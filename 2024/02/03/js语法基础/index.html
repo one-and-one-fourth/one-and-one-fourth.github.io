@@ -26,7 +26,7 @@
 <meta property="og:description" content="JavaScript （在这里，单引号和双引号表示一样，但是不能混用）  1. 弹出窗口12345678alert(&#x27;弹出窗口&#x27;)document.write(&#x27;直接显示在页面的用法&#x27;)console.log(&#x27;使用检查时，控制台输出&#x27;)&#x2F;&#x2F;用于后台测试confirm(&#x27;确定框&#x27;) &#x2F;&#x2F; 对弹出窗口进行选择后，在次确定">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-03T13:11:21.000Z">
-<meta property="article:modified_time" content="2024-02-03T13:13:24.396Z">
+<meta property="article:modified_time" content="2024-02-15T02:29:05.850Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary_large_image">
@@ -338,17 +338,11 @@
 <li><p>有其他的四则运算符之后，字符串与数字相运算会转换为数字型</p>
 </li>
 <li><p>+’ 312 ‘ 会将字符串转换为数字型</p>
-<p>显式转换</p>
-<ul>
-<li><pre><code class="js">let str=&#39;123&#39;
-console.log(Number(str)) //使用Number转换为数字型
-console.log(parseInt(&#39;12px&#39;)) // 采用 paiseInt从字符串开始截取数字，只能是截取整型
-console.log(parseFloat(&#39;12.231px&#39;) ) //浮点数截取
-<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ceylon"><br>- ```js<br>  <span class="hljs-comment">// 确定了数字类型，一般直接转换</span><br>  <br>  <span class="hljs-keyword">let</span> num = +prompt(<span class="hljs-string">&#x27;输入东西&#x27;</span>) <span class="hljs-comment">// 使用前置 + 直接转换</span><br></code></pre></td></tr></table></figure>
-</code></pre>
 </li>
-</ul>
-</li>
+<li><p>显式转换</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> str=<span class="hljs-string">&#x27;123&#x27;</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title class_">Number</span>(str)) <span class="hljs-comment">//使用Number转换为数字型</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">&#x27;12px&#x27;</span>)) <span class="hljs-comment">// 采用 paiseInt从字符串开始截取数字，只能是截取整型</span><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-built_in">parseFloat</span>(<span class="hljs-string">&#x27;12.231px&#x27;</span>) ) <span class="hljs-comment">//浮点数截取</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// 确定了数字类型，一般直接转换</span><br><br><span class="hljs-keyword">let</span> num = +<span class="hljs-title function_">prompt</span>(<span class="hljs-string">&#x27;输入东西&#x27;</span>) <span class="hljs-comment">// 使用前置 + 直接转换</span><br></code></pre></td></tr></table></figure></li>
 </ul>
 <p>存放内存解释：</p>
 <ul>
@@ -414,7 +408,7 @@ console.log(parseFloat(&#39;12.231px&#39;) ) //浮点数截取
   
     <span>></span>
     
-  <a href="/categories/html/js/" class="category-chain-item">js</a>
+  <a href="/categories/html/Js/" class="category-chain-item">Js</a>
   
   
 
