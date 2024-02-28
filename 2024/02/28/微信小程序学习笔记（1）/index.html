@@ -18,23 +18,26 @@
   <meta name="author" content="一又四分之一">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.   oj数据库名字解析1. compileinfo编译信息存储的地方，例如 报错： 1234567891011121314Main.c: In function &#x27;main&#x27;:Main.c:11:9: error: &#x27;b&#x27; undeclared (first use in this function)   11 |         b&#x3D;b&#x2F;2;">
+    <meta name="description" content="一、文件作用 app.json：当前小程序的全局配置，包括所有页面路径、窗口外观、界面表现、底部tab  pages：当前小程序的所有页面路径 window：全局定义小程序的背景色、文字色等 style：全局定义小程序组件所使用的样式版本 sitemapLocation：指定sitemap.json的路径 project.config.json:项目配置文件，记录对小程序开发工具所做的个性化配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="oj数据库名字总结">
-<meta property="og:url" content="https://one-and-one-fourth.gitee.io/2024/02/03/oj%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%E5%AD%97%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:title" content="微信小程序学习笔记（1）">
+<meta property="og:url" content="https://one-and-one-fourth.gitee.io/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
-<meta property="og:description" content="1.   oj数据库名字解析1. compileinfo编译信息存储的地方，例如 报错： 1234567891011121314Main.c: In function &#x27;main&#x27;:Main.c:11:9: error: &#x27;b&#x27; undeclared (first use in this function)   11 |         b&#x3D;b&#x2F;2;">
+<meta property="og:description" content="一、文件作用 app.json：当前小程序的全局配置，包括所有页面路径、窗口外观、界面表现、底部tab  pages：当前小程序的所有页面路径 window：全局定义小程序的背景色、文字色等 style：全局定义小程序组件所使用的样式版本 sitemapLocation：指定sitemap.json的路径 project.config.json:项目配置文件，记录对小程序开发工具所做的个性化配置">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-02-03T13:16:43.000Z">
-<meta property="article:modified_time" content="2024-02-03T13:19:23.329Z">
+<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg">
+<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/101.jpg">
+<meta property="article:published_time" content="2024-02-28T11:10:43.000Z">
+<meta property="article:modified_time" content="2024-02-28T11:29:51.087Z">
 <meta property="article:author" content="一又四分之一">
-<meta property="article:tag" content="mysql">
-<meta property="article:tag" content="sql">
+<meta property="article:tag" content="wxss">
+<meta property="article:tag" content="wxml">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg">
   
   
   
-  <title>oj数据库名字总结 - one-and-one-fourth</title>
+  <title>微信小程序学习笔记（1） - one-and-one-fourth</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -200,7 +203,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="oj数据库名字总结"></span>
+            <span id="subtitle" data-typed-text="微信小程序学习笔记（1）"></span>
           
         </div>
 
@@ -211,8 +214,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-03 21:16" pubdate>
-          2024年2月3日 晚上
+        <time datetime="2024-02-28 19:10" pubdate>
+          2024年2月28日 晚上
         </time>
       </span>
     
@@ -223,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          937 字
+          643 字
         
       </span>
     
@@ -234,7 +237,7 @@
         
         
         
-          8 分钟
+          6 分钟
         
       </span>
     
@@ -271,71 +274,65 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">oj数据库名字总结</h1>
+            <h1 id="seo-header">微信小程序学习笔记（1）</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1-oj数据库名字解析"><a href="#1-oj数据库名字解析" class="headerlink" title="1.   oj数据库名字解析"></a>1.   oj数据库名字解析</h1><h2 id="1-compileinfo"><a href="#1-compileinfo" class="headerlink" title="1. compileinfo"></a>1. compileinfo</h2><p><strong>编译信息</strong>存储的地方，例如</p>
-<p>报错：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c">Main.c: In function <span class="hljs-string">&#x27;main&#x27;</span>:<br>Main.c:<span class="hljs-number">11</span>:<span class="hljs-number">9</span>: error: <span class="hljs-string">&#x27;b&#x27;</span> undeclared (first use in this function)<br>   <span class="hljs-number">11</span> |         b=b/<span class="hljs-number">2</span>;<br>      |         ^<br>Main.c:<span class="hljs-number">11</span>:<span class="hljs-number">9</span>: note: each undeclared identifier is reported only once <span class="hljs-keyword">for</span> each function it appears in<br>Main.c:<span class="hljs-number">19</span>:<span class="hljs-number">17</span>: error: expected <span class="hljs-string">&#x27;;&#x27;</span> before <span class="hljs-string">&#x27;return&#x27;</span><br>   <span class="hljs-number">19</span> |     <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;\n&quot;</span>)<br>      |                 ^<br>      |                 ;<br>   <span class="hljs-number">20</span> |     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>      |     ~~~~~~       <br>Main.c:<span class="hljs-number">5</span>:<span class="hljs-number">5</span>: warning: ignoring <span class="hljs-keyword">return</span> value of <span class="hljs-string">&#x27;scanf&#x27;</span>, declared with attribute warn_unused_result [-Wunused-result]<br>    <span class="hljs-number">5</span> |     <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;n);<br>      |     ^~~~~~~~~~~~~~<br></code></pre></td></tr></table></figure>
-
-
-
-<p>这种信息都存在这里</p>
-<h2 id="2-contest"><a href="#2-contest" class="headerlink" title="2.  contest"></a>2.  contest</h2><p><strong>比赛目录</strong>的存储的地方</p>
-<p>里面的信息都是比赛当时的记录，比赛结束后的题目记录不存在</p>
-<h2 id="3-loginlog"><a href="#3-loginlog" class="headerlink" title="3. loginlog"></a>3. loginlog</h2><p><strong>登录日志</strong>即用户登录时间、IP的记录</p>
-<h2 id="4-news"><a href="#4-news" class="headerlink" title="4. news"></a>4. news</h2><p><strong>前端新闻</strong>的存储记录</p>
-<h2 id="5-online"><a href="#5-online" class="headerlink" title="5. online"></a>5. online</h2><h2 id="6-privilege"><a href="#6-privilege" class="headerlink" title="6. privilege"></a>6. privilege</h2><p><strong>用户权限</strong>存储的地方</p>
-<h2 id="7-problem"><a href="#7-problem" class="headerlink" title="7. problem"></a>7. problem</h2><p><strong>题目的创建时间</strong>的储存处</p>
-<h2 id="8-runmtimeinfo"><a href="#8-runmtimeinfo" class="headerlink" title="8. runmtimeinfo"></a>8. runmtimeinfo</h2><p><strong>运行时间信息</strong></p>
-<p>例如：类似这种信息的存储</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c">答案错误的样例：<br>    ========[test1.out]=========<br>Expected						      |	Yours<br>This is not a quadratic equation			      |	-nan -inf<br><br>==============================<br>time_space_table:<br>/<span class="hljs-number">1023</span>/sample.in:AC mem=<span class="hljs-number">2184</span>k time=<span class="hljs-number">4</span>ms<br>/<span class="hljs-number">1023</span>/sample1.in:AC mem=<span class="hljs-number">2184</span>k time=<span class="hljs-number">4</span>ms<br>/<span class="hljs-number">1023</span>/sc.in:AC mem=<span class="hljs-number">2184</span>k time=<span class="hljs-number">4</span>ms<br>/<span class="hljs-number">1023</span>/test0.in:AC mem=<span class="hljs-number">2184</span>k time=<span class="hljs-number">5</span>ms<br>/<span class="hljs-number">1023</span>/test1.in:WA mem=<span class="hljs-number">2184</span>k time=<span class="hljs-number">4</span>ms<br>/<span class="hljs-number">1023</span>/test2.in:AC mem=<span class="hljs-number">2184</span>k time=<span class="hljs-number">5</span>ms<br><br>    答案正确的样例：<br>    time_space_table:<br>/<span class="hljs-number">1043</span>/sample.in:AC mem=<span class="hljs-number">1200</span>k time=<span class="hljs-number">4</span>ms<br>/<span class="hljs-number">1043</span>/test0.in:AC mem=<span class="hljs-number">1200</span>k time=<span class="hljs-number">5</span>ms<br>/<span class="hljs-number">1043</span>/test1.in:AC mem=<span class="hljs-number">1200</span>k time=<span class="hljs-number">4</span>ms<br>/<span class="hljs-number">1043</span>/test2.in:AC mem=<span class="hljs-number">1200</span>k time=<span class="hljs-number">4</span>ms<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="9-solution"><a href="#9-solution" class="headerlink" title="9. solution"></a>9. solution</h2><p><strong>用户的提交信息</strong>的存储</p>
-<h2 id="10-source-code-和-source-code-user"><a href="#10-source-code-和-source-code-user" class="headerlink" title="10. source_code 和  source_code_user"></a>10. source_code 和  source_code_user</h2><p><strong>提交的源代码</strong>的存储</p>
-<p>可能两者有区别！！！但是我不知道 &gt;_&lt;</p>
-<h2 id="11-user"><a href="#11-user" class="headerlink" title="11. user"></a>11. user</h2><p><strong>用户信息的存储</strong></p>
-<hr>
-<h1 id="2-删除账户"><a href="#2-删除账户" class="headerlink" title="2. 删除账户"></a>2. 删除账户</h1><h2 id="1-信息删除（不删除其做题数据）"><a href="#1-信息删除（不删除其做题数据）" class="headerlink" title="1.信息删除（不删除其做题数据）"></a>1.信息删除（不删除其做题数据）</h2><p>进到数据库<code>user</code>表里直节删除用户</p>
-<p>该方法删除之后，用户在次用同样的用户id注册时，会自动连接到原来的数据；</p>
-<p>比如：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">开始存在了用户 A ，他做了一些题目<br>将他信息删除后，又重新注册了和用户 A 删除之前同样的用户id <br>那么，第二次注册的用户会获取 A 原本的数据，即 A 的所有做题数目<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="2-彻底删除（包括做题数据）"><a href="#2-彻底删除（包括做题数据）" class="headerlink" title="2.彻底删除（包括做题数据）"></a>2.彻底删除（包括做题数据）</h2><p>字面意思hhh</p>
-<p>比如：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs c">开始存在了用户 A ，他做了一些题目<br>将他信息删除后，又重新注册了和用户 A 删除之前同样的用户id <br>那么，第二次注册的用户，就是等同于白版，不会继承 A 的题目信息<br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="3、删除步骤"><a href="#3、删除步骤" class="headerlink" title="3、删除步骤"></a>3、删除步骤</h1><p><strong>在删除之前一定要先进行该步骤</strong></p>
-<p>要考虑到删除一个用户之后，题目的通过量，没通过量的数据的修改！！！！！</p>
-<p>通过表<code>solution</code> 中的<code>pass_rate</code> 来得出用户对某个题目的通过与否？？，，<code>pass_rate==1.0</code>表示这道题目通过，由于题目统计只有通过和没通过，所以不必考虑没通过的原因</p>
-<hr>
-<p><strong>影响其他表中的删除：</strong></p>
-<p>要先将 <strong>1</strong> 中的信息删除完，才能删除 <strong>4</strong> 中的</p>
-<p>1： <code>compileinfo  和  runtimeinfo 和 source_code 和 source_code_user</code> 表中的<code>solution_id</code>要删除对应人的 “ 提交编号 ”（有点复杂，要找到对应人的提交编号）</p>
-<p>4： <code>solution</code> 表中存储的所有通过与不通过的提交记录不要在第一个删除的前面，提前删除）</p>
-<hr>
-<p><strong>不影响其他表：</strong></p>
-<p>2： <code>loginlog</code>表中的用户登录日志要 通过对应的<code>user_id</code> 删除(简单，不影响其他的删除，可以提前删除)</p>
-<p>3： <code>privilege</code>表中的权限 通过对应的 <code>user_id</code> 删除（简单，不影响其他的删除，可以提前删除）</p>
-<p> 5： <code>users</code> 表中的用户可以删除，（简单可以提前删除）</p>
-<hr>
-<h1 id="4、修改用户-id步骤"><a href="#4、修改用户-id步骤" class="headerlink" title="4、修改用户 id步骤"></a>4、修改用户 id步骤</h1><p><strong>注意修改语句写法</strong></p>
-<p><code>loginlog</code>   、<code>privilege</code>  、<code>solution</code> 、<code>users</code> 表中的 <code>user_id</code></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> 上述表 <span class="hljs-keyword">SET</span> `user_id`<span class="hljs-operator">=</span>要修改的值 <span class="hljs-keyword">WHERE</span> `user_id`<span class="hljs-operator">=</span>要修改的用户;<br></code></pre></td></tr></table></figure>
-
-<p><code>solution</code> 、<code>users</code> 表中的 <code>nick</code>  ： 这是 <strong>用户名</strong> 建议修改，否则会导致以前的名字修改过之后，不同名字对应同一个用户id</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">UPDATE</span> 上述表 <span class="hljs-keyword">SET</span> `nick`<span class="hljs-operator">=</span>要修改的值 <span class="hljs-keyword">WHERE</span> `user_id`<span class="hljs-operator">=</span>要修改的用户;<br></code></pre></td></tr></table></figure>
-
-
-
+                <h1 id="一、文件作用"><a href="#一、文件作用" class="headerlink" title="一、文件作用"></a>一、文件作用</h1><p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg" srcset="/img/loading.gif" lazyload alt="根目录"></p>
+<h2 id="app-json："><a href="#app-json：" class="headerlink" title="app.json："></a><code>app.json</code>：</h2><p>当前小程序的<strong>全局配置</strong>，包括所有页面路径、窗口外观、界面表现、底部tab</p>
+<p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/101.jpg" srcset="/img/loading.gif" lazyload alt="app.json"></p>
+<p><code>pages</code>：当前小程序的所有页面路径</p>
+<p><code>window</code>：全局定义小程序的背景色、文字色等</p>
+<p><code>style</code>：全局定义小程序组件所使用的样式版本</p>
+<p><code>sitemapLocation</code>：指定<code>sitemap.json</code>的路径</p>
+<h2 id="project-config-json"><a href="#project-config-json" class="headerlink" title="project.config.json:"></a><code>project.config.json</code>:</h2><p>项目配置文件，记录对小程序开发工具所做的个性化配置</p>
+<p><code>setting</code>：保存了编译相关的配置</p>
+<p><code>appid</code>：小程序的账号 ID</p>
+<h2 id="sitemap-json"><a href="#sitemap-json" class="headerlink" title="sitemap.json"></a><code>sitemap.json</code></h2><p>微信现已开放小程序内搜索，效果类似于PC网页的SEO。sitemap.json文件用来配置小程序页面是否允许<br>微信索引。<br>当开发者允许微信索引时，微信会通过爬虫的形式，为小程序的页面内容建立索引。当用户的搜索关键字和页面的索引匹配成功的时候，小程序的页面将可能展示在搜索结果中。</p>
+<h2 id="页面中-json"><a href="#页面中-json" class="headerlink" title="页面中.json"></a>页面中<code>.json</code></h2><p>和<code>app.json</code>一样，但是页面中的配置会覆盖<code>app.json</code>中<code>相同</code>的<code>window</code>配置</p>
+<h1 id="二、项目首页"><a href="#二、项目首页" class="headerlink" title="二、项目首页"></a>二、项目首页</h1><p><code>app.json</code>中<code>pages</code>的前后顺序，默认<code>第一个是首页</code></p>
+<h1 id="三、语法"><a href="#三、语法" class="headerlink" title="三、语法"></a>三、语法</h1><h2 id="WXML和HTML"><a href="#WXML和HTML" class="headerlink" title="WXML和HTML"></a><strong>WXML</strong>和<strong>HTML</strong></h2><ul>
+<li><p>标签名称不同<br>HTML ( div, span, img, a )<br>WXML ( view, text, image, navigator)</p>
+<p>(上面的是一一对应的类似用法比较)</p>
+</li>
+<li><p>属性节点不同</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>超链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">navigator</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/ pages/home/home&quot;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">navigato</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>提供了类似于Vue中的模板语法<br>数据绑定<br>列表渲染</p>
+<p>条件渲染</p>
+</li>
+</ul>
+<h2 id="WXSS-和CSS的区别"><a href="#WXSS-和CSS的区别" class="headerlink" title="WXSS 和CSS的区别"></a>WXSS 和CSS的区别</h2><p>① 新增了rpx尺寸单位</p>
+<ul>
+<li>cSS中需要手动进行像素单位换算，例如 rem</li>
+<li>wXSS在底层支持新的尺寸单位 rpx，在不同大小的屏幕上小程序会自动进行换算</li>
+</ul>
+<p>② 提供了全局的样式和局部样式</p>
+<ul>
+<li>项目根目录中的app.wxSs会作用于所有小程序页面</li>
+<li>局部页面的.wxSS样式仅对当前页面生效</li>
+</ul>
+<p>③ WxSS仅支持部分CSS选择器</p>
+<ul>
+<li>.class和#id</li>
+<li>element</li>
+<li>并集选择器、后代选择器</li>
+<li>::after和 ::before等伪类选择器</li>
+</ul>
+<h2 id="小程序中-js文件的分类"><a href="#小程序中-js文件的分类" class="headerlink" title="小程序中.js文件的分类"></a>小程序中.js文件的分类</h2><p>小程序中的JS文件分为三大类，分别是:</p>
+<p>① <code>appg.js</code></p>
+<ul>
+<li>是整个小程序项目的入口文件，通过调用<code>App()</code>函数来启动整个小程序</li>
+</ul>
+<p>② 页面的<code>.js </code>文件</p>
+<ul>
+<li>是页面的入口文件，通过调用Page()函数来创建并运行页面</li>
+</ul>
+<p>③ 普通的<code>.js </code>文件</p>
+<ul>
+<li>是普通的功能模块文件，用来封装<code>公共的函数或属性</code>供页面使用</li>
+</ul>
 
                 
               </div>
@@ -354,7 +351,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/oj/" class="category-chain-item">oj</a>
+  <a href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="category-chain-item">微信小程序</a>
   
   
 
@@ -369,9 +366,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/mysql/" class="print-no-link">#mysql</a>
+        <a href="/tags/wxss/" class="print-no-link">#wxss</a>
       
-        <a href="/tags/sql/" class="print-no-link">#sql</a>
+        <a href="/tags/wxml/" class="print-no-link">#wxml</a>
       
     </div>
   
@@ -383,8 +380,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>oj数据库名字总结</div>
-      <div>https://one-and-one-fourth.gitee.io/2024/02/03/oj数据库名字总结/</div>
+      <div>微信小程序学习笔记（1）</div>
+      <div>https://one-and-one-fourth.gitee.io/2024/02/28/微信小程序学习笔记（1）/</div>
     </div>
     <div class="license-meta">
       
@@ -396,7 +393,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月3日</div>
+          <div>2024年2月28日</div>
         </div>
       
       
@@ -428,9 +425,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/27/%E8%AE%B0%E4%BA%8B%E6%9C%AC%E6%89%93%E5%BC%80%E5%A4%A7%E5%86%85%E5%AD%98%E6%96%87%E4%BB%B6/" title="使用记事本打开大文本文件">
+                      <a href="/2024/02/28/hexo%E6%9B%B4%E6%96%B0%E6%B3%A8%E6%84%8F/" title="hexo更新注意事项">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">使用记事本打开大文本文件</span>
+                        <span class="hidden-mobile">hexo更新注意事项</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -438,8 +435,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/03/html%E8%A1%A5%E5%85%85/" title="html补充">
-                        <span class="hidden-mobile">html补充</span>
+                      <a href="/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89/" title="微信小程序学习笔记（2）">
+                        <span class="hidden-mobile">微信小程序学习笔记（2）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
