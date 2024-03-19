@@ -4,6 +4,85 @@
   
   
   <entry>
+    <title>微信小程序学习笔记（4）</title>
+    <link href="/2024/03/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/"/>
+    <url>/2024/03/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-wxss"><a href="#1-wxss" class="headerlink" title="1.wxss"></a>1.wxss</h1><p>和<code>css</code>基本一样， <code>rpx</code>和<code>@import</code>是<code>wxss</code>专有的</p><h2 id="（1）、rpx"><a href="#（1）、rpx" class="headerlink" title="（1）、rpx"></a>（1）、rpx</h2><p>解决适配的问题的单位尺寸</p><h2 id="（2）、-import"><a href="#（2）、-import" class="headerlink" title="（2）、@import"></a>（2）、@import</h2><p>语法：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@import</span> <span class="hljs-string">&quot;相对路径&quot;</span>;<br></code></pre></td></tr></table></figure><h1 id="2、app-json中的用法"><a href="#2、app-json中的用法" class="headerlink" title="2、app.json中的用法"></a>2、app.json中的用法</h1><h2 id="（1）、window用法"><a href="#（1）、window用法" class="headerlink" title="（1）、window用法"></a>（1）、window用法</h2><p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/100.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>微信小程序</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>wxss</tag>
+      
+      <tag>wxml</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Linux笔记（1）</title>
+    <link href="/2024/03/19/Linux%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/"/>
+    <url>/2024/03/19/Linux%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1、进入-root-用户"><a href="#1、进入-root-用户" class="headerlink" title="1、进入 root 用户"></a>1、进入 root 用户</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">sudo</span> <span class="hljs-string">-i</span><br></code></pre></td></tr></table></figure><p>输入后，输入密码即可</p><h1 id="2、解压文件"><a href="#2、解压文件" class="headerlink" title="2、解压文件"></a>2、解压文件</h1><p><code>unzip</code>解压文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">unzip file.zip<br></code></pre></td></tr></table></figure><p>如果要将压缩文件解压到指定的目录，可以使用 <code>-d</code> 选项指定目标目录，例如：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">unzip file.zip -d /path/to/destination<br></code></pre></td></tr></table></figure><p>这会将压缩文件解压到指定的目标目录中。</p><p>另外，系统中没有安装 <code>unzip</code> 命令可以通过包管理器安装它。例如，在 Ubuntu 上，可以使用以下命令安装 <code>unzip</code>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install unzip<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>hustoj二开（1）</title>
+    <link href="/2024/03/19/hustoj%E4%BA%8C%E5%BC%80%EF%BC%881%EF%BC%89/"/>
+    <url>/2024/03/19/hustoj%E4%BA%8C%E5%BC%80%EF%BC%881%EF%BC%89/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>啊啊啊啊！！！难崩：</p><p>路径问题搞了好长时间才明白了该项目的路径如何设置的 &gt;_&lt; ,，本文就路径问题，前端页面修改问题进行解析</p></blockquote><h1 id="1、路径问题"><a href="#1、路径问题" class="headerlink" title="1、路径问题"></a>1、路径问题</h1><p>​      路径问题绝对是我解决时间最长的一部分，他对于每一个项目的参考不同，虽有一些东西是相似的（可以在网上找到参考），但是治标不治本（我真菜，了解不了大佬们的笔记）</p><p>​     就本项目而言、他的路径通过一些引用，在代码部分很难看出来，所以，可以打开前端的调试工具（F12）<strong>注意：在主页打开调试工具能更好的看到路径问题的反应</strong> （不要问早干嘛去了！！！！！）</p><p><img src="/../img/hustoj%E4%BA%8C%E5%BC%80%EF%BC%881%EF%BC%89/100.png"></p><p>   这样就一目了然了，如果仍不清楚，在后端新建测试文件试试路径即可</p><h1 id="2、开发问题"><a href="#2、开发问题" class="headerlink" title="2、开发问题"></a>2、开发问题</h1><h2 id="（1）、mysql"><a href="#（1）、mysql" class="headerlink" title="（1）、mysql"></a>（1）、mysql</h2><p>清除表中所有的数据，无法回滚，更快。</p><blockquote><p>在设计表和测试时，清除杂乱数据、对完善后的代码在次测试</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysq">TRUNCATE TABLE table_name;<br></code></pre></td></tr></table></figure><h2 id="（2）、php"><a href="#（2）、php" class="headerlink" title="（2）、php"></a>（2）、php</h2><p>如果文件夹要写入信息，使用命令</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">chmod</span> <span class="hljs-string">-R</span> <span class="hljs-number">777</span> <span class="hljs-string">文件夹</span><br></code></pre></td></tr></table></figure><p>赋予权限，一般设置完成为绿色</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>oj</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>php</tag>
+      
+      <tag>mysql</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>hexo更新注意事项</title>
     <link href="/2024/02/28/hexo%E6%9B%B4%E6%96%B0%E6%B3%A8%E6%84%8F/"/>
     <url>/2024/02/28/hexo%E6%9B%B4%E6%96%B0%E6%B3%A8%E6%84%8F/</url>
@@ -33,7 +112,7 @@
     <link href="/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/"/>
     <url>/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/</url>
     
-    <content type="html"><![CDATA[<h1 id="一、文件作用"><a href="#一、文件作用" class="headerlink" title="一、文件作用"></a>一、文件作用</h1><p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg" alt="根目录"></p><h2 id="app-json："><a href="#app-json：" class="headerlink" title="app.json："></a><code>app.json</code>：</h2><p>当前小程序的<strong>全局配置</strong>，包括所有页面路径、窗口外观、界面表现、底部tab</p><p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/101.jpg" alt="app.json"></p><p><code>pages</code>：当前小程序的所有页面路径</p><p><code>window</code>：全局定义小程序的背景色、文字色等</p><p><code>style</code>：全局定义小程序组件所使用的样式版本</p><p><code>sitemapLocation</code>：指定<code>sitemap.json</code>的路径</p><h2 id="project-config-json"><a href="#project-config-json" class="headerlink" title="project.config.json:"></a><code>project.config.json</code>:</h2><p>项目配置文件，记录对小程序开发工具所做的个性化配置</p><p><code>setting</code>：保存了编译相关的配置</p><p><code>appid</code>：小程序的账号 ID</p><h2 id="sitemap-json"><a href="#sitemap-json" class="headerlink" title="sitemap.json"></a><code>sitemap.json</code></h2><p>微信现已开放小程序内搜索，效果类似于PC网页的SEO。sitemap.json文件用来配置小程序页面是否允许<br>微信索引。<br>当开发者允许微信索引时，微信会通过爬虫的形式，为小程序的页面内容建立索引。当用户的搜索关键字和页面的索引匹配成功的时候，小程序的页面将可能展示在搜索结果中。</p><h2 id="页面中-json"><a href="#页面中-json" class="headerlink" title="页面中.json"></a>页面中<code>.json</code></h2><p>和<code>app.json</code>一样，但是页面中的配置会覆盖<code>app.json</code>中<code>相同</code>的<code>window</code>配置</p><h1 id="二、项目首页"><a href="#二、项目首页" class="headerlink" title="二、项目首页"></a>二、项目首页</h1><p><code>app.json</code>中<code>pages</code>的前后顺序，默认<code>第一个是首页</code></p><h1 id="三、语法"><a href="#三、语法" class="headerlink" title="三、语法"></a>三、语法</h1><h2 id="WXML和HTML"><a href="#WXML和HTML" class="headerlink" title="WXML和HTML"></a><strong>WXML</strong>和<strong>HTML</strong></h2><ul><li><p>标签名称不同<br>HTML ( div, span, img, a )<br>WXML ( view, text, image, navigator)</p><p>(上面的是一一对应的类似用法比较)</p></li><li><p>属性节点不同</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>超链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">navigator</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/ pages/home/home&quot;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">navigato</span>&gt;</span><br></code></pre></td></tr></table></figure></li><li><p>提供了类似于Vue中的模板语法<br>数据绑定<br>列表渲染</p><p>条件渲染</p></li></ul><h2 id="WXSS-和CSS的区别"><a href="#WXSS-和CSS的区别" class="headerlink" title="WXSS 和CSS的区别"></a>WXSS 和CSS的区别</h2><p>① 新增了rpx尺寸单位</p><ul><li>cSS中需要手动进行像素单位换算，例如 rem</li><li>wXSS在底层支持新的尺寸单位 rpx，在不同大小的屏幕上小程序会自动进行换算</li></ul><p>② 提供了全局的样式和局部样式</p><ul><li>项目根目录中的app.wxSs会作用于所有小程序页面</li><li>局部页面的.wxSS样式仅对当前页面生效</li></ul><p>③ WxSS仅支持部分CSS选择器</p><ul><li>.class和#id</li><li>element</li><li>并集选择器、后代选择器</li><li>::after和 ::before等伪类选择器</li></ul><h2 id="小程序中-js文件的分类"><a href="#小程序中-js文件的分类" class="headerlink" title="小程序中.js文件的分类"></a>小程序中.js文件的分类</h2><p>小程序中的JS文件分为三大类，分别是:</p><p>① <code>appg.js</code></p><ul><li>是整个小程序项目的入口文件，通过调用<code>App()</code>函数来启动整个小程序</li></ul><p>② 页面的<code>.js </code>文件</p><ul><li>是页面的入口文件，通过调用Page()函数来创建并运行页面</li></ul><p>③ 普通的<code>.js </code>文件</p><ul><li>是普通的功能模块文件，用来封装<code>公共的函数或属性</code>供页面使用</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="一、文件作用"><a href="#一、文件作用" class="headerlink" title="一、文件作用"></a>一、文件作用</h1><p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg" alt="根目录"></p><h2 id="app-json："><a href="#app-json：" class="headerlink" title="app.json："></a><code>app.json</code>：</h2><p>当前小程序的<strong>全局配置</strong>，包括所有页面路径、窗口外观、界面表现、底部tab</p><p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/101.jpg" alt="app.json"></p><p><code>pages</code>：当前小程序的所有页面路径</p><p><code>window</code>：全局定义小程序的背景色、文字色等可以设置如下：</p><p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/102.png" alt="app.json"></p><p>更多用法：<a href="微信小程序学习笔记（4）.md">window用法</a></p><p><code>style</code>：全局定义小程序组件所使用的样式版本</p><p><code>sitemapLocation</code>：指定<code>sitemap.json</code>的路径</p><h2 id="project-config-json"><a href="#project-config-json" class="headerlink" title="project.config.json:"></a><code>project.config.json</code>:</h2><p>项目配置文件，记录对小程序开发工具所做的个性化配置</p><p><code>setting</code>：保存了编译相关的配置</p><p><code>appid</code>：小程序的账号 ID</p><h2 id="sitemap-json"><a href="#sitemap-json" class="headerlink" title="sitemap.json"></a><code>sitemap.json</code></h2><p>微信现已开放小程序内搜索，效果类似于PC网页的SEO。sitemap.json文件用来配置小程序页面是否允许<br>微信索引。<br>当开发者允许微信索引时，微信会通过爬虫的形式，为小程序的页面内容建立索引。当用户的搜索关键字和页面的索引匹配成功的时候，小程序的页面将可能展示在搜索结果中。</p><h2 id="页面中-json"><a href="#页面中-json" class="headerlink" title="页面中.json"></a>页面中<code>.json</code></h2><p>和<code>app.json</code>一样，但是页面中的配置会覆盖<code>app.json</code>中<code>相同</code>的<code>window</code>配置</p><h1 id="二、项目首页"><a href="#二、项目首页" class="headerlink" title="二、项目首页"></a>二、项目首页</h1><p><code>app.json</code>中<code>pages</code>的前后顺序，默认<code>第一个是首页</code></p><h1 id="三、语法"><a href="#三、语法" class="headerlink" title="三、语法"></a>三、语法</h1><h2 id="WXML和HTML"><a href="#WXML和HTML" class="headerlink" title="WXML和HTML"></a><strong>WXML</strong>和<strong>HTML</strong></h2><ul><li><p>标签名称不同<br>HTML ( div, span, img, a )<br>WXML ( view, text, image, navigator)</p><p>(上面的是一一对应的类似用法比较)</p></li><li><p>属性节点不同</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>超链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">navigator</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/ pages/home/home&quot;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">navigato</span>&gt;</span><br></code></pre></td></tr></table></figure></li><li><p>提供了类似于Vue中的模板语法<br>数据绑定<br>列表渲染</p><p>条件渲染</p></li></ul><h2 id="WXSS-和CSS的区别"><a href="#WXSS-和CSS的区别" class="headerlink" title="WXSS 和CSS的区别"></a>WXSS 和CSS的区别</h2><p>① 新增了rpx尺寸单位</p><ul><li>cSS中需要手动进行像素单位换算，例如 rem</li><li>wXSS在底层支持新的尺寸单位 rpx，在不同大小的屏幕上小程序会自动进行换算</li></ul><p>② 提供了全局的样式和局部样式</p><ul><li>项目根目录中的app.wxSs会作用于所有小程序页面</li><li>局部页面的.wxSS样式仅对当前页面生效</li></ul><p>③ WxSS仅支持部分CSS选择器</p><ul><li>.class和#id</li><li>element</li><li>并集选择器、后代选择器</li><li>::after和 ::before等伪类选择器</li></ul><h2 id="小程序中-js文件的分类"><a href="#小程序中-js文件的分类" class="headerlink" title="小程序中.js文件的分类"></a>小程序中.js文件的分类</h2><p>小程序中的JS文件分为三大类，分别是:</p><p>① <code>appg.js</code></p><ul><li>是整个小程序项目的入口文件，通过调用<code>App()</code>函数来启动整个小程序</li></ul><p>② 页面的<code>.js </code>文件</p><ul><li>是页面的入口文件，通过调用Page()函数来创建并运行页面</li></ul><p>③ 普通的<code>.js </code>文件</p><ul><li>是普通的功能模块文件，用来封装<code>公共的函数或属性</code>供页面使用</li></ul>]]></content>
     
     
     <categories>
@@ -127,6 +206,33 @@
     <tags>
       
       <tag>txt</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Maven项目的创建</title>
+    <link href="/2024/02/08/Maven%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%9B%E5%BB%BA/"/>
+    <url>/2024/02/08/Maven%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%9B%E5%BB%BA/</url>
+    
+    <content type="html"><![CDATA[<p>IDEA2023版本Maven项目的创建</p><blockquote><p>参考 <a href="https://www.bmabk.com/index.php/post/112647.html">https://www.bmabk.com/index.php/post/112647.html</a></p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Javaweb</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>javaweb</tag>
       
     </tags>
     
@@ -280,7 +386,7 @@
     
     <tags>
       
-      <tag>Mysql</tag>
+      <tag>mysql</tag>
       
     </tags>
     
