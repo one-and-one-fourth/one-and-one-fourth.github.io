@@ -18,28 +18,27 @@
   <meta name="author" content="一又四分之一">
   <meta name="keywords" content="">
   
-    <meta name="description" content="本文中的html和css对应wxml和wxss 1、数据绑定Mustache语法（双大括号） 123&lt;view&gt;&#123;&#123;info&#125;&#125;&lt;&#x2F;view&gt;&#x2F;&#x2F;同时在本文件的 .js文件中写入数据  123456789Page(&#123;  data: &#123;     info:&#x27;hello world&#x27;,    ran">
+    <meta name="description" content="1、&lt; template &gt;&lt; &#x2F; template &gt;模板可以重复调用 首先要定义一个模板： 12345&lt;template name&#x3D;&quot;test&quot;&gt;    &lt;view&gt;&#123;&#123;username&#125;&#125;&lt;&#x2F;view&gt;    &lt;view&gt;&#123;&#123;pas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序学习笔记（3）">
-<meta property="og:url" content="https://one-and-one-fourth.gitee.io/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89/index.html">
+<meta property="og:title" content="微信小程序学习笔记（5）">
+<meta property="og:url" content="https://one-and-one-fourth.gitee.io/2024/04/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%885%EF%BC%89/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
-<meta property="og:description" content="本文中的html和css对应wxml和wxss 1、数据绑定Mustache语法（双大括号） 123&lt;view&gt;&#123;&#123;info&#125;&#125;&lt;&#x2F;view&gt;&#x2F;&#x2F;同时在本文件的 .js文件中写入数据  123456789Page(&#123;  data: &#123;     info:&#x27;hello world&#x27;,    ran">
+<meta property="og:description" content="1、&lt; template &gt;&lt; &#x2F; template &gt;模板可以重复调用 首先要定义一个模板： 12345&lt;template name&#x3D;&quot;test&quot;&gt;    &lt;view&gt;&#123;&#123;username&#125;&#125;&lt;&#x2F;view&gt;    &lt;view&gt;&#123;&#123;pas">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89/100.jpg">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89/101.png">
-<meta property="article:published_time" content="2024-02-28T11:10:45.000Z">
-<meta property="article:modified_time" content="2024-04-01T07:14:24.719Z">
+<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%885%EF%BC%89/100.png">
+<meta property="article:published_time" content="2024-04-01T09:30:42.000Z">
+<meta property="article:modified_time" content="2024-04-01T09:35:57.152Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="wxss">
 <meta property="article:tag" content="wxml">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89/100.jpg">
+<meta name="twitter:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%885%EF%BC%89/100.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>微信小程序学习笔记（3） - one-and-one-fourth</title>
+  <title>微信小程序学习笔记（5） - one-and-one-fourth</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -232,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="微信小程序学习笔记（3）"></span>
+            <span id="subtitle" data-typed-text="微信小程序学习笔记（5）"></span>
           
         </div>
 
@@ -243,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-28 19:10" pubdate>
-          2024年2月28日 晚上
+        <time datetime="2024-04-01 17:30" pubdate>
+          2024年4月1日 下午
         </time>
       </span>
     
@@ -255,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          851 字
+          1.2k 字
         
       </span>
     
@@ -266,7 +265,7 @@
         
         
         
-          8 分钟
+          11 分钟
         
       </span>
     
@@ -303,102 +302,92 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">微信小程序学习笔记（3）</h1>
+            <h1 id="seo-header">微信小程序学习笔记（5）</h1>
             
             
               <div class="markdown-body">
                 
-                <p>本文中的<code>html</code>和<code>css</code>对应<code>wxml</code>和<code>wxss</code></p>
-<h1 id="1、数据绑定"><a href="#1、数据绑定" class="headerlink" title="1、数据绑定"></a>1、数据绑定</h1><p><code>Mustache</code>语法（双大括号）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>&#123;&#123;info&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><br>//同时在本文件的 .js文件中写入数据<br></code></pre></td></tr></table></figure>
+                <h1 id="1、-template-template"><a href="#1、-template-template" class="headerlink" title="1、&lt; template &gt;&lt; &#x2F; template &gt;"></a>1、&lt; template &gt;&lt; &#x2F; template &gt;</h1><p>模板可以重复调用</p>
+<p>首先要定义一个模板：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>&#123;&#123;username&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>&#123;&#123;password&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 这里定义了一个模板名字为 test 的模板 ，里面包含了两个 view 组件--&gt;</span><br></code></pre></td></tr></table></figure>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title class_">Page</span>(&#123;<br><br>  <span class="hljs-attr">data</span>: &#123;<br>     <span class="hljs-attr">info</span>:<span class="hljs-string">&#x27;hello world&#x27;</span>,<br>    <span class="hljs-attr">randomNum</span>: <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>(),<span class="hljs-comment">//随机生成数字</span><br>    <span class="hljs-attr">randomNumFixed</span>: <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>().<span class="hljs-title function_">toFixed</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">//随机生成2位小数的小数  </span><br>  &#125;<br>          <br>&#125;)<br></code></pre></td></tr></table></figure>
+<p>然后才能应用该模板：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">is</span>=<span class="hljs-string">&quot;test&quot;</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;&#123;&#123;username:&#x27;admin&#x27;,password:&#x27;123&#x27;&#125;&#125;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 使用 is 引用所要使用的模板名字，同时，使用 data 更新模板中的变量的值 --&gt;</span><br><span class="hljs-comment">&lt;!-- 另外，也可以在 Page() 中定义 data 的其中一个变量值，以一个结构体的值为例子：</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">Page(&#123;</span><br><span class="hljs-comment">    data: &#123;</span><br><span class="hljs-comment">        stu:&#123;</span><br><span class="hljs-comment">            username:&#x27;admin&#x27;,</span><br><span class="hljs-comment">            password:&#x27;123&#x27;</span><br><span class="hljs-comment">        &#125;</span><br><span class="hljs-comment">    &#125;</span><br><span class="hljs-comment">&#125;)</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">然后，在引用该模板的时候可以使用</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">&lt;template is=&quot;test&quot; data=&quot;&#123;&#123;...stu&#125;&#125;&quot;&gt;</span><br><span class="hljs-comment">&lt;/template&gt;</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">来给变量赋值</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">其中 “...stu” 表示将 名字为 stu 的变量展开引用</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">--&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p> 通过该语法可以动态绑定属性</p>
-<p>在<code>data</code>中也可以写入图片链接，然后通过该语法写入<code>wxml</code>中</p>
-<h1 id="2、事件绑定"><a href="#2、事件绑定" class="headerlink" title="2、事件绑定"></a>2、事件绑定</h1><p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89/100.jpg" srcset="/img/loading.gif" lazyload alt="常用事件"></p>
-<p><code>target</code>和<code>currentTarget</code>：</p>
-<ul>
-<li>前者是触发事件的源头组件</li>
-<li>后者是当前时间所绑定的组件</li>
-<li>例如：<code>view</code> 中存在一个 <code>button</code> 给<code>view</code>绑定一个<code>bindtap</code>，点击 <code>button</code> 后，<code>e.target</code>指向是<code>button</code>，<code>e.currentTarget</code>是<code>view</code></li>
-</ul>
-<p>例如：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">bind:tap</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span><br>点击<br><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>别忘了在 <code>js</code>中写入<code>btn</code>的函数</p>
-<hr>
-<hr>
-<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs txt">通过 this.setData(&#123;&#125;) 给 data 中的数据赋新值<br></code></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">btn</span>(<span class="hljs-params"></span>)&#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>(&#123;<br>        <span class="hljs-attr">count</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">data</span>.<span class="hljs-property">count</span>+<span class="hljs-number">1</span> <span class="hljs-comment">//count是data中的数据</span><br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<hr>
-<hr>
-<p><code>bindinput</code>: 相应文本框输入事件</p>
-<p>绑定方式：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">bindinput</span>=<span class="hljs-string">&quot;btn&quot;</span>&gt;</span><br>点击<br><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">btn</span>(<span class="hljs-params">e</span>)&#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(e.<span class="hljs-property">detail</span>.<span class="hljs-property">value</span>);<span class="hljs-comment">//获取文本框最新的值</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h1 id="3、事件传参"><a href="#3、事件传参" class="headerlink" title="3、事件传参"></a>3、事件传参</h1><p>不能再绑定事件的<strong>同时</strong>传递参数</p>
-<p>例如：	</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">bind:tap</span>=<span class="hljs-string">&quot;find(123)&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
-
-<p><strong>123</strong>不能作参数传到 <code>js</code>中</p>
-<p>可以用以下方式：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span> <span class="hljs-attr">bind:tap</span>=<span class="hljs-string">&quot;find&quot;</span> <span class="hljs-attr">data-info</span>=<span class="hljs-string">&quot;&#123;&#123;2&#125;&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><br></code></pre></td></tr></table></figure>
-
-<p><code>info</code>可以随便命名，格式为<code>data-*</code></p>
-<ul>
-<li>注意传入数字式建议写为 <code>&#123;&#123;数字&#125;&#125;</code>形式，不然传进去的为文本类型</li>
-</ul>
-<p>传到<code>js</code>中的<code>find</code>函数中时，形参获取方式为：<code>e.target.dataset.参数名字</code>（和<code>data-*</code>中的<code>*</code>的名字一样）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title function_">find</span>(<span class="hljs-params">e</span>)&#123;<br>    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setData</span>(&#123;<br>        <span class="hljs-attr">count</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">data</span>.<span class="hljs-property">count</span>+e.<span class="hljs-property">target</span>.<span class="hljs-property">dataset</span>.<span class="hljs-property">info</span> <span class="hljs-comment">//count是data中的数据</span><br>        <span class="hljs-comment">// 在 input 标签中可以用 value=&quot;&quot; 为文本框赋初始值</span><br>    &#125;)<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<hr>
-<hr>
-<h1 id="4、条件渲染"><a href="#4、条件渲染" class="headerlink" title="4、条件渲染"></a>4、条件渲染</h1><h2 id="1-wx-if-duge"><a href="#1-wx-if-duge" class="headerlink" title="(1) wx:if=&quot;((duge))&quot;"></a>(1) <code>wx:if=&quot;((duge))&quot;</code></h2><p>注意上一行的 小括号应为中括号 <code>&#123;</code>(由于渲染问题不能写中括号)</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:if</span>=<span class="hljs-string">&quot;&#123;&#123;pad === 1&#125;&#125;&quot;</span>&gt;</span>值等于1<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:elif</span>=<span class="hljs-string">&quot;&#123;&#123;pad === 2&#125;&#125;&quot;</span>&gt;</span>值等于2<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:else</span>&gt;</span>值等于3<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<ul>
-<li><strong>注意：</strong> 在写入差值语法时，双大括号外不要有多余的空格！！！！！！！</li>
-</ul>
-<hr>
-<p>结合 <code>&lt;block&gt;</code> 使用 <code>wx:if</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">block</span> <span class="hljs-attr">wx:if</span>=<span class="hljs-string">&quot;&#123;&#123;true&#125;&#125;&quot;</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> 999 <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span> 888 <span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">block</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>注意：<code>&lt;block&gt;</code>只是起到包裹作用，不会在渲染时候进行渲染</p>
-<hr>
-<h2 id="2-hidden"><a href="#2-hidden" class="headerlink" title="(2) hidden"></a>(2) hidden</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">hidden</span>=<span class="hljs-string">&quot;&#123;&#123;pad&#125;&#125;&quot;</span>&gt;</span>等于 true 是显示，等于false时隐藏<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h2 id="前两者区别"><a href="#前两者区别" class="headerlink" title="前两者区别"></a>前两者区别</h2><ul>
-<li><code>wx:if</code>以<code>动态创建和移除元素</code>的方式控制</li>
-<li><code>hidden</code>以<code>切换样式</code>的方式控制（display:none &#x2F; block;）</li>
-<li>频繁切换时，使用<code>hidden</code></li>
-<li>控制条件复杂时，使用<code>wx:if</code></li>
-</ul>
-<hr>
-<h2 id="3-wx-for"><a href="#3-wx-for" class="headerlink" title="(3) wx:for"></a>(3) wx:for</h2><blockquote>
-<p>循环渲染</p>
+<h1 id="2、样式导入"><a href="#2、样式导入" class="headerlink" title="2、样式导入"></a>2、样式导入</h1><h2 id="i、wxml"><a href="#i、wxml" class="headerlink" title="i、wxml"></a>i、wxml</h2><blockquote>
+<p>提供了 import 和 include 两种引用方式</p>
 </blockquote>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html">// arr 是 data 中的数组<br><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:for</span>=<span class="hljs-string">&quot;&#123;&#123;arr&#125;&#125;&quot;</span>&gt;</span><br>	索引值：&#123;&#123;index&#125;&#125; ， item : &#123;&#123;item&#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;相对路径&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;相对路径&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
 
-<p>结果为：</p>
-<p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89/101.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="4-wx-key"><a href="#4-wx-key" class="headerlink" title="(4) wx:key"></a>(4) wx:key</h2><p>在实现列表渲染时，设置 键值可以提高渲染效率</p>
-<p><code>wx:for</code>中也可以使用</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">view</span> <span class="hljs-attr">wx:for</span>=<span class="hljs-string">&quot;&#123;&#123;arr&#125;&#125;&quot;</span> <span class="hljs-attr">wx:key</span>=<span class="hljs-string">&quot;index&quot;</span>&gt;</span><br>	索引值：&#123;&#123;index&#125;&#125; ， item : &#123;&#123;item&#125;&#125;<br><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre></td></tr></table></figure>
-
+<blockquote>
+<p>import 有作用域的概念，比如，在一个 wxml（记为 A） 文件中引用了另一个 wxml（记为B），同时，在 B 中引用了其他的 wxml （记为C）文件，那么，在 A 中，只能引用 B 中的 内容，而不会引用 C 中，使用 import 导入的内容</p>
+<p>避免了多个页面相互引用，陷入逻辑错误</p>
+</blockquote>
+<blockquote>
+<p>include 只会引入<code> 除了</code> <code>template  style script </code>及其内容，相当于吧代码 copy 过来</p>
+</blockquote>
+<blockquote>
 <ul>
-<li><code>wx:key</code>中不要用差值语法！！！！！</li>
-<li>键值一定要唯一</li>
+<li><code>&lt;import&gt;</code>：适用于导入通用的模板、组件等，提高代码的复用性和可维护性。</li>
+<li><code>&lt;include&gt;</code>：适用于将某个文件中的特定部分插入到当前页面中，通常用于模块化开发。</li>
 </ul>
+</blockquote>
+<h2 id="ii、wxss"><a href="#ii、wxss" class="headerlink" title="ii、wxss"></a>ii、wxss</h2><p>尺寸单位：<code>rpx</code>根据指定的屏幕自适应</p>
+<p>样式导入：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@import</span> <span class="hljs-string">&quot;相对路径&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<h1 id="3、flex布局"><a href="#3、flex布局" class="headerlink" title="3、flex布局"></a>3、flex布局</h1><blockquote>
+<p>在flex布局中，用于包含内容的组件成为容器，容器内部的组件成为项目，容器允许包含嵌套</p>
+</blockquote>
+<blockquote>
+<p>坐标轴是以容器的左上角为原点，自左向右，自上向下</p>
+<p>也可以通过<code>flex-direction:column</code>将主轴改变为：自上向下，自左向右</p>
+</blockquote>
+<h2 id="i、容器属性"><a href="#i、容器属性" class="headerlink" title="i、容器属性"></a>i、容器属性</h2><p><code>flex-direction</code>:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">flex-direction</span>: <span class="hljs-built_in">row</span>(默认) | row-reverse | column | column-reverse<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">row 坐标轴是以容器的左上角为原点，自左向右，自上向下</span><br><span class="hljs-comment">row-reverse  坐标轴是以容器的左上角为原点，自右向左，自上向下</span><br><span class="hljs-comment">column 自上向下，自左向右</span><br><span class="hljs-comment">column-reverse 自下向上，自左向右</span><br></code></pre></td></tr></table></figure>
+
+<p><code>flex-wrap</code>:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">flex-wrap</span>: <span class="hljs-built_in">nowrap</span>(默认) | wrap | wrap-reverse<br><span class="hljs-comment">/*</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">nowrap 不换行，如果单行内容过多，项目宽度会被压缩</span><br><span class="hljs-comment">wrap 当容器单行容不下所有项目时，允许换行</span><br><span class="hljs-comment">wrap-reverse 与 wrap 相同，只不过，换行方向为 wrap 的反方向</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%885%EF%BC%89/100.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>justify-content</code>:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around | space-evenly ;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>flex-start（默认值）：左对齐，没有空隙</li>
+<li>flex-end：右对齐，没有空隙</li>
+<li>center： 居中，没有空隙</li>
+<li>space-between：两端对齐，项目之间的间隔都相等。</li>
+<li>space-around：项目之间的间隔比 开始和末尾 与边框的间隔大一倍，开始 和末尾与边框相同</li>
+<li>space-evenly: 开始和末尾，与项目之间的间隔相同</li>
+</ul>
+</blockquote>
+<p>还有 <code>align-items</code>（项目在行中的对齐方式）</p>
+<p><code>align-content</code>（项目在非主轴的对齐方式）</p>
+<h2 id="ii、项目属性"><a href="#ii、项目属性" class="headerlink" title="ii、项目属性"></a>ii、项目属性</h2><p><code>order</code>:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span>&#123;<br>    <span class="hljs-attribute">order</span>: <span class="hljs-number">0</span>（默认）;<span class="hljs-comment">/* 一个整数，表示排列的位置，数值越小越靠前  */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code> flex-shrink</code>:（收缩因子）</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span>&#123;<br>    <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">1</span>（默认）;<span class="hljs-comment">/* 一个非负数 ，也称为 收缩因子*/</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小</p>
+<p>计算公式：最终长度&#x3D; 原长 x （1 - 溢出长度 x 收缩因子 &#x2F; 压缩权重 ）向下取整</p>
+<p>上述公式只适用于 所有收缩因子的总和大于 1 的情况</p>
+<p>压缩权重 &#x3D; 长度1 x 收缩因子1 + 长度2 x 收缩因子2 + …</p>
+<p>长度指的是主轴上的长度</p>
+</blockquote>
+<p><code>flex-grow</code>:定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;<br>  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">/* 非负数 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>最终长度 &#x3D; 原长度 + 扩张单位 x 扩张因子 （向下取整）</p>
+<p>扩张单位 &#x3D; 剩余空间 &#x2F; 扩张因子的总和</p>
+<p>长度指的是主轴上的长度</p>
+</blockquote>
+<p><code>flex-basis</code>：根据主轴的方向代替，主轴上的宽或者高</p>
+<p>默认 auto（其优先级比数值低）如果，不是 auto 而是数字，则优先级大于 项目的宽或者高</p>
 
                 
               </div>
@@ -446,8 +435,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>微信小程序学习笔记（3）</div>
-      <div>https://one-and-one-fourth.gitee.io/2024/02/28/微信小程序学习笔记（3）/</div>
+      <div>微信小程序学习笔记（5）</div>
+      <div>https://one-and-one-fourth.gitee.io/2024/04/01/微信小程序学习笔记（5）/</div>
     </div>
     <div class="license-meta">
       
@@ -459,7 +448,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月28日</div>
+          <div>2024年4月1日</div>
         </div>
       
       
@@ -491,9 +480,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/28/hexo%E6%9B%B4%E6%96%B0%E6%B3%A8%E6%84%8F/" title="hexo更新注意事项">
+                      <a href="/2024/04/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886%EF%BC%89/" title="微信小程序学习笔记（6）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">hexo更新注意事项</span>
+                        <span class="hidden-mobile">微信小程序学习笔记（6）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -501,8 +490,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89/" title="微信小程序学习笔记（2）">
-                        <span class="hidden-mobile">微信小程序学习笔记（2）</span>
+                      <a href="/2024/03/24/Servlet-01/" title="Servlet-01">
+                        <span class="hidden-mobile">Servlet-01</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

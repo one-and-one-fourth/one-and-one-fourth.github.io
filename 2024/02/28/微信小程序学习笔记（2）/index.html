@@ -28,8 +28,8 @@
 <meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89/100.png">
 <meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89/101.png">
 <meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89/102.png">
-<meta property="article:published_time" content="2024-02-28T11:10:43.000Z">
-<meta property="article:modified_time" content="2024-02-28T11:26:18.500Z">
+<meta property="article:published_time" content="2024-02-28T11:10:44.000Z">
+<meta property="article:modified_time" content="2024-04-01T07:34:44.599Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="wxss">
 <meta property="article:tag" content="wxml">
@@ -256,7 +256,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          542 字
+          558 字
         
       </span>
     
@@ -318,6 +318,11 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-comment">&lt;!--pages/list/list.wxml--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">scroll-view</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container1&quot;</span> <span class="hljs-attr">scroll-y</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>&lt;/scroll-view &gt;<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs CSS"><span class="hljs-comment">/* pages/list/list.wxss */</span><br><span class="hljs-selector-class">.container1</span> view&#123;<br>	<span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>	<span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;<span class="hljs-attribute">text-align</span>: center;<br>	<span class="hljs-attribute">line-height</span>: <span class="hljs-number">100px</span>;<br>&#125;<br><br><span class="hljs-selector-class">.container1</span> view<span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">1</span>)&#123;<br>	<span class="hljs-attribute">background-color</span>: aqua;<br>&#125;<br><span class="hljs-selector-class">.container1</span> view<span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>)&#123;<br>	<span class="hljs-attribute">background-color</span>: blueviolet;<br>&#125;<br><span class="hljs-selector-class">.container1</span> view<span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">3</span>)&#123;<br>	<span class="hljs-attribute">background-color</span>: chartreuse;<br>&#125;<br><br><span class="hljs-selector-class">.container1</span>&#123;<br>	<span class="hljs-attribute">display</span>: flex;<br>	<span class="hljs-attribute">justify-content</span>: space-around;<br>&#125;<br><span class="hljs-selector-class">.container1</span>&#123;<br>	<span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid black;<br>	<span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;<br>	<span class="hljs-attribute">height</span>: <span class="hljs-number">120px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">scroll-x <span class="hljs-comment">/* 允许横向滚动 */</span><br>scroll-x <span class="hljs-comment">/* 允许纵向滚动 */</span><br></code></pre></td></tr></table></figure>
+
+
+
 
 <h1 id="3、swiper-和-swiper-item"><a href="#3、swiper-和-swiper-item" class="headerlink" title="3、swiper 和 swiper-item"></a>3、swiper 和 swiper-item</h1><ul>
 <li>轮播图容器组件 和 轮播图 <code>item</code> 组件</li>
@@ -437,9 +442,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" title="微信小程序学习笔记（1）">
+                      <a href="/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89/" title="微信小程序学习笔记（3）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">微信小程序学习笔记（1）</span>
+                        <span class="hidden-mobile">微信小程序学习笔记（3）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -447,8 +452,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%883%EF%BC%89/" title="微信小程序学习笔记（3）">
-                        <span class="hidden-mobile">微信小程序学习笔记（3）</span>
+                      <a href="/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/" title="微信小程序学习笔记（1）">
+                        <span class="hidden-mobile">微信小程序学习笔记（1）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
