@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2019053022120536.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg1ODIwMQ==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190530221543230.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mzg1ODIwMQ==,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2024-02-03T13:02:06.000Z">
-<meta property="article:modified_time" content="2024-02-28T13:17:40.667Z">
+<meta property="article:modified_time" content="2024-05-29T06:27:36.247Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary_large_image">
@@ -254,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4k 字
+          3.9k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
         
-          34 分钟
+          33 分钟
         
       </span>
     
@@ -577,8 +577,6 @@
 <p>我们通过以下例子来探究以下事务：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">begin</span>;   #开始事务<br>...<br><span class="hljs-keyword">rollback</span>;  #回滚事务<br><span class="hljs-keyword">savepoint</span> 回滚点;  #添加回滚点<br><span class="hljs-keyword">rollback</span> <span class="hljs-keyword">to</span> 回滚点; #回滚到指定回滚点<br>...<br><span class="hljs-keyword">commit</span>; #提交事务<br><span class="hljs-comment">-- 一旦提交，就无法再进行回滚了！</span><br></code></pre></td></tr></table></figure>
 
-<hr>
-<h2 id="选学内容"><a href="#选学内容" class="headerlink" title="选学内容"></a>选学内容</h2><p><strong>函数</strong>和<strong>存储过程</strong>并没有包含在我们的教程当中，但是这并不代表它们就不重要，通过学习它们能够让你的数据库管理能力更上一层楼，它们能够捆绑一组SQL语句运行，并且可以反复使用，大大提高工作效率。</p>
 <hr>
 
                 
