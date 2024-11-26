@@ -21,36 +21,36 @@
     <meta name="description" content="1、Maven简介Q:什么是？ A：全称是Apache Maven。专门用于管理和构建项目的工具  Q：有什么用？？ A：就是用meven后，不管用什么编译器，项目结构都一样通用了 A：项目写好后，不知道怎么打包之类的，使用maven对应的一个命令就可以帮你完成这些工作了  依赖管理： 管理你项目所依赖的第三方资源（jar包、插件）  不用maven使用jar包的步骤： 网上去寻找下载jar包–&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven项目的创建">
-<meta property="og:url" content="https://one-and-one-fourth.gitee.io/2024/03/22/maven%E5%9F%BA%E7%A1%8001/index.html">
+<meta property="og:url" content="http://124.222.56.204/2024/03/22/maven%E5%9F%BA%E7%A1%8001/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
 <meta property="og:description" content="1、Maven简介Q:什么是？ A：全称是Apache Maven。专门用于管理和构建项目的工具  Q：有什么用？？ A：就是用meven后，不管用什么编译器，项目结构都一样通用了 A：项目写好后，不知道怎么打包之类的，使用maven对应的一个命令就可以帮你完成这些工作了  依赖管理： 管理你项目所依赖的第三方资源（jar包、插件）  不用maven使用jar包的步骤： 网上去寻找下载jar包–&amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/11.jpg">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/12.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/13.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/14.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/15.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/16.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/17.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/18.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/19.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/20.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/21.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/22.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/23.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/24.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/25.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/26.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/27.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/28.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/29.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/11.jpg">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/12.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/13.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/14.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/15.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/16.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/17.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/18.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/19.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/20.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/21.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/22.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/23.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/24.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/25.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/26.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/27.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/28.png">
+<meta property="og:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/29.png">
 <meta property="article:published_time" content="2024-03-22T09:12:00.000Z">
 <meta property="article:modified_time" content="2024-03-22T09:13:27.127Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="javaweb">
 <meta property="article:tag" content="xml">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://one-and-one-fourth.gitee.io/img/maven%E5%9F%BA%E7%A1%8001/11.jpg">
+<meta name="twitter:image" content="http://124.222.56.204/img/maven%E5%9F%BA%E7%A1%8001/11.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -94,7 +94,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"one-and-one-fourth.gitee.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"124.222.56.204","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -475,7 +475,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Maven项目的创建</div>
-      <div>https://one-and-one-fourth.gitee.io/2024/03/22/maven基础01/</div>
+      <div>http://124.222.56.204/2024/03/22/maven基础01/</div>
     </div>
     <div class="license-meta">
       

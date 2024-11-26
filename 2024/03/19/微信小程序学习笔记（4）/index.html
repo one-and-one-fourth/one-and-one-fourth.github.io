@@ -21,20 +21,20 @@
     <meta name="description" content="1.wxss和css基本一样， rpx和@import是wxss专有的 （1）、rpx解决适配的问题的单位尺寸	 （2）、@import语法： 1@import &quot;相对路径&quot;;  2、app.json中的用法 注意：页面中无 window 的标签，需要属性直接写进去即可，他只能配置与 window 相关的配置项  （1）、window用法 3、全局配置tabBar 在 wind">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信小程序学习笔记（4）">
-<meta property="og:url" content="https://one-and-one-fourth.gitee.io/2024/03/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/index.html">
+<meta property="og:url" content="http://124.222.56.204/2024/03/19/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
 <meta property="og:description" content="1.wxss和css基本一样， rpx和@import是wxss专有的 （1）、rpx解决适配的问题的单位尺寸	 （2）、@import语法： 1@import &quot;相对路径&quot;;  2、app.json中的用法 注意：页面中无 window 的标签，需要属性直接写进去即可，他只能配置与 window 相关的配置项  （1）、window用法 3、全局配置tabBar 在 wind">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/100.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/102.png">
-<meta property="og:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/101.png">
+<meta property="og:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/100.png">
+<meta property="og:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/102.png">
+<meta property="og:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/101.png">
 <meta property="article:published_time" content="2024-03-19T08:53:42.000Z">
 <meta property="article:modified_time" content="2024-04-01T09:36:07.599Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="wxss">
 <meta property="article:tag" content="wxml">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://one-and-one-fourth.gitee.io/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/100.png">
+<meta name="twitter:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%884%EF%BC%89/100.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"one-and-one-fourth.gitee.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"124.222.56.204","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -379,7 +379,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>微信小程序学习笔记（4）</div>
-      <div>https://one-and-one-fourth.gitee.io/2024/03/19/微信小程序学习笔记（4）/</div>
+      <div>http://124.222.56.204/2024/03/19/微信小程序学习笔记（4）/</div>
     </div>
     <div class="license-meta">
       
