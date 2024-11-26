@@ -16,29 +16,25 @@
   <meta name="author" content="一又四分之一">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、文件作用 app.json：当前小程序的全局配置，包括所有页面路径、窗口外观、界面表现、底部tab  pages：当前小程序的所有页面路径 window：全局定义小程序的背景色、文字色等可以设置如下：  更多用法：window用法 style：全局定义小程序组件所使用的样式版本 sitemapLocation：指定sitemap.json的路径 project.config.json:项目配置">
+    <meta name="description" content="根据目录自动生成路由关键字：import.meta.glob  常用的路由配置方式已经满足使用，但是为了追求更好的路由配置方式，减少繁琐的配置方式，可以将路由和文件夹关联起来   使用此方法可以让路由随着文件夹的创建而创建（根据微信小程序开发的思想，注意，每个文件夹下必须有一个.vue和.js 文件，而且名字必须一致，生成的路由就是改名字的路由） 例如：在views下（因为以下的代码是由views">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序学习笔记（1）">
-<meta property="og:url" content="http://124.222.56.204/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/index.html">
+<meta property="og:title" content="vite中自动生成路由">
+<meta property="og:url" content="http://124.222.56.204/2024/11/26/vue/vite%E4%B8%AD%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E8%B7%AF%E7%94%B1/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
-<meta property="og:description" content="一、文件作用 app.json：当前小程序的全局配置，包括所有页面路径、窗口外观、界面表现、底部tab  pages：当前小程序的所有页面路径 window：全局定义小程序的背景色、文字色等可以设置如下：  更多用法：window用法 style：全局定义小程序组件所使用的样式版本 sitemapLocation：指定sitemap.json的路径 project.config.json:项目配置">
+<meta property="og:description" content="根据目录自动生成路由关键字：import.meta.glob  常用的路由配置方式已经满足使用，但是为了追求更好的路由配置方式，减少繁琐的配置方式，可以将路由和文件夹关联起来   使用此方法可以让路由随着文件夹的创建而创建（根据微信小程序开发的思想，注意，每个文件夹下必须有一个.vue和.js 文件，而且名字必须一致，生成的路由就是改名字的路由） 例如：在views下（因为以下的代码是由views">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg">
-<meta property="og:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/101.jpg">
-<meta property="og:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/102.png">
-<meta property="article:published_time" content="2024-02-28T11:10:43.000Z">
-<meta property="article:modified_time" content="2024-03-08T06:10:04.896Z">
+<meta property="article:published_time" content="2024-11-26T09:14:01.000Z">
+<meta property="article:modified_time" content="2024-11-26T09:46:05.942Z">
 <meta property="article:author" content="一又四分之一">
-<meta property="article:tag" content="wxss">
-<meta property="article:tag" content="wxml">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="router">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>微信小程序学习笔记（1） - one-and-one-fourth</title>
+  <title>vite中自动生成路由 - one-and-one-fourth</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +227,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="微信小程序学习笔记（1）"></span>
+            <span id="subtitle" data-typed-text="vite中自动生成路由"></span>
           
         </div>
 
@@ -242,8 +238,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-28 19:10" pubdate>
-          2024年2月28日 晚上
+        <time datetime="2024-11-26 17:14" pubdate>
+          2024年11月26日 下午
         </time>
       </span>
     
@@ -254,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          655 字
+          626 字
         
       </span>
     
@@ -302,67 +298,28 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">微信小程序学习笔记（1）</h1>
+            <h1 id="seo-header">vite中自动生成路由</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="一、文件作用"><a href="#一、文件作用" class="headerlink" title="一、文件作用"></a>一、文件作用</h1><p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg" srcset="/img/loading.gif" lazyload alt="根目录"></p>
-<h2 id="app-json："><a href="#app-json：" class="headerlink" title="app.json："></a><code>app.json</code>：</h2><p>当前小程序的<strong>全局配置</strong>，包括所有页面路径、窗口外观、界面表现、底部tab</p>
-<p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/101.jpg" srcset="/img/loading.gif" lazyload alt="app.json"></p>
-<p><code>pages</code>：当前小程序的所有页面路径</p>
-<p><code>window</code>：全局定义小程序的背景色、文字色等可以设置如下：</p>
-<p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/102.png" srcset="/img/loading.gif" lazyload alt="app.json"></p>
-<p>更多用法：<a href="微信小程序学习笔记（4）.md">window用法</a></p>
-<p><code>style</code>：全局定义小程序组件所使用的样式版本</p>
-<p><code>sitemapLocation</code>：指定<code>sitemap.json</code>的路径</p>
-<h2 id="project-config-json"><a href="#project-config-json" class="headerlink" title="project.config.json:"></a><code>project.config.json</code>:</h2><p>项目配置文件，记录对小程序开发工具所做的个性化配置</p>
-<p><code>setting</code>：保存了编译相关的配置</p>
-<p><code>appid</code>：小程序的账号 ID</p>
-<h2 id="sitemap-json"><a href="#sitemap-json" class="headerlink" title="sitemap.json"></a><code>sitemap.json</code></h2><p>微信现已开放小程序内搜索，效果类似于PC网页的SEO。sitemap.json文件用来配置小程序页面是否允许<br>微信索引。<br>当开发者允许微信索引时，微信会通过爬虫的形式，为小程序的页面内容建立索引。当用户的搜索关键字和页面的索引匹配成功的时候，小程序的页面将可能展示在搜索结果中。</p>
-<h2 id="页面中-json"><a href="#页面中-json" class="headerlink" title="页面中.json"></a>页面中<code>.json</code></h2><p>和<code>app.json</code>一样，但是页面中的配置会覆盖<code>app.json</code>中<code>相同</code>的<code>window</code>配置</p>
-<h1 id="二、项目首页"><a href="#二、项目首页" class="headerlink" title="二、项目首页"></a>二、项目首页</h1><p><code>app.json</code>中<code>pages</code>的前后顺序，默认<code>第一个是首页</code></p>
-<h1 id="三、语法"><a href="#三、语法" class="headerlink" title="三、语法"></a>三、语法</h1><h2 id="WXML和HTML"><a href="#WXML和HTML" class="headerlink" title="WXML和HTML"></a><strong>WXML</strong>和<strong>HTML</strong></h2><ul>
-<li><p>标签名称不同<br>HTML ( div, span, img, a )<br>WXML ( view, text, image, navigator)</p>
-<p>(上面的是一一对应的类似用法比较)</p>
-</li>
-<li><p>属性节点不同</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>超链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">navigator</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/ pages/home/home&quot;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">navigato</span>&gt;</span><br></code></pre></td></tr></table></figure>
-</li>
-<li><p>提供了类似于Vue中的模板语法<br>数据绑定<br>列表渲染</p>
-<p>条件渲染</p>
-</li>
-</ul>
-<h2 id="WXSS-和CSS的区别"><a href="#WXSS-和CSS的区别" class="headerlink" title="WXSS 和CSS的区别"></a>WXSS 和CSS的区别</h2><p>① 新增了rpx尺寸单位</p>
-<ul>
-<li>cSS中需要手动进行像素单位换算，例如 rem</li>
-<li>wXSS在底层支持新的尺寸单位 rpx，在不同大小的屏幕上小程序会自动进行换算</li>
-</ul>
-<p>② 提供了全局的样式和局部样式</p>
-<ul>
-<li>项目根目录中的app.wxSs会作用于所有小程序页面</li>
-<li>局部页面的.wxSS样式仅对当前页面生效</li>
-</ul>
-<p>③ WxSS仅支持部分CSS选择器</p>
-<ul>
-<li>.class和#id</li>
-<li>element</li>
-<li>并集选择器、后代选择器</li>
-<li>::after和 ::before等伪类选择器</li>
-</ul>
-<h2 id="小程序中-js文件的分类"><a href="#小程序中-js文件的分类" class="headerlink" title="小程序中.js文件的分类"></a>小程序中.js文件的分类</h2><p>小程序中的JS文件分为三大类，分别是:</p>
-<p>① <code>appg.js</code></p>
-<ul>
-<li>是整个小程序项目的入口文件，通过调用<code>App()</code>函数来启动整个小程序</li>
-</ul>
-<p>② 页面的<code>.js </code>文件</p>
-<ul>
-<li>是页面的入口文件，通过调用Page()函数来创建并运行页面</li>
-</ul>
-<p>③ 普通的<code>.js </code>文件</p>
-<ul>
-<li>是普通的功能模块文件，用来封装<code>公共的函数或属性</code>供页面使用</li>
-</ul>
+                <h2 id="根据目录自动生成路由"><a href="#根据目录自动生成路由" class="headerlink" title="根据目录自动生成路由"></a>根据目录自动生成路由</h2><p><strong>关键字</strong>：<code>import.meta.glob</code></p>
+<blockquote>
+<p>常用的路由配置方式已经满足使用，但是为了追求更好的路由配置方式，减少繁琐的配置方式，可以将路由和文件夹关联起来</p>
+</blockquote>
+<ol>
+<li>使用此方法可以让路由随着文件夹的创建而创建（根据微信小程序开发的思想，注意，每个文件夹下必须有一个<code>.vue</code>和<code>.js</code> 文件，而且名字必须一致，生成的路由就是改名字的路由）</li>
+<li>例如：在<code>views</code>下（因为以下的代码是由<code>views</code>目录下的文件产生的路由），</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs js">- views<br>    - index<br>    	- index.<span class="hljs-property">vue</span><br>    	- index.<span class="hljs-property">js</span><br>    - second<br>    	- second.<span class="hljs-property">vue</span><br>    	- second.<span class="hljs-property">js</span><br><span class="hljs-comment">// 以上产生的路由有 &#x27;/index&#x27;  &#x27;/second&#x27; 这两个路由</span><br><span class="hljs-comment">// 当然也可以产生子路由</span><br>- views<br>    - index<br>    	- index.<span class="hljs-property">vue</span><br>    	- index.<span class="hljs-property">js</span><br>    	- son<br>    		- son.<span class="hljs-property">vue</span><br>    		- son.<span class="hljs-property">js</span><br>    - second<br>    	- second.<span class="hljs-property">vue</span><br>    	- second.<span class="hljs-property">js</span><br><span class="hljs-comment">// 以上产生的路由有 &#x27;/index&#x27; &#x27;/index/son&#x27; &#x27;/second&#x27; 这三个路由  </span><br> <br><span class="hljs-comment">// 如果有更多的子路由，可以无限的嵌套文件夹</span><br><br>    <br> <span class="hljs-comment">// 当然我们希望有时候，在切换路由的时候，该路由可以携带一些参数，.js文件就是用来写携带的参数，可以使用一下模版</span><br> <br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>  <span class="hljs-attr">meta</span>: &#123;<br>    <span class="hljs-attr">title</span>: <span class="hljs-string">&#x27;通知&#x27;</span><br>  &#125;<br>&#125;<br><span class="hljs-comment">// 一般情况下，title 参数用于给不同的路由设置不同的标题，其他的参数可根据自己需求而定，</span><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> pages = <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-title function_">glob</span>(<span class="hljs-string">&#x27;../views/**/*.js&#x27;</span>, &#123;<br>  <span class="hljs-attr">eager</span>: <span class="hljs-literal">true</span>,<br>  <span class="hljs-attr">import</span>:<span class="hljs-string">&#x27;default&#x27;</span><br>&#125;);<br><br><span class="hljs-keyword">const</span> components = <span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-title function_">glob</span>(<span class="hljs-string">&#x27;../views/**/*.vue&#x27;</span>);<br><span class="hljs-comment">// 上一行的配置是由于在生产环境中文件夹的路径变化，要映射</span><br><br><span class="hljs-keyword">const</span> routes = <span class="hljs-title class_">Object</span>.<span class="hljs-title function_">entries</span>(pages).<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">[path, mate]</span>) =&gt;</span> &#123; <br>  <span class="hljs-keyword">const</span> pathRealy = path.<span class="hljs-title function_">replace</span>(<span class="hljs-string">&#x27;../views&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>).<span class="hljs-title function_">replace</span>(<span class="hljs-regexp">/\/[^/]*\.js$/</span>, <span class="hljs-string">&#x27;&#x27;</span>) || <span class="hljs-string">&#x27;/&#x27;</span>;<br>  <span class="hljs-keyword">const</span> nameRealy = path.<span class="hljs-title function_">split</span>(<span class="hljs-string">&#x27;/&#x27;</span>).<span class="hljs-title function_">pop</span>().<span class="hljs-title function_">replace</span>(<span class="hljs-string">&#x27;.js&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>);<br>  <span class="hljs-keyword">const</span> componentRealy = components[path.<span class="hljs-title function_">replace</span>(<span class="hljs-string">&#x27;.js&#x27;</span>, <span class="hljs-string">&#x27;.vue&#x27;</span>)];<br>  <br>  <span class="hljs-keyword">return</span> &#123;<br>    <span class="hljs-attr">path</span>: pathRealy,<br>    <span class="hljs-attr">name</span>: nameRealy,<br>    <span class="hljs-attr">component</span>: componentRealy,<br>    <span class="hljs-attr">meta</span>: mate.<span class="hljs-property">meta</span><br>  &#125;<br>&#125;);<br><span class="hljs-comment">// console.log(routes);</span><br><br><span class="hljs-keyword">const</span> router = <span class="hljs-title function_">createRouter</span>(&#123;<br>  <span class="hljs-attr">history</span>: <span class="hljs-title function_">createWebHistory</span>(<span class="hljs-keyword">import</span>.<span class="hljs-property">meta</span>.<span class="hljs-property">env</span>.<span class="hljs-property">BASE_URL</span>),<br>  <span class="hljs-attr">routes</span>: routes<br>&#125;)<br><span class="hljs-comment">// 一下是用来从跟路由跳转第一个路由（因为没有设置跟路由），同时修改页面的标题（也就是 .js 文件中，title 变量）</span><br>router.<span class="hljs-title function_">beforeEach</span>(<span class="hljs-function">(<span class="hljs-params">to, <span class="hljs-keyword">from</span>, next</span>) =&gt;</span> &#123;<br><br>  <span class="hljs-keyword">if</span> (to.<span class="hljs-property">path</span> == <span class="hljs-string">&#x27;/&#x27;</span>) &#123; <span class="hljs-comment">// 因为没有 / 路由的存在 </span><br>    <span class="hljs-title function_">next</span>(<span class="hljs-string">&#x27;/first&#x27;</span>);<br>    <span class="hljs-keyword">return</span>;<br>  &#125;<br>  <span class="hljs-title function_">nextTick</span>(<span class="hljs-function">() =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (to.<span class="hljs-property">meta</span>.<span class="hljs-property">title</span>) &#123;<br>      <span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span> = to.<span class="hljs-property">meta</span>.<span class="hljs-property">title</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>      <span class="hljs-variable language_">document</span>.<span class="hljs-property">title</span> = <span class="hljs-string">&#x27;默认标题&#x27;</span>;<br>    &#125;<br>  &#125;);<br>  <span class="hljs-title function_">next</span>();<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>看了上面这多代码，的确比较难懂，其实在自己调试的手可以打印出来，看看每一步处理的什么东西</strong></p>
 
                 
               </div>
@@ -381,8 +338,15 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="category-chain-item">微信小程序</a>
+  <a href="/categories/%E5%89%8D%E7%AB%AF/" class="category-chain-item">前端</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%89%8D%E7%AB%AF/vue/" class="category-chain-item">vue</a>
+  
+  
+
   
 
       </span>
@@ -396,9 +360,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/wxss/" class="print-no-link">#wxss</a>
+        <a href="/tags/vue/" class="print-no-link">#vue</a>
       
-        <a href="/tags/wxml/" class="print-no-link">#wxml</a>
+        <a href="/tags/router/" class="print-no-link">#router</a>
       
     </div>
   
@@ -410,8 +374,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>微信小程序学习笔记（1）</div>
-      <div>http://124.222.56.204/2024/02/28/微信小程序学习笔记（1）/</div>
+      <div>vite中自动生成路由</div>
+      <div>http://124.222.56.204/2024/11/26/vue/vite中自动生成路由/</div>
     </div>
     <div class="license-meta">
       
@@ -423,7 +387,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月28日</div>
+          <div>2024年11月26日</div>
         </div>
       
       
@@ -455,9 +419,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89/" title="微信小程序学习笔记（2）">
+                      <a href="/2024/11/26/vue/vue/" title="Vue总结">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">微信小程序学习笔记（2）</span>
+                        <span class="hidden-mobile">Vue总结</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -465,8 +429,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/27/%E8%AE%B0%E4%BA%8B%E6%9C%AC%E6%89%93%E5%BC%80%E5%A4%A7%E5%86%85%E5%AD%98%E6%96%87%E4%BB%B6/" title="使用记事本打开大文本文件">
-                        <span class="hidden-mobile">使用记事本打开大文本文件</span>
+                      <a href="/2024/04/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%887%EF%BC%89/" title="1111">
+                        <span class="hidden-mobile">1111</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
