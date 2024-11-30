@@ -16,27 +16,29 @@
   <meta name="author" content="一又四分之一">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1、&lt; template &gt;&lt; &#x2F; template &gt;模板可以重复调用 首先要定义一个模板： 12345&lt;template name&#x3D;&quot;test&quot;&gt;    &lt;view&gt;&#123;&#123;username&#125;&#125;&lt;&#x2F;view&gt;    &lt;view&gt;&#123;&#123;pas">
+    <meta name="description" content="一、文件作用 app.json：当前小程序的全局配置，包括所有页面路径、窗口外观、界面表现、底部tab  pages：当前小程序的所有页面路径 window：全局定义小程序的背景色、文字色等可以设置如下：  更多用法：window用法 style：全局定义小程序组件所使用的样式版本 sitemapLocation：指定sitemap.json的路径 project.config.json:项目配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序学习笔记（5）">
-<meta property="og:url" content="http://124.222.56.204/2024/04/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%885%EF%BC%89/index.html">
+<meta property="og:title" content="微信小程序学习笔记（1）">
+<meta property="og:url" content="http://124.222.56.204/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
-<meta property="og:description" content="1、&lt; template &gt;&lt; &#x2F; template &gt;模板可以重复调用 首先要定义一个模板： 12345&lt;template name&#x3D;&quot;test&quot;&gt;    &lt;view&gt;&#123;&#123;username&#125;&#125;&lt;&#x2F;view&gt;    &lt;view&gt;&#123;&#123;pas">
+<meta property="og:description" content="一、文件作用 app.json：当前小程序的全局配置，包括所有页面路径、窗口外观、界面表现、底部tab  pages：当前小程序的所有页面路径 window：全局定义小程序的背景色、文字色等可以设置如下：  更多用法：window用法 style：全局定义小程序组件所使用的样式版本 sitemapLocation：指定sitemap.json的路径 project.config.json:项目配置">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%885%EF%BC%89/100.png">
-<meta property="article:published_time" content="2024-04-01T09:30:42.000Z">
-<meta property="article:modified_time" content="2024-04-01T09:35:57.152Z">
+<meta property="og:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg">
+<meta property="og:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/101.jpg">
+<meta property="og:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/102.png">
+<meta property="article:published_time" content="2024-02-28T11:10:43.000Z">
+<meta property="article:modified_time" content="2024-03-08T06:10:04.896Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="wxss">
 <meta property="article:tag" content="wxml">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%885%EF%BC%89/100.png">
+<meta name="twitter:image" content="http://124.222.56.204/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>微信小程序学习笔记（5） - one-and-one-fourth</title>
+  <title>微信小程序学习笔记（1） - one-and-one-fourth</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -229,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="微信小程序学习笔记（5）"></span>
+            <span id="subtitle" data-typed-text="微信小程序学习笔记（1）"></span>
           
         </div>
 
@@ -240,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-04-01 17:30" pubdate>
-          2024年4月1日 下午
+        <time datetime="2024-02-28 19:10" pubdate>
+          2024年2月28日 晚上
         </time>
       </span>
     
@@ -252,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          655 字
         
       </span>
     
@@ -263,7 +265,7 @@
         
         
         
-          11 分钟
+          6 分钟
         
       </span>
     
@@ -300,92 +302,67 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">微信小程序学习笔记（5）</h1>
+            <h1 id="seo-header">微信小程序学习笔记（1）</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="1、-template-template"><a href="#1、-template-template" class="headerlink" title="1、&lt; template &gt;&lt; &#x2F; template &gt;"></a>1、&lt; template &gt;&lt; &#x2F; template &gt;</h1><p>模板可以重复调用</p>
-<p>首先要定义一个模板：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;test&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>&#123;&#123;username&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span>&#123;&#123;password&#125;&#125;<span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 这里定义了一个模板名字为 test 的模板 ，里面包含了两个 view 组件--&gt;</span><br></code></pre></td></tr></table></figure>
-
-<p>然后才能应用该模板：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">is</span>=<span class="hljs-string">&quot;test&quot;</span> <span class="hljs-attr">data</span>=<span class="hljs-string">&quot;&#123;&#123;username:&#x27;admin&#x27;,password:&#x27;123&#x27;&#125;&#125;&quot;</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span><br><span class="hljs-comment">&lt;!-- 使用 is 引用所要使用的模板名字，同时，使用 data 更新模板中的变量的值 --&gt;</span><br><span class="hljs-comment">&lt;!-- 另外，也可以在 Page() 中定义 data 的其中一个变量值，以一个结构体的值为例子：</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">Page(&#123;</span><br><span class="hljs-comment">    data: &#123;</span><br><span class="hljs-comment">        stu:&#123;</span><br><span class="hljs-comment">            username:&#x27;admin&#x27;,</span><br><span class="hljs-comment">            password:&#x27;123&#x27;</span><br><span class="hljs-comment">        &#125;</span><br><span class="hljs-comment">    &#125;</span><br><span class="hljs-comment">&#125;)</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">然后，在引用该模板的时候可以使用</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">&lt;template is=&quot;test&quot; data=&quot;&#123;&#123;...stu&#125;&#125;&quot;&gt;</span><br><span class="hljs-comment">&lt;/template&gt;</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">来给变量赋值</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">其中 “...stu” 表示将 名字为 stu 的变量展开引用</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">--&gt;</span><br></code></pre></td></tr></table></figure>
-
-<h1 id="2、样式导入"><a href="#2、样式导入" class="headerlink" title="2、样式导入"></a>2、样式导入</h1><h2 id="i、wxml"><a href="#i、wxml" class="headerlink" title="i、wxml"></a>i、wxml</h2><blockquote>
-<p>提供了 import 和 include 两种引用方式</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;相对路径&quot;</span> /&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;相对路径&quot;</span> /&gt;</span><br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p>import 有作用域的概念，比如，在一个 wxml（记为 A） 文件中引用了另一个 wxml（记为B），同时，在 B 中引用了其他的 wxml （记为C）文件，那么，在 A 中，只能引用 B 中的 内容，而不会引用 C 中，使用 import 导入的内容</p>
-<p>避免了多个页面相互引用，陷入逻辑错误</p>
-</blockquote>
-<blockquote>
-<p>include 只会引入<code> 除了</code> <code>template  style script </code>及其内容，相当于吧代码 copy 过来</p>
-</blockquote>
-<blockquote>
-<ul>
-<li><code>&lt;import&gt;</code>：适用于导入通用的模板、组件等，提高代码的复用性和可维护性。</li>
-<li><code>&lt;include&gt;</code>：适用于将某个文件中的特定部分插入到当前页面中，通常用于模块化开发。</li>
+                <h1 id="一、文件作用"><a href="#一、文件作用" class="headerlink" title="一、文件作用"></a>一、文件作用</h1><p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/100.jpg" srcset="/img/loading.gif" lazyload alt="根目录"></p>
+<h2 id="app-json："><a href="#app-json：" class="headerlink" title="app.json："></a><code>app.json</code>：</h2><p>当前小程序的<strong>全局配置</strong>，包括所有页面路径、窗口外观、界面表现、底部tab</p>
+<p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/101.jpg" srcset="/img/loading.gif" lazyload alt="app.json"></p>
+<p><code>pages</code>：当前小程序的所有页面路径</p>
+<p><code>window</code>：全局定义小程序的背景色、文字色等可以设置如下：</p>
+<p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89/102.png" srcset="/img/loading.gif" lazyload alt="app.json"></p>
+<p>更多用法：<a href="微信小程序学习笔记（4）.md">window用法</a></p>
+<p><code>style</code>：全局定义小程序组件所使用的样式版本</p>
+<p><code>sitemapLocation</code>：指定<code>sitemap.json</code>的路径</p>
+<h2 id="project-config-json"><a href="#project-config-json" class="headerlink" title="project.config.json:"></a><code>project.config.json</code>:</h2><p>项目配置文件，记录对小程序开发工具所做的个性化配置</p>
+<p><code>setting</code>：保存了编译相关的配置</p>
+<p><code>appid</code>：小程序的账号 ID</p>
+<h2 id="sitemap-json"><a href="#sitemap-json" class="headerlink" title="sitemap.json"></a><code>sitemap.json</code></h2><p>微信现已开放小程序内搜索，效果类似于PC网页的SEO。sitemap.json文件用来配置小程序页面是否允许<br>微信索引。<br>当开发者允许微信索引时，微信会通过爬虫的形式，为小程序的页面内容建立索引。当用户的搜索关键字和页面的索引匹配成功的时候，小程序的页面将可能展示在搜索结果中。</p>
+<h2 id="页面中-json"><a href="#页面中-json" class="headerlink" title="页面中.json"></a>页面中<code>.json</code></h2><p>和<code>app.json</code>一样，但是页面中的配置会覆盖<code>app.json</code>中<code>相同</code>的<code>window</code>配置</p>
+<h1 id="二、项目首页"><a href="#二、项目首页" class="headerlink" title="二、项目首页"></a>二、项目首页</h1><p><code>app.json</code>中<code>pages</code>的前后顺序，默认<code>第一个是首页</code></p>
+<h1 id="三、语法"><a href="#三、语法" class="headerlink" title="三、语法"></a>三、语法</h1><h2 id="WXML和HTML"><a href="#WXML和HTML" class="headerlink" title="WXML和HTML"></a><strong>WXML</strong>和<strong>HTML</strong></h2><ul>
+<li><p>标签名称不同<br>HTML ( div, span, img, a )<br>WXML ( view, text, image, navigator)</p>
+<p>(上面的是一一对应的类似用法比较)</p>
+</li>
+<li><p>属性节点不同</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;#&quot;</span>&gt;</span>超链接<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">navigator</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/ pages/home/home&quot;</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">navigato</span>&gt;</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>提供了类似于Vue中的模板语法<br>数据绑定<br>列表渲染</p>
+<p>条件渲染</p>
+</li>
 </ul>
-</blockquote>
-<h2 id="ii、wxss"><a href="#ii、wxss" class="headerlink" title="ii、wxss"></a>ii、wxss</h2><p>尺寸单位：<code>rpx</code>根据指定的屏幕自适应</p>
-<p>样式导入：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@import</span> <span class="hljs-string">&quot;相对路径&quot;</span>;<br></code></pre></td></tr></table></figure>
-
-<h1 id="3、flex布局"><a href="#3、flex布局" class="headerlink" title="3、flex布局"></a>3、flex布局</h1><blockquote>
-<p>在flex布局中，用于包含内容的组件成为容器，容器内部的组件成为项目，容器允许包含嵌套</p>
-</blockquote>
-<blockquote>
-<p>坐标轴是以容器的左上角为原点，自左向右，自上向下</p>
-<p>也可以通过<code>flex-direction:column</code>将主轴改变为：自上向下，自左向右</p>
-</blockquote>
-<h2 id="i、容器属性"><a href="#i、容器属性" class="headerlink" title="i、容器属性"></a>i、容器属性</h2><p><code>flex-direction</code>:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">flex-direction</span>: <span class="hljs-built_in">row</span>(默认) | row-reverse | column | column-reverse<br><span class="hljs-comment">/*</span><br><span class="hljs-comment">row 坐标轴是以容器的左上角为原点，自左向右，自上向下</span><br><span class="hljs-comment">row-reverse  坐标轴是以容器的左上角为原点，自右向左，自上向下</span><br><span class="hljs-comment">column 自上向下，自左向右</span><br><span class="hljs-comment">column-reverse 自下向上，自左向右</span><br></code></pre></td></tr></table></figure>
-
-<p><code>flex-wrap</code>:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">flex-wrap</span>: <span class="hljs-built_in">nowrap</span>(默认) | wrap | wrap-reverse<br><span class="hljs-comment">/*</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">nowrap 不换行，如果单行内容过多，项目宽度会被压缩</span><br><span class="hljs-comment">wrap 当容器单行容不下所有项目时，允许换行</span><br><span class="hljs-comment">wrap-reverse 与 wrap 相同，只不过，换行方向为 wrap 的反方向</span><br></code></pre></td></tr></table></figure>
-
-<p><img src="/../img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%885%EF%BC%89/100.png" srcset="/img/loading.gif" lazyload></p>
-<p><code>justify-content</code>:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">justify-content</span>: flex-start | flex-end | center | space-between | space-around | space-evenly ;<br></code></pre></td></tr></table></figure>
-
-<blockquote>
+<h2 id="WXSS-和CSS的区别"><a href="#WXSS-和CSS的区别" class="headerlink" title="WXSS 和CSS的区别"></a>WXSS 和CSS的区别</h2><p>① 新增了rpx尺寸单位</p>
 <ul>
-<li>flex-start（默认值）：左对齐，没有空隙</li>
-<li>flex-end：右对齐，没有空隙</li>
-<li>center： 居中，没有空隙</li>
-<li>space-between：两端对齐，项目之间的间隔都相等。</li>
-<li>space-around：项目之间的间隔比 开始和末尾 与边框的间隔大一倍，开始 和末尾与边框相同</li>
-<li>space-evenly: 开始和末尾，与项目之间的间隔相同</li>
+<li>cSS中需要手动进行像素单位换算，例如 rem</li>
+<li>wXSS在底层支持新的尺寸单位 rpx，在不同大小的屏幕上小程序会自动进行换算</li>
 </ul>
-</blockquote>
-<p>还有 <code>align-items</code>（项目在行中的对齐方式）</p>
-<p><code>align-content</code>（项目在非主轴的对齐方式）</p>
-<h2 id="ii、项目属性"><a href="#ii、项目属性" class="headerlink" title="ii、项目属性"></a>ii、项目属性</h2><p><code>order</code>:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span>&#123;<br>    <span class="hljs-attribute">order</span>: <span class="hljs-number">0</span>（默认）;<span class="hljs-comment">/* 一个整数，表示排列的位置，数值越小越靠前  */</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p><code> flex-shrink</code>:（收缩因子）</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span>&#123;<br>    <span class="hljs-attribute">flex-shrink</span>: <span class="hljs-number">1</span>（默认）;<span class="hljs-comment">/* 一个非负数 ，也称为 收缩因子*/</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小</p>
-<p>计算公式：最终长度&#x3D; 原长 x （1 - 溢出长度 x 收缩因子 &#x2F; 压缩权重 ）向下取整</p>
-<p>上述公式只适用于 所有收缩因子的总和大于 1 的情况</p>
-<p>压缩权重 &#x3D; 长度1 x 收缩因子1 + 长度2 x 收缩因子2 + …</p>
-<p>长度指的是主轴上的长度</p>
-</blockquote>
-<p><code>flex-grow</code>:定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;<br>  <span class="hljs-attribute">flex-grow</span>: <span class="hljs-number">0</span>; <span class="hljs-comment">/* 非负数 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
-
-<blockquote>
-<p>最终长度 &#x3D; 原长度 + 扩张单位 x 扩张因子 （向下取整）</p>
-<p>扩张单位 &#x3D; 剩余空间 &#x2F; 扩张因子的总和</p>
-<p>长度指的是主轴上的长度</p>
-</blockquote>
-<p><code>flex-basis</code>：根据主轴的方向代替，主轴上的宽或者高</p>
-<p>默认 auto（其优先级比数值低）如果，不是 auto 而是数字，则优先级大于 项目的宽或者高</p>
+<p>② 提供了全局的样式和局部样式</p>
+<ul>
+<li>项目根目录中的app.wxSs会作用于所有小程序页面</li>
+<li>局部页面的.wxSS样式仅对当前页面生效</li>
+</ul>
+<p>③ WxSS仅支持部分CSS选择器</p>
+<ul>
+<li>.class和#id</li>
+<li>element</li>
+<li>并集选择器、后代选择器</li>
+<li>::after和 ::before等伪类选择器</li>
+</ul>
+<h2 id="小程序中-js文件的分类"><a href="#小程序中-js文件的分类" class="headerlink" title="小程序中.js文件的分类"></a>小程序中.js文件的分类</h2><p>小程序中的JS文件分为三大类，分别是:</p>
+<p>① <code>appg.js</code></p>
+<ul>
+<li>是整个小程序项目的入口文件，通过调用<code>App()</code>函数来启动整个小程序</li>
+</ul>
+<p>② 页面的<code>.js </code>文件</p>
+<ul>
+<li>是页面的入口文件，通过调用Page()函数来创建并运行页面</li>
+</ul>
+<p>③ 普通的<code>.js </code>文件</p>
+<ul>
+<li>是普通的功能模块文件，用来封装<code>公共的函数或属性</code>供页面使用</li>
+</ul>
 
                 
               </div>
@@ -433,8 +410,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>微信小程序学习笔记（5）</div>
-      <div>http://124.222.56.204/2024/04/01/微信小程序/微信小程序学习笔记（5）/</div>
+      <div>微信小程序学习笔记（1）</div>
+      <div>http://124.222.56.204/2024/02/28/微信小程序学习笔记（1）/</div>
     </div>
     <div class="license-meta">
       
@@ -446,7 +423,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年4月1日</div>
+          <div>2024年2月28日</div>
         </div>
       
       
@@ -478,9 +455,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/01/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%886%EF%BC%89/" title="微信小程序学习笔记（6）">
+                      <a href="/2024/02/28/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%882%EF%BC%89/" title="微信小程序学习笔记（2）">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">微信小程序学习笔记（6）</span>
+                        <span class="hidden-mobile">微信小程序学习笔记（2）</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -488,8 +465,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/03/24/Servlet-01/" title="Servlet-01">
-                        <span class="hidden-mobile">Servlet-01</span>
+                      <a href="/2024/02/27/%E8%AE%B0%E4%BA%8B%E6%9C%AC%E6%89%93%E5%BC%80%E5%A4%A7%E5%86%85%E5%AD%98%E6%96%87%E4%BB%B6/" title="使用记事本打开大文本文件">
+                        <span class="hidden-mobile">使用记事本打开大文本文件</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
