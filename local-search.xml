@@ -4,11 +4,90 @@
   
   
   <entry>
+    <title>hexo文章</title>
+    <link href="/2024/11/30/hexo/hexo%E6%96%87%E7%AB%A0/"/>
+    <url>/2024/11/30/hexo/hexo%E6%96%87%E7%AB%A0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Tag的使用"><a href="#Tag的使用" class="headerlink" title="Tag的使用"></a>Tag的使用</h1><p>在 markdown 中加入如下的代码来使用便签：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% note success %&#125;<br>文字 或者 <span class="hljs-code">`markdown`</span> 均可<br>&#123;% endnote %&#125;<br></code></pre></td></tr></table></figure><p>或者使用 HTML 形式：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;note note-primary&quot;</span>&gt;</span>标签<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br></code></pre></td></tr></table></figure><p>样式如下：</p><div class="note note-primary">            <p><code>primary</code> 文字 或者 <code>markdown</code> 均可</p>          </div><div class="note note-secondary">            <p><code>secondary</code> </p>          </div><div class="note note-success">            <p><code>success</code> </p>          </div><div class="note note-danger">            <p><code>danger</code> </p>          </div><div class="note note-warning">            <p><code>warning</code> </p>          </div><div class="note note-info">            <p><code>info</code> </p>          </div><div class="note note-light">            <p><code>light</code> </p>          </div><h1 id="勾选框"><a href="#勾选框" class="headerlink" title="勾选框"></a>勾选框</h1><p>在 markdown 中加入如下的代码来使用 Checkbox：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% cb text, checked?, incline? %&#125;<br></code></pre></td></tr></table></figure><p>text：显示的文字<br>checked：默认是否已勾选，默认 false<br>incline: 是否内联（可以理解为后面的文字是否换行），默认 false</p><p>示例：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">&#123;% cb 普通示例 %&#125;<br><br>&#123;% cb 默认选中, true %&#125;<br><br>&#123;% cb 内联示例, false, true %&#125; 后面文字不换行<br><br>&#123;% cb false %&#125; 也可以只传入一个参数，文字写在后边（这样不支持外联）<br></code></pre></td></tr></table></figure><div>            <input type="checkbox"  >普通示例          </div><div>            <input type="checkbox"  checked="checked">默认选中          </div>            <input type="checkbox"  >内联示例           后面文字不换行<br /><input type="checkbox" disabled > 也可以只传入一个参数，文字写在后边（这样不支持外联）<h1 id="图片的组合"><a href="#图片的组合" class="headerlink" title="图片的组合"></a>图片的组合</h1><p>如果想把多张图片按一定布局组合显示，你可以在 markdown 中按如下格式：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown">&#123;% gi total n1-n2-... %&#125;<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>  ![](<span class="hljs-link">url</span>)<br>&#123;% endgi %&#125;<br></code></pre></td></tr></table></figure><p><code>total</code>：图片总数量，对应中间包含的图片 url 数量<br><code>n1-n2-...</code>：每行的图片数量，可以省略，默认单行最多 3 张图，求和必须相等于 total，否则按默认样式</p><p>如<code>&#123;% gi 5 3-2 %&#125;</code> 示例，代表共 5 张图，第一行 3 张图，第二行 2 张图。</p><h1 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h1><h2 id="1、关于中括号的问题"><a href="#1、关于中括号的问题" class="headerlink" title="1、关于中括号的问题"></a>1、关于中括号的问题</h2><p>不在代码块中的 <code>&#123;</code> 不能出现一对，否则不能渲染页面</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>计算机网络期末复习</title>
+    <link href="/2024/11/30/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/"/>
+    <url>/2024/11/30/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/</url>
+    
+    <content type="html"><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="五层体系结构"><a href="#五层体系结构" class="headerlink" title="五层体系结构"></a>五层体系结构</h1><blockquote><p>自上向下：应用层、运输层、网络层、数据链路层、物理层</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>上岸</category>
+      
+      <category>计算机网络</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计网</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>计算机网络</title>
+    <link href="/2024/11/30/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    <url>/2024/11/30/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1、概述"><a href="#1、概述" class="headerlink" title="1、概述"></a>1、概述</h1><h2 id="1-1-互联网的概述"><a href="#1-1-互联网的概述" class="headerlink" title="1.1 互联网的概述"></a>1.1 互联网的概述</h2><p>互联网具有两个最重要的基本特点：<strong>连通性和共享</strong></p><p>计算机网络（简称为<strong>网络</strong>）由若干个节点和连接这些节点的链路组成</p><blockquote><p>网络中的节点可以是计算机、集线器、交换机和路由器等</p><blockquote><p>例如：由三个计算机通过三条链路连接到一个集线器上，这就是一个简单的计算机网络（简称为网络）</p><p>&emsp;&emsp; 由许多网络通过路由器相互连接起来，构成了一个覆盖范围更大的计算机网络，这样的网络称为<strong>互连网</strong></p><p>因此，互连网是一个<strong>网络的网络</strong></p></blockquote><p>网络把许多计算机连接在一起，而<strong>互连网</strong>则把许多网络通过一些路由器连接在一起。与网络相连的计算机常称为主机。</p><blockquote><p>&emsp;一般用云表示的网络已经包含了网络中的计算机，为了讨论方便（例如：讨论几个计算机之间如何进行通信），一般把有关的计算机画在云外。</p><p>&emsp; 习惯上：与网络相连的计算机成为<strong>主机</strong>，在互联网中不可缺少的<strong>路由器是一种特殊的计算机</strong>（有中央处理器、存储器、操作系统等），<strong>但不能成为主机</strong></p></blockquote></blockquote><p><strong>注意：</strong> </p><ol><li><code>internet</code> （互连网）是一个通用名词，他泛指有多个计算机网络互连而成的计算机网络，在这些网络之间的通信协议（即通信规则）可以任意选择，不一定非要使用<code>TCP/IP协议</code></li><li><code>Internet</code>（互联网，或因特网）则是一个专用名词，他指当前全球最大的、开放的、由众多网络相互连接而成的<strong>特定互连网</strong>，它采用<code>TCP/IP协议</code>族作为通信的规则，且其前身是美国的 AEPANET</li></ol><ul><li>可见，任意把几个计算机网络互连起来（不管采用什么协议），并能够互相通信，<strong>这样构成的是一个互连网</strong>，<strong>而不是互联网</strong></li></ul><h2 id="1-2-互联网的组成"><a href="#1-2-互联网的组成" class="headerlink" title="1.2 互联网的组成"></a>1.2 互联网的组成</h2><p>从工作方式上看，可以划分为两大类：</p><ol><li><strong>边缘部分</strong> :由所有连接在互联网上的主机组成，这部分是<strong>用户直接使用的</strong>，用来进行通信（传送数据、音频、视频）和资源共享 </li><li><strong>核心部分</strong> : 由大量网络和连接这些网络的路由器组成。这部分是为边缘部分提供服务的（提供连通性和交换）</li></ol><ul><li><blockquote><p><strong>边缘部分</strong>：</p><p>&emsp; 处在互联网边缘的部分就是连接在互联网上的所有的主机，这些主机又称<strong>端系统</strong> </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*  端系统</span><br><span class="hljs-comment">    小的端系统可以是一台普通的个人电脑和具有上网功能的智能手机、甚至是一个很小的网络摄像头、大的端系统可以是一个昂贵的大型计算机</span><br><span class="hljs-comment"></span><br></code></pre></td></tr></table></figure><p>主机<strong>A</strong>的某个进程和主机<strong>B</strong>上的另一个进程进行通信，这种说法通常可以简称为<strong>计算机之间通信</strong></p><p><strong>边缘方式的通信可以分为两大类：</strong>客户-服务器方式（C&#x2F;S方式）和对等方式（P2P方式）</p><ol><li>C&#x2F;S</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/* </span><br><span class="hljs-comment">客户和服务器都是值通信中所涉及的两个应用进程，他们描述的是进程之间服务和被服务的关系</span><br><span class="hljs-comment">服务请求方和服务提供方都要使用网络核心部分所提供的服</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">但是他们之间的通信可以是双向的，客户和服务器都可发送和接受数据！！！！！！！</span><br></code></pre></td></tr></table></figure><ol start="2"><li>P2P</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/* </span><br><span class="hljs-comment">没有明确的服务请求方和服务提供者，具体看进程工作时的动作</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">对等连接工作方式可支持大量对等用户（如上百万个）同时工作</span><br></code></pre></td></tr></table></figure></blockquote><ul><li><blockquote><p><strong>核心部分</strong></p><p>&emsp;核心部分是互联网中最复杂的部分，因为<strong>网络中的核心部分要向网络边缘部分中的大量主机提供连通性，使边缘部分中的任何一台主机都能够与其他主机通信</strong> </p><p>&emsp; 起<strong>特殊作用的是路由器</strong>，他是一种专用计算机（但不叫作主机）。路由器是实现<strong>分组交换</strong>的关键构件，其任务是<strong>转发收到的分组</strong>，这是网络核心部分最重要的功能</p><blockquote><p>为了了解分组交换，首先了解电路交换：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/* </span><br><span class="hljs-comment">交换：从通信资源的分配来看，他就是按照某种方式动态的分配传输路线的资源</span><br><span class="hljs-comment">    必须经过：  建立连接（占用通信资源）---&gt; 通话（已知占用资源）--&gt; 释放连接（归还通信资源） 三个步骤的交换方式成为电路交换</span><br><span class="hljs-comment">    电路交换的一个重要特点：</span><br><span class="hljs-comment">    在通话的全部时间内，通话的两个用户始终占用端到端的通信资源</span><br><span class="hljs-comment"></span><br></code></pre></td></tr></table></figure><p>分组交换：</p><p>​通常把要发送的整块数据成为一个<strong>报文</strong>。</p><p>​在发送报文之前，先把报文划分为一个个更小的等长数据段，在每一个数据段前面，加上一些必要的控制信息组成的<strong>首部</strong>后，就构成了一个<strong>分组</strong>，分组又称为“<strong>包</strong>”，而分组的首部也可称为“包头”。</p></blockquote></blockquote></li></ul></li></ul><h2 id="1-6计算机网络的性能"><a href="#1-6计算机网络的性能" class="headerlink" title="1.6计算机网络的性能"></a>1.6计算机网络的性能</h2><ol><li><blockquote><p><strong>速率</strong>：网络中的速率指的是数据的传送速率，也称为<strong>数据率</strong>或<strong>比特率</strong> </p><p>​单位 <code>bit/s</code>（比特每秒）或 <code>b/s</code> 有时也写为<code>bps</code> ，当速率较高的时候，就在单位前加一个字母，如：<br>$$<br>k&#x3D;10^3 （千）\<br>M&#x3D;10^6  （兆）<br>$$</p><p>当提到网络速率的时候，往往指的是<strong>额定速率或标称速率</strong></p><p><strong>注意： B 是字节，1个字节&#x3D;8比特</strong></p></blockquote></li><li><blockquote><p><strong>带宽</strong></p><ol><li>本来指某个信号具有的频带宽度，信号的带宽指的是该信号包含的各种不同频率成分所占据的频率范围，这种意义的<strong>带宽的单位是赫</strong> </li><li>在计算机网络中，带宽用来表示网络中<strong>某通</strong>道传送数据的能力，因此网络带宽表示<strong>单位时间内</strong>网络中的某信道所能通过的最<strong>高数据率</strong> ，单位 <code>bit/s</code></li></ol></blockquote></li><li><blockquote><p><strong>吞吐量</strong> ： 表示在单位时间内通过某个网络的实际数据量</p></blockquote></li><li><blockquote><p><strong>时延</strong>： 指数据（一个报文或分组，甚至比特）从网络（或链路）的一段传送到另一端所需的时间</p><p>​       他是一个重要的性能指标，他有事也称为<strong>延迟或迟延</strong></p><p>网络的时延是由以下几个不同的部分组成：</p><ol><li><strong>发送时延</strong> ： 是主机或路由器发送数据帧所需要的时间（也就是从发送数据帧的第一个比特算起，到该帧的最后一个比特发送完毕所需要的时间），计算公式：</li></ol><p>$$<br>发送时延&#x3D;\frac{数据帧长度(bit)}{发送速率（bit&#x2F;s）}<br>$$</p><ol start="2"><li><p><strong>传播时延</strong>： 是电磁波在信道中传播一定的距离需要花费的时间，计算公式：<br>$$<br>发送时延&#x3D;\frac{信道长度(m)}{电磁波在信道上的传播速率（m&#x2F;s）}<br>$$<br>电磁波在自由空间的传播速率是光速，也就是<code>3.0 x 10^5  km/s</code>  </p></li><li><p><strong>处理时延</strong> ： 主机或路由器在收到分组时要花费一定的时间进行处理，例如：分析分组的首部、从分组中提取数据部分等</p></li><li><p><strong>排队时延</strong> ： 分组在经过网络传输时，要经过许多路由器，但分组在进入路由器后要现在输入队列中排队等待处理，在路由器确定了转发接口后，还要在输出队列中排队等待</p></li></ol><hr><p>   发送时延发生在机器内部的发送器中（一般就是发生在网络适配器中）<strong>与传输信道的长度没有任何关系</strong></p><p>   传播时延发生在机器外部的传输信道媒体上，与<strong>信号的发送速率无关</strong>，<strong>信号传送的距离越远，传播时延就越大</strong><br>$$<br>总时延 &#x3D; 发送时延 + 传播时延 + 处理时延 + 排队时延<br>$$</p></blockquote></li><li><blockquote><p><strong>时延宽带积</strong><br>$$<br>时延宽带积 &#x3D; 传播时延 + 宽带<br>$$<br>​        例如：某链路的传播时延为 20s，宽带为 10Mbit&#x2F;s，则时延宽带 &#x3D; 20 x 10 x （10^6）bit</p><p>这表明，若发送端连续发送数据，则发送的第一个比特即将到达终点时，发送端就已经发送了  20 x 10 x （10^6）比特，这写比特都在链路上向前移动，因此，链路的时延带宽积又称为 <strong>以比特为单位的链路长度</strong></p></blockquote></li><li><blockquote><p>往返时间<strong>RTT</strong> ： 双向交互一次所需的时间</p><p>​       有时也称为往返时延<br>$$<br>有效数据率&#x3D;\frac{数据长度}{发送时间+RTT}<br>$$</p></blockquote></li><li><blockquote><p><strong>利用率</strong></p><p>​      <strong>信道利用率或网络利用率过高就会产生非常大的时延</strong></p></blockquote></li></ol><h2 id="1-7-具有五层协议的体系结构"><a href="#1-7-具有五层协议的体系结构" class="headerlink" title="1.7 具有五层协议的体系结构"></a>1.7 具有五层协议的体系结构</h2><p>对<strong>OSI</strong>的七层协议体系结构和 <strong>TCP&#x2F;IP</strong>的四层体系结构进行综合，讨论五层体系结构，即（从上到下）： <strong>应用层，运输层，网络层，数据链路层，物理层</strong></p><ol><li><blockquote><p><strong>应用层</strong>：协议定义：应用进程间通信和交互的规则   （进程指的是主机中正在运行的程序）</p><p>​    任务：<strong>通过应用进程间的交互来完成特定网络应用</strong></p><p>​    我们将应用层交互的数据单元称为<strong>报文</strong></p><p>如：域名系统DNS、支持万维网应用的HTTP协议等</p></blockquote></li><li><blockquote><p><strong>运输层</strong> ： 任务：向两台主机中进程之间的通信提供<strong>通用的数据传输服务</strong> ，应用进程利用该服务传送应用层报文</p></blockquote></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>上岸</category>
+      
+      <category>计算机网络</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计网</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>命令操作</title>
     <link href="/2024/11/26/linux/%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C/"/>
     <url>/2024/11/26/linux/%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C/</url>
     
-    <content type="html"><![CDATA[<h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h2 id="1、进入-root-用户"><a href="#1、进入-root-用户" class="headerlink" title="1、进入 root 用户"></a>1、进入 root 用户</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">sudo</span> <span class="hljs-string">-i</span><br></code></pre></td></tr></table></figure><p>输入后，输入密码即可</p><h2 id="2、解压文件"><a href="#2、解压文件" class="headerlink" title="2、解压文件"></a>2、解压文件</h2><p><code>unzip</code>解压文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">unzip file.zip<br></code></pre></td></tr></table></figure><p>如果要将压缩文件解压到指定的目录，可以使用 <code>-d</code> 选项指定目标目录，例如：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">unzip file.zip -d /path/to/destination<br></code></pre></td></tr></table></figure><p>这会将压缩文件解压到指定的目标目录中。</p><p>另外，系统中没有安装 <code>unzip</code> 命令可以通过包管理器安装它。例如，在 Ubuntu 上，可以使用以下命令安装 <code>unzip</code>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install unzip<br></code></pre></td></tr></table></figure><h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><h2 id="1-查看端口占用情况"><a href="#1-查看端口占用情况" class="headerlink" title="1.查看端口占用情况"></a>1.查看端口占用情况</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">netstat -aon | findstr 4000 <span class="hljs-comment"># 固定端口</span><br>netstat -ano <span class="hljs-comment"># 所有端口占用情况</span><br></code></pre></td></tr></table></figure><h2 id="2-杀死某个进程"><a href="#2-杀死某个进程" class="headerlink" title="2. 杀死某个进程"></a>2. 杀死某个进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">taskkill /PID &lt;进程号&gt; /F<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h1><h2 id="1、进入-root-用户"><a href="#1、进入-root-用户" class="headerlink" title="1、进入 root 用户"></a>1、进入 root 用户</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">sudo</span> <span class="hljs-string">-i</span>  <br></code></pre></td></tr></table></figure><p>输入后，输入密码即可。</p><h2 id="2、解压文件"><a href="#2、解压文件" class="headerlink" title="2、解压文件"></a>2、解压文件</h2><p><code>unzip</code>解压文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">unzip file.zip<br></code></pre></td></tr></table></figure><p>如果要将压缩文件解压到指定的目录，可以使用 <code>-d</code> 选项指定目标目录，例如：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">unzip file.zip -d /path/to/destination<br></code></pre></td></tr></table></figure><p>这会将压缩文件解压到指定的目标目录中。</p><p>另外，系统中没有安装 <code>unzip</code> 命令可以通过包管理器安装它。例如，在 Ubuntu 上，可以使用以下命令安装 <code>unzip</code>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt-get install unzip<br></code></pre></td></tr></table></figure><h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><h2 id="1-查看端口占用情况"><a href="#1-查看端口占用情况" class="headerlink" title="1.查看端口占用情况"></a>1.查看端口占用情况</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">netstat -aon | findstr 4000 <span class="hljs-comment"># 固定端口</span><br>netstat -ano <span class="hljs-comment"># 所有端口占用情况</span><br></code></pre></td></tr></table></figure><h2 id="2-杀死某个进程"><a href="#2-杀死某个进程" class="headerlink" title="2. 杀死某个进程"></a>2. 杀死某个进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">taskkill /PID &lt;进程号&gt; /F<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -131,35 +210,6 @@
     <tags>
       
       <tag>vue</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>1111</title>
-    <link href="/2024/04/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%887%EF%BC%89/"/>
-    <url>/2024/04/20/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%887%EF%BC%89/</url>
-    
-    <content type="html"><![CDATA[<h1 id="1、发起请求"><a href="#1、发起请求" class="headerlink" title="1、发起请求"></a>1、发起请求</h1><h2 id="wx-request"><a href="#wx-request" class="headerlink" title="wx.request()"></a>wx.request()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js">wx.<span class="hljs-title function_">request</span>()<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>微信小程序</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>wxss</tag>
-      
-      <tag>wxml</tag>
-      
-      <tag>weChatjs</tag>
       
     </tags>
     
@@ -360,8 +410,8 @@
   
   <entry>
     <title>hexo更新注意事项</title>
-    <link href="/2024/02/28/hexo%E6%9B%B4%E6%96%B0%E6%B3%A8%E6%84%8F/"/>
-    <url>/2024/02/28/hexo%E6%9B%B4%E6%96%B0%E6%B3%A8%E6%84%8F/</url>
+    <link href="/2024/02/28/hexo/hexo%E6%9B%B4%E6%96%B0%E6%B3%A8%E6%84%8F/"/>
+    <url>/2024/02/28/hexo/hexo%E6%9B%B4%E6%96%B0%E6%B3%A8%E6%84%8F/</url>
     
     <content type="html"><![CDATA[<h1 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h1><h2 id="1、关于中括号的问题"><a href="#1、关于中括号的问题" class="headerlink" title="1、关于中括号的问题"></a>1、关于中括号的问题</h2><p>不在代码块中的 <code>&#123;</code> 不能出现一对，否则不能渲染页面</p>]]></content>
     
@@ -644,56 +694,6 @@
   
   
   <entry>
-    <title>图片放置测试</title>
-    <link href="/2024/02/03/3/"/>
-    <url>/2024/02/03/3/</url>
-    
-    <content type="html"><![CDATA[<p><img src="/../img/11.jpg"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>测试</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>测试</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>hexo更新流程及解析</title>
-    <link href="/2024/02/03/hexo%E6%9B%B4%E6%96%B0%E6%B5%81%E7%A8%8B%E5%8F%8A%E8%A7%A3%E6%9E%90/"/>
-    <url>/2024/02/03/hexo%E6%9B%B4%E6%96%B0%E6%B5%81%E7%A8%8B%E5%8F%8A%E8%A7%A3%E6%9E%90/</url>
-    
-    <content type="html"><![CDATA[<h1 id="文件解析"><a href="#文件解析" class="headerlink" title="文件解析"></a>文件解析</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">.</span><br><span class="hljs-string">├──</span> <span class="hljs-string">.deploy</span>       <span class="hljs-comment"># 需要部署的文件</span><br><span class="hljs-string">├──</span> <span class="hljs-string">node_modules</span>  <span class="hljs-comment"># 项目所有的依赖包和插件</span><br><span class="hljs-string">├──</span> <span class="hljs-string">public</span>        <span class="hljs-comment"># 生成的静态网页文件</span><br><span class="hljs-string">├──</span> <span class="hljs-string">scaffolds</span>     <span class="hljs-comment"># 文章模板</span><br><span class="hljs-string">├──</span> <span class="hljs-string">source</span>        <span class="hljs-comment"># 博客正文和其他源文件等都应该放在这里</span><br><span class="hljs-string">|</span>   <span class="hljs-string">├──</span> <span class="hljs-string">_drafts</span>   <span class="hljs-comment"># 草稿</span><br><span class="hljs-string">|</span>   <span class="hljs-string">└──</span> <span class="hljs-string">_posts</span>    <span class="hljs-comment"># 文章</span><br><span class="hljs-string">├──</span> <span class="hljs-string">themes</span>        <span class="hljs-comment"># 主题</span><br><span class="hljs-string">├──</span> <span class="hljs-string">_config.yml</span>   <span class="hljs-comment"># 全局配置文件</span><br><span class="hljs-string">└──</span> <span class="hljs-string">package.json</span>  <span class="hljs-comment"># 项目依赖信息</span><br><br></code></pre></td></tr></table></figure><h1 id="md文件头部内容"><a href="#md文件头部内容" class="headerlink" title="md文件头部内容"></a>md文件头部内容</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">文章名称</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2020-07-30 16:46:07</span><span class="hljs-string">(创建时间)</span><br><span class="hljs-attr">tags:</span> <span class="hljs-string">文章标签</span><br><span class="hljs-attr">categories:</span> <span class="hljs-string">文章分类</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure><h2 id="（1）文章顶置，排序"><a href="#（1）文章顶置，排序" class="headerlink" title="（1）文章顶置，排序"></a>（1）文章顶置，排序</h2><p><code>sticky</code> 数值越大，该文章越靠前，达到类似于置顶的效果，其他未设置的文章依然按默认排序。</p><p>当文章设置了 <code>sticky</code> 后，主题会默认在首页文章标题前增加一个图标，来标识这是一个置顶文章，你可以通过<strong>主题配置</strong>去关闭或修改这个功能：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">index:</span><br>  <span class="hljs-attr">post_sticky:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">icon:</span> <span class="hljs-string">&#x27;iconfont icon-top&#x27;</span><br></code></pre></td></tr></table></figure><h2 id="（2）文章隐藏"><a href="#（2）文章隐藏" class="headerlink" title="（2）文章隐藏"></a>（2）文章隐藏</h2><p> <code>hide: true</code> 属性</p><p>隐藏后依然可以通过文章链接访问，所以可以用于一些需要链接跳转的特殊文章。</p><p>如果只是想让文章在首页隐藏，但仍<strong>需要在归档分类页里展示</strong>，可以在文章开头 <code>front-matter </code>中配置 <code>archive: true</code> 属性。</p><h2 id="（3）分类和标签"><a href="#（3）分类和标签" class="headerlink" title="（3）分类和标签"></a>（3）分类和标签</h2><p>只有文章支持分类和标签，在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 <code>Foo, Bar</code> 不等于 <code>Bar, Foo</code>；而标签没有顺序和层次。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Diary</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">PS3</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Games</span><br></code></pre></td></tr></table></figure><blockquote><p>分类方法的分歧</p><p>如果您有过使用 WordPress 的经验，就很容易误解 Hexo 的分类方式。WordPress 支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是 Hexo 不支持指定多个同级分类。下面的指定方法：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Diary</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Life</span><br></code></pre></td></tr></table></figure><p>会使分类 <code>Life</code> 成为 <code>Diary</code> 的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p><p>如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span><br><span class="hljs-bullet">-</span> [<span class="hljs-string">Diary</span>, <span class="hljs-string">PlayStation</span>]<br><span class="hljs-bullet">-</span> [<span class="hljs-string">Diary</span>, <span class="hljs-string">Games</span>]<br><span class="hljs-bullet">-</span> [<span class="hljs-string">Life</span>]<br></code></pre></td></tr></table></figure><p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 <code>Life</code> 是一个没有子分类的分类。</p></blockquote><h2 id="（4）其他属性"><a href="#（4）其他属性" class="headerlink" title="（4）其他属性"></a>（4）其他属性</h2><table><thead><tr><th><code>comments</code></th><th>开启文章的评论功能</th><th><code>true</code></th></tr></thead><tbody><tr><td><code>tags</code></td><td>标签（不适用于分页）</td><td></td></tr><tr><td><code>categories</code></td><td>分类（不适用于分页）</td><td></td></tr></tbody></table><h1 id="更新博客"><a href="#更新博客" class="headerlink" title="更新博客"></a>更新博客</h1><p>使用命令即可推送更新</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 1.清除 hexo 的缓存</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">clean</span><br><span class="hljs-comment"># 2.生成静态网站文件</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">g</span>  <br><span class="hljs-comment"># 3.上传到远程仓库</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">d</span>  <br><span class="hljs-comment"># 4.采用一键部署</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">g</span> <span class="hljs-string">--d</span><br></code></pre></td></tr></table></figure><p><strong>执行2、3就不用执行4，执行2可以在本地先看看，然后再推送</strong></p><h1 id="注意安装插件"><a href="#注意安装插件" class="headerlink" title="注意安装插件"></a>注意安装插件</h1><p>在站点目录下安装插件才可以使用<code>hexo d</code></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-string">hexo-deployer-git</span> <span class="hljs-string">--save</span><br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-    <categories>
-      
-      <category>hexo</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>hexo</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>js API总结</title>
     <link href="/2024/02/03/js_API/"/>
     <url>/2024/02/03/js_API/</url>
@@ -721,23 +721,23 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2024/02/03/hello-world/"/>
-    <url>/2024/02/03/hello-world/</url>
+    <title>hexo更新流程及解析</title>
+    <link href="/2024/02/03/hexo/hexo%E6%9B%B4%E6%96%B0%E6%B5%81%E7%A8%8B%E5%8F%8A%E8%A7%A3%E6%9E%90/"/>
+    <url>/2024/02/03/hexo/hexo%E6%9B%B4%E6%96%B0%E6%B5%81%E7%A8%8B%E5%8F%8A%E8%A7%A3%E6%9E%90/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="文件解析"><a href="#文件解析" class="headerlink" title="文件解析"></a>文件解析</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">.</span><br><span class="hljs-string">├──</span> <span class="hljs-string">.deploy</span>       <span class="hljs-comment"># 需要部署的文件</span><br><span class="hljs-string">├──</span> <span class="hljs-string">node_modules</span>  <span class="hljs-comment"># 项目所有的依赖包和插件</span><br><span class="hljs-string">├──</span> <span class="hljs-string">public</span>        <span class="hljs-comment"># 生成的静态网页文件</span><br><span class="hljs-string">├──</span> <span class="hljs-string">scaffolds</span>     <span class="hljs-comment"># 文章模板</span><br><span class="hljs-string">├──</span> <span class="hljs-string">source</span>        <span class="hljs-comment"># 博客正文和其他源文件等都应该放在这里</span><br><span class="hljs-string">|</span>   <span class="hljs-string">├──</span> <span class="hljs-string">_drafts</span>   <span class="hljs-comment"># 草稿</span><br><span class="hljs-string">|</span>   <span class="hljs-string">└──</span> <span class="hljs-string">_posts</span>    <span class="hljs-comment"># 文章</span><br><span class="hljs-string">├──</span> <span class="hljs-string">themes</span>        <span class="hljs-comment"># 主题</span><br><span class="hljs-string">├──</span> <span class="hljs-string">_config.yml</span>   <span class="hljs-comment"># 全局配置文件</span><br><span class="hljs-string">└──</span> <span class="hljs-string">package.json</span>  <span class="hljs-comment"># 项目依赖信息</span><br><br></code></pre></td></tr></table></figure><h1 id="md文件头部内容"><a href="#md文件头部内容" class="headerlink" title="md文件头部内容"></a>md文件头部内容</h1><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">文章名称</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2020-07-30 16:46:07</span><span class="hljs-string">(创建时间)</span><br><span class="hljs-attr">tags:</span> <span class="hljs-string">文章标签</span><br><span class="hljs-attr">categories:</span> <span class="hljs-string">文章分类</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure><h2 id="（1）文章顶置，排序"><a href="#（1）文章顶置，排序" class="headerlink" title="（1）文章顶置，排序"></a>（1）文章顶置，排序</h2><p><code>sticky</code> 数值越大，该文章越靠前，达到类似于置顶的效果，其他未设置的文章依然按默认排序。</p><p>当文章设置了 <code>sticky</code> 后，主题会默认在首页文章标题前增加一个图标，来标识这是一个置顶文章，你可以通过<strong>主题配置</strong>去关闭或修改这个功能：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">index:</span><br>  <span class="hljs-attr">post_sticky:</span><br>    <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>    <span class="hljs-attr">icon:</span> <span class="hljs-string">&#x27;iconfont icon-top&#x27;</span><br></code></pre></td></tr></table></figure><h2 id="（2）文章隐藏"><a href="#（2）文章隐藏" class="headerlink" title="（2）文章隐藏"></a>（2）文章隐藏</h2><p> <code>hide: true</code> 属性</p><p>隐藏后依然可以通过文章链接访问，所以可以用于一些需要链接跳转的特殊文章。</p><p>如果只是想让文章在首页隐藏，但仍<strong>需要在归档分类页里展示</strong>，可以在文章开头 <code>front-matter </code>中配置 <code>archive: true</code> 属性。</p><h2 id="（3）分类和标签"><a href="#（3）分类和标签" class="headerlink" title="（3）分类和标签"></a>（3）分类和标签</h2><p>只有文章支持分类和标签，在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 <code>Foo, Bar</code> 不等于 <code>Bar, Foo</code>；而标签没有顺序和层次。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Diary</span><br><span class="hljs-attr">tags:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">PS3</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">Games</span><br></code></pre></td></tr></table></figure><blockquote><p>分类方法的分歧</p><p>如果您有过使用 WordPress 的经验，就很容易误解 Hexo 的分类方式。WordPress 支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是 Hexo 不支持指定多个同级分类。下面的指定方法：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Diary</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Life</span><br></code></pre></td></tr></table></figure><p>会使分类 <code>Life</code> 成为 <code>Diary</code> 的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p><p>如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">categories:</span><br><span class="hljs-bullet">-</span> [<span class="hljs-string">Diary</span>, <span class="hljs-string">PlayStation</span>]<br><span class="hljs-bullet">-</span> [<span class="hljs-string">Diary</span>, <span class="hljs-string">Games</span>]<br><span class="hljs-bullet">-</span> [<span class="hljs-string">Life</span>]<br></code></pre></td></tr></table></figure><p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 <code>Life</code> 是一个没有子分类的分类。</p></blockquote><h2 id="（4）其他属性"><a href="#（4）其他属性" class="headerlink" title="（4）其他属性"></a>（4）其他属性</h2><table><thead><tr><th align="center"><code>comments</code></th><th align="center">开启文章的评论功能</th><th align="center"><code>true</code></th></tr></thead><tbody><tr><td align="center"><code>tags</code></td><td align="center">标签（不适用于分页）</td><td align="center"></td></tr><tr><td align="center"><code>categories</code></td><td align="center">分类（不适用于分页）</td><td align="center"></td></tr><tr><td align="center"><code>math</code></td><td align="center">对本页面是否启用数学公式解析（需要手动开启）</td><td align="center">true</td></tr></tbody></table><h1 id="更新博客"><a href="#更新博客" class="headerlink" title="更新博客"></a>更新博客</h1><p>使用命令即可推送更新</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 1.清除 hexo 的缓存</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">clean</span><br><span class="hljs-comment"># 2.生成静态网站文件</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">g</span>  <br><span class="hljs-comment"># 3.上传到远程仓库</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">d</span>  <br><span class="hljs-comment"># 4.采用一键部署</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">g</span> <span class="hljs-string">--d</span><br></code></pre></td></tr></table></figure><p><strong>执行2、3就不用执行4，执行2可以在本地先看看，然后再推送</strong></p><h1 id="注意安装插件"><a href="#注意安装插件" class="headerlink" title="注意安装插件"></a>注意安装插件</h1><p>在站点目录下安装插件才可以使用<code>hexo d</code></p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-string">hexo-deployer-git</span> <span class="hljs-string">--save</span><br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
       
-      <category>测试</category>
+      <category>hexo</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>测试</tag>
+      <tag>hexo</tag>
       
     </tags>
     
