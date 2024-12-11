@@ -16,24 +16,24 @@
   <meta name="author" content="一又四分之一">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1.顺序存储和交叉存储顺序存储又称高位交叉编址 交叉存储又称 低位交叉存储 低位交叉存储连续取n个字所需的时间为$$t_1&#x3D;T+(n-1)τ$$高位交叉存储连续取n个字所需的时间为$$t2&#x3D;nT$$ $$带宽&#x3D;\frac{bit}{s}[这里的是单位]$$ 2.冯·诺依曼冯·诺依曼计算机的主要设计思想是以“存储程序”为基础，是以运算器为中心的。 主要组成部分有：运算器">
+    <meta name="description" content="utf8mb4 和 utf8mb3 的区别 utf8mb3：  它是一个较旧的字符集，用于存储 UTF-8 编码的字符数据，最多支持 3 字节的字符。 由于最多支持 3 字节，它不能存储一些超出基本多文种平面（BMP）范围的字符（例如 Emoji 表情等）。因此，它不支持所有的 Unicode 字符。   utf8mb4：  它是 utf8mb3 的超集，能够支持 4 字节的字符，包括所有 Uni">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计组期末复习">
-<meta property="og:url" content="http://124.222.56.204/2024/12/05/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%BB%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:title" content="mysql常用字符集和排序规则">
+<meta property="og:url" content="http://124.222.56.204/2024/12/11/mysql/mysql%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E9%9B%86/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
-<meta property="og:description" content="1.顺序存储和交叉存储顺序存储又称高位交叉编址 交叉存储又称 低位交叉存储 低位交叉存储连续取n个字所需的时间为$$t_1&#x3D;T+(n-1)τ$$高位交叉存储连续取n个字所需的时间为$$t2&#x3D;nT$$ $$带宽&#x3D;\frac{bit}{s}[这里的是单位]$$ 2.冯·诺依曼冯·诺依曼计算机的主要设计思想是以“存储程序”为基础，是以运算器为中心的。 主要组成部分有：运算器">
+<meta property="og:description" content="utf8mb4 和 utf8mb3 的区别 utf8mb3：  它是一个较旧的字符集，用于存储 UTF-8 编码的字符数据，最多支持 3 字节的字符。 由于最多支持 3 字节，它不能存储一些超出基本多文种平面（BMP）范围的字符（例如 Emoji 表情等）。因此，它不支持所有的 Unicode 字符。   utf8mb4：  它是 utf8mb3 的超集，能够支持 4 字节的字符，包括所有 Uni">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-12-05T02:33:00.000Z">
-<meta property="article:modified_time" content="2024-12-06T03:25:54.548Z">
+<meta property="article:published_time" content="2024-12-11T01:43:06.000Z">
+<meta property="article:modified_time" content="2024-12-11T01:50:20.751Z">
 <meta property="article:author" content="一又四分之一">
-<meta property="article:tag" content="计组">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>计组期末复习 - one-and-one-fourth</title>
+  <title>mysql常用字符集和排序规则 - one-and-one-fourth</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -226,7 +226,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="计组期末复习"></span>
+            <span id="subtitle" data-typed-text="mysql常用字符集和排序规则"></span>
           
         </div>
 
@@ -237,8 +237,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-12-05 10:33" pubdate>
-          2024年12月5日 上午
+        <time datetime="2024-12-11 09:43" pubdate>
+          2024年12月11日 上午
         </time>
       </span>
     
@@ -249,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          418 字
         
       </span>
     
@@ -260,7 +260,7 @@
         
         
         
-          9 分钟
+          4 分钟
         
       </span>
     
@@ -297,57 +297,92 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">计组期末复习</h1>
+            <h1 id="seo-header">mysql常用字符集和排序规则</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="1-顺序存储和交叉存储"><a href="#1-顺序存储和交叉存储" class="headerlink" title="1.顺序存储和交叉存储"></a>1.顺序存储和交叉存储</h2><p><strong>顺序存储</strong>又称<strong>高位交叉编址</strong></p>
-<p><strong>交叉存储</strong>又称 <strong>低位交叉存储</strong></p>
-<p><strong>低位交叉</strong>存储连续取<code>n个字</code>所需的时间为<br>$$<br>t_1&#x3D;T+(n-1)τ<br>$$<br><strong>高位交叉</strong>存储连续取<code>n个字</code>所需的时间为<br>$$<br>t2&#x3D;nT<br>$$</p>
-<p>$$<br>带宽&#x3D;\frac{bit}{s}<br>[这里的是单位]<br>$$</p>
-<h2 id="2-冯·诺依曼"><a href="#2-冯·诺依曼" class="headerlink" title="2.冯·诺依曼"></a>2.冯·诺依曼</h2><p>冯·诺依曼计算机的主要<strong>设计思想是以“存储程序”为基础，是以运算器为中心的。</strong></p>
-<p>主要组成部分有：<strong>运算器，控制器</strong>(前两个合起来称为CPU)，<strong>存储器，输入设备和输出设备</strong>五大部件。</p>
-<h2 id="3-动态存储器"><a href="#3-动态存储器" class="headerlink" title="3.动态存储器"></a>3.动态存储器</h2><p>&emsp;&emsp;刷新的目的：由于存储单元被访问是随机的，有可能某些存储单元长期得不到，不进行存储器的读&#x2F;写操作，其存储单元内的原信息将会慢慢消失，为此，必须采用定时刷新的方法。</p>
-<p>常用的刷新方式：</p>
-<ol>
-<li><p>集中刷新：集中刷新是在规定的一个刷新周期内，对全部存储单元集中一段时间逐行进行刷新，此刻必须停止读&#x2F;写操作。</p>
+                <h3 id="utf8mb4-和-utf8mb3-的区别"><a href="#utf8mb4-和-utf8mb3-的区别" class="headerlink" title="utf8mb4 和 utf8mb3 的区别"></a><code>utf8mb4</code> 和 <code>utf8mb3</code> 的区别</h3><ol>
+<li><p><strong>utf8mb3</strong>：</p>
+<ul>
+<li>它是一个较旧的字符集，用于存储 UTF-8 编码的字符数据，最多支持 3 字节的字符。</li>
+<li>由于最多支持 3 字节，它不能存储一些超出基本多文种平面（BMP）范围的字符（例如 Emoji 表情等）。因此，它不支持所有的 Unicode 字符。</li>
+</ul>
 </li>
-<li><p>分散刷新：分散刷新是指对每行存储单元的刷新分散到每个存取周期内完成、</p>
-</li>
-<li><p>异步刷新：既可缩短“死时间”，又充分利用最大刷新间隔为2ms的特点。</p>
+<li><p><strong>utf8mb4</strong>：</p>
+<ul>
+<li>它是 <code>utf8mb3</code> 的超集，能够支持 4 字节的字符，包括所有 Unicode 字符（如 emoji 和一些亚洲特殊字符等）。</li>
+<li>由于支持 4 字节，<code>utf8mb4</code> 能够存储更多种类的字符，尤其是 BMP 之外的字符</li>
+</ul>
 </li>
 </ol>
-<h2 id="4-微指令、指令"><a href="#4-微指令、指令" class="headerlink" title="4.微指令、指令"></a>4.微指令、指令</h2><p>指令：指挥机器工作的指示和命令</p>
-<p>微指令：把在同一CPU周期内并行执行的微操作控制信息，存储在控制存储器里，称为一条微指令</p>
-<p>机器指令和微指令之间的关系：<br>(1) 一条机器指令对应一个微程序，这个微程序是由若干条微指令构成的。因此，一条机器指令的功能是若干条微指令组成的序列来实现的。简而言之，一条机器指令所完成的操作划分成若干条微指令来完成，由微指令进行解释和执行。</p>
-<p>(2)从指令与微指令，程序与微程序，地址与微地址的一一对应关系上看，前者与内存储器有关，而后者与控制存储器（它是微程序控制器的一部分。微程序控制器主要由控制存储器、微指令寄存器和地址转移逻辑三部分组成。其中，微指令寄存器又分为微地址寄存器和微命令寄存器两部分）有关，与此相关也有相对应的硬设备。</p>
-<p>(3)从一般指令的微程序执行流程图可以看出。每个CPU周期就对于一条微指令。这就告诉我们怎么设计微程序，也将使得我们进一步体验到机器指令很微指令的关系。</p>
-<h2 id="5-Cache主存地址映射"><a href="#5-Cache主存地址映射" class="headerlink" title="5.Cache主存地址映射"></a>5.Cache主存地址映射</h2><ol>
-<li>直接映射(一对多的方式)</li>
-<li>全相连映射 （多对多）</li>
-<li>组相连映射</li>
+<table>
+<thead>
+<tr>
+<th>字符集</th>
+<th>排序方式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>utf8mb3</code></td>
+<td><code>utf8mb3_general_ci</code></td>
+<td>不区分大小写的通用排序规则，适用于多种语言。</td>
+</tr>
+<tr>
+<td><code>utf8mb3</code></td>
+<td><code>utf8mb3_unicode_ci</code></td>
+<td>更精确的 Unicode 排序，支持更多语言。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>utf8mb4</code></td>
+<td><code>utf8mb4_general_ci</code></td>
+<td>不区分大小写的通用排序规则，适用于大多数语言。</td>
+</tr>
+<tr>
+<td><code>utf8mb4</code></td>
+<td><code>utf8mb4_unicode_ci</code></td>
+<td>更精确的 Unicode 排序，支持更多语言的复杂排序。</td>
+</tr>
+<tr>
+<td><code>utf8mb4</code></td>
+<td><code>utf8mb4_bin</code></td>
+<td>按字节顺序比较字符，区分大小写，非常精确的二进制排序规则</td>
+</tr>
+</tbody></table>
+<h3 id="xxxxx-0900-ai-ci"><a href="#xxxxx-0900-ai-ci" class="headerlink" title="xxxxx_0900_ai_ci"></a><strong><code>xxxxx_0900_ai_ci</code></strong></h3><ol>
+<li><p>**<code>0900</code>**：</p>
+<ul>
+<li><code>0900</code> 代表 MySQL 版本 8.0（MySQL 8.0 版本引入了新的 Unicode 排序规则）。这个数字表示该排序规则是在 MySQL 8.0 中引入的，并且它基于 Unicode 9.0 规范进行优化。</li>
+</ul>
+</li>
+<li><p>**<code>ai</code>**：</p>
+<ul>
+<li><code>ai</code> 代表 <strong>accent insensitive</strong>（不区分重音）。在进行字符比较时，这种排序规则会忽略字符中的重音符号（例如，<code>é</code> 和 <code>e</code> 被视为相同的字符）。</li>
+</ul>
+</li>
+<li><p>**<code>ci</code>**：</p>
+<ul>
+<li><code>ci</code> 代表 <strong>case insensitive</strong>（不区分大小写）。在字符比较时，它会忽略大小写的差异（例如，<code>A</code> 和 <code>a</code> 被视为相同的字符）</li>
+</ul>
+</li>
 </ol>
-<p>更多可参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/aiden_kevin/article/details/113198046">Cache与主存的三种地址映射详细解读</a></p>
 <hr>
-<p>&emsp;&emsp;主存容量为 512 K  * 16 位，Cache容量为 4096 * 16 位，块长为4个16位的字，访存地址为字地址</p>
-<blockquote>
-<p>Cache 容量为 $4096 &#x3D; 2^{12}$ 字，则 Cache 字地址为 12 位</p>
-<p>块长为4，且访存地址为字地址，字块内地址为 $log_2 4&#x3D;2$</p>
-<p>主存容量为 $512 K &#x3D; 2^{19}$ 字，主存地址为 19 位</p>
+<ul>
+<li><blockquote>
+<p> <strong><code>as</code></strong> &#x3D; accent sensitive（区分重音）</p>
+<p><strong><code>cs</code></strong> &#x3D; case sensitive（区分大小写</p>
 </blockquote>
-<p>&emsp;&emsp;对于直接映射和全相连映射则有 </p>
-<p><strong>主存字块标记 &#x3D; 19 - 12 &#x3D; 7</strong></p>
-<p><strong>Cache字块地址 &#x3D; $log_2\frac{4096}{4}&#x3D;log_2{2^{10}}&#x3D;10$</strong></p>
-<p><strong>字块内地址 &#x3D; 2</strong></p>
-<p>&emsp;&emsp;对于二路组相连， <strong>一个组内有两块</strong>，</p>
-<p>则 <strong>Cache 共分为 $\frac{2^{10}}{2}&#x3D;2^9$ 组</strong>，即 <strong>组地址为 9</strong>， 主存字块标记  &#x3D; 19 - 9 -2 &#x3D;8</p>
-<p>四路组相连，一个组内有 4块，则 <strong>Cache 共分为 $\frac{2^{10}}{4}&#x3D;2^8$ 组</strong></p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs text">直接映射：<br>| 主存字块标记（7） | Cache字块地址（10） | 字块内地址（2） |<br><br>全相连映射：<br>| 主存字块标记（17） | 字块内地址（2） |<br><br>二路组相连映射：<br>| 主存字块标记（8） | 组地址（9） | 字块内地址（2） |<br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="6-数据寻址"><a href="#6-数据寻址" class="headerlink" title="6.数据寻址"></a>6.数据寻址</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/vavid317/article/details/120553807">计组——十种数据寻址方式</a></p>
+</li>
+</ul>
+<div class="note note-success">
+            <p>&emsp;&emsp;常用<code>uft8mb4</code> 和 <code>utf8mb4_0900_ai_ci</code> </p>
+          </div>
 
                 
               </div>
@@ -366,15 +401,8 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%B8%8A%E5%B2%B8/" class="category-chain-item">上岸</a>
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="category-chain-item">数据库</a>
   
-  
-    <span>></span>
-    
-  <a href="/categories/%E4%B8%8A%E5%B2%B8/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="category-chain-item">计算机组成原理</a>
-  
-  
-
   
 
       </span>
@@ -388,7 +416,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%AE%A1%E7%BB%84/" class="print-no-link">#计组</a>
+        <a href="/tags/mysql/" class="print-no-link">#mysql</a>
       
     </div>
   
@@ -400,8 +428,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>计组期末复习</div>
-      <div>http://124.222.56.204/2024/12/05/计组/计组期末复习/</div>
+      <div>mysql常用字符集和排序规则</div>
+      <div>http://124.222.56.204/2024/12/11/mysql/mysql常用字符集/</div>
     </div>
     <div class="license-meta">
       
@@ -413,7 +441,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年12月5日</div>
+          <div>2024年12月11日</div>
         </div>
       
       
@@ -445,18 +473,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/12/11/mysql/mysql%E5%B8%B8%E7%94%A8%E5%AD%97%E7%AC%A6%E9%9B%86/" title="mysql常用字符集和排序规则">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">mysql常用字符集和排序规则</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/12/02/%E8%AE%A1%E7%BD%91/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="计算机网络期末复习">
-                        <span class="hidden-mobile">计算机网络期末复习</span>
+                      <a href="/2024/12/05/%E8%AE%A1%E7%BB%84/%E8%AE%A1%E7%BB%84%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/" title="计组期末复习">
+                        <span class="hidden-mobile">计组期末复习</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -513,12 +535,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -736,49 +752,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
