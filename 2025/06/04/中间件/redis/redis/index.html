@@ -16,26 +16,24 @@
   <meta name="author" content="一又四分之一">
   <meta name="keywords" content="">
   
-    <meta name="description" content="​	 1、行列式  1.1 性质 转置性质行列式转置后值不变：$$|A^T| &#x3D; |A|$$  行&#x2F;列互换两行（或列）互换，行列式变号。若两行（或列）相同，行列式为0。  公因子提取某行（或列）有公因子$k$，可提出：    推论1：某行（或列）全为0，行列式为0。   推论2：两行（或列）成比例，行列式为0。   行列式拆分若某行（或列）为两元素之和，可拆分为两个行列式之和：">
+    <meta name="description" content="windows操作docker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出  服务器相关命令ping ： 检测连接是否存活echo： 在命令行打印一些内容quit、exit： 退出客户端shutdown： 退出服务器端info： 返回redis相关信息config get dir&#x2F;*: 实时传递接收的请求showlog： 显示慢查询selec">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线代一轮复习">
-<meta property="og:url" content="http://124.222.56.204/2025/05/27/%E7%BA%BF%E4%BB%A3/%E7%BA%BF%E4%BB%A3%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:title" content="redis基本操作">
+<meta property="og:url" content="http://124.222.56.204/2025/06/04/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
-<meta property="og:description" content="​	 1、行列式  1.1 性质 转置性质行列式转置后值不变：$$|A^T| &#x3D; |A|$$  行&#x2F;列互换两行（或列）互换，行列式变号。若两行（或列）相同，行列式为0。  公因子提取某行（或列）有公因子$k$，可提出：    推论1：某行（或列）全为0，行列式为0。   推论2：两行（或列）成比例，行列式为0。   行列式拆分若某行（或列）为两元素之和，可拆分为两个行列式之和：">
+<meta property="og:description" content="windows操作docker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出  服务器相关命令ping ： 检测连接是否存活echo： 在命令行打印一些内容quit、exit： 退出客户端shutdown： 退出服务器端info： 返回redis相关信息config get dir&#x2F;*: 实时传递接收的请求showlog： 显示慢查询selec">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://124.222.56.204/img/%E7%BA%BF%E4%BB%A3/1.jpg">
-<meta property="article:published_time" content="2025-05-27T02:33:10.177Z">
-<meta property="article:modified_time" content="2025-06-02T10:04:04.847Z">
+<meta property="article:published_time" content="2025-06-04T07:27:20.236Z">
+<meta property="article:modified_time" content="2025-06-04T08:45:37.875Z">
 <meta property="article:author" content="一又四分之一">
-<meta property="article:tag" content="线代">
+<meta property="article:tag" content="redis">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://124.222.56.204/img/%E7%BA%BF%E4%BB%A3/1.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>线代一轮复习 - one-and-one-fourth</title>
+  <title>redis基本操作 - one-and-one-fourth</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -228,7 +226,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="线代一轮复习"></span>
+            <span id="subtitle" data-typed-text="redis基本操作"></span>
           
         </div>
 
@@ -239,8 +237,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-05-27 10:33" pubdate>
-          2025-05-27 10:33:10
+        <time datetime="2025-06-04 15:27" pubdate>
+          2025-06-04 15:27:20
         </time>
       </span>
     
@@ -251,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          671 字
         
       </span>
     
@@ -262,7 +260,7 @@
         
         
         
-          15 分钟
+          6 分钟
         
       </span>
     
@@ -299,12 +297,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">线代一轮复习</h1>
+            <h1 id="seo-header">redis基本操作</h1>
             
               <p id="updated-time" class="note note-default" style="">
                 
                   
-                    本文最后更新于 2025-06-02 18:04:04
+                    本文最后更新于 2025-06-04 16:45:37
                   
                 
               </p>
@@ -312,152 +310,28 @@
             
               <div class="markdown-body">
                 
-                <p>​	</p>
-<h1 id="1、行列式"><a href="#1、行列式" class="headerlink" title="1、行列式"></a>1、行列式</h1><p><img src="/../../img/%E7%BA%BF%E4%BB%A3/1.jpg" srcset="/img/loading.gif" lazyload></p>
+                <h1 id="windows操作"><a href="#windows操作" class="headerlink" title="windows操作"></a>windows操作</h1><p><code>docker exec -it 容器名字 redis-cli --raw</code> ：进入redis 容器，以原始格式输出</p>
 <hr>
-<h2 id="1-1-性质"><a href="#1-1-性质" class="headerlink" title="1.1 性质"></a>1.1 性质</h2><ol>
-<li><p><strong>转置性质</strong><br>行列式转置后值不变：<br>$$|A^T| &#x3D; |A|$$</p>
-</li>
-<li><p><strong>行&#x2F;列互换</strong><br>两行（或列）互换，行列式变号。若两行（或列）相同，行列式为0。</p>
-</li>
-<li><p><strong>公因子提取</strong><br>某行（或列）有公因子$k$，可提出：  </p>
-<ul>
-<li>推论1：某行（或列）全为0，行列式为0。  </li>
-<li>推论2：两行（或列）成比例，行列式为0。</li>
-</ul>
-</li>
-<li><p><strong>行列式拆分</strong><br>若某行（或列）为两元素之和，可拆分为两个行列式之和：<br>$$<br>\begin{vmatrix}a_1+b_1 &amp; \cdots \\ \vdots &amp; \ddots\end{vmatrix} &#x3D; \begin{vmatrix}a_1 &amp; \cdots \\ \vdots &amp; \ddots\end{vmatrix} + \begin{vmatrix}b_1 &amp; \cdots \\ \vdots &amp; \ddots\end{vmatrix}<br>$$</p>
-</li>
-<li><p><strong>倍加性质</strong><br>某行（或列）的$k$倍加到另一行（或列），行列式值不变。</p>
-</li>
-</ol>
-<h2 id="1-2-行列式展开公式"><a href="#1-2-行列式展开公式" class="headerlink" title="1.2 行列式展开公式"></a>1.2 行列式展开公式</h2><ol>
-<li><p><strong>余子式与代数余子式</strong>  </p>
-<ul>
-<li>余子式$M_{ij}$：划去$a_{ij}$所在行、列得到的$(n-1)$阶行列式。  </li>
-<li>代数余子式$A_{ij} &#x3D; (-1)^{i+j}M_{ij}$。</li>
-</ul>
-</li>
-<li><p><strong>展开定理</strong>  </p>
-<ul>
-<li><p><strong>定理1.1</strong>：行列式可按任意行（列）展开：<br>$$<br>|A| &#x3D; \sum_{k&#x3D;1}^n a_{ik}A_{ik} \quad \text{（按第$i$行展开）}<br>$$</p>
-<p>$$<br>|A| &#x3D; \sum_{k&#x3D;1}^n a_{kj}A_{kj} \quad \text{（按第$j$列展开）}<br>$$</p>
-</li>
-<li><p><strong>定理1.2</strong>：不同行（列）的代数余子式乘积和为0：<br>$$<br>\sum_{k&#x3D;1}^n a_{ik}A_{jk} &#x3D; 0 \quad (i \ne j)<br>$$</p>
-</li>
-</ul>
-</li>
-</ol>
-<h2 id="1-3-特殊行列式"><a href="#1-3-特殊行列式" class="headerlink" title="1.3 特殊行列式"></a>1.3 特殊行列式</h2><ol>
-<li><p><strong>三角形行列式</strong><br> 上（下）三角行列式等于主对角线元素乘积：<br>$$<br>  \begin{vmatrix}a_{11} &amp; \cdots &amp; a_{1n} \\ &amp; \ddots &amp; \vdots \\ 0 &amp; &amp; a_{nn}\end{vmatrix} &#x3D; a_{11}a_{22}\cdots a_{nn}<br>$$</p>
-</li>
-<li><p><strong>副对角线行列式</strong><br>$$<br>  \begin{vmatrix}0 &amp; \cdots &amp; a_{1n} \\ \vdots &amp; \ddots &amp; \vdots \\ a_{n1} &amp; \cdots &amp; 0\end{vmatrix} &#x3D; (-1)^{\frac{n(n-1)}{2}} a_{1n}a_{2,n-1}\cdots a_{n1}<br>$$</p>
-</li>
-<li><p><strong>分块行列式（拉普拉斯展开）</strong></p>
-</li>
-</ol>
-<ul>
-<li><p>若$A$为$m$阶，$B$为$n$阶矩阵：<br>$$<br>\begin{vmatrix}A &amp; * \\ O &amp; B\end{vmatrix} &#x3D; |A|\cdot|B|<br>$$</p>
-<p>$$<br>\begin{vmatrix}O &amp; A \\ B &amp; *\end{vmatrix} &#x3D; (-1)^{mn}|A|\cdot|B|<br>$$</p>
-</li>
-</ul>
-<ol start="4">
-<li><strong>范德蒙行列式</strong><br>$$<br>  \begin{vmatrix}1 &amp; \cdots &amp; 1 \\ x_1 &amp; \cdots &amp; x_n \\ \vdots &amp; \ddots &amp; \vdots \\ x_1^{n-1} &amp; \cdots &amp; x_n^{n-1}\end{vmatrix} &#x3D; \prod_{1 \leq j &lt; i \leq n} (x_i - x_j)<br>$$<br>  注：</li>
-</ol>
-<h2 id="1-4-克拉默法则"><a href="#1-4-克拉默法则" class="headerlink" title="1.4 克拉默法则"></a>1.4 克拉默法则</h2><p><strong>定理1.3（克拉默法则）</strong></p>
-<p>对于由 ( n ) 个方程、( n ) 个未知量构成的非齐次线性方程组：<br>$$<br>\begin{cases}<br>a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &#x3D; b_1, \\<br>a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &#x3D; b_2, \\<br>\vdots \\<br>a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n &#x3D; b_n<br>\end{cases}<br>$$<br>若其系数行列式 ( $|A| \neq 0 $)，则方程组有唯一解：<br>$$<br>x_i &#x3D; \frac{|A_i|}{|A|}, \quad i &#x3D; 1, 2, \cdots, n<br>$$<br>其中 ($ |A_i| $) 是将 $( |A| $) 的第 ($ i $) 列替换为常数项 ( $b_1, b_2, \cdots, b_n $) 所得的行列式。</p>
-<p><strong>注：</strong></p>
-<ol>
-<li><strong>唯一解条件</strong>：仅当 ($ |A| \neq 0 $) 时适用。  </li>
-<li><strong>特殊情况</strong>：  <ul>
-<li>若 ( $|A| &#x3D; 0 $)，方程组可能无解或有无穷多解，但<strong>不可能有唯一解</strong>。</li>
-</ul>
-</li>
-</ol>
-<p><strong>推论（齐次线性方程组）</strong></p>
-<p>对于齐次线性方程组（常数项全为0）：  </p>
-<ul>
-<li>若 ( $|A| \neq 0 $)，方程组仅有零解 ($ x_1 &#x3D; x_2 &#x3D; \cdots &#x3D; x_n &#x3D; 0 $)。  </li>
-<li>若 ($ |A| &#x3D; 0 $)，方程组存在非零解（无穷多解）。</li>
-</ul>
-<h1 id="2、矩阵"><a href="#2、矩阵" class="headerlink" title="2、矩阵"></a>2、矩阵</h1><h2 id="2-1-矩阵多项式"><a href="#2-1-矩阵多项式" class="headerlink" title="2.1 矩阵多项式"></a>2.1 矩阵多项式</h2><h2 id="2-2-运算法则"><a href="#2-2-运算法则" class="headerlink" title="2.2 运算法则"></a>2.2 运算法则</h2><h3 id="1-加法"><a href="#1-加法" class="headerlink" title="(1) 加法"></a>(1) 加法</h3><p>设 $A$, $B$, $C$ 为同型矩阵，则：  </p>
-<ul>
-<li><strong>交换律</strong>：$A + B &#x3D; B + A$  </li>
-<li><strong>结合律</strong>：$(A + B) + C &#x3D; A + (B + C)$  </li>
-<li><strong>零矩阵</strong>：$A + O &#x3D; A$（$O$ 为同型零矩阵）  </li>
-<li><strong>负矩阵</strong>：$A + (-A) &#x3D; O$</li>
-</ul>
-<h3 id="2-数乘矩阵"><a href="#2-数乘矩阵" class="headerlink" title="(2) 数乘矩阵"></a>(2) 数乘矩阵</h3><p>设 $k$, $m$ 为标量，则：  </p>
-<ul>
-<li><strong>结合性</strong>：$k(mA) &#x3D; (km)A &#x3D; m(kA)$  </li>
-<li><strong>分配律</strong>：$(k + m)A &#x3D; kA + mA$  </li>
-<li><strong>线性性</strong>：$k(A + B) &#x3D; kA + kB$  </li>
-<li><strong>单位数乘</strong>：$1A &#x3D; A$, $0A &#x3D; O$</li>
-</ul>
-<h3 id="3-乘法"><a href="#3-乘法" class="headerlink" title="(3) 乘法"></a>(3) 乘法</h3><p>若矩阵 $A$, $B$, $C$ 满足乘法条件，则：  </p>
-<ul>
-<li><strong>结合律</strong>：$(AB)C &#x3D; A(BC)$  </li>
-<li><strong>左分配律</strong>：$A(B + C) &#x3D; AB + AC$  </li>
-<li><strong>右分配律</strong>：$(B + C)A &#x3D; BA + CA$</li>
-</ul>
-<h3 id="4-转置"><a href="#4-转置" class="headerlink" title="(4) 转置"></a>(4) 转置</h3><ul>
-<li><strong>和的转置</strong>：$(A + B)^T &#x3D; A^T + B^T$  </li>
-<li><strong>数乘转置</strong>：$(kA)^T &#x3D; kA^T$  </li>
-<li><strong>积的转置</strong>：$(AB)^T &#x3D; B^T A^T$ </li>
-<li><strong>转置的转置</strong>：$(A^T)^T &#x3D; A$</li>
-</ul>
+<h1 id="服务器相关命令"><a href="#服务器相关命令" class="headerlink" title="服务器相关命令"></a>服务器相关命令</h1><p><code>ping</code> ： 检测连接是否存活<br><code>echo</code>： 在命令行打印一些内容<br><code>quit、exit</code>： 退出客户端<br><code>shutdown</code>： 退出服务器端<br><code>info</code>： 返回redis相关信息<br><code>config get dir/*</code>: 实时传递接收的请求<br><code>showlog</code>： 显示慢查询<br><code>select n</code>： 切换到数据库n，redis 默认有16个数据库（DB 0~DB 15），默认使用的第0个<br><code>dbsize</code>： 查看当前数据库大小<br><code>move key n</code>： 不同数据库之间数据是不能互通的，move移动键到指定数据库<br><code>flushdb</code>： 清空<strong>当前数据库</strong>中的键值对<br><code>flushall</code>： 清空<strong>所有数据库</strong>的键值对</p>
 <hr>
-<p><strong>注</strong>：矩阵乘法一般不满足交换律（即 $AB \neq BA$）。  </p>
-<h2 id="2-3-对角矩阵的性质与运算"><a href="#2-3-对角矩阵的性质与运算" class="headerlink" title="2.3 对角矩阵的性质与运算"></a>2.3 对角矩阵的性质与运算</h2><p>对角矩阵乘法</p>
-<p>两个对角矩阵相乘结果仍为对角矩阵，且元素为对应位置相乘:<br>$$<br>\begin{bmatrix}<br>a_1 &amp; 0 &amp; 0 \\<br>0 &amp; a_2 &amp; 0 \\<br>0 &amp; 0 &amp; a_3<br>\end{bmatrix}<br>\begin{bmatrix}<br>b_1 &amp; 0 &amp; 0 \\<br>0 &amp; b_2 &amp; 0 \\<br>0 &amp; 0 &amp; b_3<br>\end{bmatrix} &#x3D;<br>\begin{bmatrix}<br>a_1 b_1 &amp; 0 &amp; 0 \\<br>0 &amp; a_2 b_2 &amp; 0 \\<br>0 &amp; 0 &amp; a_3 b_3<br>\end{bmatrix}<br>$$</p>
-<p><strong>性质</strong></p>
-<ol>
-<li><p><strong>交换律</strong><br>对角矩阵乘法可交换：$\Lambda_1 \Lambda_2 &#x3D; \Lambda_2 \Lambda_1$。</p>
-</li>
-<li><p><strong>逆矩阵</strong><br>若对角元素均非零（$a_i \neq 0$），其逆矩阵为元素取倒数：</p>
-</li>
-</ol>
-<p>$$<br>\begin{bmatrix}<br>a_1 &amp; 0 &amp; 0 \\<br>0 &amp; a_2 &amp; 0 \\<br>0 &amp; 0 &amp; a_3<br>\end{bmatrix}^{-1} &#x3D; \begin{bmatrix}<br>\frac{1}{a_1} &amp; 0 &amp; 0 \\<br>0 &amp; \frac{1}{a_2} &amp; 0 \\<br>0 &amp; 0 &amp; \frac{1}{a_3}<br>\end{bmatrix}<br>$$</p>
+<h1 id="key相关"><a href="#key相关" class="headerlink" title="key相关"></a>key相关</h1><p><code>keys * </code>：查看当前数据库中所有的key<br><code>dbsize</code>： 键总数<br><code>exists key</code>： 检查键是否存在<br><code>del key [key …]</code>： 删除键<br><code>expire key seconds</code>： 键过期<br><code>ttl key</code>： 获取键的有效时长<br><code>persist key</code>： 移除键的过期时间<br><code>type key</code>： 键的数据结构类型<br><code>randomkey</code>： 随机返回数据库中一个键<br><code>rename key1 key2</code> ： 重命名<br><code>renamex key1 key2</code> ： 当 key2 不存在时，key1 重命名</p>
 <hr>
-<h2 id="2-4-伴随矩阵"><a href="#2-4-伴随矩阵" class="headerlink" title="2.4 伴随矩阵"></a>2.4 伴随矩阵</h2><p>设 $A$ 是一个 $n$ 阶方阵（$n \geq 2$），其伴随矩阵 $A^*$（或记作 $\text{adj}(A)$）定义为：<br>$$<br>A^* &#x3D; \begin{bmatrix}<br>A_{11} &amp; A_{21} &amp; \cdots &amp; A_{n1} \\<br>A_{12} &amp; A_{22} &amp; \cdots &amp; A_{n2} \\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>A_{1n} &amp; A_{2n} &amp; \cdots &amp; A_{nn}<br>\end{bmatrix}<br>$$<br>其中 $A_{ij}$ 是矩阵 $A$ 的元素 $a_{ij}$ 的<strong>代数余子式</strong>（Cofactor），即：<br>$$<br>A_{ij} &#x3D; (-1)^{i+j} M_{ij},<br>$$<br>$M_{ij}$ 是 $A$ 删去第 $i$ 行第 $j$ 列后得到的 $(n-1)$ 阶子矩阵的行列式。</p>
+<h1 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">SET key value         <span class="hljs-comment"># 设置键值对</span><br>GET key               <span class="hljs-comment"># 获取键的值</span><br>INCR key              <span class="hljs-comment"># 键值递增 1（要求值为数字）</span><br>incrby key increment  <span class="hljs-comment"># 增加 increment</span><br>DECR key              <span class="hljs-comment"># 键值递减 1</span><br>APPEND key <span class="hljs-string">&quot;text&quot;</span>     <span class="hljs-comment"># 追加字符串到键值末尾</span><br>STRLEN key            <span class="hljs-comment"># 获取字符串长度</span><br>MSET key1 val1 key2 val2  <span class="hljs-comment"># 批量设置键值对</span><br>MGET key1 key2        <span class="hljs-comment"># 批量获取键的值</span><br></code></pre></td></tr></table></figure>
+
 <hr>
-<p><strong>伴随矩阵的公式：</strong></p>
-<p>$AA^* &#x3D; A^*A &#x3D; |A|E$</p>
-<p>$(A^*)^{-1} &#x3D; (A^{-1})^* &#x3D; \frac{1}{|A|}A$ ($|A|\neq 0$)</p>
-<p>$(kA)^* &#x3D; k^{n-1}A^*$</p>
-<p>$(A^*)^{\top} &#x3D; (A^{\top})^*$</p>
-<p>$|A^*| &#x3D; |A|^{n-1}$</p>
-<p>$(A^*)^* &#x3D; |A|^{n-2}A$ ($n \geq 2$)</p>
+<h1 id="哈希（Hash）操作"><a href="#哈希（Hash）操作" class="headerlink" title="哈希（Hash）操作"></a>哈希（Hash）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">HSET user:1 name <span class="hljs-string">&quot;Alice&quot;</span> age 30  <span class="hljs-comment"># 设置哈希字段</span><br>HGET user:1 name                <span class="hljs-comment"># 获取哈希字段的值</span><br>HGETALL user:1                  <span class="hljs-comment"># 获取哈希的所有字段和值</span><br>HKEYS user:1                    <span class="hljs-comment"># 获取哈希的所有字段名</span><br>HVALS user:1                    <span class="hljs-comment"># 获取哈希的所有字段值</span><br>HINCRBY user:1 age 1            <span class="hljs-comment"># 哈希字段值递增</span><br></code></pre></td></tr></table></figure>
+
+<p><code>user:1</code>：哈希的键名，通常使用 <code>对象类型:ID</code> 的格式</p>
 <hr>
-<h2 id="2-4-可逆矩阵的概念与定理"><a href="#2-4-可逆矩阵的概念与定理" class="headerlink" title="2.4 可逆矩阵的概念与定理"></a>2.4 可逆矩阵的概念与定理</h2><p><strong>定义</strong> 设 $A$ 是 $n$ 阶矩阵，如果存在 $n$ 阶矩阵 $B$ 使得</p>
-<p>$AB &#x3D; BA &#x3D; E$（单位矩阵）</p>
-<p>成立，则称 $A$ 是<strong>可逆矩阵</strong>或<strong>非奇异矩阵</strong>，$B$ 是 $A$ 的逆矩阵，记成 $A^{-1} &#x3D; B$。</p>
-<p><strong>定理 2.1</strong> 若 $A$ 可逆，则 $A$ 的逆矩阵唯一。</p>
-<p><strong>定理 2.2</strong> $A$ 可逆 $\Leftrightarrow$ $|A| \neq 0$。</p>
-<p><strong>定理 2.3</strong> 设 $A$ 和 $B$ 是 $n$ 阶矩阵且 $AB &#x3D; E$，则 $BA &#x3D; E$。</p>
+<h1 id="列表（List）操作"><a href="#列表（List）操作" class="headerlink" title="列表（List）操作"></a>列表（List）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">LPUSH list <span class="hljs-string">&quot;item1&quot;</span> <span class="hljs-string">&quot;item2&quot;</span>      <span class="hljs-comment"># 从左侧插入元素</span><br>RPUSH list <span class="hljs-string">&quot;item3&quot;</span>              <span class="hljs-comment"># 从右侧插入元素</span><br>LPOP list                       <span class="hljs-comment"># 从左侧弹出元素</span><br>RPOP list                       <span class="hljs-comment"># 从右侧弹出元素</span><br>LRANGE list 0 -1                <span class="hljs-comment"># 获取列表所有元素</span><br>LLEN list                       <span class="hljs-comment"># 获取列表长度</span><br></code></pre></td></tr></table></figure>
+
 <hr>
-<p><strong>3. $n$ 阶矩阵 $A$ 可逆的充分必要条件</strong></p>
-<ol>
-<li>存在 $n$ 阶矩阵 $B$，使 $AB &#x3D; E$（或 $BA &#x3D; E$）</li>
-<li>$|A| \neq 0$，或秩 $r(A) &#x3D; n$，或 $A$ 的列（行）向量线性无关</li>
-<li>齐次方程组 $Ax &#x3D; 0$ 只有零解</li>
-<li>$\forall b$，非齐次线性方程组 $Ax &#x3D; b$ 总有唯一解</li>
-<li>矩阵 $A$ 的特征值全不为 0</li>
-</ol>
+<h1 id="集合（Set）操作"><a href="#集合（Set）操作" class="headerlink" title="集合（Set）操作"></a>集合（Set）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">SADD <span class="hljs-built_in">set</span> <span class="hljs-string">&quot;member1&quot;</span> <span class="hljs-string">&quot;member2&quot;</span>    <span class="hljs-comment"># 添加集合成员</span><br>SMEMBERS <span class="hljs-built_in">set</span>                    <span class="hljs-comment"># 获取集合所有成员</span><br>SISMEMBER <span class="hljs-built_in">set</span> <span class="hljs-string">&quot;member1&quot;</span>         <span class="hljs-comment"># 检查成员是否存在</span><br>SCARD <span class="hljs-built_in">set</span>                       <span class="hljs-comment"># 获取集合成员数量</span><br>SINTER set1 set2                <span class="hljs-comment"># 获取多个集合的交集</span><br>SUNION set1 set2                <span class="hljs-comment"># 获取多个集合的并集</span><br></code></pre></td></tr></table></figure>
+
 <hr>
-<p><strong>4. 逆矩阵的运算性质</strong></p>
-<p>若 $k \neq 0$, $A$ 可逆，则 $(kA)^{-1} &#x3D; \frac{1}{k}A^{-1}$。</p>
-<p>若 $A, B$ 可逆，则 $(AB)^{-1} &#x3D; B^{-1}A^{-1}$，特别地 $(A^2)^{-1} &#x3D; (A^{-1})^2$。</p>
-<p>若 $A^{\top}$ 可逆，则 $(A^{\top})^{-1} &#x3D; (A^{-1})^{\top}$；$(A^{-1})^{-1} &#x3D; A$；$|A^{-1}| &#x3D; \frac{1}{|A|}$。</p>
-<p><strong>注意</strong> 即使 $A, B$ 和 $A + B$ 都可逆，一般地 $(A + B)^{-1} \neq A^{-1} + B^{-1}$。</p>
-<hr>
-<p><strong>5. 求逆矩阵的方法</strong></p>
-<p><strong>方法一</strong> 用公式，若 $|A|\neq0$，则 $A^{-1}&#x3D;\frac{1}{|A|}A^*$。</p>
-<p><strong>方法二</strong> 初等变换法。$(A:E) \xrightarrow{\text{初等行变换}} (E:A^{-1})$。</p>
-<p><strong>方法三</strong> 用定义求 $B$，使 $AB&#x3D;E$ 或 $BA&#x3D;E$，则 $A$ 可逆，且 $A^{-1}&#x3D;B$。</p>
-<p><strong>方法四</strong> 用分块矩阵。</p>
-<p>设 $B,C$ 都是可逆矩阵，则<br>$$<br>\begin{bmatrix}<br>B &amp; O \\<br>O &amp; C<br>\end{bmatrix}^{-1} &#x3D;<br>\begin{bmatrix}<br>B^{-1} &amp; O \\<br>O &amp; C^{-1}<br>\end{bmatrix},<br>\begin{bmatrix}<br>O &amp; B \\<br>C &amp; O<br>\end{bmatrix}^{-1} &#x3D;<br>\begin{bmatrix}<br>O &amp; C^{-1} \\<br>B^{-1} &amp; O<br>\end{bmatrix}<br>$$</p>
-<h1 id="3、向量"><a href="#3、向量" class="headerlink" title="3、向量"></a>3、向量</h1><h1 id="4、线性方程组"><a href="#4、线性方程组" class="headerlink" title="4、线性方程组"></a>4、线性方程组</h1><h1 id="5、特征值和特征向量"><a href="#5、特征值和特征向量" class="headerlink" title="5、特征值和特征向量"></a>5、特征值和特征向量</h1><h1 id="6、二次型"><a href="#6、二次型" class="headerlink" title="6、二次型"></a>6、二次型</h1>
+<h1 id="有序集合（Sorted-Set）操作"><a href="#有序集合（Sorted-Set）操作" class="headerlink" title="有序集合（Sorted Set）操作"></a>有序集合（Sorted Set）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">ZADD zset 10 <span class="hljs-string">&quot;member1&quot;</span> 20 <span class="hljs-string">&quot;member2&quot;</span>  <span class="hljs-comment"># 添加有序集合成员（分数在前）</span><br>ZRANGE zset 0 -1 WITHSCORES          <span class="hljs-comment"># 获取有序集合所有成员（按分数升序）</span><br>ZREVRANGE zset 0 -1 WITHSCORES       <span class="hljs-comment"># 获取有序集合所有成员（按分数降序）WITHSCORES：可选参数，指定是否返回分数。如果省略，则只返回成员名称</span><br>ZRANK zset <span class="hljs-string">&quot;member1&quot;</span>                 <span class="hljs-comment"># 获取成员的排名（分数升序）</span><br>ZCOUNT zset 10 20                    <span class="hljs-comment"># 获取分数范围内的成员数量</span><br></code></pre></td></tr></table></figure>
+
+
                 
               </div>
             
@@ -475,12 +349,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%B8%8A%E5%B2%B8/" class="category-chain-item">上岸</a>
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="category-chain-item">中间件</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E4%B8%8A%E5%B2%B8/%E7%BA%BF%E4%BB%A3/" class="category-chain-item">线代</a>
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/" class="category-chain-item">redis</a>
   
   
 
@@ -497,7 +371,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%BA%BF%E4%BB%A3/" class="print-no-link">#线代</a>
+        <a href="/tags/redis/" class="print-no-link">#redis</a>
       
     </div>
   
@@ -509,8 +383,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>线代一轮复习</div>
-      <div>http://124.222.56.204/2025/05/27/线代/线代一轮复习/</div>
+      <div>redis基本操作</div>
+      <div>http://124.222.56.204/2025/06/04/中间件/redis/redis/</div>
     </div>
     <div class="license-meta">
       
@@ -522,13 +396,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025-05-27 10:33:10</div>
+          <div>2025-06-04 15:27:20</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-06-02 18:04:04</div>
+          <div>2025-06-04 16:45:37</div>
         </div>
       
       
@@ -559,18 +433,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/06/04/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis/" title="redis基本操作">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">redis基本操作</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/02/26/%E9%AB%98%E6%95%B0/%E9%AB%98%E6%95%B0%E5%AE%9A%E7%A7%AF%E5%88%86/" title="定积分">
-                        <span class="hidden-mobile">定积分</span>
+                      <a href="/2025/05/27/%E7%BA%BF%E4%BB%A3/%E7%BA%BF%E4%BB%A3%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0/" title="线代一轮复习">
+                        <span class="hidden-mobile">线代一轮复习</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
