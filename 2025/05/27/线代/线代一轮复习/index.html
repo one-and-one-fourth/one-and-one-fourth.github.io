@@ -1,0 +1,1056 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="一又四分之一">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="​	 1、行列式  1.1 性质 转置性质行列式转置后值不变：$$|A^T| &#x3D; |A|$$  行&#x2F;列互换两行（或列）互换，行列式变号。若两行（或列）相同，行列式为0。  公因子提取某行（或列）有公因子$k$，可提出：    推论1：某行（或列）全为0，行列式为0。   推论2：两行（或列）成比例，行列式为0。   行列式拆分若某行（或列）为两元素之和，可拆分为两个行列式之和：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线代一轮复习">
+<meta property="og:url" content="http://124.222.56.204/2025/05/27/%E7%BA%BF%E4%BB%A3/%E7%BA%BF%E4%BB%A3%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="one-and-one-fourth">
+<meta property="og:description" content="​	 1、行列式  1.1 性质 转置性质行列式转置后值不变：$$|A^T| &#x3D; |A|$$  行&#x2F;列互换两行（或列）互换，行列式变号。若两行（或列）相同，行列式为0。  公因子提取某行（或列）有公因子$k$，可提出：    推论1：某行（或列）全为0，行列式为0。   推论2：两行（或列）成比例，行列式为0。   行列式拆分若某行（或列）为两元素之和，可拆分为两个行列式之和：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://124.222.56.204/img/%E7%BA%BF%E4%BB%A3/1.jpg">
+<meta property="article:published_time" content="2025-05-27T02:33:10.177Z">
+<meta property="article:modified_time" content="2025-06-04T16:30:52.010Z">
+<meta property="article:author" content="一又四分之一">
+<meta property="article:tag" content="线代">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://124.222.56.204/img/%E7%BA%BF%E4%BB%A3/1.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>线代一轮复习 - one-and-one-fourth</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"124.222.56.204","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>一又四分之一</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="线代一轮复习"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2025-05-27 10:33" pubdate>
+          2025-05-27 10:33:10
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          29 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">线代一轮复习</h1>
+            
+              <p id="updated-time" class="note note-default" style="">
+                
+                  
+                    本文最后更新于 2025-06-05 00:30:52
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <p>​	</p>
+<h1 id="1、行列式"><a href="#1、行列式" class="headerlink" title="1、行列式"></a>1、行列式</h1><p><img src="/../../img/%E7%BA%BF%E4%BB%A3/1.jpg" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<h2 id="1-1-性质"><a href="#1-1-性质" class="headerlink" title="1.1 性质"></a>1.1 性质</h2><ol>
+<li><p><strong>转置性质</strong><br>行列式转置后值不变：<br>$$|A^T| &#x3D; |A|$$</p>
+</li>
+<li><p><strong>行&#x2F;列互换</strong><br>两行（或列）互换，行列式变号。若两行（或列）相同，行列式为0。</p>
+</li>
+<li><p><strong>公因子提取</strong><br>某行（或列）有公因子$k$，可提出：  </p>
+<ul>
+<li>推论1：某行（或列）全为0，行列式为0。  </li>
+<li>推论2：两行（或列）成比例，行列式为0。</li>
+</ul>
+</li>
+<li><p><strong>行列式拆分</strong><br>若某行（或列）为两元素之和，可拆分为两个行列式之和：<br>$$<br>\begin{vmatrix}a_1+b_1 &amp; \cdots \\ \vdots &amp; \ddots\end{vmatrix} &#x3D; \begin{vmatrix}a_1 &amp; \cdots \\ \vdots &amp; \ddots\end{vmatrix} + \begin{vmatrix}b_1 &amp; \cdots \\ \vdots &amp; \ddots\end{vmatrix}<br>$$</p>
+</li>
+<li><p><strong>倍加性质</strong><br>某行（或列）的$k$倍加到另一行（或列），行列式值不变。</p>
+</li>
+</ol>
+<h2 id="1-2-行列式展开公式"><a href="#1-2-行列式展开公式" class="headerlink" title="1.2 行列式展开公式"></a>1.2 行列式展开公式</h2><ol>
+<li><p><strong>余子式与代数余子式</strong>  </p>
+<ul>
+<li>余子式$M_{ij}$：划去$a_{ij}$所在行、列得到的$(n-1)$阶行列式。  </li>
+<li>代数余子式$A_{ij} &#x3D; (-1)^{i+j}M_{ij}$。</li>
+</ul>
+</li>
+<li><p><strong>展开定理</strong>  </p>
+<ul>
+<li><p><strong>定理1.1</strong>：行列式可按任意行（列）展开：<br>$$<br>|A| &#x3D; \sum_{k&#x3D;1}^n a_{ik}A_{ik} \quad \text{（按第$i$行展开）}<br>$$</p>
+<p>$$<br>|A| &#x3D; \sum_{k&#x3D;1}^n a_{kj}A_{kj} \quad \text{（按第$j$列展开）}<br>$$</p>
+</li>
+<li><p><strong>定理1.2</strong>：不同行（列）的代数余子式乘积和为0：<br>$$<br>\sum_{k&#x3D;1}^n a_{ik}A_{jk} &#x3D; 0 \quad (i \ne j)<br>$$</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="1-3-特殊行列式"><a href="#1-3-特殊行列式" class="headerlink" title="1.3 特殊行列式"></a>1.3 特殊行列式</h2><ol>
+<li><p><strong>三角形行列式</strong><br> 上（下）三角行列式等于主对角线元素乘积：<br>$$<br>  \begin{vmatrix}a_{11} &amp; \cdots &amp; a_{1n} \\ &amp; \ddots &amp; \vdots \\ 0 &amp; &amp; a_{nn}\end{vmatrix} &#x3D; a_{11}a_{22}\cdots a_{nn}<br>$$</p>
+</li>
+<li><p><strong>副对角线行列式</strong><br>$$<br>  \begin{vmatrix}0 &amp; \cdots &amp; a_{1n} \\ \vdots &amp; \ddots &amp; \vdots \\ a_{n1} &amp; \cdots &amp; 0\end{vmatrix} &#x3D; (-1)^{\frac{n(n-1)}{2}} a_{1n}a_{2,n-1}\cdots a_{n1}<br>$$</p>
+</li>
+<li><p><strong>分块行列式（拉普拉斯展开）</strong></p>
+</li>
+</ol>
+<ul>
+<li><p>若$A$为$m$阶，$B$为$n$阶矩阵：<br>$$<br>\begin{vmatrix}A &amp; * \\ O &amp; B\end{vmatrix} &#x3D; |A|\cdot|B|<br>$$</p>
+<p>$$<br>\begin{vmatrix}O &amp; A \\ B &amp; *\end{vmatrix} &#x3D; (-1)^{mn}|A|\cdot|B|<br>$$</p>
+</li>
+</ul>
+<ol start="4">
+<li><strong>范德蒙行列式</strong><br>$$<br>  \begin{vmatrix}1 &amp; \cdots &amp; 1 \\ x_1 &amp; \cdots &amp; x_n \\ \vdots &amp; \ddots &amp; \vdots \\ x_1^{n-1} &amp; \cdots &amp; x_n^{n-1}\end{vmatrix} &#x3D; \prod_{1 \leq j &lt; i \leq n} (x_i - x_j)<br>$$<br>  注：</li>
+</ol>
+<h2 id="1-4-克拉默法则"><a href="#1-4-克拉默法则" class="headerlink" title="1.4 克拉默法则"></a>1.4 克拉默法则</h2><p><strong>定理1.3（克拉默法则）</strong></p>
+<p>对于由 ( n ) 个方程、( n ) 个未知量构成的非齐次线性方程组：<br>$$<br>\begin{cases}<br>a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &#x3D; b_1, \\<br>a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &#x3D; b_2, \\<br>\vdots \\<br>a_{n1}x_1 + a_{n2}x_2 + \cdots + a_{nn}x_n &#x3D; b_n<br>\end{cases}<br>$$<br>若其系数行列式 ( $|A| \neq 0 $)，则方程组有唯一解：<br>$$<br>x_i &#x3D; \frac{|A_i|}{|A|}, \quad i &#x3D; 1, 2, \cdots, n<br>$$<br>其中 ($ |A_i| $) 是将 $( |A| $) 的第 ($ i $) 列替换为常数项 ( $b_1, b_2, \cdots, b_n $) 所得的行列式。</p>
+<p><strong>注：</strong></p>
+<ol>
+<li><strong>唯一解条件</strong>：仅当 ($ |A| \neq 0 $) 时适用。  </li>
+<li><strong>特殊情况</strong>：  <ul>
+<li>若 ( $|A| &#x3D; 0 $)，方程组可能无解或有无穷多解，但<strong>不可能有唯一解</strong>。</li>
+</ul>
+</li>
+</ol>
+<p><strong>推论（齐次线性方程组）</strong></p>
+<p>对于齐次线性方程组（常数项全为0）：  </p>
+<ul>
+<li>若 ( $|A| \neq 0 $)，方程组仅有零解 ($ x_1 &#x3D; x_2 &#x3D; \cdots &#x3D; x_n &#x3D; 0 $)。  </li>
+<li>若 ($ |A| &#x3D; 0 $)，方程组存在非零解（无穷多解）。</li>
+</ul>
+<h1 id="2、矩阵"><a href="#2、矩阵" class="headerlink" title="2、矩阵"></a>2、矩阵</h1><h2 id="2-1-矩阵多项式"><a href="#2-1-矩阵多项式" class="headerlink" title="2.1 矩阵多项式"></a>2.1 矩阵多项式</h2><h2 id="2-2-运算法则"><a href="#2-2-运算法则" class="headerlink" title="2.2 运算法则"></a>2.2 运算法则</h2><h3 id="1-加法"><a href="#1-加法" class="headerlink" title="(1) 加法"></a>(1) 加法</h3><p>设 $A$, $B$, $C$ 为同型矩阵，则：  </p>
+<ul>
+<li><strong>交换律</strong>：$A + B &#x3D; B + A$  </li>
+<li><strong>结合律</strong>：$(A + B) + C &#x3D; A + (B + C)$  </li>
+<li><strong>零矩阵</strong>：$A + O &#x3D; A$（$O$ 为同型零矩阵）  </li>
+<li><strong>负矩阵</strong>：$A + (-A) &#x3D; O$</li>
+</ul>
+<h3 id="2-数乘矩阵"><a href="#2-数乘矩阵" class="headerlink" title="(2) 数乘矩阵"></a>(2) 数乘矩阵</h3><p>设 $k$, $m$ 为标量，则：  </p>
+<ul>
+<li><strong>结合性</strong>：$k(mA) &#x3D; (km)A &#x3D; m(kA)$  </li>
+<li><strong>分配律</strong>：$(k + m)A &#x3D; kA + mA$  </li>
+<li><strong>线性性</strong>：$k(A + B) &#x3D; kA + kB$  </li>
+<li><strong>单位数乘</strong>：$1A &#x3D; A$, $0A &#x3D; O$</li>
+</ul>
+<h3 id="3-乘法"><a href="#3-乘法" class="headerlink" title="(3) 乘法"></a>(3) 乘法</h3><p>若矩阵 $A$, $B$, $C$ 满足乘法条件，则：  </p>
+<ul>
+<li><strong>结合律</strong>：$(AB)C &#x3D; A(BC)$  </li>
+<li><strong>左分配律</strong>：$A(B + C) &#x3D; AB + AC$  </li>
+<li><strong>右分配律</strong>：$(B + C)A &#x3D; BA + CA$</li>
+</ul>
+<h3 id="4-转置"><a href="#4-转置" class="headerlink" title="(4) 转置"></a>(4) 转置</h3><ul>
+<li><strong>和的转置</strong>：$(A + B)^T &#x3D; A^T + B^T$  </li>
+<li><strong>数乘转置</strong>：$(kA)^T &#x3D; kA^T$  </li>
+<li><strong>积的转置</strong>：$(AB)^T &#x3D; B^T A^T$ </li>
+<li><strong>转置的转置</strong>：$(A^T)^T &#x3D; A$</li>
+</ul>
+<hr>
+<p><strong>注</strong>：矩阵乘法一般不满足交换律（即 $AB \neq BA$）。  </p>
+<h2 id="2-3-对角矩阵的性质与运算"><a href="#2-3-对角矩阵的性质与运算" class="headerlink" title="2.3 对角矩阵的性质与运算"></a>2.3 对角矩阵的性质与运算</h2><p>对角矩阵乘法</p>
+<p>两个对角矩阵相乘结果仍为对角矩阵，且元素为对应位置相乘:<br>$$<br>\begin{bmatrix}<br>a_1 &amp; 0 &amp; 0 \\<br>0 &amp; a_2 &amp; 0 \\<br>0 &amp; 0 &amp; a_3<br>\end{bmatrix}<br>\begin{bmatrix}<br>b_1 &amp; 0 &amp; 0 \\<br>0 &amp; b_2 &amp; 0 \\<br>0 &amp; 0 &amp; b_3<br>\end{bmatrix} &#x3D;<br>\begin{bmatrix}<br>a_1 b_1 &amp; 0 &amp; 0 \\<br>0 &amp; a_2 b_2 &amp; 0 \\<br>0 &amp; 0 &amp; a_3 b_3<br>\end{bmatrix}<br>$$</p>
+<p><strong>性质</strong></p>
+<ol>
+<li><p><strong>交换律</strong><br>对角矩阵乘法可交换：$\Lambda_1 \Lambda_2 &#x3D; \Lambda_2 \Lambda_1$。</p>
+</li>
+<li><p><strong>逆矩阵</strong><br>若对角元素均非零（$a_i \neq 0$），其逆矩阵为元素取倒数：</p>
+</li>
+</ol>
+<p>$$<br>\begin{bmatrix}<br>a_1 &amp; 0 &amp; 0 \\<br>0 &amp; a_2 &amp; 0 \\<br>0 &amp; 0 &amp; a_3<br>\end{bmatrix}^{-1} &#x3D; \begin{bmatrix}<br>\frac{1}{a_1} &amp; 0 &amp; 0 \\<br>0 &amp; \frac{1}{a_2} &amp; 0 \\<br>0 &amp; 0 &amp; \frac{1}{a_3}<br>\end{bmatrix}<br>$$</p>
+<hr>
+<h2 id="2-4-伴随矩阵"><a href="#2-4-伴随矩阵" class="headerlink" title="2.4 伴随矩阵"></a>2.4 伴随矩阵</h2><p>设 $A$ 是一个 $n$ 阶方阵（$n \geq 2$），其伴随矩阵 $A^*$（或记作 $\text{adj}(A)$）定义为：<br>$$<br>A^* &#x3D; \begin{bmatrix}<br>A_{11} &amp; A_{21} &amp; \cdots &amp; A_{n1} \\<br>A_{12} &amp; A_{22} &amp; \cdots &amp; A_{n2} \\<br>\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\<br>A_{1n} &amp; A_{2n} &amp; \cdots &amp; A_{nn}<br>\end{bmatrix}<br>$$<br>其中 $A_{ij}$ 是矩阵 $A$ 的元素 $a_{ij}$ 的<strong>代数余子式</strong>（Cofactor），即：<br>$$<br>A_{ij} &#x3D; (-1)^{i+j} M_{ij},<br>$$<br>$M_{ij}$ 是 $A$ 删去第 $i$ 行第 $j$ 列后得到的 $(n-1)$ 阶子矩阵的行列式。</p>
+<hr>
+<p><strong>伴随矩阵的公式：</strong></p>
+<p>$AA^* &#x3D; A^*A &#x3D; |A|E$</p>
+<p>$(A^*)^{-1} &#x3D; (A^{-1})^* &#x3D; \frac{1}{|A|}A$ ($|A|\neq 0$)</p>
+<p>$(kA)^* &#x3D; k^{n-1}A^*$</p>
+<p>$(A^*)^{\top} &#x3D; (A^{\top})^*$</p>
+<p>$|A^*| &#x3D; |A|^{n-1}$</p>
+<p>$(A^*)^* &#x3D; |A|^{n-2}A$ ($n \geq 2$)</p>
+<hr>
+<h2 id="2-4-可逆矩阵的概念与定理"><a href="#2-4-可逆矩阵的概念与定理" class="headerlink" title="2.4 可逆矩阵的概念与定理"></a>2.4 可逆矩阵的概念与定理</h2><p><strong>定义</strong> 设 $A$ 是 $n$ 阶矩阵，如果存在 $n$ 阶矩阵 $B$ 使得</p>
+<p>$AB &#x3D; BA &#x3D; E$（单位矩阵）</p>
+<p>成立，则称 $A$ 是<strong>可逆矩阵</strong>或<strong>非奇异矩阵</strong>，$B$ 是 $A$ 的逆矩阵，记成 $A^{-1} &#x3D; B$。</p>
+<p><strong>定理 2.1</strong> 若 $A$ 可逆，则 $A$ 的逆矩阵唯一。</p>
+<p><strong>定理 2.2</strong> $A$ 可逆 $\Leftrightarrow$ $|A| \neq 0$。</p>
+<p><strong>定理 2.3</strong> 设 $A$ 和 $B$ 是 $n$ 阶矩阵且 $AB &#x3D; E$，则 $BA &#x3D; E$。</p>
+<hr>
+<p><strong>3. $n$ 阶矩阵 $A$ 可逆的充分必要条件</strong></p>
+<ol>
+<li>存在 $n$ 阶矩阵 $B$，使 $AB &#x3D; E$（或 $BA &#x3D; E$）</li>
+<li>$|A| \neq 0$，或秩 $r(A) &#x3D; n$，或 $A$ 的列（行）向量线性无关</li>
+<li>齐次方程组 $Ax &#x3D; 0$ 只有零解</li>
+<li>$\forall b$，非齐次线性方程组 $Ax &#x3D; b$ 总有唯一解</li>
+<li>矩阵 $A$ 的特征值全不为 0</li>
+</ol>
+<hr>
+<p><strong>4. 逆矩阵的运算性质</strong></p>
+<p>若 $k \neq 0$, $A$ 可逆，则 $(kA)^{-1} &#x3D; \frac{1}{k}A^{-1}$。</p>
+<p>若 $A, B$ 可逆，则 $(AB)^{-1} &#x3D; B^{-1}A^{-1}$，特别地 $(A^2)^{-1} &#x3D; (A^{-1})^2$。</p>
+<p>若 $A^{\top}$ 可逆，则 $(A^{\top})^{-1} &#x3D; (A^{-1})^{\top}$；$(A^{-1})^{-1} &#x3D; A$；$|A^{-1}| &#x3D; \frac{1}{|A|}$。</p>
+<p><strong>注意</strong> 即使 $A, B$ 和 $A + B$ 都可逆，一般地 $(A + B)^{-1} \neq A^{-1} + B^{-1}$。</p>
+<hr>
+<p><strong>5. 求逆矩阵的方法</strong></p>
+<p><strong>方法一</strong> 用公式，若 $|A|\neq0$，则 $A^{-1}&#x3D;\frac{1}{|A|}A^*$。</p>
+<p><strong>方法二</strong> 初等变换法。$(A:E) \xrightarrow{\text{初等行变换}} (E:A^{-1})$。</p>
+<p><strong>方法三</strong> 用定义求 $B$，使 $AB&#x3D;E$ 或 $BA&#x3D;E$，则 $A$ 可逆，且 $A^{-1}&#x3D;B$。</p>
+<p><strong>方法四</strong> 用分块矩阵。</p>
+<p>设 $B,C$ 都是可逆矩阵，则<br>$$<br>\begin{bmatrix}<br>B &amp; O \\<br>O &amp; C<br>\end{bmatrix}^{-1} &#x3D;<br>\begin{bmatrix}<br>B^{-1} &amp; O \\<br>O &amp; C^{-1}<br>\end{bmatrix},<br>\begin{bmatrix}<br>O &amp; B \\<br>C &amp; O<br>\end{bmatrix}^{-1} &#x3D;<br>\begin{bmatrix}<br>O &amp; C^{-1} \\<br>B^{-1} &amp; O<br>\end{bmatrix}<br>$$</p>
+<hr>
+<h1 id="3、向量"><a href="#3、向量" class="headerlink" title="3、向量"></a>3、向量</h1><h2 id="3-1线性组合和线性表示"><a href="#3-1线性组合和线性表示" class="headerlink" title="3.1线性组合和线性表示"></a>3.1线性组合和线性表示</h2><ol>
+<li>给定向量组 $A：a_1,a_2,a_3,…,a_m$，对于任何一组实数$k_1,k_2,k_3,…,k_m$，表达式 $k_1a_1+k_2a_2+k_3a_3+···+k_ma_m$ 称为向量组 <strong>A</strong> 的一个<strong>线性组合</strong>，$k_1,k_2,k_3,…,K_m$称为这个线性组合的系数</li>
+<li>给定向量组 $A：a_1,a_2,a_3,…,a_m$，向量 $b$ ，如果存在一组数$λ_1,λ_2,λ_3,···,λ_m$，使 $b&#x3D;λ_1a_1+λ_2a_2+λ_3a_3+···+λ_ma_m$ ，则向量 <strong>b</strong> 是向量组 <strong>A</strong> 的线性组合，这时称<strong>向量 b 能由向量组 A 线性表示</strong></li>
+</ol>
+<p><strong>定理：</strong></p>
+<ul>
+<li>向量 $b$ 由向量组 $A：a_1,a_2,a_3,…,a_m$ 表示的充分必要条件是矩阵 $A&#x3D;(a_1,a_2,a_3,···,a_m)$ 的秩等于矩阵 $B&#x3D;(a_1,a_2,a_3,…,a_m,b)$ 的秩</li>
+<li>若 A ，B能互相表示，则称他们是<strong>等价的</strong></li>
+<li>向量组 A 能由向量组 B <strong>线性表示</strong>的充分必要条件为 $R(A)&#x3D;R(A,B)$，<strong>或者</strong>$R(A) ≤ R(B)$，<strong>等价的充要条件</strong>为 $R(A)&#x3D;R(B)&#x3D;R(A,B)$</li>
+</ul>
+<h2 id="3-2-线性相关与线性无关"><a href="#3-2-线性相关与线性无关" class="headerlink" title="3.2 线性相关与线性无关"></a>3.2 线性相关与线性无关</h2><ol>
+<li>给定向量组 $A：a_1,a_2,a_3,…,a_m$，存在不全为零实数$k_1,k_2,k_3,…,k_m$，使 $k_1a_1+k_2a_2+k_3a_3+···+k_ma_m &#x3D; 0$ ，则称向量组 A 是<strong>线性相关</strong>的，否则称他<strong>线性无关</strong></li>
+</ol>
+<div class="note note-success">
+            <p>简单来说：</p><ol><li><strong>线性相关：有非零解</strong></li><li><strong>线性无关：只有零解</strong></li></ol>
+          </div>
+
+<p><strong>重要结论：</strong></p>
+<ul>
+<li><div class="note note-success">
+            <ol><li>方阵形式：直接判断行列式的值是否为零，线性相关D为0，线性无关D不为0</li><li>行数大于列数的矩阵：判断齐次线性方程组的解，<strong>线性相关有非零解</strong>，<strong>线性无关只有零解</strong></li><li>列数大于行数的矩阵：向量个数大于维数，一定线性相关</li></ol>
+          </div>
+</li>
+<li><p>向量组  $a_1,a_2,a_3,…,a_m$ <strong>线性相关</strong>的充分必要条件是：其中<strong>至少有一个向量可由</strong>其余 m -1 个向量线性表示</p>
+</li>
+<li><p>向量组 $a_1,a_2,a_3,…,a_m$ <strong>线性无关</strong>的充分必要条件是：其中<strong>每一个向量</strong>都<strong>不能由</strong>其余 m -1 个向量线性表示</p>
+</li>
+<li><p>若向量组 $a_1,a_2,a_3,…,a_m$ 线性无关，而向量组 $a_1,a_2,a_3,…,a_m,b$ 线性相关，<strong>则 b 可由 $a_1,a_2,a_3,…,a_m$ 线性表示，且表达式唯一</strong></p>
+</li>
+</ul>
+<p><code>注：线性表示和线性相关性是不同的概念</code></p>
+<hr>
+<ul>
+<li>若部分线性相关，则整个向量组也线性相关</li>
+<li>若整体线性无关，则任意一个部分也线性无关</li>
+<li>如果n维向量组$a_1,a_2,a_3,…,a_m$ 线性无关，则在每一个向量上都添加 m 个分量，得到的 <strong>n+m 维接长的向量组也线性无关</strong></li>
+<li>如果n维向量组 $a_1,a_2,a_3,…,a_m$ 线性相关，则在每一个向量上都减去 m 个分量，得到的 <strong>n-m 维截断的向量组也线性相关</strong></li>
+</ul>
+<hr>
+<ul>
+<li>向量组线性无关 ⇔  秩等于向量个数</li>
+<li>线性相关 ⇔  秩小于向量个数</li>
+</ul>
+<hr>
+<h2 id="3-3-向量组的秩"><a href="#3-3-向量组的秩" class="headerlink" title="3.3 向量组的秩"></a>3.3 向量组的秩</h2><p><strong>定义：</strong>向量组的极大无关组所包含向量的个数，称为<strong>向量组的的秩</strong></p>
+<p><strong>定理：</strong></p>
+<ul>
+<li>如果两个向量组的秩相等，且其中一个向量组可由另一个线性表示，则两个向量组等价</li>
+</ul>
+<p><strong>行向量组与列向量组</strong>：</p>
+<ul>
+<li>行向量组的秩为<strong>行秩</strong>，列向量组的秩为<strong>列秩</strong></li>
+<li><strong>行秩&#x3D;列秩&#x3D;矩阵的秩</strong></li>
+</ul>
+<h2 id="3-4-极大无关组"><a href="#3-4-极大无关组" class="headerlink" title="3.4 极大无关组"></a>3.4 极大无关组</h2><p>定义：设向量组 $A：a_1,a_2,a_3,…,a_m$中有一部分向量组  $a_1,a_2,a_3,…,a_r  (r&lt;n)$满足</p>
+<ol>
+<li>$a_1,a_2,a_3,…,a_r $<strong>线性无关</strong></li>
+<li>向量组 A 中任意 $r+1$(如果有 $r+1$个向量的话) ，则称 $a_1,a_2,a_3,…,a_r $是向量组 A 的一个<strong>极大线性无关组</strong>。简称为极大无关组</li>
+</ol>
+<div class="note note-success">
+            <p>&emsp;&emsp;求向量组极大无关组的方法：先将列向量组构成矩阵A，然后对A实行初等行变换，把A化为行最简型矩阵，由行最简型矩阵列之间的关系，确定原向量组间的线性关系，从而确定极大无关组。(<strong>行最简型矩阵中每行首个非零元素所在的列</strong>)</p>
+          </div>
+
+<hr>
+<h1 id="4、线性方程组"><a href="#4、线性方程组" class="headerlink" title="4、线性方程组"></a>4、线性方程组</h1><h2 id="4-1-非齐次"><a href="#4-1-非齐次" class="headerlink" title="4.1 非齐次"></a>4.1 非齐次</h2><ul>
+<li>线性方程组 $A_{mn}$ * $x$&#x3D;b <strong>有解</strong>的 充要条件 是 r(A，b)&#x3D; r(A)</li>
+<li>当线性方程组 $A_{mn} * x$&#x3D;b 有解时：r 为秩，n为系数项数，即未知量的个数(列向量个数)<ul>
+<li>若 r(A，b)&#x3D; r(A)&#x3D;<strong>r &#x3D; n</strong>，方程组有<strong>唯一解</strong></li>
+<li>若 r(A，b)&#x3D; r(A)&#x3D;<strong>r &lt; n</strong>，方 程组有<strong>无穷多解</strong></li>
+</ul>
+</li>
+<li>同理， $A_{mn }* x $&#x3D;b <strong>无解</strong>的充要条件是 r(A，b)!&#x3D;r(A)</li>
+</ul>
+<hr>
+<h2 id="4-2-齐次线性方程组解的判定"><a href="#4-2-齐次线性方程组解的判定" class="headerlink" title="4.2 齐次线性方程组解的判定"></a>4.2 齐次线性方程组解的判定</h2><p>齐次线性方程组一定满足：$r(A,b)$&#x3D;$r(A)$</p>
+<ul>
+<li>齐次线性方程组$A_{mn} * x&#x3D;0$ <strong>只有零解的充要条件是 r(A)&#x3D; n</strong></li>
+<li>齐次线性方程组$A_{mn} * x&#x3D;0$ <strong>有非零解的充要条件是 r(A)&lt; n</strong>（有非零解即为无穷多解）</li>
+</ul>
+<hr>
+<h2 id="4-3齐次线性方程组的解的结构"><a href="#4-3齐次线性方程组的解的结构" class="headerlink" title="4.3齐次线性方程组的解的结构"></a>4.3齐次线性方程组的解的结构</h2><p>解向量的概念</p>
+<p>&emsp;&emsp;若齐次线性方程组有非零解，则它会有无穷多解，这些解组成一个n维向量组，若能求出这个向量组的一个极大无关组，则就能用它来表示它的全部解，<strong>这个极大无关组</strong>称为<strong>齐次线性方程组的基础解系</strong></p>
+<p>齐次线性方程组有非零解，则它一定有基础解系。</p>
+<ul>
+<li><strong>定理1</strong>：如果齐次线性方程组$A_{mn} * x&#x3D;0$ 的系数矩阵A的秩 $r(A)&#x3D; r &lt; n$，则$A_{mn} * x&#x3D;0$ 的基础解系中有 $n-r$ 个解向量</li>
+</ul>
+<hr>
+<h2 id="4-4非齐次线性方程组的解的结构"><a href="#4-4非齐次线性方程组的解的结构" class="headerlink" title="4.4非齐次线性方程组的解的结构"></a>4.4非齐次线性方程组的解的结构</h2><p>非齐次线性方程组的解的结构为：非齐次线性方程组的特解 + 齐次线性方程组的通解。</p>
+<blockquote>
+<p>求线性方程组通解的一般步骤</p>
+<p>齐次线性方程组：</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>对于增广矩阵化简为 <strong>行最简型矩阵</strong></li>
+<li>判断解的情况并且得到解向量的个数 &#x3D; n-r</li>
+<li>通过行最简矩阵得到<strong>自由未知量</strong>，首非零元与自由未知量确定方程，求方程解，得到各个未知量的解，并且得到每一个<strong>基础解系</strong></li>
+<li>通解为 各个基础解系的k倍和</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>非齐次线性方程组：</p>
+<ol>
+<li>步骤与上面基本一致，但是通解为：特解 + 导出组（导出组指的是常数项为0）的基础解系</li>
+</ol>
+</blockquote>
+<hr>
+<h1 id="5、特征值和特征向量"><a href="#5、特征值和特征向量" class="headerlink" title="5、特征值和特征向量"></a>5、特征值和特征向量</h1><hr>
+<h1 id="6、二次型"><a href="#6、二次型" class="headerlink" title="6、二次型"></a>6、二次型</h1>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E4%B8%8A%E5%B2%B8/" class="category-chain-item">上岸</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E4%B8%8A%E5%B2%B8/%E7%BA%BF%E4%BB%A3/" class="category-chain-item">线代</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%BA%BF%E4%BB%A3/" class="print-no-link">#线代</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>线代一轮复习</div>
+      <div>http://124.222.56.204/2025/05/27/线代/线代一轮复习/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>一又四分之一</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2025-05-27 10:33:10</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025-06-05 00:30:52</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2025/06/04/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis/" title="redis基本操作">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">redis基本操作</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/02/26/%E9%AB%98%E6%95%B0/%E9%AB%98%E6%95%B0%E5%AE%9A%E7%A7%AF%E5%88%86/" title="定积分">
+                        <span class="hidden-mobile">定积分</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+<script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+
+<script>
+    if (window.mermaid) {
+        mermaid.initialize({"startOnload":true});
+    }
+</script>
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+
+
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

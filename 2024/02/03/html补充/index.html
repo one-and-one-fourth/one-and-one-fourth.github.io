@@ -1,0 +1,819 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="一又四分之一">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1.opacity(透明度)不仅对颜色有效，对图像或者页面中其它的元素也有效。 1opacity: value|inherit;   value 规定不透明度。从 0.0 （完全透明）到 1.0（完全不透明）。  inherit 应该从父元素继承 opacity 属性的值。 注意： 当opacity属性的值应用于某个元素上时，是把这个元素（包括它的内容）当成一个整体看待，即使这个值没有被子元素继承">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html补充">
+<meta property="og:url" content="http://124.222.56.204/2024/02/03/html%E8%A1%A5%E5%85%85/index.html">
+<meta property="og:site_name" content="one-and-one-fourth">
+<meta property="og:description" content="1.opacity(透明度)不仅对颜色有效，对图像或者页面中其它的元素也有效。 1opacity: value|inherit;   value 规定不透明度。从 0.0 （完全透明）到 1.0（完全不透明）。  inherit 应该从父元素继承 opacity 属性的值。 注意： 当opacity属性的值应用于某个元素上时，是把这个元素（包括它的内容）当成一个整体看待，即使这个值没有被子元素继承">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://124.222.56.204/img/html%E8%A1%A5%E5%85%85/cur1.png">
+<meta property="og:image" content="http://124.222.56.204/img/html%E8%A1%A5%E5%85%85/cur2.png">
+<meta property="og:image" content="http://124.222.56.204/img/html%E8%A1%A5%E5%85%85/cur3.png">
+<meta property="article:published_time" content="2024-02-03T13:15:31.000Z">
+<meta property="article:modified_time" content="2024-02-15T02:16:24.158Z">
+<meta property="article:author" content="一又四分之一">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://124.222.56.204/img/html%E8%A1%A5%E5%85%85/cur1.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>html补充 - one-and-one-fourth</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"124.222.56.204","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>一又四分之一</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="html补充"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-03 21:15" pubdate>
+          2024-02-03 21:15:31
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">html补充</h1>
+            
+              <p id="updated-time" class="note note-default" style="">
+                
+                  
+                    本文最后更新于 2024-02-15 10:16:24
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="1-opacity-透明度"><a href="#1-opacity-透明度" class="headerlink" title="1.opacity(透明度)"></a>1.opacity(透明度)</h1><p><code>不仅对颜色有效，对图像或者页面中其它的元素也有效。</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-attribute">opacity</span>: value|inherit;<br></code></pre></td></tr></table></figure>
+
+<p><font color="skyblue"> <strong>value</strong> 规定不透明度。从 0.0 （完全透明）到 1.0（完全不透明）。</font> <br> <strong>inherit</strong> 应该从父元素继承 opacity 属性的值。</p>
+<p>注意： 当opacity属性的值应用于某个元素上时，是把这个元素（包括它的内容）当成一个整体看待，即使这个值没有被子元素继承。<br > &emsp;因此，一个元素和它包含的子元素都会具有和元素背景相同的透明度，哪怕这个元素和它的子元素有不同的opacity属性值。</p>
+<hr>
+<h1 id="2-cursor-鼠标形式"><a href="#2-cursor-鼠标形式" class="headerlink" title="2.cursor(鼠标形式)"></a>2.cursor(鼠标形式)</h1><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-number">1</span>. <span class="hljs-attribute">cursor</span>:<span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;img/sanchaji.png&#x27;</span>),pointer;//自定义图标的时候，后面必须加上一个普通光标<br><br><span class="hljs-number">2</span>. <span class="hljs-attribute">cursor</span><span class="hljs-selector-pseudo">:default</span>;<br></code></pre></td></tr></table></figure>
+
+<p><img src="/../img/html%E8%A1%A5%E5%85%85/cur1.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/../img/html%E8%A1%A5%E5%85%85/cur2.png" srcset="/img/loading.gif" lazyload><br><img src="/../img/html%E8%A1%A5%E5%85%85/cur3.png" srcset="/img/loading.gif" lazyload><br>cursor属性的默认值为 auto， 它表示由浏览器根据当前上下文，自动确定最适合的光标类型。auto 与 default 不同，default 表示使用客户端操作系统默认的光标类型。</p>
+<hr>
+<h1 id="4-display-flex-类似于行内块元素"><a href="#4-display-flex-类似于行内块元素" class="headerlink" title="4. display: flex (类似于行内块元素)"></a>4. display: flex (类似于行内块元素)</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_46048008/article/details/126406331?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522169606027516777224439343%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=169606027516777224439343&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-126406331-null-null.142%5Ev94%5Einsert_down28v1&utm_term=flex&spm=1018.2226.3001.4187">felx 详解</a></p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs gauss">全称为 “Flexible <span class="hljs-built_in">Box</span> Layout”，即 “弹性盒布局”，旨在提供一种更有效的方式来<br>布局对齐和分配容器中项目之间的空间，即使它们的大小未知或动态变化<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.container</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex | inline-flex;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="5、justify-content-（弹性容器中对齐和分布子元素的水平位置）"><a href="#5、justify-content-（弹性容器中对齐和分布子元素的水平位置）" class="headerlink" title="5、justify-content （弹性容器中对齐和分布子元素的水平位置）"></a>5、justify-content （弹性容器中对齐和分布子元素的水平位置）</h1><p>该属性可应用于具有 <code>display: flex</code> 或 <code>display: inline-flex</code> 的父容器。以下是 <code>justify-content</code> 属性的几个常用取值：</p>
+<ol>
+<li><code>flex-start</code>: 默认值，子元素靠左对齐。</li>
+<li><code>flex-end</code>: 子元素靠右对齐。</li>
+<li><code>center</code>: 子元素在容器内居中对齐。</li>
+<li><code>space-between</code>: 子元素平均分布在容器内，首尾子元素靠边。</li>
+<li><code>space-around</code>: 子元素平均分布在容器内，包括首尾子元素。</li>
+</ol>
+<h1 id="6"><a href="#6" class="headerlink" title="6.###"></a>6.###</h1><h2 id="（1）定位：position"><a href="#（1）定位：position" class="headerlink" title="（1）定位：position"></a>（1）定位：position</h2><p>一般：子级元素用绝对定位，父级元素用相对定位</p>
+<p><code>relative</code> 相对定位，移动的时候相对原来的定位，原来的位置不脱离标准流</p>
+<p><code>absolute</code> 绝对定位，现对于他的父元素来说，如果最近的，没有祖元素或者祖元素没有定位，那么，就相当于浏览器为定位标准，定位之后，原来的位置不在占有空间</p>
+<p><code>fixed</code> 固定定位,：是固定于浏览器可视的位置，即，浏览器滚动时，页面的元素的位置不改变</p>
+<p><code>sticky</code> 粘性定位，浏览器的可视为参照点，占有原来的位置，必须有 <code>top  bottom right left </code> 其中的一个，兼容性不太好</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.op</span>&#123;<br>    <span class="hljs-attribute">position</span>: relative/absolute/fixed/sticky;<br>    <span class="hljs-attribute">top</span>:<span class="hljs-number">10px</span>;<br>    <span class="hljs-attribute">bottom</span>:<span class="hljs-number">10px</span>;<br>    <span class="hljs-attribute">right</span>:<span class="hljs-number">10px</span>;<br>    <span class="hljs-attribute">left</span>:<span class="hljs-number">10px</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-叠放次序"><a href="#2-叠放次序" class="headerlink" title="(2)叠放次序"></a>(2)叠放次序</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.op</span>&#123;<br>	<span class="hljs-attribute">z-index</span>:<span class="hljs-number">1</span>;//可以是正数，负数，<span class="hljs-number">0</span>，默认auto<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>比说：两张图片在同一位置，那么，谁在上，谁的<code>z-index</code>值大，</p>
+<p>注意：只有定位 <code>position</code> 的盒子才有用</p>
+<h2 id="3-元素的隐藏和显示"><a href="#3-元素的隐藏和显示" class="headerlink" title="(3) 元素的隐藏和显示"></a>(3) 元素的隐藏和显示</h2><p><code>display</code> :</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs txt">类似于网页中的广告，点击关闭，在此刷新会显示出来<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.op</span>&#123;<br>	<span class="hljs-attribute">display</span>: none;//隐藏， 不在占有原来的位置<br>    <span class="hljs-attribute">display</span>: block;//除了转化为块级元素之外，还可显示元素，重新占有原来的位置	<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>visibility</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.op</span>&#123;    <br>	<span class="hljs-attribute">visibility</span>: hidden;//隐藏， 占有原来的位置   <br>	<span class="hljs-attribute">visibility</span>: visible;//显示元素，占有原来的位置   <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>overflow</code></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.op</span>&#123;    <br>	<span class="hljs-attribute">overflow</span>: scroll; //溢不溢出都显示滚动条<br>    <span class="hljs-attribute">overflow</span>: auto; // 需要才显示滚动条<br>     <span class="hljs-attribute">overflow</span>: hidden;//溢出的部分隐藏起来<br>     <span class="hljs-attribute">overflow</span>: visible;//默认的，超出的部分显示 <br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-字体图标"><a href="#4-字体图标" class="headerlink" title="(4)字体图标"></a>(4)字体图标</h2><p><code>iconfont.cn</code>  阿里的</p>
+<p><code>icomoon.io</code>  github的</p>
+<p>下载之后，点击 <code>demo.html</code> 文件，找到要添加的图标，下面有个小方框的东西，虽然看起来都一样，复制下来，放到 <strong>html</strong> 文件中即可</p>
+<p>举例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">&lt;<span class="hljs-selector-tag">span</span>&gt; □ &lt;/<span class="hljs-selector-tag">span</span>&gt;   //注意，这个方块是复制相应的图标的方块<br></code></pre></td></tr></table></figure>
+
+
+
+<p>但是css中要使用：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-tag">span</span>&#123;<br>	<span class="hljs-attribute">font-family</span>:<span class="hljs-string">&#x27;icommon&#x27;</span>; //这个可以复制前面的<br>	//其他的样式 大小，颜色。。。。<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs css">// 该文件就是前面下载的  这个是 style文件， <span class="hljs-keyword">@font-face</span> 里面的内容要复制到html页面中，主页面里 放到 css标签的里面，然后后面的要根据上面的 span 里面的写法<br><br>@font-face &#123;<br>  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&#x27;icomoon&#x27;</span>;//复制这个到 <span class="hljs-selector-tag">span</span><br>  <span class="hljs-attribute">src</span>:  <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;fonts/icomoon.eot?9gijve&#x27;</span>);<br>  <span class="hljs-attribute">src</span>:  <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;fonts/icomoon.eot?9gijve#iefix&#x27;</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">&#x27;embedded-opentype&#x27;</span>),<br>    <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;fonts/icomoon.ttf?9gijve&#x27;</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">&#x27;truetype&#x27;</span>),<br>    <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;fonts/icomoon.woff?9gijve&#x27;</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">&#x27;woff&#x27;</span>),<br>    <span class="hljs-built_in">url</span>(<span class="hljs-string">&#x27;fonts/icomoon.svg?9gijve#icomoon&#x27;</span>) <span class="hljs-built_in">format</span>(<span class="hljs-string">&#x27;svg&#x27;</span>);<br>  <span class="hljs-attribute">font-weight</span>: normal;<br>  <span class="hljs-attribute">font-style</span>: normal;<br>  <span class="hljs-attribute">font-display</span>: block;<br>&#125;<br><br><span class="hljs-selector-attr">[class^=<span class="hljs-string">&quot;icon-&quot;</span>]</span>, <span class="hljs-selector-attr">[class*=<span class="hljs-string">&quot; icon-&quot;</span>]</span> &#123;<br>  <span class="hljs-comment">/* use !important to prevent issues with browser extensions that change fonts */</span><br>  <span class="hljs-attribute">font-family</span>: <span class="hljs-string">&#x27;icomoon&#x27;</span> <span class="hljs-meta">!important</span>;<br>  <span class="hljs-attribute">speak</span>: never;<br>  <span class="hljs-attribute">font-style</span>: normal;<br>  <span class="hljs-attribute">font-weight</span>: normal;<br>  <span class="hljs-attribute">font-variant</span>: normal;<br>  <span class="hljs-attribute">text-transform</span>: none;<br>  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1</span>;<br><br>  <span class="hljs-comment">/* Better Font Rendering =========== */</span><br>  -webkit-<span class="hljs-attribute">font-smoothing</span>: antialiased;<br>  -moz-osx-<span class="hljs-attribute">font-smoothing</span>: grayscale;<br>&#125;<br><br><span class="hljs-selector-class">.icon-pencil</span><span class="hljs-selector-pseudo">:before</span> &#123;<br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;\e905&quot;</span>;<br>&#125;<br><span class="hljs-selector-class">.icon-pencil2</span><span class="hljs-selector-pseudo">:before</span> &#123;<br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;\e906&quot;</span>;<br>&#125;<br><span class="hljs-selector-class">.icon-quill</span><span class="hljs-selector-pseudo">:before</span> &#123;<br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;\e907&quot;</span>;<br>&#125;<br><span class="hljs-selector-class">.icon-pen</span><span class="hljs-selector-pseudo">:before</span> &#123;<br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;\e908&quot;</span>;<br>&#125;<br><span class="hljs-selector-class">.icon-blog</span><span class="hljs-selector-pseudo">:before</span> &#123;<br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;\e909&quot;</span>;<br>&#125;<br><span class="hljs-selector-class">.icon-eyedropper</span><span class="hljs-selector-pseudo">:before</span> &#123;<br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">&quot;\e90a&quot;</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<p>追加时，在网址里有个按钮 <code>import icons</code>  选择 <code>.josn</code> 后缀的文件，在添加新的即可</p>
+<p>三角形的做法：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.op</span>&#123;<br>	<span class="hljs-attribute">margin-top</span>-<span class="hljs-attribute">color</span>: blue; //这个是下三角，其他的同理<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-文本域取消用户拉大效果"><a href="#4-文本域取消用户拉大效果" class="headerlink" title="(4)文本域取消用户拉大效果"></a>(4)文本域取消用户拉大效果</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">inptu&#123;<br>	<span class="hljs-attribute">outline</span>: none;//取消表单轮廓<br>&#125;<br><br><span class="hljs-selector-tag">textarea</span>&#123;<br>	<span class="hljs-attribute">resize</span>: none;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="5-vertical-align"><a href="#5-vertical-align" class="headerlink" title="(5) vertical-align"></a>(5) vertical-align</h2><p>实现行内块元素和文字垂直对齐，具体可参考《浏览器搜索框》</p>
+<p>一般属性值多用: <code>midddle</code> </p>
+<p>也可解决图片下部分会有默认的白色空隙的问题</p>
+<h2 id="6-对于-超链接打开方式的追加解析"><a href="#6-对于-超链接打开方式的追加解析" class="headerlink" title="(6)对于 超链接打开方式的追加解析"></a>(6)对于 超链接打开方式的追加解析</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css">对于该问题的来源，是由于导航栏和主界面分开写而导致的问题<br></code></pre></td></tr></table></figure>
+
+
+
+<p><code>_top</code>、<code>_parent</code>、<code>_self</code> 和 <code>_blank</code> 都是 HTML 中使用的 <code>&lt;a&gt;</code> 标签的 <code>target</code> 属性值，用于指定链接在何处打开。</p>
+<ul>
+<li><p><code>_top</code>：在整个窗口中加载目标页面。如果当前页面在一个框架集内，将会在顶层框架中加载目标页面，并且会取消所有已有的框架集。</p>
+</li>
+<li><p><code>_parent</code>：在父级框架中加载目标页面。如果当前页面不在框架集中，那么该属性与 <code>_self</code> 等同，即在当前窗口中打开目标页面。</p>
+</li>
+<li><p><code>_self</code>：在当前窗口中打开目标页面，默认值。</p>
+</li>
+<li><p><code>_blank</code>：在新窗口中打开目标页面。</p>
+</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/html/" class="category-chain-item">html</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/html/" class="print-no-link">#html</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>html补充</div>
+      <div>http://124.222.56.204/2024/02/03/html补充/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>一又四分之一</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024-02-03 21:15:31</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2024-02-15 10:16:24</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/02/03/oj%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%E5%AD%97%E6%80%BB%E7%BB%93/" title="oj数据库名字总结">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">oj数据库名字总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/02/03/js%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/" title="js语法基础">
+                        <span class="hidden-mobile">js语法基础</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+
+<script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+
+<script>
+    if (window.mermaid) {
+        mermaid.initialize({"startOnload":true});
+    }
+</script>
+
+
+  </footer>
+
+  <!-- Scripts -->
+  
+
+
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
