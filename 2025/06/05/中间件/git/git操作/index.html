@@ -16,24 +16,24 @@
   <meta name="author" content="一又四分之一">
   <meta name="keywords" content="">
   
-    <meta name="description" content="windows操作docker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出  服务器相关命令ping ： 检测连接是否存活echo： 在命令行打印一些内容quit、exit： 退出客户端shutdown： 退出服务器端info： 返回redis相关信息config get dir&#x2F;*: 实时传递接收的请求showlog： 显示慢查询selec">
+    <meta name="description" content="工作方式1、工作区 -&gt; 暂存区  使用git add命令将工作区中的修改添加到暂存区  2、暂存区 -&gt; 版本库  使用git commit命令将暂存区中的修改提交到版本库  3、版本库 -&gt; 远程仓库  使用 git push 命令将本地版本库的提交推送到远程仓库  4、远程仓库 -&gt; 本地版本库  使用 git pull 或 git fetch 命令从远程仓库获取更新">
 <meta property="og:type" content="article">
-<meta property="og:title" content="redis基本操作">
-<meta property="og:url" content="https://one-and-one-fourth.github.io/2025/06/04/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis/index.html">
+<meta property="og:title" content="git操作">
+<meta property="og:url" content="https://one-and-one-fourth.github.io/2025/06/05/%E4%B8%AD%E9%97%B4%E4%BB%B6/git/git%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
-<meta property="og:description" content="windows操作docker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出  服务器相关命令ping ： 检测连接是否存活echo： 在命令行打印一些内容quit、exit： 退出客户端shutdown： 退出服务器端info： 返回redis相关信息config get dir&#x2F;*: 实时传递接收的请求showlog： 显示慢查询selec">
+<meta property="og:description" content="工作方式1、工作区 -&gt; 暂存区  使用git add命令将工作区中的修改添加到暂存区  2、暂存区 -&gt; 版本库  使用git commit命令将暂存区中的修改提交到版本库  3、版本库 -&gt; 远程仓库  使用 git push 命令将本地版本库的提交推送到远程仓库  4、远程仓库 -&gt; 本地版本库  使用 git pull 或 git fetch 命令从远程仓库获取更新">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-06-04T07:27:20.236Z">
-<meta property="article:modified_time" content="2025-06-04T08:45:37.875Z">
+<meta property="article:published_time" content="2025-06-05T03:17:08.607Z">
+<meta property="article:modified_time" content="2025-06-05T04:57:18.448Z">
 <meta property="article:author" content="一又四分之一">
-<meta property="article:tag" content="redis">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>redis基本操作 - one-and-one-fourth</title>
+  <title>git操作 - one-and-one-fourth</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -226,7 +226,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="redis基本操作"></span>
+            <span id="subtitle" data-typed-text="git操作"></span>
           
         </div>
 
@@ -237,8 +237,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-04 15:27" pubdate>
-          2025-06-04 15:27:20
+        <time datetime="2025-06-05 11:17" pubdate>
+          2025-06-05 11:17:08
         </time>
       </span>
     
@@ -249,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          671 字
+          1.7k 字
         
       </span>
     
@@ -260,7 +260,7 @@
         
         
         
-          6 分钟
+          15 分钟
         
       </span>
     
@@ -297,12 +297,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">redis基本操作</h1>
+            <h1 id="seo-header">git操作</h1>
             
               <p id="updated-time" class="note note-default" style="">
                 
                   
-                    本文最后更新于 2025-06-04 16:45:37
+                    本文最后更新于 2025-06-05 12:57:18
                   
                 
               </p>
@@ -310,26 +310,110 @@
             
               <div class="markdown-body">
                 
-                <h1 id="windows操作"><a href="#windows操作" class="headerlink" title="windows操作"></a>windows操作</h1><p><code>docker exec -it 容器名字 redis-cli --raw</code> ：进入redis 容器，以原始格式输出</p>
+                <h1 id="工作方式"><a href="#工作方式" class="headerlink" title="工作方式"></a>工作方式</h1><p><strong>1、工作区 -&gt; 暂存区</strong></p>
+<ul>
+<li>使用<code>git add</code>命令将工作区中的修改添加到暂存区</li>
+</ul>
+<p><strong>2、暂存区 -&gt; 版本库</strong></p>
+<ul>
+<li>使用<code>git commit</code>命令将暂存区中的修改提交到版本库</li>
+</ul>
+<p><strong>3、版本库 -&gt; 远程仓库</strong></p>
+<ul>
+<li>使用 <code>git push</code> 命令将本地版本库的提交推送到远程仓库</li>
+</ul>
+<p><strong>4、远程仓库 -&gt; 本地版本库</strong></p>
+<ul>
+<li>使用 <code>git pull </code>或<code> git fetch</code> 命令从远程仓库获取更新</li>
+</ul>
 <hr>
-<h1 id="服务器相关命令"><a href="#服务器相关命令" class="headerlink" title="服务器相关命令"></a>服务器相关命令</h1><p><code>ping</code> ： 检测连接是否存活<br><code>echo</code>： 在命令行打印一些内容<br><code>quit、exit</code>： 退出客户端<br><code>shutdown</code>： 退出服务器端<br><code>info</code>： 返回redis相关信息<br><code>config get dir/*</code>: 实时传递接收的请求<br><code>showlog</code>： 显示慢查询<br><code>select n</code>： 切换到数据库n，redis 默认有16个数据库（DB 0~DB 15），默认使用的第0个<br><code>dbsize</code>： 查看当前数据库大小<br><code>move key n</code>： 不同数据库之间数据是不能互通的，move移动键到指定数据库<br><code>flushdb</code>： 清空<strong>当前数据库</strong>中的键值对<br><code>flushall</code>： 清空<strong>所有数据库</strong>的键值对</p>
+<ul>
+<li><strong>工作区</strong>是本地计算机上的项目目录，在这里进行文件的创建、修改和删除操作。工作区包含了当前项目的所有文件和子目录</li>
+<li><strong>暂存区</strong>是一个临时存储区域，它包含了即将被提交到版本库中的文件快照，在提交之前，可以选择性地将工作区中的修改添加到暂存区</li>
+<li>版本库包含项目的所有版本历史记录，每次提交都会在版本库中创建一个新的快照，这些快照是不可变的，确保了项目的完整历史记录</li>
+<li><ol>
+<li>版本库分为<strong>本地版本库</strong>和<strong>远程版本库</strong>。这里主要指本地版本库。</li>
+<li>本地版本库存储在 <code>.git</code> 目录中，它包含了所有提交的对象和引用</li>
+</ol>
+</li>
+</ul>
 <hr>
-<h1 id="key相关"><a href="#key相关" class="headerlink" title="key相关"></a>key相关</h1><p><code>keys * </code>：查看当前数据库中所有的key<br><code>dbsize</code>： 键总数<br><code>exists key</code>： 检查键是否存在<br><code>del key [key …]</code>： 删除键<br><code>expire key seconds</code>： 键过期<br><code>ttl key</code>： 获取键的有效时长<br><code>persist key</code>： 移除键的过期时间<br><code>type key</code>： 键的数据结构类型<br><code>randomkey</code>： 随机返回数据库中一个键<br><code>rename key1 key2</code> ： 重命名<br><code>renamex key1 key2</code> ： 当 key2 不存在时，key1 重命名</p>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 1 步</span><br><span class="hljs-comment"># 初始化</span><br>git init  <span class="hljs-comment"># 初始化仓库</span><br>git <span class="hljs-built_in">clone</span> [url] <span class="hljs-comment"># 拷贝一份远程仓库，也就是下载一个项目</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 2 步</span><br><span class="hljs-comment">#提交与修改</span><br>git add . / [file1] [file2] / [<span class="hljs-built_in">dir</span>]  <span class="hljs-comment"># 将 所有文件/某些文件/文件夹 添加到暂存区</span><br>git status	                         <span class="hljs-comment"># 查看仓库当前的状态，显示有变更的文件</span><br>git reset [--soft | --mixed | --hard] [HEAD] <span class="hljs-comment"># 回退版本</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 3 步</span><br>git commit -m <span class="hljs-string">&quot;Commit message&quot;</span>   <span class="hljs-comment"># 将暂存区的更改提交到本地版本库</span><br>git <span class="hljs-built_in">log</span>                          <span class="hljs-comment"># 查看提交历史</span><br>git diff                         <span class="hljs-comment"># 查看工作区和暂存区之间的差异</span><br>git diff --cached                <span class="hljs-comment"># 查看暂存区和最后一次提交之间的差异</span><br><br>git remote add &lt;remote_name&gt; &lt;remote_url&gt; <span class="hljs-comment"># 添加远程版本库</span><br>git remote -v <span class="hljs-comment"># 查看当前仓库中配置的远程仓库列表以及它们的 URL</span><br>git remote show [remote] <span class="hljs-comment"># 显示某个远程仓库的信息</span><br>git remote rename old_name new_name  <span class="hljs-comment"># 修改仓库名</span><br>git remote set-url &lt;remote_name&gt; &lt;new_url&gt; <span class="hljs-comment"># 修改指定远程仓库的 URL</span><br>git remote remove &lt;remote_name&gt; <span class="hljs-comment"># 从当前仓库中删除指定的远程仓库，或 git remote rm name</span><br>git push origin --delete master <span class="hljs-comment"># 远程仓库中的 master 分支将被永久删除</span><br></code></pre></td></tr></table></figure>
+
+
+<ul>
+<li><p><code>git status</code>通常使用 <strong>-s</strong> 参数来获得简短的输出结果，一般在前面会有字母的组合，<strong>AM</strong> 状态的意思是这个文件在将它添加到缓存之后又有改动（A 在暂存区 M修改了，应该是吧）</p>
+</li>
+<li><p><strong>reset</strong>： </p>
+</li>
+<li><ol>
+<li><p><code>--mixed</code> 为默认，可以不用带该参数，用于重置暂存区的文件与上一次的提交(commit)保持一致，工作区文件内容保持不变</p>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset HEAD^            <span class="hljs-comment"># 回退所有内容到上一个版本  </span><br>git reset HEAD^ hello.php  <span class="hljs-comment"># 回退 hello.php 文件的版本到上一个版本  </span><br>git  reset  052e           <span class="hljs-comment"># 回退到指定版本</span><br></code></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><code>--soft</code>参数用于回退到某个版本</p>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --soft HEAD~3   <span class="hljs-comment"># 回退上上上一个版本 </span><br></code></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p><code>--hard</code> 参数撤销工作区中所有未提交的修改内容，将暂存区与工作区都回到上一次版本，并删除之前的所有信息提交（慎用，它会删除回退点之前的所有信息）</p>
+<blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">git reset --hard HEAD~3  <span class="hljs-comment"># 回退上上上一个版本  </span><br>git reset –hard bae128  <span class="hljs-comment"># 回退到某个版本回退点之前的所有信息。 </span><br>git reset --hard origin/master    <span class="hljs-comment"># 将本地的状态回退到和远程的一样 </span><br></code></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><blockquote>
+<p><strong>HEAD 说明：</strong></p>
+<ul>
+<li><p>HEAD 表示当前版本</p>
+</li>
+<li><p>HEAD^ 上一个版本</p>
+</li>
+<li><p>HEAD^^ 上上一个版本</p>
+</li>
+<li><p>HEAD^^^ 上上上一个版本</p>
+</li>
+<li><p>以此类推…</p>
+</li>
+</ul>
+<p>可以使用 ～数字表示</p>
+<ul>
+<li>HEAD~0 表示当前版本</li>
+<li>HEAD~1 上一个版本</li>
+<li>HEAD^2 上上一个版本</li>
+<li>HEAD^3 上上上一个版本</li>
+<li>以此类推…</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p><strong>git pull</strong> 其实就是 <strong>git fetch</strong> 和 <strong>git merge</strong> 的简写，先从远程仓库获取最新的提交记录，然后将这些提交记录合并到当前的分支中。</p>
+</li>
+</ul>
 <hr>
-<h1 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">SET key value         <span class="hljs-comment"># 设置键值对</span><br>GET key               <span class="hljs-comment"># 获取键的值</span><br>INCR key              <span class="hljs-comment"># 键值递增 1（要求值为数字）</span><br>incrby key increment  <span class="hljs-comment"># 增加 increment</span><br>DECR key              <span class="hljs-comment"># 键值递减 1</span><br>APPEND key <span class="hljs-string">&quot;text&quot;</span>     <span class="hljs-comment"># 追加字符串到键值末尾</span><br>STRLEN key            <span class="hljs-comment"># 获取字符串长度</span><br>MSET key1 val1 key2 val2  <span class="hljs-comment"># 批量设置键值对</span><br>MGET key1 key2        <span class="hljs-comment"># 批量获取键的值</span><br></code></pre></td></tr></table></figure>
+<h2 id="远程早已更新产生问题"><a href="#远程早已更新产生问题" class="headerlink" title="远程早已更新产生问题"></a>远程早已更新产生问题</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 4 步</span><br>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt; <span class="hljs-comment"># 如果本地分支名与远程分支名相同，则可以省略冒号及其后面内容</span><br>git push -f origin main <span class="hljs-comment"># 强推 ， 可能丢失他人代码，直接覆盖远程仓库分支</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 远程分支已更新（如他人推送了新代码），而本地分支仍基于旧的提交</span><br><span class="hljs-comment"># （1）</span><br>git fetch origin  <span class="hljs-comment"># 从名为 origin 的远程仓库获取所有更新</span><br>git fetch origin main  <span class="hljs-comment"># 只获取远程的 main 分支</span><br>git fetch --all  <span class="hljs-comment"># 获取所有已配置远程仓库的更新</span><br>git fetch -p  <span class="hljs-comment"># 或 git fetch --prune  如果远程分支被删除，本地仍会保留记录。使用命令清理</span><br><span class="hljs-comment"># （2）</span><br>git merge origin/main  <span class="hljs-comment"># 将origin远程 main 分支合并到当前分支，执行完fetch之后要执行本操作进行合并</span><br><br>git branch -r  <span class="hljs-comment"># 列出所有远程分支</span><br>git pull [远程仓库名] [分支名] <span class="hljs-comment"># 从远程获取代码并合并本地的版本</span><br>	<span class="hljs-comment"># 举例：将远程主机 origin 的 master 分支拉取过来，与本地的 brantest 分支合并（如果远程分支是与当前分支合并，则冒号后面的部分可以省略）</span><br>	git pull origin master:brantest<br></code></pre></td></tr></table></figure>
 
 <hr>
-<h1 id="哈希（Hash）操作"><a href="#哈希（Hash）操作" class="headerlink" title="哈希（Hash）操作"></a>哈希（Hash）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">HSET user:1 name <span class="hljs-string">&quot;Alice&quot;</span> age 30  <span class="hljs-comment"># 设置哈希字段</span><br>HGET user:1 name                <span class="hljs-comment"># 获取哈希字段的值</span><br>HGETALL user:1                  <span class="hljs-comment"># 获取哈希的所有字段和值</span><br>HKEYS user:1                    <span class="hljs-comment"># 获取哈希的所有字段名</span><br>HVALS user:1                    <span class="hljs-comment"># 获取哈希的所有字段值</span><br>HINCRBY user:1 age 1            <span class="hljs-comment"># 哈希字段值递增</span><br></code></pre></td></tr></table></figure>
+<h2 id="其他操作"><a href="#其他操作" class="headerlink" title="其他操作"></a>其他操作</h2><h3 id="1-日志："><a href="#1-日志：" class="headerlink" title="1.  日志："></a>1.  日志：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> -n &lt;number&gt; <span class="hljs-comment"># 限制显示的提交数</span><br>git <span class="hljs-built_in">log</span> --since=<span class="hljs-string">&quot;2024-01-01&quot;</span> <span class="hljs-comment"># 显示自指定日期之后的提交</span><br>git <span class="hljs-built_in">log</span> --<span class="hljs-keyword">until</span>=<span class="hljs-string">&quot;2024-07-01&quot;</span> <span class="hljs-comment"># 显示指定日期之前的提交</span><br>git <span class="hljs-built_in">log</span> --author=<span class="hljs-string">&quot;Author Name&quot;</span> <span class="hljs-comment"># 只显示某个作者的提交</span><br></code></pre></td></tr></table></figure>
 
-<p><code>user:1</code>：哈希的键名，通常使用 <code>对象类型:ID</code> 的格式</p>
-<hr>
-<h1 id="列表（List）操作"><a href="#列表（List）操作" class="headerlink" title="列表（List）操作"></a>列表（List）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">LPUSH list <span class="hljs-string">&quot;item1&quot;</span> <span class="hljs-string">&quot;item2&quot;</span>      <span class="hljs-comment"># 从左侧插入元素</span><br>RPUSH list <span class="hljs-string">&quot;item3&quot;</span>              <span class="hljs-comment"># 从右侧插入元素</span><br>LPOP list                       <span class="hljs-comment"># 从左侧弹出元素</span><br>RPOP list                       <span class="hljs-comment"># 从右侧弹出元素</span><br>LRANGE list 0 -1                <span class="hljs-comment"># 获取列表所有元素</span><br>LLEN list                       <span class="hljs-comment"># 获取列表长度</span><br></code></pre></td></tr></table></figure>
+<h3 id="2-撤销"><a href="#2-撤销" class="headerlink" title="2.  撤销"></a>2.  撤销</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git revert &lt;commit哈希值&gt;/[HEAD] <span class="hljs-comment"># 创建一个新的提交来抵消指定提交的修改，而不是直接删除历史记录,</span><br>git reset <span class="hljs-comment"># 直接删除历史记录，无法回退，一般不用</span><br></code></pre></td></tr></table></figure>
+<ul>
+<li>举例：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git revert 6d0f3b  <span class="hljs-comment"># 使用提交哈希的前几位（无需完整哈希）</span><br>git revert HEAD~3..HEAD  <span class="hljs-comment"># 撤销最近4次提交（HEAD~3 到 HEAD）</span><br></code></pre></td></tr></table></figure>
 
-<hr>
-<h1 id="集合（Set）操作"><a href="#集合（Set）操作" class="headerlink" title="集合（Set）操作"></a>集合（Set）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">SADD <span class="hljs-built_in">set</span> <span class="hljs-string">&quot;member1&quot;</span> <span class="hljs-string">&quot;member2&quot;</span>    <span class="hljs-comment"># 添加集合成员</span><br>SMEMBERS <span class="hljs-built_in">set</span>                    <span class="hljs-comment"># 获取集合所有成员</span><br>SISMEMBER <span class="hljs-built_in">set</span> <span class="hljs-string">&quot;member1&quot;</span>         <span class="hljs-comment"># 检查成员是否存在</span><br>SCARD <span class="hljs-built_in">set</span>                       <span class="hljs-comment"># 获取集合成员数量</span><br>SINTER set1 set2                <span class="hljs-comment"># 获取多个集合的交集</span><br>SUNION set1 set2                <span class="hljs-comment"># 获取多个集合的并集</span><br></code></pre></td></tr></table></figure>
+<h3 id="3-切换-创建分支"><a href="#3-切换-创建分支" class="headerlink" title="3. 切换&#x2F;创建分支"></a>3. 切换&#x2F;创建分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">git checkout &lt;branch-name&gt; <span class="hljs-comment"># 从当前分支切换到指定的分支 &lt;branch-name&gt;</span><br>git checkout -b &lt;new-branch-name&gt; <span class="hljs-comment"># 创建一个新分支 &lt;new-branch-name&gt; 并立即切换到新创建的分支</span><br>git checkout - <span class="hljs-comment"># 快速切换回前一个分支，无需记住分支名称</span><br>git checkout -- &lt;file&gt; <span class="hljs-comment"># 将工作区指定文件 &lt;file&gt; 恢复到最近一次提交时的状态，丢弃所有未提交的更改</span><br><br>git checkout -b &lt;分支名&gt; origin/&lt;分支名&gt; <span class="hljs-comment"># 快速建立联系</span><br></code></pre></td></tr></table></figure>
 
-<hr>
-<h1 id="有序集合（Sorted-Set）操作"><a href="#有序集合（Sorted-Set）操作" class="headerlink" title="有序集合（Sorted Set）操作"></a>有序集合（Sorted Set）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">ZADD zset 10 <span class="hljs-string">&quot;member1&quot;</span> 20 <span class="hljs-string">&quot;member2&quot;</span>  <span class="hljs-comment"># 添加有序集合成员（分数在前）</span><br>ZRANGE zset 0 -1 WITHSCORES          <span class="hljs-comment"># 获取有序集合所有成员（按分数升序）</span><br>ZREVRANGE zset 0 -1 WITHSCORES       <span class="hljs-comment"># 获取有序集合所有成员（按分数降序）WITHSCORES：可选参数，指定是否返回分数。如果省略，则只返回成员名称</span><br>ZRANK zset <span class="hljs-string">&quot;member1&quot;</span>                 <span class="hljs-comment"># 获取成员的排名（分数升序）</span><br>ZCOUNT zset 10 20                    <span class="hljs-comment"># 获取分数范围内的成员数量</span><br></code></pre></td></tr></table></figure>
+<h3 id="4-查看分支"><a href="#4-查看分支" class="headerlink" title="4. 查看分支"></a>4. 查看分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch <span class="hljs-comment"># 查看本地分支</span><br>git branch -r  <span class="hljs-comment"># 查看远程分支  或 --remotes  </span><br>git branch -a  <span class="hljs-comment"># 查看本地和远程分支  或 --all  </span><br>git branch --show-current  <span class="hljs-comment"># 查看当前分支   Git 2.22+ 版本支持</span><br>git branch -vv <span class="hljs-comment"># 查看分支关联关系</span><br><br>git branch --merged    <span class="hljs-comment"># 查看哪些分支已合并到当前分支</span><br>git branch --no-merged <span class="hljs-comment"># 查看哪些分支尚未合并到当前分支</span><br>git branch -m master main <span class="hljs-comment"># 重命名本地 master 为 main</span><br><br><br></code></pre></td></tr></table></figure>
+
+<h3 id="5-查看分支差异"><a href="#5-查看分支差异" class="headerlink" title="5. 查看分支差异"></a>5. 查看分支差异</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">log</span> branch1..branch2  <span class="hljs-comment"># 显示 branch2 有但 branch1 没有的提交</span><br>git diff branch1..branch2  <span class="hljs-comment"># 显示两个分支的文件差异</span><br></code></pre></td></tr></table></figure>
 
 
                 
@@ -354,7 +438,7 @@
   
     <span>></span>
     
-  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/" class="category-chain-item">redis</a>
+  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/git/" class="category-chain-item">git</a>
   
   
 
@@ -371,7 +455,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/redis/" class="print-no-link">#redis</a>
+        <a href="/tags/git/" class="print-no-link">#git</a>
       
     </div>
   
@@ -383,8 +467,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>redis基本操作</div>
-      <div>https://one-and-one-fourth.github.io/2025/06/04/中间件/redis/redis/</div>
+      <div>git操作</div>
+      <div>https://one-and-one-fourth.github.io/2025/06/05/中间件/git/git操作/</div>
     </div>
     <div class="license-meta">
       
@@ -396,13 +480,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025-06-04 15:27:20</div>
+          <div>2025-06-05 11:17:08</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-06-04 16:45:37</div>
+          <div>2025-06-05 12:57:18</div>
         </div>
       
       
@@ -433,18 +517,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/06/05/%E4%B8%AD%E9%97%B4%E4%BB%B6/git/git%E6%93%8D%E4%BD%9C/" title="git操作">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">git操作</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/05/27/%E7%BA%BF%E4%BB%A3/%E7%BA%BF%E4%BB%A3%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0/" title="线代一轮复习">
-                        <span class="hidden-mobile">线代一轮复习</span>
+                      <a href="/2025/06/04/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis/" title="redis基本操作">
+                        <span class="hidden-mobile">redis基本操作</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
