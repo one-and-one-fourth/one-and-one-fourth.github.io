@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://124.222.56.204/img/%E7%BA%BF%E4%BB%A3/1.jpg">
 <meta property="article:published_time" content="2025-05-27T02:33:10.177Z">
-<meta property="article:modified_time" content="2025-06-04T16:30:52.010Z">
+<meta property="article:modified_time" content="2025-06-10T08:31:48.477Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="线代">
 <meta name="twitter:card" content="summary_large_image">
@@ -251,7 +251,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.4k 字
+          5.4k 字
         
       </span>
     
@@ -262,7 +262,7 @@
         
         
         
-          29 分钟
+          45 分钟
         
       </span>
     
@@ -304,7 +304,7 @@
               <p id="updated-time" class="note note-default" style="">
                 
                   
-                    本文最后更新于 2025-06-05 00:30:52
+                    本文最后更新于 2025-06-10 16:31:48
                   
                 
               </p>
@@ -521,6 +521,51 @@
             <p>&emsp;&emsp;求向量组极大无关组的方法：先将列向量组构成矩阵A，然后对A实行初等行变换，把A化为行最简型矩阵，由行最简型矩阵列之间的关系，确定原向量组间的线性关系，从而确定极大无关组。(<strong>行最简型矩阵中每行首个非零元素所在的列</strong>)</p>
           </div>
 
+<h2 id="3-5-内积"><a href="#3-5-内积" class="headerlink" title="3.5 内积"></a>3.5 内积</h2><h3 id="3-5-1-定义与性质"><a href="#3-5-1-定义与性质" class="headerlink" title="3.5.1 定义与性质"></a>3.5.1 定义与性质</h3><ol>
+<li><p><strong>内积定义</strong>：对于向量$\mathbf{a}&#x3D;(a_1,…,a_n)$和$\mathbf{b}&#x3D;(b_1,…,b_n)$，其内积为：<br>$$[\mathbf{a},\mathbf{b}] &#x3D; \sum_{i&#x3D;1}^n a_ib_i$$</p>
+</li>
+<li><p><strong>矩阵内积</strong>：对于$m×n$矩阵$A,B$，其内积为：<br>$$[A,B] &#x3D; \sum_{i&#x3D;1}^m\sum_{j&#x3D;1}^n a_{ij}b_{ij}$$</p>
+</li>
+<li><p><strong>向量长度（范数）</strong>：<br>$$|\mathbf{a}| &#x3D; \sqrt{[\mathbf{a},\mathbf{a}]} &#x3D; \sqrt{\sum_{i&#x3D;1}^n a_i^2}$$</p>
+</li>
+<li><p><strong>单位向量</strong>：若$|\mathbf{a}|&#x3D;1$，则称$\mathbf{a}$为单位向量</p>
+</li>
+<li><p><strong>施瓦茨不等式</strong>：<br>$$|[\mathbf{a},\mathbf{b}]| \leq |\mathbf{a}|\cdot|\mathbf{b}|$$</p>
+</li>
+</ol>
+<h3 id="3-5-2-重要性质"><a href="#3-5-2-重要性质" class="headerlink" title="3.5.2 重要性质"></a>3.5.2 重要性质</h3><ul>
+<li>对称性：$[\mathbf{a},\mathbf{b}]&#x3D;[\mathbf{b},\mathbf{a}]$</li>
+<li>线性性：$[k\mathbf{a}+\mathbf{b},\mathbf{c}]&#x3D;k[\mathbf{a},\mathbf{c}]+[\mathbf{b},\mathbf{c}]$</li>
+<li>正定性：$[\mathbf{a},\mathbf{a}] \geq 0$，且$[\mathbf{a},\mathbf{a}]&#x3D;0 \iff \mathbf{a}&#x3D;\mathbf{0}$</li>
+</ul>
+<div class="note note-success">
+            <p><strong>例题1</strong>：计算向量$\mathbf{a}&#x3D;(1,2,3)$和$\mathbf{b}&#x3D;(4,-5,6)$的内积和长度。</p><p>解：</p><ol><li><p>内积：<br>$$[\mathbf{a},\mathbf{b}] &#x3D; 1×4 + 2×(-5) + 3×6 &#x3D; 4-10+18&#x3D;12$$</p></li><li><p>长度：<br>$$|\mathbf{a}| &#x3D; \sqrt{1^2+2^2+3^2} &#x3D; \sqrt{14}$$<br>$$|\mathbf{b}| &#x3D; \sqrt{4^2+(-5)^2+6^2} &#x3D; \sqrt{77}$$</p></li></ol>
+          </div>
+
+<hr>
+<h2 id="3-6-正交向量组"><a href="#3-6-正交向量组" class="headerlink" title="3.6 正交向量组"></a>3.6 正交向量组</h2><h3 id="3-6-1-基本概念"><a href="#3-6-1-基本概念" class="headerlink" title="3.6.1 基本概念"></a>3.6.1 基本概念</h3><ol>
+<li><strong>正交定义</strong>：若$[\mathbf{a},\mathbf{b}]&#x3D;0$，则称向量$\mathbf{a}$与$\mathbf{b}$正交</li>
+<li><strong>正交向量组</strong>：由非零向量组成的向量组，其中任意两个不同向量都正交</li>
+<li><strong>标准正交基</strong>：由单位向量组成的正交向量组</li>
+</ol>
+<hr>
+<h3 id="3-6-2-重要定理"><a href="#3-6-2-重要定理" class="headerlink" title="3.6.2 重要定理"></a>3.6.2 重要定理</h3><ol>
+<li><p><strong>正交向量组的线性无关性</strong>：<br>任何正交向量组都是线性无关的</p>
+</li>
+<li><p><strong>Gram-Schmidt正交化</strong>：<br>可将线性无关向量组转化为正交向量组：</p>
+<ul>
+<li>$\mathbf{b}_1 &#x3D; \mathbf{a}_1$</li>
+<li>$\mathbf{b}_2 &#x3D; \mathbf{a}_2 - \frac{[\mathbf{a}_2,\mathbf{b}_1]}{[\mathbf{b}_1,\mathbf{b}_1]}\mathbf{b}_1$</li>
+<li>$\mathbf{b}_3 &#x3D; \mathbf{a}_3 - \frac{[\mathbf{a}_3,\mathbf{b}_1]}{[\mathbf{b}_1,\mathbf{b}_1]}\mathbf{b}_1 - \frac{[\mathbf{a}_3,\mathbf{b}_2]}{[\mathbf{b}_2,\mathbf{b}_2]}\mathbf{b}_2$</li>
+<li>…</li>
+</ul>
+</li>
+</ol>
+<hr>
+<div class="note note-success">
+            <p><strong>例题2</strong>：验证向量组$\mathbf{a}_1&#x3D;(1,1,1)$，$\mathbf{a}_2&#x3D;(1,-1,0)$，$\mathbf{a}_3&#x3D;(1,1,-2)$是否正交。</p><p><strong>解：</strong><br>计算各对内积：</p><ol><li>$[\mathbf{a}_1,\mathbf{a}_2] &#x3D; 1×1 + 1×(-1) + 1×0 &#x3D; 0$</li><li>$[\mathbf{a}_1,\mathbf{a}_3] &#x3D; 1×1 + 1×1 + 1×(-2) &#x3D; 0$</li><li>$[\mathbf{a}_2,\mathbf{a}_3] &#x3D; 1×1 + (-1)×1 + 0×(-2) &#x3D; 0$<br>因此该向量组是正交向量组。</li></ol><p><strong>例题3</strong>：将线性无关向量组$\mathbf{a}_1&#x3D;(1,1,0)$，$\mathbf{a}_2&#x3D;(1,0,1)$，$\mathbf{a}_3&#x3D;(0,1,1)$正交化。</p><p><strong>解：</strong><br>使用Gram-Schmidt正交化：</p><ol><li>$\mathbf{b}_1 &#x3D; \mathbf{a}_1 &#x3D; (1,1,0)$</li><li>$\mathbf{b}_2 &#x3D; \mathbf{a}_2 - \frac{[\mathbf{a}_2,\mathbf{b}_1]}{[\mathbf{b}_1,\mathbf{b}_1]}\mathbf{b}_1 &#x3D; (1,0,1) - \frac{1}{2}(1,1,0) &#x3D; (\frac{1}{2},-\frac{1}{2},1)$</li><li>$\mathbf{b}_3 &#x3D; \mathbf{a}_3 - \frac{[\mathbf{a}_3,\mathbf{b}_1]}{[\mathbf{b}_1,\mathbf{b}_1]}\mathbf{b}_1 - \frac{[\mathbf{a}_3,\mathbf{b}_2]}{[\mathbf{b}_2,\mathbf{b}_2]}\mathbf{b}_2 &#x3D; (0,1,1) - \frac{1}{2}(1,1,0) - \frac{1&#x2F;2}{3&#x2F;2}(\frac{1}{2},-\frac{1}{2},1) &#x3D; (-\frac{2}{3},\frac{2}{3},\frac{2}{3})$</li></ol><p>最终得到正交向量组：$\mathbf{b}_1&#x3D;(1,1,0)$，$\mathbf{b}_2&#x3D;(\frac{1}{2},-\frac{1}{2},1)$，$\mathbf{b}_3&#x3D;(-\frac{2}{3},\frac{2}{3},\frac{2}{3})$</p>
+          </div>
+
 <hr>
 <h1 id="4、线性方程组"><a href="#4、线性方程组" class="headerlink" title="4、线性方程组"></a>4、线性方程组</h1><h2 id="4-1-非齐次"><a href="#4-1-非齐次" class="headerlink" title="4.1 非齐次"></a>4.1 非齐次</h2><ul>
 <li>线性方程组 $A_{mn}$ * $x$&#x3D;b <strong>有解</strong>的 充要条件 是 r(A，b)&#x3D; r(A)</li>
@@ -553,7 +598,7 @@
 <blockquote>
 <ol>
 <li>对于增广矩阵化简为 <strong>行最简型矩阵</strong></li>
-<li>判断解的情况并且得到解向量的个数 &#x3D; n-r</li>
+<li><span style="color:red"><strong>判断解的情况并且得到解向量的个数 &#x3D; n-r</strong></span></li>
 <li>通过行最简矩阵得到<strong>自由未知量</strong>，首非零元与自由未知量确定方程，求方程解，得到各个未知量的解，并且得到每一个<strong>基础解系</strong></li>
 <li>通解为 各个基础解系的k倍和</li>
 </ol>
@@ -565,8 +610,87 @@
 </ol>
 </blockquote>
 <hr>
-<h1 id="5、特征值和特征向量"><a href="#5、特征值和特征向量" class="headerlink" title="5、特征值和特征向量"></a>5、特征值和特征向量</h1><hr>
-<h1 id="6、二次型"><a href="#6、二次型" class="headerlink" title="6、二次型"></a>6、二次型</h1>
+<h1 id="5-特征值和特征向量"><a href="#5-特征值和特征向量" class="headerlink" title="5. 特征值和特征向量"></a>5. 特征值和特征向量</h1><h2 id="5-1-基本概念与定理"><a href="#5-1-基本概念与定理" class="headerlink" title="5.1 基本概念与定理"></a>5.1 基本概念与定理</h2><p><strong>定义</strong>:  设$A$是$n$阶方阵，若存在数$\lambda$和非零向量$\alpha$使得：  $A\alpha &#x3D; \lambda\alpha$，  则称$\lambda$为$A$的特征值，$\alpha$为对应$\lambda$的特征向量。</p>
+<ul>
+<li><p>带参数r的n阶方阵称为A的<strong>特征方阵</strong>；</p>
+</li>
+<li><p>它的行列式称为A的<strong>特征多项式</strong>；</p>
+</li>
+<li><p>$|\lambda E-A|$&#x3D;0称为A的<strong>特征方程</strong></p>
+</li>
+</ul>
+<p>求解特征值与特征向量的方法：</p>
+<ul>
+<li><strong>n阶实方阵的特征值就是它的特征方程的n个根</strong></li>
+<li><strong>任意取定一个特征值，其对应特征向量就是相应齐次线性方程组（rE-A）x&#x3D;0 的所有非零解</strong></li>
+</ul>
+<div class="note note-success">
+            <p>例题1：求特征值和特征向量</p><p>  求矩阵$A&#x3D;\begin{bmatrix}3&amp;1\\1&amp;3\end{bmatrix}$的特征值和特征向量。</p><p>  <strong>解</strong>：</p><ol><li><p>特征方程：<br>$$<br>\begin{vmatrix}<br>  3-\lambda &amp; 1 \\<br>  1 &amp; 3-\lambda<br>  \end{vmatrix} &#x3D; (3-\lambda)^2 -1 &#x3D; 0<br>$$<br>  解得：$\lambda_1&#x3D;2$，$\lambda_2&#x3D;4$</p></li><li><p>求特征向量：</p></li></ol><ul><li>对$\lambda_1&#x3D;2$：<br>$$<br>\begin{bmatrix}1&amp;1\\1&amp;1\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix}&#x3D;0 \Rightarrow \alpha_1&#x3D;k\begin{bmatrix}1\\-1\end{bmatrix}<br>$$</li><li>对$\lambda_2&#x3D;4$：<br>$$<br>\begin{bmatrix}-1&amp;1\\1&amp;-1\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix}&#x3D;0 \Rightarrow \alpha_2&#x3D;k\begin{bmatrix}1\\1\end{bmatrix}<br>$$</li></ul>
+          </div>
+
+<hr>
+<h2 id="5-2-矩阵对角化"><a href="#5-2-矩阵对角化" class="headerlink" title="5.2 矩阵对角化"></a>5.2 矩阵对角化</h2><p> <strong>对角化条件</strong></p>
+<ol>
+<li>$A$有$n$个线性无关特征向量</li>
+<li>$A$的每个特征值的几何重数等于代数重数</li>
+</ol>
+<div class="note note-success">
+            <p><strong>例题：</strong>将$A&#x3D;\begin{bmatrix}2&amp;-1\\-1&amp;2\end{bmatrix}$对角化。</p><p><strong>解</strong>：</p><ol><li>特征值：$\lambda_1&#x3D;1$，$\lambda_2&#x3D;3$</li><li>特征向量：<ul><li>$\lambda_1&#x3D;1$对应$\alpha_1&#x3D;(1,1)^T$</li><li>$\lambda_2&#x3D;3$对应$\alpha_2&#x3D;(-1,1)^T$</li></ul></li><li>构造矩阵：<br>$$<br>P&#x3D;\begin{bmatrix}1&amp;-1\\1&amp;1\end{bmatrix}, \quad<br>P^{-1}&#x3D;\frac{1}{2}\begin{bmatrix}1&amp;1\\-1&amp;1\end{bmatrix}<br>$$</li><li>对角化结果：<br>$$<br>A&#x3D;P\begin{bmatrix}1&amp;0\\0&amp;3\end{bmatrix}P^{-1}<br>$$</li></ol>
+          </div>
+
+
+
+<h2 id="5-3-特征值与特征向量的若干结论"><a href="#5-3-特征值与特征向量的若干结论" class="headerlink" title="5.3 特征值与特征向量的若干结论"></a>5.3 特征值与特征向量的若干结论</h2><ol>
+<li><p><strong>实方阵的特征值未必是实数</strong>，特征向量也未必是实向量。</p>
+</li>
+<li><p><strong>三角矩阵的特征值</strong>：<br>上下三角矩阵的特征值就是它的全体对角元素。</p>
+</li>
+<li><p><strong>特征向量的唯一性</strong>：<br>一个向量 <strong>p</strong> 不可能是同一个方阵 <strong>A</strong> 的不同特征值的特征向量。</p>
+</li>
+<li><p><strong>方阵与其转置的特征值关系</strong>：<br>n阶方阵和它的转置具有相同的特征值。</p>
+</li>
+<li><p><strong>特征值与矩阵的关系</strong>：<br>设 <strong>r₁, r₂, …, rₙ</strong> 为方阵 <strong>A</strong> 的全体特征值，则必有：</p>
+<ul>
+<li><p><strong>特征值之和等于对角线元素之和（迹）</strong>：</p>
+<p>$\sum_{i&#x3D;1}^{n} \lambda_{i} &#x3D; \sum_{i&#x3D;1}^{n} a_{ii} &#x3D; \text{tr}(A)$</p>
+</li>
+<li><p><strong>特征值之积等于行列式的值</strong>：<br>$\prod_{i&#x3D;1}^{n} \lambda_{i} &#x3D; |A|$</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="6、二次型"><a href="#6、二次型" class="headerlink" title="6、二次型"></a>6、二次型</h1><p>$n$元二次齐次函数：<br>$$<br>f(x_1,…,x_n)&#x3D;\sum_{i&#x3D;1}^n\sum_{j&#x3D;1}^n a_{ij}x_ix_j \quad (a_{ij}&#x3D;a_{ji})<br>$$<br>矩阵形式：$f(\mathbf{x})&#x3D;\mathbf{x}^TA\mathbf{x}$</p>
+<ul>
+<li>A(<strong>对称矩阵</strong>)称为二次型f的矩阵，对称阵A的秩为二次型f的秩</li>
+<li>二次型与对称阵具有一一对应的关系，一个二次型 f 由其对应的实对称矩阵 A 唯一确定。当给定了二次型 f 后，便可以确定其对应的实对称矩阵 A<ul>
+<li>A 的对角线元素为：$a_{ii}$为$x_{i} ^2$项的<strong>系数</strong></li>
+<li>A 的其他元素为： $a_{ij} &#x3D; a_{ji}$ 为 $x_{ij}$ 项的<strong>系数的 $2^{-1}$</strong></li>
+</ul>
+</li>
+</ul>
+<div class="note note-success">
+            <p>例题3：化二次型为标准形<br>化二次型$f&#x3D;2x_1^2+3x_2^2+4x_1x_2$为标准形。</p><p><strong>解法1（配方法）</strong>：<br>$$<br>\begin{aligned}<br>f &amp;&#x3D; 2x_1^2+4x_1x_2+3x_2^2 \\<br>&amp;&#x3D; 2(x_1^2+2x_1x_2+x_2^2)+x_2^2 \\<br>&amp;&#x3D; 2(x_1+x_2)^2+x_2^2<br>\end{aligned}<br>$$<br>令$y_1&#x3D;x_1+x_2$，$y_2&#x3D;x_2$，则$f&#x3D;2y_1^2+y_2^2$</p><p><strong>解法2（正交变换法）</strong>：</p><ol><li>写出矩阵$A&#x3D;\begin{bmatrix}2&amp;2\\2&amp;3\end{bmatrix}$</li><li>求特征值：$\lambda_1&#x3D;1$，$\lambda_2&#x3D;4$</li><li>标准形：$f&#x3D;y_1^2+4y_2^2$</li></ol>
+          </div>
+
+<h2 id="6-1-标准型"><a href="#6-1-标准型" class="headerlink" title="6.1 标准型"></a>6.1 标准型</h2><p><strong>定义：只含平方项的 二次型称为二次型的标准型</strong></p>
+<p>正交变换法化二次型为标准型的方法：</p>
+<ol>
+<li>写出二次型的矩阵A，求其特征值</li>
+<li>求出特征值对应的特征向量，并且将他们<strong>正交单位化</strong></li>
+<li>将正交单位化后的特征向量依次作为列向量构成<strong>正交矩阵 P</strong>。</li>
+<li>做正交变换 $x&#x3D;Py$，得二次型的标准型</li>
+</ol>
+<blockquote>
+<p>正交单位化的时候：</p>
+<ol>
+<li>如果对应不同的特征值，所以他们正交，直接单位化即可</li>
+<li>如果对应<strong>相同的特征值</strong>，所以要<strong>首先正交化</strong>，然后<strong>再单位化</strong></li>
+</ol>
+</blockquote>
+<hr>
+<h2 id="6-2-合同"><a href="#6-2-合同" class="headerlink" title="6.2 合同"></a>6.2 合同</h2><p>对于两个矩阵A和B，如果存在可逆矩阵C，使得$C^TAC&#x3D;B$，就称A<strong>合同（或相合）</strong>于B，记作A≃B，也是一种等价关系。因此可以称A和B是合同矩阵。</p>
+
                 
               </div>
             
@@ -637,7 +761,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-06-05 00:30:52</div>
+          <div>2025-06-10 16:31:48</div>
         </div>
       
       
