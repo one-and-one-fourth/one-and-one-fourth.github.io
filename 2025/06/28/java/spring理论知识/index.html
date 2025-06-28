@@ -16,24 +16,24 @@
   <meta name="author" content="一又四分之一">
   <meta name="keywords" content="">
   
-    <meta name="description" content="windows操作docker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出。  服务器相关命令ping ： 检测连接是否存活echo： 在命令行打印一些内容quit、exit： 退出客户端shutdown： 退出服务器端info： 返回redis相关信息config get dir&#x2F;*: 实时传递接收的请求showlog： 显示慢查询sele">
+    <meta name="description" content="Spring、Spring Boot 和 Spring Cloud 是 Spring 生态系统中三个关键的技术栈，它们各自有不同的定位，但又紧密关联。以下是它们之间的关系和区别：  1. Spring（核心框架）定位：Spring 是一个轻量级的 Java 开发框架，最初的核心功能是 IoC（控制反转） 和 AOP（面向切面编程），用于解耦和管理 Java 对象（Bean）的生命周期。扩展功能：S">
 <meta property="og:type" content="article">
-<meta property="og:title" content="redis基本操作">
-<meta property="og:url" content="http://124.222.56.204/2025/06/04/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis/index.html">
+<meta property="og:title" content="spring、springboot、springCloud">
+<meta property="og:url" content="http://124.222.56.204/2025/06/28/java/spring%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
-<meta property="og:description" content="windows操作docker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出。  服务器相关命令ping ： 检测连接是否存活echo： 在命令行打印一些内容quit、exit： 退出客户端shutdown： 退出服务器端info： 返回redis相关信息config get dir&#x2F;*: 实时传递接收的请求showlog： 显示慢查询sele">
+<meta property="og:description" content="Spring、Spring Boot 和 Spring Cloud 是 Spring 生态系统中三个关键的技术栈，它们各自有不同的定位，但又紧密关联。以下是它们之间的关系和区别：  1. Spring（核心框架）定位：Spring 是一个轻量级的 Java 开发框架，最初的核心功能是 IoC（控制反转） 和 AOP（面向切面编程），用于解耦和管理 Java 对象（Bean）的生命周期。扩展功能：S">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-06-04T07:27:20.236Z">
-<meta property="article:modified_time" content="2025-06-05T05:13:36.268Z">
+<meta property="article:published_time" content="2025-06-28T12:38:50.922Z">
+<meta property="article:modified_time" content="2025-06-28T12:54:54.321Z">
 <meta property="article:author" content="一又四分之一">
-<meta property="article:tag" content="redis">
+<meta property="article:tag" content="spring">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>redis基本操作 - one-and-one-fourth</title>
+  <title>spring、springboot、springCloud - one-and-one-fourth</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -226,7 +226,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="redis基本操作"></span>
+            <span id="subtitle" data-typed-text="spring、springboot、springCloud"></span>
           
         </div>
 
@@ -237,8 +237,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-06-04 15:27" pubdate>
-          2025-06-04 15:27:20
+        <time datetime="2025-06-28 20:38" pubdate>
+          2025-06-28 20:38:50
         </time>
       </span>
     
@@ -249,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          671 字
+          765 字
         
       </span>
     
@@ -260,7 +260,7 @@
         
         
         
-          6 分钟
+          7 分钟
         
       </span>
     
@@ -297,12 +297,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">redis基本操作</h1>
+            <h1 id="seo-header">spring、springboot、springCloud</h1>
             
               <p id="updated-time" class="note note-default" style="">
                 
                   
-                    本文最后更新于 2025-06-05 13:13:36
+                    本文最后更新于 2025-06-28 20:54:54
                   
                 
               </p>
@@ -310,27 +310,87 @@
             
               <div class="markdown-body">
                 
-                <h1 id="windows操作"><a href="#windows操作" class="headerlink" title="windows操作"></a>windows操作</h1><p><code>docker exec -it 容器名字 redis-cli --raw</code> ：进入redis 容器，以原始格式输出。</p>
+                <p>Spring、Spring Boot 和 Spring Cloud 是 Spring 生态系统中三个关键的技术栈，它们各自有不同的定位，但又紧密关联。以下是它们之间的关系和区别：</p>
 <hr>
-<h1 id="服务器相关命令"><a href="#服务器相关命令" class="headerlink" title="服务器相关命令"></a>服务器相关命令</h1><p><code>ping</code> ： 检测连接是否存活<br><code>echo</code>： 在命令行打印一些内容<br><code>quit、exit</code>： 退出客户端<br><code>shutdown</code>： 退出服务器端<br><code>info</code>： 返回redis相关信息<br><code>config get dir/*</code>: 实时传递接收的请求<br><code>showlog</code>： 显示慢查询<br><code>select n</code>： 切换到数据库n，redis 默认有16个数据库（DB 0~DB 15），默认使用的第0个<br><code>dbsize</code>： 查看当前数据库大小<br><code>move key n</code>： 不同数据库之间数据是不能互通的，move移动键到指定数据库<br><code>flushdb</code>： 清空<strong>当前数据库</strong>中的键值对<br><code>flushall</code>： 清空<strong>所有数据库</strong>的键值对</p>
+<h3 id="1-Spring（核心框架）"><a href="#1-Spring（核心框架）" class="headerlink" title="1. Spring（核心框架）"></a><strong>1. Spring（核心框架）</strong></h3><p><strong>定位</strong>：Spring 是一个轻量级的 Java 开发框架，最初的核心功能是 <strong>IoC（控制反转）</strong> 和 <strong>AOP（面向切面编程）</strong>，用于解耦和管理 Java 对象（Bean）的生命周期。<br><strong>扩展功能</strong>：Spring 后续发展出 <strong>Spring MVC（Web 开发）</strong>、<strong>Spring Data（数据访问）</strong>、<strong>Spring Security（安全）</strong> 等模块，覆盖企业级开发的各个方面。<br><strong>特点</strong>：</p>
+<ul>
+<li>提供灵活的配置方式（XML &#x2F; 注解）。</li>
+<li>需要手动配置大量 Bean 和依赖管理。</li>
+</ul>
 <hr>
-<h1 id="key相关"><a href="#key相关" class="headerlink" title="key相关"></a>key相关</h1><p><code>keys * </code>：查看当前数据库中所有的key<br><code>dbsize</code>： 键总数<br><code>exists key</code>： 检查键是否存在<br><code>del key [key …]</code>： 删除键<br><code>expire key seconds</code>： 键过期<br><code>ttl key</code>： 获取键的有效时长<br><code>persist key</code>： 移除键的过期时间<br><code>type key</code>： 键的数据结构类型<br><code>randomkey</code>： 随机返回数据库中一个键<br><code>rename key1 key2</code> ： 重命名<br><code>renamex key1 key2</code> ： 当 key2 不存在时，key1 重命名</p>
+<h3 id="2-Spring-Boot（简化-Spring-开发）"><a href="#2-Spring-Boot（简化-Spring-开发）" class="headerlink" title="2. Spring Boot（简化 Spring 开发）"></a><strong>2. Spring Boot（简化 Spring 开发）</strong></h3><p><strong>定位</strong>：Spring Boot 是 <strong>Spring 的扩展</strong>，旨在简化 Spring 应用的初始搭建和开发过程，减少样板代码和配置。<br><strong>核心特性</strong>：</p>
+<ul>
+<li><strong>自动配置</strong>（Auto Configuration）：根据依赖自动配置 Spring 应用（如引入 <code>spring-boot-starter-web</code> 自动配置 Tomcat + Spring MVC）。</li>
+<li><strong>内嵌服务器</strong>（如 Tomcat、Jetty），无需部署到外部容器，直接打包成可执行 JAR 运行。</li>
+<li><strong>起步依赖（Starters）</strong>：预定义的依赖组合（如 <code>spring-boot-starter-data-jpa</code> 自动引入 Hibernate + JPA 相关库）。</li>
+<li><strong>Actuator</strong>：提供应用监控和管理端点（如健康检查、性能指标）。</li>
+</ul>
+<p><strong>与 Spring 的关系</strong>：</p>
+<ul>
+<li>Spring Boot <strong>基于 Spring</strong>，但通过约定优于配置（Convention over Configuration）大幅减少手动配置。</li>
+<li><strong>不替代 Spring</strong>，而是让 Spring 更易用。</li>
+</ul>
 <hr>
-<h1 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">SET key value         <span class="hljs-comment"># 设置键值对</span><br>GET key               <span class="hljs-comment"># 获取键的值</span><br>INCR key              <span class="hljs-comment"># 键值递增 1（要求值为数字）</span><br>incrby key increment  <span class="hljs-comment"># 增加 increment</span><br>DECR key              <span class="hljs-comment"># 键值递减 1</span><br>APPEND key <span class="hljs-string">&quot;text&quot;</span>     <span class="hljs-comment"># 追加字符串到键值末尾</span><br>STRLEN key            <span class="hljs-comment"># 获取字符串长度</span><br>MSET key1 val1 key2 val2  <span class="hljs-comment"># 批量设置键值对</span><br>MGET key1 key2        <span class="hljs-comment"># 批量获取键的值</span><br></code></pre></td></tr></table></figure>
-
+<h3 id="3-Spring-Cloud（分布式微服务解决方案）"><a href="#3-Spring-Cloud（分布式微服务解决方案）" class="headerlink" title="3. Spring Cloud（分布式微服务解决方案）"></a><strong>3. Spring Cloud（分布式微服务解决方案）</strong></h3><p><strong>定位</strong>：Spring Cloud <strong>基于 Spring Boot</strong>，提供一套完整的 <strong>微服务架构工具集</strong>，用于构建和管理分布式系统。<br><strong>核心功能</strong>：</p>
+<ul>
+<li><strong>服务注册与发现</strong>（Eureka、Consul、Nacos）。</li>
+<li><strong>负载均衡</strong>（Ribbon）。</li>
+<li><strong>熔断器</strong>（Hystrix &#x2F; Resilience4j）。</li>
+<li><strong>分布式配置中心</strong>（Spring Cloud Config）。</li>
+<li><strong>API 网关</strong>（Spring Cloud Gateway &#x2F; Zuul）。</li>
+</ul>
+<p><strong>与 Spring Boot 的关系</strong>：</p>
+<ul>
+<li><strong>依赖关系</strong>：Spring Cloud <strong>必须基于 Spring Boot</strong>，利用其自动配置和快速启动能力。</li>
+<li><strong>互补关系</strong>：<ul>
+<li>Spring Boot 用于 <strong>快速开发单个微服务</strong>。</li>
+<li>Spring Cloud 用于 <strong>协调和管理多个微服务</strong>（如服务调用、容错、配置同步）。</li>
+</ul>
+</li>
+</ul>
 <hr>
-<h1 id="哈希（Hash）操作"><a href="#哈希（Hash）操作" class="headerlink" title="哈希（Hash）操作"></a>哈希（Hash）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">HSET user:1 name <span class="hljs-string">&quot;Alice&quot;</span> age 30  <span class="hljs-comment"># 设置哈希字段</span><br>HGET user:1 name                <span class="hljs-comment"># 获取哈希字段的值</span><br>HGETALL user:1                  <span class="hljs-comment"># 获取哈希的所有字段和值</span><br>HKEYS user:1                    <span class="hljs-comment"># 获取哈希的所有字段名</span><br>HVALS user:1                    <span class="hljs-comment"># 获取哈希的所有字段值</span><br>HINCRBY user:1 age 1            <span class="hljs-comment"># 哈希字段值递增</span><br></code></pre></td></tr></table></figure>
-
-<p><code>user:1</code>：哈希的键名，通常使用 <code>对象类型:ID</code> 的格式</p>
+<h3 id="4-三者的层级关系"><a href="#4-三者的层级关系" class="headerlink" title="4. 三者的层级关系"></a><strong>4. 三者的层级关系</strong></h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs scss">Spring (IoC/AOP) → Spring Boot (简化开发) → Spring Cloud (分布式扩展)<br></code></pre></td></tr></table></figure>
+<ol>
+<li><strong>Spring</strong> 提供最基础的 Bean 管理和企业级开发能力。</li>
+<li><strong>Spring Boot</strong> 在 Spring 基础上提供快速开发支持（自动配置、内嵌服务器）。</li>
+<li><strong>Spring Cloud</strong> 在 Spring Boot 基础上扩展，提供 <strong>微服务治理</strong>（服务发现、熔断、配置管理等）。</li>
+</ol>
 <hr>
-<h1 id="列表（List）操作"><a href="#列表（List）操作" class="headerlink" title="列表（List）操作"></a>列表（List）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">LPUSH list <span class="hljs-string">&quot;item1&quot;</span> <span class="hljs-string">&quot;item2&quot;</span>      <span class="hljs-comment"># 从左侧插入元素</span><br>RPUSH list <span class="hljs-string">&quot;item3&quot;</span>              <span class="hljs-comment"># 从右侧插入元素</span><br>LPOP list                       <span class="hljs-comment"># 从左侧弹出元素</span><br>RPOP list                       <span class="hljs-comment"># 从右侧弹出元素</span><br>LRANGE list 0 -1                <span class="hljs-comment"># 获取列表所有元素</span><br>LLEN list                       <span class="hljs-comment"># 获取列表长度</span><br></code></pre></td></tr></table></figure>
-
+<h3 id="5-实际应用场景"><a href="#5-实际应用场景" class="headerlink" title="5. 实际应用场景"></a><strong>5. 实际应用场景</strong></h3><ul>
+<li><strong>单体应用</strong>：仅需 <strong>Spring Boot</strong>（如后台管理系统、小型 REST API）。</li>
+<li><strong>微服务架构</strong>：<strong>Spring Boot + Spring Cloud</strong>（如电商系统，拆分为用户服务、订单服务、支付服务等）。</li>
+<li><strong>传统企业应用</strong>：可能仅使用 <strong>Spring</strong>（如旧系统逐步迁移到 Spring Boot）。</li>
+</ul>
 <hr>
-<h1 id="集合（Set）操作"><a href="#集合（Set）操作" class="headerlink" title="集合（Set）操作"></a>集合（Set）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">SADD <span class="hljs-built_in">set</span> <span class="hljs-string">&quot;member1&quot;</span> <span class="hljs-string">&quot;member2&quot;</span>    <span class="hljs-comment"># 添加集合成员</span><br>SMEMBERS <span class="hljs-built_in">set</span>                    <span class="hljs-comment"># 获取集合所有成员</span><br>SISMEMBER <span class="hljs-built_in">set</span> <span class="hljs-string">&quot;member1&quot;</span>         <span class="hljs-comment"># 检查成员是否存在</span><br>SCARD <span class="hljs-built_in">set</span>                       <span class="hljs-comment"># 获取集合成员数量</span><br>SINTER set1 set2                <span class="hljs-comment"># 获取多个集合的交集</span><br>SUNION set1 set2                <span class="hljs-comment"># 获取多个集合的并集</span><br></code></pre></td></tr></table></figure>
-
-<hr>
-<h1 id="有序集合（Sorted-Set）操作"><a href="#有序集合（Sorted-Set）操作" class="headerlink" title="有序集合（Sorted Set）操作"></a>有序集合（Sorted Set）操作</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">ZADD zset 10 <span class="hljs-string">&quot;member1&quot;</span> 20 <span class="hljs-string">&quot;member2&quot;</span>  <span class="hljs-comment"># 添加有序集合成员（分数在前）</span><br>ZRANGE zset 0 -1 WITHSCORES          <span class="hljs-comment"># 获取有序集合所有成员（按分数升序）</span><br>ZREVRANGE zset 0 -1 WITHSCORES       <span class="hljs-comment"># 获取有序集合所有成员（按分数降序）WITHSCORES：可选参数，指定是否返回分数。如果省略，则只返回成员名称</span><br>ZRANK zset <span class="hljs-string">&quot;member1&quot;</span>                 <span class="hljs-comment"># 获取成员的排名（分数升序）</span><br>ZCOUNT zset 10 20                    <span class="hljs-comment"># 获取分数范围内的成员数量</span><br></code></pre></td></tr></table></figure>
-
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><table>
+<thead>
+<tr>
+<th>技术</th>
+<th>核心目标</th>
+<th>依赖关系</th>
+<th>典型应用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Spring</strong></td>
+<td>提供企业级 Java 开发框架</td>
+<td>无</td>
+<td>传统 Java EE 应用</td>
+</tr>
+<tr>
+<td><strong>Spring Boot</strong></td>
+<td>简化 Spring 开发</td>
+<td>基于 Spring</td>
+<td>快速开发单体&#x2F;微服务</td>
+</tr>
+<tr>
+<td><strong>Spring Cloud</strong></td>
+<td>微服务治理</td>
+<td>基于 Spring Boot</td>
+<td>分布式系统架构</td>
+</tr>
+</tbody></table>
+<p>三者共同构成了 Spring 生态的完整解决方案，适用于从传统应用到现代云原生架构的不同需求。</p>
 
                 
               </div>
@@ -349,12 +409,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="category-chain-item">中间件</a>
+  <a href="/categories/Java/" class="category-chain-item">Java</a>
   
   
     <span>></span>
     
-  <a href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/" class="category-chain-item">redis</a>
+  <a href="/categories/Java/spring/" class="category-chain-item">spring</a>
   
   
 
@@ -371,7 +431,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/redis/" class="print-no-link">#redis</a>
+        <a href="/tags/spring/" class="print-no-link">#spring</a>
       
     </div>
   
@@ -383,8 +443,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>redis基本操作</div>
-      <div>http://124.222.56.204/2025/06/04/中间件/redis/redis/</div>
+      <div>spring、springboot、springCloud</div>
+      <div>http://124.222.56.204/2025/06/28/java/spring理论知识/</div>
     </div>
     <div class="license-meta">
       
@@ -396,13 +456,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025-06-04 15:27:20</div>
+          <div>2025-06-28 20:38:50</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-06-05 13:13:36</div>
+          <div>2025-06-28 20:54:54</div>
         </div>
       
       
@@ -433,18 +493,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/06/05/%E4%B8%AD%E9%97%B4%E4%BB%B6/git/git%E6%93%8D%E4%BD%9C/" title="git操作">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">git操作</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/05/27/%E7%BA%BF%E4%BB%A3/%E7%BA%BF%E4%BB%A3%E4%B8%80%E8%BD%AE%E5%A4%8D%E4%B9%A0/" title="线代一轮复习">
-                        <span class="hidden-mobile">线代一轮复习</span>
+                      <a href="/2025/06/28/%E9%AB%98%E6%95%B0/%E9%AB%98%E6%95%B0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="高数基础知识">
+                        <span class="hidden-mobile">高数基础知识</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -501,12 +555,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -751,49 +799,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
