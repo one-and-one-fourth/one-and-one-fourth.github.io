@@ -16,15 +16,15 @@
   <meta name="author" content="一又四分之一">
   <meta name="keywords" content="">
   
-    <meta name="description" content="windows操作&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEADdocker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出docker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出。        ad8b833 (文章更新)         服务器相关命令ping ：">
+    <meta name="description" content="windows操作docker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出  服务器相关命令ping ： 检测连接是否存活echo： 在命令行打印一些内容quit、exit： 退出客户端shutdown： 退出服务器端info： 返回redis相关信息config get dir&#x2F;*: 实时传递接收的请求showlog： 显示慢查询selec">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redis基本操作">
 <meta property="og:url" content="http://124.222.56.204/2025/06/10/%E4%B8%AD%E9%97%B4%E4%BB%B6/redis/redis/index.html">
 <meta property="og:site_name" content="one-and-one-fourth">
-<meta property="og:description" content="windows操作&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEADdocker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出docker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出。        ad8b833 (文章更新)         服务器相关命令ping ：">
+<meta property="og:description" content="windows操作docker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出  服务器相关命令ping ： 检测连接是否存活echo： 在命令行打印一些内容quit、exit： 退出客户端shutdown： 退出服务器端info： 返回redis相关信息config get dir&#x2F;*: 实时传递接收的请求showlog： 显示慢查询selec">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-06-10T08:53:40.715Z">
-<meta property="article:modified_time" content="2025-06-10T08:53:40.715Z">
+<meta property="article:modified_time" content="2025-07-18T09:17:26.209Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="redis">
 <meta name="twitter:card" content="summary_large_image">
@@ -249,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          704 字
+          671 字
         
       </span>
     
@@ -299,25 +299,18 @@
           <article class="post-content mx-auto">
             <h1 id="seo-header">redis基本操作</h1>
             
+              <p id="updated-time" class="note note-default" style="">
+                
+                  
+                    本文最后更新于 2025-07-18 17:17:26
+                  
+                
+              </p>
+            
             
               <div class="markdown-body">
                 
-                <h1 id="windows操作"><a href="#windows操作" class="headerlink" title="windows操作"></a>windows操作</h1><h1 id="HEAD"><a href="#HEAD" class="headerlink" title="&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEADdocker exec -it 容器名字 redis-cli --raw ：进入redis 容器，以原始格式输出"></a>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br><code>docker exec -it 容器名字 redis-cli --raw</code> ：进入redis 容器，以原始格式输出</h1><p><code>docker exec -it 容器名字 redis-cli --raw</code> ：进入redis 容器，以原始格式输出。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>ad8b833 (文章更新)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+                <h1 id="windows操作"><a href="#windows操作" class="headerlink" title="windows操作"></a>windows操作</h1><p><code>docker exec -it 容器名字 redis-cli --raw</code> ：进入redis 容器，以原始格式输出</p>
 <hr>
 <h1 id="服务器相关命令"><a href="#服务器相关命令" class="headerlink" title="服务器相关命令"></a>服务器相关命令</h1><p><code>ping</code> ： 检测连接是否存活<br><code>echo</code>： 在命令行打印一些内容<br><code>quit、exit</code>： 退出客户端<br><code>shutdown</code>： 退出服务器端<br><code>info</code>： 返回redis相关信息<br><code>config get dir/*</code>: 实时传递接收的请求<br><code>showlog</code>： 显示慢查询<br><code>select n</code>： 切换到数据库n，redis 默认有16个数据库（DB 0~DB 15），默认使用的第0个<br><code>dbsize</code>： 查看当前数据库大小<br><code>move key n</code>： 不同数据库之间数据是不能互通的，move移动键到指定数据库<br><code>flushdb</code>： 清空<strong>当前数据库</strong>中的键值对<br><code>flushall</code>： 清空<strong>所有数据库</strong>的键值对</p>
 <hr>
@@ -407,6 +400,11 @@
         </div>
       
       
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2025-07-18 17:17:26</div>
+        </div>
+      
       
         <div class="license-meta-item">
           <div>许可协议</div>
@@ -445,8 +443,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/06/10/%E7%BA%BF%E4%BB%A3/%E7%BA%BF%E4%BB%A3%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/" title="线代思维导图">
-                        <span class="hidden-mobile">线代思维导图</span>
+                      <a href="/2025/06/10/%E4%B8%AD%E9%97%B4%E4%BB%B6/git/git%E6%93%8D%E4%BD%9C/" title="git操作">
+                        <span class="hidden-mobile">git操作</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
