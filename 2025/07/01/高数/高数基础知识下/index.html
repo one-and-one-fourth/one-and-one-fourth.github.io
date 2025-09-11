@@ -23,11 +23,15 @@
 <meta property="og:site_name" content="one-and-one-fourth">
 <meta property="og:description" content="四、不定积分4.1 基本概念若 $F(x)$ 为 $f(x)$ 在某区间内的原函数，则 $F(x) + C$（$C$ 为任意常数）也为 $f(x)$ 在该区间内的原函数。 若 $F(x), G(x)$ 都是 $f(x)$ 在某区间内的原函数，则 $F(x) - G(x) &#x3D; C$（$C$ 为某个确定常数）。 不定积分 定义 $f(x)$ 的原函数的全体称为 $f(x)$ 的不定积分，记为">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://124.222.56.204/img/%E9%AB%98%E6%95%B0/6b1d0e993ab0c47ceb1a5f3c999ce107.jpg">
+<meta property="og:image" content="http://124.222.56.204/img/%E9%AB%98%E6%95%B0/24b43d72b64163e534795fc4636fadb7_720.png">
+<meta property="og:image" content="http://124.222.56.204/img/%E9%AB%98%E6%95%B0/%E6%95%9B%E6%95%A3%E6%80%A7.png">
 <meta property="article:published_time" content="2025-07-01T02:42:54.064Z">
-<meta property="article:modified_time" content="2025-07-18T08:52:13.020Z">
+<meta property="article:modified_time" content="2025-09-11T02:02:28.625Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="高数">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://124.222.56.204/img/%E9%AB%98%E6%95%B0/6b1d0e993ab0c47ceb1a5f3c999ce107.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -249,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4k 字
+          6.1k 字
         
       </span>
     
@@ -260,7 +264,7 @@
         
         
         
-          34 分钟
+          51 分钟
         
       </span>
     
@@ -302,7 +306,7 @@
               <p id="updated-time" class="note note-default" style="">
                 
                   
-                    本文最后更新于 2025-07-18 16:52:13
+                    本文最后更新于 2025-09-11 10:02:28
                   
                 
               </p>
@@ -434,6 +438,8 @@
 <p><strong>定理</strong> 如果 $f(x)$ 在区间 $[a,b]$ 上连续，则 $\Phi(x) &#x3D; \int_{a}^{x} f(t) dt$ 在 $[a,b]$ 上可导，且 $\frac{d\Phi(x)}{dx} &#x3D; f(x)$</p>
 <p>&emsp;&emsp;由原函数的概念可知，如果 $f(x)$ 在区间 $[a,b]$ 上连续，则 $\Phi(x) &#x3D; \int_{a}^{x} f(t) dt$ 为 $f(x)$ 在区间 $[a,b]$ 上的一个原函数。由此可知，连续函数必有原函数。</p>
 <p><strong>【注】</strong> 如果 $f(x)$ 为 $[a,b]$ 上的连续函数，$\varphi_1(x), \varphi_2(x)$ 为可导函数，则 （积分求导）<br>$$\left( \int_{\varphi_1(x)}^{\varphi_2(x)} f(t) dt \right)’ &#x3D; f[\varphi_2(x)] \cdot \varphi_2’(x) - f[\varphi_1(x)] \cdot \varphi_1’(x)$$</p>
+<p>二重积分求导：</p>
+<p><img src="/../../img/%E9%AB%98%E6%95%B0/6b1d0e993ab0c47ceb1a5f3c999ce107.jpg" srcset="/img/loading.gif" lazyload></p>
 <hr>
 <h2 id="5-4-定积分的积分方法"><a href="#5-4-定积分的积分方法" class="headerlink" title="5.4 定积分的积分方法"></a>5.4 定积分的积分方法</h2><p>定积分的计算主要有以下五种方法：</p>
 <h3 id="5-4-1-牛顿—莱布尼茨公式"><a href="#5-4-1-牛顿—莱布尼茨公式" class="headerlink" title="5.4.1 牛顿—莱布尼茨公式"></a>5.4.1 牛顿—莱布尼茨公式</h3><p>设 $f(x)$ 在区间 $[a,b]$ 上连续，$F(x)$ 为 $f(x)$ 在 $[a,b]$ 上的一个原函数，则有<br>$$<br>\int_a^b f(x) dx &#x3D; F(x) \bigg|_a^b &#x3D; F(b) - F(a)。<br>$$</p>
@@ -449,10 +455,30 @@
 <h3 id="5-4-5-利用已有公式"><a href="#5-4-5-利用已有公式" class="headerlink" title="5.4.5 利用已有公式"></a>5.4.5 利用已有公式</h3><p>(1)<br>$$<br>\int_{0}^{\frac{\pi}{2}} \sin^n x dx &#x3D; \int_{0}^{\frac{\pi}{2}} \cos^n x dx &#x3D;<br>\begin{cases}<br>\frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdots \frac{1}{2} \cdot \frac{\pi}{2}, &amp; n \text{为正偶数}\\<br>\frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdots \frac{2}{3}, &amp; n \text{为大于1的奇数}<br>\end{cases}<br>$$</p>
 <p>(2)<br>$$<br>\int_{0}^{\pi} x f(\sin x) dx &#x3D; \frac{\pi}{2} \int_{0}^{\pi} f(\sin x) dx \quad (\text{其中} f(x) \text{连续}).<br>$$</p>
 <hr>
+<h2 id="5-5-判断原函数的可导性"><a href="#5-5-判断原函数的可导性" class="headerlink" title="5.5 判断原函数的可导性"></a>5.5 判断原函数的可导性</h2><p><img src="/../../img/%E9%AB%98%E6%95%B0/24b43d72b64163e534795fc4636fadb7_720.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<h2 id="5-6-定积分的应用"><a href="#5-6-定积分的应用" class="headerlink" title="5.6 定积分的应用"></a>5.6 定积分的应用</h2><p><font color='blue'>平面图形的面积</font></p>
+<p>(1) 若平面域 $D$ 由曲线 $y &#x3D; f(x)$, $y &#x3D; g(x)$ ($f(x) \geq g(x)$), $x &#x3D; a$, $x &#x3D; b$ ($a &lt; b$) 所围成，则平面域 $D$ 的面积为 $S &#x3D; \int_a^b [f(x) - g(x)] dx$</p>
+<p>(2) 若平面域 $D$ 由曲线 $r &#x3D; r(\theta)$, $\theta &#x3D; \alpha$, $\theta &#x3D; \beta$ ($\alpha &lt; \beta$) 所围成，则其面积为 $S &#x3D; \frac{1}{2} \int_{\alpha}^{\beta} r^2 (\theta) d\theta$</p>
+<p><font color='blue'>旋转体体积</font></p>
+<p>若区域 $D$ 由曲线 $y &#x3D; f(x)$ ($f(x) \geq 0$) 和直线 $x &#x3D; a$, $x &#x3D; b$ ($0 \leq a &lt; b$) 及 $x$ 轴所围成，则</p>
+<p>(1)区域 $D$ 绕 $x$ 轴旋转一周所得到的旋转体体积为<br>$$V_x &#x3D; \pi \int_a^b f^2(x) dx$$</p>
+<p>(2) 区域 $D$ 绕 $y$ 轴旋转一周所得到的旋转体体积为<br>$$V_y &#x3D; 2\pi \int_a^b xf(x) dx$$</p>
+<p><font color='blue'>曲线弧长</font></p>
+<p>(1) $C: y &#x3D; y(x), a \leq x \leq b.$</p>
+<p>$$s &#x3D; \int_a^b \sqrt{1 + y’^2} dx$$</p>
+<p>(2) $C:  \begin{cases} x&#x3D; x(t), \\  y&#x3D; y(t),  \end{cases} a\leq t \leq b.$</p>
+<p>$$s &#x3D; \int_a^b \sqrt{x’^2 + y’^2} dt$$</p>
+<p>(3) $C: r &#x3D; r(\theta), a \leq \theta \leq b$</p>
+<p>$$s &#x3D; \int_a^b \sqrt{r^2 + r’^2}dt$$</p>
+<p><font color='blue'>旋转体侧面积</font></p>
+<p>曲线 $ y &#x3D; f(x) (f(x) \geq 0) $ 和直线 $ x &#x3D; a, x &#x3D; b (0 \leq a &lt; b)  $及  $ $轴所围成区域绕  $x $ 轴旋转所得旋转体的侧面积为</p>
+<p>$$S &#x3D; 2\pi \int_{a}^{b} f(x) \sqrt{1 + f’^{2}(x)} \mathrm{d}x$$</p>
+<hr>
 <h1 id="六、反常积分"><a href="#六、反常积分" class="headerlink" title="六、反常积分"></a>六、反常积分</h1><h3 id="6-1-无穷区间上的反常积分"><a href="#6-1-无穷区间上的反常积分" class="headerlink" title="6.1 无穷区间上的反常积分"></a>6.1 无穷区间上的反常积分</h3><p><strong>定义</strong>  </p>
 <p>(1) 设 $f(x)$ 为 $[a, +\infty)$ 上的连续函数，如果极限 $\lim\limits_{x \to +\infty} \int_a^x f(x) dx$ 存在，则称原函数 $f(x)$ 在无穷区间 $[a, +\infty)$ 上的<strong>反常积分</strong>，记作 $\int_a^{+\infty} f(x) dx$<br>$$\int_a^{+\infty} f(x) dx &#x3D; \lim\limits_{x \to +\infty} \int_a^x f(x) dx$$<br>这时也称反常积分 $\int_a^{+\infty} f(x) dx$ 收敛。如果上述极限不存在，则称反常积分 $\int_a^{+\infty} f(x) dx$ 发散。</p>
 <p>(2) 设 $f(x)$ 为 $(-\infty, b]$ 上的连续函数，则可类似的定义函数 $f(x)$ 在无穷区间 $(-\infty, b]$ 上的反常积分<br>$$\int_{-\infty}^b f(x) dx &#x3D; \lim\limits_{x \to -\infty} \int_b^x f(x) dx$$</p>
-<p>(3) 设 $f(x)$ 为 $(-\infty, +\infty)$ 上的连续函数，如果反常积分<br>$$\int_{-\infty}^0 f(x) dx$ 和 $\int_0^{+\infty} f(x) dx$$<br>都收敛，则称反常积分 $\int_{-\infty}^{+\infty} f(x) dx$ <strong>收敛</strong>，且<br>$$\int_{-\infty}^{+\infty} f(x) dx &#x3D; \int_{-\infty}^0 f(x) dx + \int_0^{+\infty} f(x) dx$$<br>如果 $\int_{-\infty}^0 f(x) dx$ 与 $\int_0^{+\infty} f(x) dx$ 至少有一个发散，则称 $\int_{-\infty}^{+\infty} f(x) dx$ <strong>发散</strong>。</p>
+<p>(3) 设 $f(x)$ 为 $(-\infty, +\infty)$ 上的连续函数，如果反常积分<br>$$\int_{-\infty}^0 f(x) dx$$ 和 $$\int_0^{+\infty} f(x) dx$$<br>都收敛，则称反常积分 $\int_{-\infty}^{+\infty} f(x) dx$ <strong>收敛</strong>，且<br>$$\int_{-\infty}^{+\infty} f(x) dx &#x3D; \int_{-\infty}^0 f(x) dx + \int_0^{+\infty} f(x) dx$$<br>如果 $\int_{-\infty}^0 f(x) dx$ 与 $\int_0^{+\infty} f(x) dx$ 至少有一个发散，则称 $\int_{-\infty}^{+\infty} f(x) dx$ <strong>发散</strong>。</p>
 <hr>
 <p><strong>定理 1（比较判别法）</strong></p>
 <p>设 $f(x), g(x)$ 在 $[a, +\infty)$ 上连续，且 $0 \leq f(x) \leq g(x)$，则  </p>
@@ -485,6 +511,74 @@
 <p>常用结论：<br>$$<br>\int_a^b \frac{1}{(x-a)^p} dx<br>\begin{cases}<br>p&lt;1, \text{收敛}\\<br>p\geq 1, \text{发散}<br>\end{cases}<br>$$</p>
 <p>$$<br>\int_a^b \frac{1}{(b-x)^p}dx<br>\begin{cases}<br>p&lt;1, \text{收敛}\\<br>p\geq 1, \text{发散}<br>\end{cases}<br>$$</p>
 <hr>
+<h3 id="6-3-反常积分敛散性判断"><a href="#6-3-反常积分敛散性判断" class="headerlink" title="6.3 反常积分敛散性判断"></a>6.3 反常积分敛散性判断</h3><p><img src="/../../img/%E9%AB%98%E6%95%B0/%E6%95%9B%E6%95%A3%E6%80%A7.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<h1 id="七、微分方程"><a href="#七、微分方程" class="headerlink" title="七、微分方程"></a>七、微分方程</h1><ol>
+<li><p>微分方程：含有未知函数的导数或微分的方程称为微分方程，简称方程。</p>
+</li>
+<li><p>微分方程的阶：微分方程中所出现的未知函数最高阶导数的阶数，称为微分方程的阶。</p>
+</li>
+<li><p>微分方程的解：满足微分方程的函数，称为该方程的解。</p>
+</li>
+<li><p>微分方程的通解：如果微分方程的解中含有任意常数，且任意常数的个数与微分方程的阶数相同，则称之为微分方程的通解。</p>
+</li>
+<li><p>微分方程的特解：微分方程的不含任意常数的解，称之为特解。</p>
+</li>
+<li><p>初始条件：确定特解的一组常数称为初始条件。</p>
+</li>
+<li><p>积分曲线：方程的一个解在平面上对应一条曲线，称为该微分方程的积分曲线。</p>
+</li>
+</ol>
+<h2 id="7-1-一阶微分方程"><a href="#7-1-一阶微分方程" class="headerlink" title="7.1 一阶微分方程"></a>7.1 一阶微分方程</h2><h3 id="7-1-1-可分离变量的方程"><a href="#7-1-1-可分离变量的方程" class="headerlink" title="7.1.1 可分离变量的方程"></a>7.1.1 可分离变量的方程</h3><p>能表示为 $g(y)dy &#x3D; f(x)dx$ 的方程，称为可分离变量的方程。求解的方法是两端积分$$ \int g(y)dy &#x3D; \int f(x)dx$$</p>
+<h3 id="7-1-2-齐次微分方程"><a href="#7-1-2-齐次微分方程" class="headerlink" title="7.1.2 齐次微分方程"></a>7.1.2 齐次微分方程</h3><p>可化为$\frac{dy}{dx} &#x3D; \varphi \left( \frac{y}{x} \right)$的微分方程称为齐次微分方程。</p>
+<p>&emsp;求解齐次微分方程的一般方法：令 $u &#x3D; \frac{y}{x}$，则 $y’ &#x3D; u + xu’$，从而将原方程化为 $xu’ &#x3D; \varphi (u) - u$，此方程为可分离变量的方程。</p>
+<div class="note note-success">
+            <p>求微分方程 $x^2 y’ + xy &#x3D; y^2$ 满足初始条件 $y(1) &#x3D; 1$ 的特解</p><p>原方程为齐次方程，可改写为 $y’ &#x3D; \left( \frac{y}{x} \right)^2 - \frac{y}{x}$。令 $u &#x3D; \frac{y}{x}$，则 $xu’ + u &#x3D; u^2 - u$，分离变量得 $$\frac{1}{2} \left( \ln |u-2| - \ln |u|\right) &#x3D; \ln |x| + C_1$$,</p><p> 即$$ \frac{u-2}{u} &#x3D; C x^2$$,</p><p>$$ \frac{y-2x}{y} &#x3D; C x^2$$</p><p>由 $y(1) &#x3D; 1$，得 $C &#x3D; -1$，得所求的特解为 $\frac{y-2x}{y} &#x3D; -x^2$，即 $y &#x3D; \frac{2x}{1+x^2}$。</p>
+          </div>
+
+<h3 id="7-1-3-一阶线性微分方程"><a href="#7-1-3-一阶线性微分方程" class="headerlink" title="7.1.3 一阶线性微分方程"></a>7.1.3 一阶线性微分方程</h3><p>形如 $y’ + p(x)y &#x3D; q(x)$ 的方程称为一阶线性微分方程。</p>
+<p>求解一阶线性微分方程的一般方法：常数变易法，或直接利用以下通解公式 $$y &#x3D; e^{-\int p(x)dx} \left[ \int q(x)e^{\int p(x)dx} dx + C \right]$$</p>
+<div class="note note-success">
+            <p>微分方程 $(y + x^2 e^{-x})dx - xdy &#x3D; 0$ 的通解是______。</p><p>解： $$(y + x^2 e^{-x}) - x \frac{dy}{dx} &#x3D; 0, \quad \frac{dy}{dx} &#x3D; \frac{y + x^2 e^{-x}}{x}$$</p><p>$$\frac{dy}{dx} - \frac{1}{x}y &#x3D; xe^{-x}, \quad \frac{dy}{dx} - \frac{1}{x}y &#x3D; xe^{-x}$$</p><p>由线性方程通解公式得<br>$$<br>\begin{align*}<br>y &amp;&#x3D; e^{-\int -\frac{1}{x}dx} \left( \int xe^{-x} e^{\int -\frac{1}{x}dx} dx + C \right)\\<br>&amp;&#x3D; x \left( \int e^{-x} dx + C \right)\\<br>&amp;&#x3D; x(-e^{-x} + C) &#x3D; x(C - e^{-x})<br>\end{align*}<br>$$<br>其中C为任意常数.</p>
+          </div>
+
+<hr>
+<h2 id="7-2-可降阶的高阶方程"><a href="#7-2-可降阶的高阶方程" class="headerlink" title="7.2 可降阶的高阶方程"></a>7.2 可降阶的高阶方程</h2><ol>
+<li><p>$y^{(n)} &#x3D; f(x)$ 型的微分方程</p>
+</li>
+<li><p>$y’’ &#x3D; f(x, y’)$ 型的方程：只需令 $y’ &#x3D; p$, $y’’ &#x3D; p’$，可将原方程化为一阶微分方程。</p>
+</li>
+<li><p>$y’’ &#x3D; f(y, y’)$ 型的方程：只需令 $y’ &#x3D; p$, $y’’ &#x3D; p \frac{dp}{dy}$，可将原方程化为一阶微分方程。</p>
+</li>
+</ol>
+<div class="note note-success">
+            <p>微分方程 $yy’’ + y’^2 &#x3D; 0$ 满足初始 条件$y \vert_{x&#x3D;0} &#x3D; 1,y’ \vert_{x&#x3D;0} &#x3D; 0 $的特解是______。</p><p>令 $y’ &#x3D; p$，则 $y’’ &#x3D; \frac{dp}{dy} p$，代入原方程得<br>$$<br>\begin{gather*}<br>yp\frac{dp}{dy} + p^2 &#x3D; 0, \\[8pt]<br>y\frac{dp}{dy} &#x3D; -p, \\[8pt]<br>\int \frac{dp}{p} &#x3D; - \int \frac{dy}{y}, \\[8pt]<br>\ln |p| &#x3D; -\ln |y| + C_1, \\[8pt]<br>\ln |yp| &#x3D; C_1, \\[8pt]<br>yp &#x3D; \pm e^{C_1} &#x3D; C, \\[10pt]<br>\text{由 } y \vert_{x&#x3D;0} &#x3D; 1, , y’ \vert_{x&#x3D;0} &#x3D; \frac{1}{2} \text{ 知，} C &#x3D; \frac{1}{2}, \\[8pt]<br>\text{则 } y \frac{dy}{dx} &#x3D; \frac{1}{2}, \\[8pt]<br>\int y dy &#x3D; \frac{1}{2} \int dx, \\[8pt]<br>\frac{1}{2} y^2 &#x3D; \frac{1}{2} x + C_2, \\[10pt]<br>\text{由 } y \vert_{x&#x3D;0} &#x3D; 1 \text{ 知，} C_2 &#x3D; \frac{1}{2}, , \text{则 } y^2 &#x3D; x + 1, , y &#x3D; \pm \sqrt{x+1}, \\[8pt]<br>\text{由 } y \vert_{x&#x3D;0} &#x3D; 1 \text{ 知，} y &#x3D; \sqrt{x+1}.<br>\end{gather*}<br>$$</p>
+          </div>
+
+<hr>
+<h2 id="7-3-高阶线性微分方程"><a href="#7-3-高阶线性微分方程" class="headerlink" title="7.3 高阶线性微分方程"></a>7.3 高阶线性微分方程</h2><h3 id="7-3-1-线性微分方程的解的结构"><a href="#7-3-1-线性微分方程的解的结构" class="headerlink" title="7.3.1  线性微分方程的解的结构"></a>7.3.1  线性微分方程的解的结构</h3><p>这里只讨论二阶线性微分方程，其结论可以推广到更高阶的方程。二阶线性微分方程的一般形式为<br>$$ y’’ + p(x)y’ + q(x)y &#x3D; f(x), $$<br>这里的 $p(x), q(x), f(x)$ 均为连续函数。当方程右端的 $f(x) \equiv 0$ 时，称为<strong>二阶线性齐次方程</strong>，否则称为<strong>二阶线性非齐次方程</strong>。</p>
+<ul>
+<li><p><strong>齐次方程</strong><br>$$ y’’ + p(x)y’ + q(x)y &#x3D; 0     \tag{①}$$    </p>
+</li>
+<li><p><strong>非齐次方程</strong><br>$$ y’’ + p(x)y’ + q(x)y &#x3D; f(x). \tag{②}$$</p>
+</li>
+</ul>
+<p><strong>定理</strong> 如果 $y_1(x)$ 和 $y_2(x)$ 是齐次方程<strong>①</strong>的两个线性无关的特解，那么 </p>
+<p>$$ y &#x3D; C_1 y_1(x) + C_2 y_2(x) $$</p>
+<p>就是方程①的通解。</p>
+<p>【注】 方程①的两个解线性无关的充要条件是它们之比不为常数。</p>
+<p><strong>定理</strong> 如果 $y^*$ 是非齐次方程②的一个特解，$y_1(x)$ 和 $y_2(x)$ 是齐次方程①的两个线性无关的特解，则<br>$$ y &#x3D; C_1 y_1(x) + C_2 y_2(x) + y^*(x) $$<br>是非齐次微分方程②的通解。</p>
+<p><strong>定理</strong> 如果 $y_1^*(x), y_2^*(x)$ 是非齐次方程②的两个特解，则 $y(x) &#x3D; y_2^*(x) - y_1^*(x)$ 是齐次微分方程①的解。</p>
+<p><strong>定理</strong> 如果 $y_1^*(x), y_2^*(x)$ 分别是方程<br>$$ y’’ + p(x)y’ + q(x)y &#x3D; f_1(x), $$  </p>
+<p>$$ y’’ + p(x)y’ + q(x)y &#x3D; f_2(x) $$<br>的特解，则 $y_1^*(x) + y_2^*(x)$ 是方程<br>$$ y’’ + p(x)y’ + q(x)y &#x3D; f_1(x) + f_2(x) $$<br>的一个特解。</p>
+<h3 id="7-3-2-常系数齐次线性微分方程"><a href="#7-3-2-常系数齐次线性微分方程" class="headerlink" title="7.3.2 常系数齐次线性微分方程"></a>7.3.2 常系数齐次线性微分方程</h3><p>二阶常系数线性齐次微分方程的一般形式为<br>$$ y’’ + py’ + qy &#x3D; 0, \tag{③}$$<br>其特征方程为 $r^2 + pr + q &#x3D; 0$，设 $r_1, r_2$ 为该方程的两个根。</p>
+<p>(1) 若 $r_1 \neq r_2$ 为两个不相等的实特征根，则方程③的通解为<br>$$ y &#x3D; C_1 e^{r_1 x} + C_2 e^{r_2 x}. $$</p>
+<p>(2) 若 $r_1 &#x3D; r_2$ 为二重实特征根，则方程③的通解为<br>$$ y &#x3D; (C_1 + C_2 x)e^{r_1 x}. $$</p>
+<p>(3) 若 $r_1 &#x3D; \alpha + i\beta, r_2 &#x3D; \alpha - i\beta$ 为一对共轭复根，则方程③的通解为<br>$$ y &#x3D; e^{\alpha x} (C_1 \cos \beta x + C_2 \sin \beta x). $$</p>
+<h3 id="7-3-3-常系数非齐次线性微分方程"><a href="#7-3-3-常系数非齐次线性微分方程" class="headerlink" title="7.3.3 常系数非齐次线性微分方程"></a>7.3.3 常系数非齐次线性微分方程</h3><p>二阶常系数线性非齐次微分方程的一般形式为<br>$$ y’’ + py’ + qy &#x3D; f(x). \tag{④}$$</p>
+<p>(1) 若 $f(x) &#x3D; P_m(x)e^{\lambda x}$，其中 $P_m(x)$ 为 $x$ 的 $m$ 次多项式，则方程 ④ 的特解可设为<br>$$ y^* &#x3D; x^k Q_m(x)e^{\lambda x}, $$<br>其中 $Q_m(x)$ 是与 $P_m(x)$ 同次的多项式，$k$ 是特征方程含根 $\lambda$ 的重复次数。</p>
+<p>(2) 若 $f(x) &#x3D; e^{\alpha x} [P_l^{(1)}(x)\cos\beta x + P_n^{(2)}(x)\sin\beta x]$，其中 $P_l^{(1)}(x), P_n^{(2)}(x)$ 分别为 $x$ 的 $l$ 次、$n$ 次多项式，则方程 ④ 的特解可设为<br>$$ y^* &#x3D; x^k e^{\alpha x} [R_m^{(1)}(x)\cos\beta x + R_m^{(2)}(x)\sin\beta x], $$<br>其中 $R_m^{(1)}(x), R_m^{(2)}(x)$ 是两个 $m$ 次多项式，$m &#x3D; \max(l, n)$。</p>
+<p>当 $\alpha + i\beta$ 不是方程 ③ 的特征根时，取 $k &#x3D; 0$。<br>当 $\alpha + i\beta$ 是程 ③ 的单特征根时，取 $k &#x3D; 1$。</p>
 <a href="/2025/06/28/%E9%AB%98%E6%95%B0/%E9%AB%98%E6%95%B0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8A/" title="高数基础知识（上）">高数基础知识（上）</a>
                 
               </div>
@@ -556,7 +650,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2025-07-18 16:52:13</div>
+          <div>2025-09-11 10:02:28</div>
         </div>
       
       
