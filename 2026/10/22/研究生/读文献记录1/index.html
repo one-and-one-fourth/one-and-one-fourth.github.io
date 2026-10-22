@@ -1,0 +1,836 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="一又四分之一">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="论文名称：Learning Transferable Visual Models From Natural Language Supervision阅读日期：2026.10.22 所属方向与编号：通用基础论文-03 预知识：              123456789# L1归一化def l1_normalize(x, axis&#x3D;-1, eps&#x3D;1e-8):    norm &#x3D; np.sum(n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读文献-2">
+<meta property="og:url" content="http://one-and-one-fourth.github.io/2026/10/22/%E7%A0%94%E7%A9%B6%E7%94%9F/%E8%AF%BB%E6%96%87%E7%8C%AE%E8%AE%B0%E5%BD%951/index.html">
+<meta property="og:site_name" content="一又四分之一">
+<meta property="og:description" content="论文名称：Learning Transferable Visual Models From Natural Language Supervision阅读日期：2026.10.22 所属方向与编号：通用基础论文-03 预知识：              123456789# L1归一化def l1_normalize(x, axis&#x3D;-1, eps&#x3D;1e-8):    norm &#x3D; np.sum(n">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-10-22T12:31:09.728Z">
+<meta property="article:modified_time" content="2026-10-22T14:26:30.101Z">
+<meta property="article:author" content="一又四分之一">
+<meta property="article:tag" content="遥感大模型">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>读文献-2 - 一又四分之一</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"one-and-one-fourth.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>一又四分之一</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="读文献-2"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        一又四分之一
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-10-22 20:31" pubdate>
+          2026年10月22日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          13 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">读文献-2</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2026年10月22日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="论文名称：Learning-Transferable-Visual-Models-From-Natural-Language-Supervision"><a href="#论文名称：Learning-Transferable-Visual-Models-From-Natural-Language-Supervision" class="headerlink" title="论文名称：Learning Transferable Visual Models From Natural Language Supervision"></a>论文名称：Learning Transferable Visual Models From Natural Language Supervision</h1><p>阅读日期：2026.10.22</p>
+<p>所属方向与编号：通用基础论文-03</p>
+<p><strong>预知识：</strong></p>
+<div class="note note-success">
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># L1归一化</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">l1_normalize</span>(<span class="hljs-params">x, axis=-<span class="hljs-number">1</span>, eps=<span class="hljs-number">1e-8</span></span>):<br>    norm = np.<span class="hljs-built_in">sum</span>(np.<span class="hljs-built_in">abs</span>(x), axis=axis, keepdims=<span class="hljs-literal">True</span>)<br>    <span class="hljs-keyword">return</span> x / (norm + eps)<br><br><span class="hljs-comment"># L2归一化</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">l2_normalize</span>(<span class="hljs-params">x, axis=-<span class="hljs-number">1</span>, eps=<span class="hljs-number">1e-8</span></span>):<br>    norm = np.linalg.norm(x, <span class="hljs-built_in">ord</span>=<span class="hljs-number">2</span>, axis=axis, keepdims=<span class="hljs-literal">True</span>)<br>    <span class="hljs-keyword">return</span> x / (norm + eps)<br></code></pre></td></tr></table></figure><ol><li><p>L1：管<strong>比例、频次、稀疏</strong>，适合统计特征；</p></li><li><p>L2：管<strong>方向、相似度、检索</strong>，所有Embedding通用；</p></li><li><p>L2归一后点积等价余弦相似度，是工业界向量检索的核心基石；</p></li><li><p>永远区分：归一化是预处理，正则化是损失惩罚。</p></li></ol><hr><ul><li><strong>零样本 (Zero-shot)</strong>	模型没见过某个任务&#x2F;数据集的任何训练样本，直接就能做。像一个人没学过法语单词，但靠语言能力猜出意思</li><li><strong>少样本 (Few-shot, k-shot)</strong>	只给模型每个类别 k 个例子（如 4-shot &#x3D; 每类 4 张图）</li><li><strong>嵌入 (Embedding)</strong>	把图像或文字变成一串数字（向量）。语义相近的东西，向量在空间中距离也近。”猫”和”狗”的向量近，和”飞机”的远</li><li><strong>对比学习 (Contrastive Learning)</strong>	让”该配对的东西”向量靠近，”不该配对的”向量远离。就像教孩子认图卡：图和正确的词放一起，错误的词排除掉</li><li><strong>线性探针 (Linear Probe)</strong>	冻结预训练模型，只在其输出的特征上训练一个简单的逻辑回归分类器。用来检验特征本身的质量——如果简单分类器都能用好，说明特征很棒</li><li><strong>分布偏移 (Distribution Shift)</strong>	测试数据的来源和训练数据不一样。比如模型在杂志照片上训练，考试却用手机随手拍的照片</li><li><strong>prompt &#x2F; 提示工程</strong>	通过精心设计输入文字的”措辞模板”来提升模型表现。如把类别名”狗”包装成”一张狗的照片”再输入</li><li><strong>batch</strong>	一次训练同时处理的样本组。<em>CLIP 用了超大的 32,768</em></li></ul>
+          </div>
+
+
+
+<ol>
+<li><em><strong>这篇论文要解决什么问题？</strong></em></li>
+</ol>
+<p>&emsp;&emsp;解决计算机视觉模型“不通用、不可扩展”的问题——让视觉模型像 GPT 一样，直接从互联网海量图文数据中学习，从而不需要人工标注、不需要重新训练，就能零样本完成任意视觉任务。</p>
+<hr>
+<ol start="2">
+<li><p><em><strong>这篇论文干了什么？</strong></em></p>
+<ol>
+<li><p><strong>造了一个大规模数据集（WIT，WebImageText）</strong></p>
+<ul>
+<li><p>从互联网收集 4 亿（图像，文本）对</p>
+</li>
+<li><p>用 50 万个查询词搜索，每个查询最多保留 2 万对，尽量覆盖所有视觉概念</p>
+</li>
+</ul>
+</li>
+<li><p><strong>设计并训练了 CLIP 模型</strong></p>
+<ul>
+<li><p>方法极简：给定一批 N 对图文，预测哪张图配哪段文字，而不是生成文字的具体内容</p>
+</li>
+<li><p>效率发现：这个“配对”任务比“预测文字内容”的任务在零样本迁移效率上高约 12 倍</p>
+</li>
+<li><p>架构：图像编码器（改进 ResNet 或 ViT）+ 文本编码器（Transformer），共享一个多模态嵌入空间</p>
+</li>
+</ul>
+</li>
+<li><p><strong>做了大规模实验验证</strong> (核心！！！！！！！！！)</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>注：</strong> </p>
+<p>&emsp;&emsp;对于本篇论文，大篇幅的使用实验，验证了使用所提到的 <strong>CLIP</strong> 的架构，去训练出的参数是可以应用到任何视觉任务的 ，这个证明本身就是本篇论文的最大的贡献。</p>
+<p>&emsp;&emsp;也就是说，clip经过训练后的模型参数，在推理时，输入图片和文字描述，会生成相应的向量，然后根据相似度进行图文匹配</p>
+<p><strong>CLIP 训练好之后，怎么准备数据、怎么使用?</strong></p>
+<ol>
+<li>快速给图片打类别标签，类别可以随时改<ul>
+<li>a. 准备图片</li>
+<li>b. 写类别名（这就是全部的”数据准备”）</li>
+<li>套提示模板（加提示能提升精度，论文证明的）</li>
+<li>推理+预测结果</li>
+</ul>
+</li>
+<li>图片检索、内容审核、素材管理<ul>
+<li>准备自己的图库</li>
+<li>首先每个图片 encode_image() 存成向量库</li>
+<li>输入一句话，直接返回相关的图片</li>
+</ul>
+</li>
+</ol>
+<p>其他先关的用法…….. 。</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<ol start="3">
+<li><em><strong>输入和输出分别是什么？</strong></em></li>
+</ol>
+<p>&emsp;&emsp;<code>本文对于模型的设计描述比较少，但是原文中提到“Enabled by the large amounts of publicly available data of this form on the internet, we create a new dataset of 400 million (image, text) pairs and demonstrate that a simplified version of ConVIRT trained from scratch, which we call CLIP, for Contrastive Language-Image Pre-training, is an efficient method of learning from natural language supervision.”， 也就是后面这篇文献中的ConVIRT模型的简化版本</code> <a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2010.00747">Contrastive Learning of Medical Visual Representations from Paired Images and Text</a></p>
+<p>基于ConVIRT，CLIP主要做出了以下简化：</p>
+<ul>
+<li>ConVIRT中的 image encoder 的参数是 ImageNet 初始化的，而 CLIP 直接用 random 初始化；</li>
+<li>ConVIRT的 projection head 是 non-linear 的，而 CLIP 采用 linear 的 projection；</li>
+<li>CLIP去掉了 ConVIRT 中 text transformatio（指均匀从text中采样句子），因为 CLIP 数据集中有很多只出现过一次的（image，text）；</li>
+<li>CLIP的 image transformation 只用了 resize 和 squared crop；</li>
+<li>CLIP loss中的 temperature 参数τ是可学的。</li>
+</ul>
+<p><strong>训练阶段</strong>：</p>
+<p>输入是一个 batch 的图文对：</p>
+<p>$$<br>{(I_i, T_i)}_{i&#x3D;1}^N<br>$$</p>
+<p>其中：</p>
+<ul>
+<li>$I_i$：一张图像；</li>
+<li>$T_i$：与这张图配对的一段文本，通常是标题、说明、alt-text 等；</li>
+<li>$N$：batch size，论文里很大，达到 32,768。</li>
+</ul>
+<p>模型内部输出：</p>
+<ul>
+<li>图像特征：$I_f &#x3D; \text{ImageEncoder}(I)$</li>
+<li>文本特征：$T_f &#x3D; \text{TextEncoder}(T)$</li>
+</ul>
+<p>再经过线性投影和 L2 归一化，得到多模态嵌入：</p>
+<p>$$<br>I_e &#x3D; \text{L2Norm}(I_f W_i), \quad T_e &#x3D; \text{L2Norm}(T_f W_t)<br>$$</p>
+<p>然后输出一个相似度矩阵：</p>
+<p>$$<br>\text{logits}_{ij} &#x3D; \tau \cdot (I_{e,i} \cdot T_{e,j})<br>$$</p>
+<p>也就是 batch 内每张图和每段文本的余弦相似度，乘以可学习温度 $\tau$。</p>
+<p>训练目标是让对角线上的真匹配对相似度高，非对角线上的错配相似度低，用对称交叉熵损失。</p>
+<p><strong>推理 &#x2F; 零样本分类阶段</strong></p>
+<p>输入是：</p>
+<ul>
+<li>一张待分类图像 $I$；</li>
+<li>一组候选类别文本，比如 ImageNet 的 1000 个类名，通常会套上提示模板：</li>
+</ul>
+<p>$$<br>\text{“a photo of a {label}.”}<br>$$</p>
+<p>输出是：</p>
+<ul>
+<li>图像和每个类别文本的相似度；</li>
+<li>经过 softmax 后得到类别概率分布；</li>
+<li>取概率最高的类别作为预测结果。</li>
+</ul>
+<p>本质上，CLIP 的文本编码器在测试时临时“生成”了一个零样本线性分类器。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A0%94%E7%A9%B6%E7%94%9F/" class="category-chain-item">研究生</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%A0%94%E7%A9%B6%E7%94%9F/%E6%96%87%E7%8C%AE/" class="category-chain-item">文献</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%81%A5%E6%84%9F%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="print-no-link">#遥感大模型</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>读文献-2</div>
+      <div>http://one-and-one-fourth.github.io/2026/10/22/研究生/读文献记录1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>一又四分之一</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年10月22日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2026年10月22日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/10/21/%E7%A0%94%E7%A9%B6%E7%94%9F/%E8%AF%BB%E6%96%87%E7%8C%AE/" title="读文献问题">
+                        <span class="hidden-mobile">读文献问题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a _href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a _href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
