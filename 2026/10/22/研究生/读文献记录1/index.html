@@ -27,7 +27,7 @@
 <meta property="og:description" content="论文名称：Learning Transferable Visual Models From Natural Language Supervision阅读日期：2026.10.22 所属方向与编号：通用基础论文-03 预知识：              123456789# L1归一化def l1_normalize(x, axis&#x3D;-1, eps&#x3D;1e-8):    norm &#x3D; np.sum(n">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-10-22T12:31:09.728Z">
-<meta property="article:modified_time" content="2026-10-22T14:26:30.101Z">
+<meta property="article:modified_time" content="2026-10-25T12:08:40.468Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="遥感大模型">
 <meta name="twitter:card" content="summary_large_image">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          3.7k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          13 分钟
+          31 分钟
         
       </span>
     
@@ -293,7 +293,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2026年10月22日 晚上
+                    本文最后更新于 2026年10月25日 晚上
                   
                 
               </p>
@@ -410,6 +410,149 @@
 <li>取概率最高的类别作为预测结果。</li>
 </ul>
 <p>本质上，CLIP 的文本编码器在测试时临时“生成”了一个零样本线性分类器。</p>
+<h1 id="论文名称：Segment-Anything"><a href="#论文名称：Segment-Anything" class="headerlink" title="论文名称：Segment Anything"></a>论文名称：Segment Anything</h1><p>阅读日期：2026.10.25</p>
+<p>所属方向与编号：通用基础论文-04</p>
+<div class="note note-success">
+            <p><strong>预知识</strong></p><ol><li><strong>MAE（Masked Autoencoder）</strong></li></ol><p>&emsp;&emsp;一种<strong>自监督预训练</strong>方法：把图像随机遮住一大块，让模型根据没遮住的部分重建被遮部分。学完后拿来初始化 ViT，比从零训练效果好。SAM 的 image encoder 就用 MAE 预训练的 ViT-H 初始化。</p><ol start="2"><li><strong>Positional Encoding（位置编码）</strong></li></ol><p>&emsp;&emsp;Transformer 本身不知道“位置”，所以要给每个 token 加上表示位置的向量（论文用的是文献 [95] 的傅里叶特征式编码）。SAM 里点的位置、框的角点都用它编码。</p><ol start="3"><li><strong>Transformer Decoder &#x2F; Self-Attention &#x2F; Cross-Attention</strong></li></ol><ul><li><strong>Self-attention（自注意力）</strong>：一串 token 互相“看”，交换信息。</li><li><strong>Cross-attention（交叉注意力）</strong>：两组 token 之间交换信息。SAM 的 mask decoder 里是双向的：prompt→图像、图像→prompt。</li><li><strong>轻量 mask decoder</strong>：2 层 Transformer decoder，每层 4 步（自注意力 → token 看图像 → MLP → 图像看 token），最后 output token 变成“动态线性分类器”逐点算出 mask。</li></ul><ol start="4"><li><strong>NMS（Non-Maximum Suppression，非极大值抑制）</strong></li></ol><p>&emsp;&emsp;去掉重复检测的经典后处理：一堆重叠的候选里只留分数最高的。</p><ol start="5"><li><p><strong>Mask（掩码）</strong><br>&emsp;&emsp;一张和原图同尺寸的 0&#x2F;1 图，标记哪些像素属于目标物体。</p></li><li><p><strong>IoU 预测（IoU prediction）</strong></p></li></ol><p>&emsp;&emsp;模型给每个输出的 mask 预测一个置信分数（估计的 IoU），用于：多 mask 排序、NMS 排序、选择下一轮迭代的 mask。训练用 MSE 对齐“预测 IoU”与真实 IoU。</p><ol start="7"><li><strong>IoU &#x2F; mIoU（交并比 &#x2F; 平均交并比）</strong></li></ol><p>&emsp;&emsp;<strong>IoU</strong> 两个 mask 的交集面积 ÷ 并集面积，0~1，分割最核心指标。<strong>mIoU</strong> 是对很多物体&#x2F;数据集求平均。论文里几乎所有分割结果都用它。</p><ol start="8"><li><strong>SA-1B（Segment Anything 1B）</strong></li></ol><p>&emsp;&emsp;本文发布的数据集：<strong>11M 授权且保护隐私的图像 + 1.1B 高质量 mask</strong>。图像平均 3300×4950（发布版短边缩到 1500px），人脸和车牌已模糊。<strong>只包含全自动阶段生成的 mask</strong>（99.1% 的 mask 本来就是全自动的；消融显示只用自动数据只掉 ~0.5 mIoU）。比最大的已有分割数据集 Open Images 多 11× 图像、400× mask。</p><ol start="9"><li><strong>embedding</strong></li></ol><p>&emsp;&emsp;在自然语言处理 (NLP) 任务中，处理文本需要将每个单词转换成对应的数字表示。大多数Embedding方法都归结为将单词或标记转换为向量。各种嵌入技术之间的区别在于它们如何处理这种“单词→向量”的转换。  </p><p>&emsp;&emsp;Embedding不仅适用于文本，还可以应用于图像、音频甚至图数据。<strong>广义上讲，Embedding是将（任何类型的）数据转换为向量的过程</strong>。</p>
+          </div>
+
+<hr>
+<ol>
+<li>本文主要解决了什么问题？</li>
+</ol>
+<p>&emsp;&emsp;给“图像分割”这个领域也造一个像 GPT 那样的基础模型。本文解决了三个相互关联的问题：</p>
+<blockquote>
+<ol>
+<li>什么任务可以支持零样本泛华？</li>
+</ol>
+<p>&emsp;&emsp;提出 promptable segmentation （可提示分割）：给定任意的 prompt ，返回有效的分割 mask ，即使 prompt 有歧义，也要返回至少其中一个对象的合理 mask。</p>
+<ol start="2">
+<li>什么样的架构？</li>
+</ol>
+<p>&emsp;&emsp;首先需要灵活支持多种 prompt ，其次，要实时出 mask ，</p>
+<ol start="3">
+<li>什么数据可以支持？</li>
+</ol>
+<p>&emsp;&emsp;互联网上的 mask 极少，本文自构建了“数据引擎”。最终的数据集称为 <strong>SA - 1B</strong></p>
+</blockquote>
+<hr>
+<ol start="2">
+<li>输入和输出是什么？</li>
+</ol>
+<p><strong>输入：</strong></p>
+<blockquote>
+<p><strong>① 图像：</strong></p>
+<blockquote>
+<ol>
+<li>尺寸处理<ul>
+<li>原图先被 <strong>resize + padding</strong> 到 <strong>1024 × 1024</strong>（短边拉到 1024，长边方向补灰边）；</li>
+<li>不是裁剪，而是缩放，保证物体不丢。</li>
+</ul>
+</li>
+<li>经过 image encoder 后<ul>
+<li>ViT-H 把 1024×1024 切成 64×64 个 16×16 的 patch；</li>
+<li>输出 <strong>image embedding：64 × 64 × 256</strong>（记作 C×H×W &#x3D; 256×64×64）；</li>
+<li>即图像被压缩成“16 倍下采样的特征地图”，每个空间位置是一个 256 维向量。</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<p>注意：embedding 在 prompt 之前计算</p>
+<hr>
+<p><strong>② Prompt</strong></p>
+<p>&emsp;&emsp;论文把 prompt 分为稀疏（sparse）和稠密（dense）两类。区分标准：有没有空间上的连续结构。</p>
+<font color="purplue">
+
+<ul>
+<li><strong>稀疏</strong> &#x3D; 指明“在哪、是什么类型”的少量 token（点&#x2F;框&#x2F;文本）→ 变成几个 256 维向量；</li>
+<li><strong>稠密</strong> &#x3D; 与图像同空间结构的提示 → 变成一张与图像 embedding 相加的特征图。</li>
+</ul>
+</font>
+
+<p><font color="skyblue1"><em>prompt 分为以下四类：</em> </font></p>
+<ol>
+<li><p>稀疏 prompt：点</p>
+<p><strong>原始形式</strong>：图像上的一个坐标 + 一个标签（前景点还是背景点）。</p>
+<p><strong>编码成什么</strong>：一个 256 维向量，由两部分<strong>相加</strong>而成：<code>点的 embedding = 位置编码(坐标) + 类型 embedding(前景 or 背景)</code></p>
+</li>
+<li><p>稀疏 prompt：框</p>
+<p><strong>原始形式</strong>：一个 bounding box（左上角 + 右下角两个坐标）。</p>
+<p><strong>编码成什么</strong>：<strong>两个</strong> 256 维向量（一对 token）：<code>左上角 token = 位置编码(左上坐标) + &quot;左上角&quot;类型 embedding </code> &emsp;  和 &emsp;   <code>右下角 token = 位置编码(右下坐标) + &quot;右下角&quot;类型 embedding</code></p>
+<font color="green">
+
+<p>为什么是两个 token 而不是拼接成一条向量？ </p>
+<p>&emsp;&emsp;因为四个角的信息本质上是两组独立的位置，拆成一对 token 让 decoder 的注意力机制能分别“看到”两个角。</p>
+</font>
+</li>
+<li><p>稀疏 prompt：文本</p>
+<p><strong>原始形式</strong>：任意文字，如 “a wheel”、”beaver tooth grille”。</p>
+<p><strong>编码成什么</strong>：<em>丢进 CLIP 的 text encoder</em>（ViT-L&#x2F;14@336px，论文里最大的公开 CLIP），取输出向量，做 L2 归一化后作为 256 维（对齐后）的 prompt embedding。</p>
+<p><font color="green">CLIP 是冻结的，SAM 不训练它；</font></p>
+</li>
+<li><p>稠密 prompt：mask</p>
+<p><strong>原始形式：</strong> 一个粗略的 mask（比如上一轮交互的预测结果）。</p>
+<p><strong>编码成什么：</strong> 一个与图像 embedding 同尺寸的 64×64×256 张量，处理流程：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">输入 mask（H×W）<br>  → 缩到 1/4 分辨率（因为 mask 本身比较粗）<br>  → 两个 2×2、stride-2 卷积（通道 4 → 16）<br>  → 一个 1×1 卷积 → 256 通道<br>  → 与图像 embedding 逐元素相加<br></code></pre></td></tr></table></figure>
+
+<font color="green">
+
+<p>&emsp;&emsp;每层之间夹 GELU 激活和 LayerNorm。</p>
+<p>&emsp;&emsp;如果没有提供 mask prompt，不是什么都不加，而是给每个图像 embedding 位置加一个学出来的 “no mask” embedding——让模型明确知道“当前没有 mask 提示”，而不是把“缺失”误解成“全零 mask”。</p>
+</font></li>
+</ol>
+</blockquote>
+<p><strong>输出：</strong></p>
+<blockquote>
+<p>Ambiguity is much rarer with multiple prompts and the three output masks will usually become similar. To minimize computation of degenerate losses at training and ensure the single unambiguous mask receives a regular gradient signal, we only predict a single mask when more than one prompt is given. This is accomplished by adding a fourth output token for an additional mask prediction. This fourth mask is never returned for a single prompt and is the only mask returned for multiple prompts.</p>
+<p>关于多个 prompt 原文描述：</p>
+<ul>
+<li>第 4 个 output token 是<strong>额外加的</strong>、专门处理多 prompt 情况；</li>
+<li><strong>单 prompt 时它永不返回；多 prompt 时它独占返回</strong>（因为此时歧义已被多重提示消除，3 个输出会趋同，再输出 3 个会造成退化 loss）。</li>
+</ul>
+<p>By default we predict three masks, since we observe that three layers (whole, part, and subpart) are often enough to describe nested masks. During training, we compute the loss (described shortly) between the ground truth and each of the predicted masks, but only backpropagate from the lowest loss.</p>
+<p>关于单个 prompt 原文描述：</p>
+<ul>
+<li>3 个输出对应 3 个嵌套层级：<strong>整体物体 &#x2F; 部分 &#x2F; 子部分</strong>（如”人 &#x2F; 衬衫 &#x2F; 口袋”）；</li>
+<li>训练时对 3 个输出都算 loss，但 <strong>只回传最小的那个</strong></li>
+</ul>
+<p><strong>① mask</strong></p>
+<p>&emsp;&emsp;<strong>模型不是用固定的卷积头出 mask，而是“根据当前 prompt 现场算出一个分类器”</strong>（那个 256 维向量 v 就是分类器的权重）。不同 prompt → 不同 v → 不同 mask。</p>
+<p><strong>② IoU 置信分数</strong></p>
+<p>&emsp;&emsp;每个 mask 同时输出一个标量分数 &#x3D; 模型预测的“这个 mask 与真实物体边界的 IoU”。</p>
+</blockquote>
+<hr>
+<ol start="3">
+<li>整体流程是什么？各模块分别做什么？</li>
+</ol>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">image → [image encoder] → image embedding (64×64×256)<br>                                   ↓<br>points/box/text/mask → [prompt encoder] → prompt embeddings<br>                                   ↓<br>              [lightweight mask decoder] → 3 个 mask + IoU 分数<br></code></pre></td></tr></table></figure>
+
+<p><strong>① Image encoder（重）</strong></p>
+<ul>
+<li>MAE 预训练的 <strong>ViT-H&#x2F;16</strong>（windowed attention + 4 个全局注意力块）</li>
+<li><strong>每张图只跑一次</strong>，可先于 prompt 计算；输出 16× 下采样的 embedding</li>
+</ul>
+<p><strong>② Prompt encoder（轻）</strong></p>
+<ul>
+<li>点 &#x3D; 位置编码 + 前&#x2F;背景可学习 embedding</li>
+<li>框 &#x3D; 左上&#x2F;右下两个角的 embedding 对</li>
+<li>文本 &#x3D; CLIP text encoder</li>
+<li>mask &#x3D; 卷积嵌入后与图像 embedding 逐元素相加；无 mask 时加“no mask”可学习 embedding</li>
+</ul>
+<p><strong>③ Mask decoder（轻，~50ms 在浏览器 CPU 上）</strong></p>
+<ul>
+<li>2 层 Transformer decoder，每层 4 步：[ token 自注意力 ] → token→ [ image 交叉注意力 ] → [ pointwise MLP ] → image → [ token 交叉注意力 ]（双向更新）</li>
+<li>上采样 4× 后，output token 经 MLP 变成动态线性分类器，与上采样 embedding 做逐点内积得 mask</li>
+<li>同时预测 IoU 分数用于排序</li>
+</ul>
+<p>&emsp;&emsp;<strong>效率逻辑</strong>：重的一步（image encoder）每图一次；轻的一步（prompt encoder + decoder）每次 prompt 只需 ~50ms，所以图像 embedding 的开销被不同 prompt <strong>摊销</strong>，重轻是<strong>计算量（计算开销）的大小</strong>。</p>
+<hr>
+<ol start="4">
+<li><p>与前一篇相比，核心变化是什么？</p>
+<p>&emsp;&emsp;相对于前一篇的 CLIP 模型的的论文，本篇侧重于对图片内部的物品的分类标注，而 CLIP 则是对图像的一个标签分类（识别图片中的物品是什么东西，并给出命名，反之依然）。</p>
+<p>&emsp;&emsp;虽然偏重不同，但是本文的部分细节仍需要 CLIP 模型的内容，正如前面提到的当输入的 prompt 为文本时，采用的是 CLIP 的文本编码器。</p>
+<p>&emsp;&emsp;当去标注的时候，可能也会使用 CLIP 去将文本和图片进行关联。目前所有变式基于第一篇 transform 不断的从文本，到图片（ViT），再到文本与图片两者的结合（CLIP），到本篇进行图片里面的相关分析。</p>
+</li>
+</ol>
 
                 
               </div>
@@ -481,7 +624,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年10月22日</div>
+          <div>2026年10月25日</div>
         </div>
       
       
@@ -511,6 +654,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2026/10/26/%E7%A0%94%E7%A9%B6%E7%94%9F/%E8%AF%BB%E6%96%87%E7%8C%AE%E8%AE%B0%E5%BD%952/" title="读文献-3">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">读文献-3</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
