@@ -1,0 +1,948 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="一又四分之一">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="RSICCformer论文名称：Remote Sensing Image Change Captioning with Dual-branch Transformers: A New Method and a  Large Scale Dataset 阅读日期：2026.10.30 所属方向与编号：视觉语言驱动的变化检测-01               预知识：人类一致性：选一句作假设句、其余四">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读文献4-RSICCformer&#x2F;Semantic-CD">
+<meta property="og:url" content="http://one-and-one-fourth.github.io/2026/10/30/%E7%A0%94%E7%A9%B6%E7%94%9F/%E8%AF%BB%E6%96%87%E7%8C%AE%E8%AE%B0%E5%BD%953/index.html">
+<meta property="og:site_name" content="一又四分之一">
+<meta property="og:description" content="RSICCformer论文名称：Remote Sensing Image Change Captioning with Dual-branch Transformers: A New Method and a  Large Scale Dataset 阅读日期：2026.10.30 所属方向与编号：视觉语言驱动的变化检测-01               预知识：人类一致性：选一句作假设句、其余四">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://one-and-one-fourth.github.io/img/%E7%A0%94%E7%A9%B6%E7%94%9F/semantic-CD/1.png">
+<meta property="article:published_time" content="2026-10-30T08:39:51.236Z">
+<meta property="article:modified_time" content="2026-11-01T09:07:00.344Z">
+<meta property="article:author" content="一又四分之一">
+<meta property="article:tag" content="遥感大模型">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://one-and-one-fourth.github.io/img/%E7%A0%94%E7%A9%B6%E7%94%9F/semantic-CD/1.png">
+  
+  
+  
+  <title>读文献4-RSICCformer/Semantic-CD - 一又四分之一</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1749284_5i9bdhy70f8.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/c/font_1736178_k526ubmyhba.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"one-and-one-fourth.github.io","root":"/","version":"1.9.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"umami":{"src":null,"website_id":null,"domains":null,"start_time":"2024-01-01T00:00:00.000Z","token":null,"api_server":null}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>一又四分之一</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="读文献4-RSICCformer/Semantic-CD"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        一又四分之一
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2026-10-30 16:39" pubdate>
+          2026年10月30日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          41 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">读文献4-RSICCformer/Semantic-CD</h1>
+            
+              <p id="updated-time" class="note note-info" style="">
+                
+                  
+                    本文最后更新于 2026年11月1日 下午
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="RSICCformer"><a href="#RSICCformer" class="headerlink" title="RSICCformer"></a>RSICCformer</h1><p>论文名称：<code>Remote Sensing Image Change Captioning with Dual-branch Transformers: A New Method and a  Large Scale Dataset</code></p>
+<p>阅读日期：2026.10.30</p>
+<p>所属方向与编号：视觉语言驱动的变化检测-01</p>
+<hr>
+<div class="note note-success">
+            <p><strong>预知识</strong>：</p><ol><li><strong>人类一致性</strong>：选一句作假设句、其余四句作参考，计算BLEU-N&#x2F;ROUGE-L&#x2F;METEOR。</li><li><strong>双时相影像（bi-temporal images）</strong>→ 数据形式 → 同一地点、两个不同时间点拍摄的两张影像对，是变化分析的基本输入单元。</li><li><strong>孪生网络（Siamese network）</strong>→ 网络结构 → 两个结构完全相同、权重共享的分支网络，分别处理两路输入（这里就是“前”图和“后”图），便于比较两者的特征。</li><li><strong>交叉编码（CE，Cross-Encoding）</strong>→ 注意力模块 → 与普通Transformer的“自注意力”（自己关注自己）不同，交叉注意力让一张图的特征去“查询”另一路特征，从而建立两路信息之间的联系。</li></ol><hr><ol><li><p><strong>BLEU-4 &#x2F; ROUGE-L &#x2F; METEOR &#x2F; CIDEr-D</strong> → 文本自动评价指标 → 都是通过比较机器生成的句子和人工参考句子的重合度来打分。BLEU看n-gram（连续n个词）精确匹配率；ROUGE-L找最长公共子序列；METEOR考虑同义词和词形变化；CIDEr-D基于TF-IDF加权的共识度，对常见词敏感。分数越高说明生成句子与人类参考越接近。</p></li><li><p><strong>自回归生成（autoregressive generation）</strong>→ 生成方式 → 逐词生成：先输出第一个词，把它加入输入再预测第二个词，如此循环直到输出“结束”符。就像一个词一个词地写作文，每写一个词都要参考前面已写的全部内容。</p></li><li><p><strong>Teacher forcing（教师强制）</strong>→ 训练技巧 → 训练时解码器不是用自己上一步生成的词，而是直接用标准答案（真值词）作为下一步的输入，加速且稳定训练。</p></li></ol>
+          </div>
+
+<h2 id="1-这篇论文要解决什么问题？"><a href="#1-这篇论文要解决什么问题？" class="headerlink" title="1. 这篇论文要解决什么问题？"></a>1. 这篇论文要解决什么问题？</h2><blockquote>
+<p>&emsp;&emsp;<strong>背景</strong>：传统遥感变化检测只能在像素级标出“哪里变了”，无法说明“变了什么”（如建了楼、修了路）；而现有的图像变化描述研究局限于合成简单场景，遥感领域既缺乏大规模真实数据集，也没有能充分挖掘特征差异、捕捉多重变化的有效方法</p>
+</blockquote>
+<p>&emsp;&emsp;让AI看懂两张卫星图，并用一句话说出“这里发生了什么变化”。具体来说是3个方面：</p>
+<ol>
+<li>提出新任务 RSICC，让AI自动用自然语言描述两幅遥感影像的变化</li>
+<li>构建首个大规模真实数据集 LEVIR-CC</li>
+<li><strong>提出新模型 RSICCformer</strong>，利用影像逐像素配准的先验，通过差分编码+孪生交叉编码+多阶段融合，捕捉多重感兴趣变化、忽略无关干扰</li>
+</ol>
+<h2 id="2-输入和输出分别是什么？"><a href="#2-输入和输出分别是什么？" class="headerlink" title="2. 输入和输出分别是什么？"></a>2. 输入和输出分别是什么？</h2><p>&emsp;&emsp;<strong>输入</strong>：一对双时相遥影像 $I &#x3D; (I_{t0}, I_{t1})$，即同一地点、前后两个时刻各一张 256×256 的 RGB 卫星影像（“前”图 $I_{t0}$ 与“后”图 $I_{t1}$，逐像素配准、无视角变化）</p>
+<p>&emsp;&emsp;<strong>输出</strong>：一句描述两图差异的自然语言句子（Caption），例如 <em>“Many buildings appear around the road”</em></p>
+<h3 id="2-1-训练阶段"><a href="#2-1-训练阶段" class="headerlink" title="2.1 训练阶段"></a>2.1 训练阶段</h3><p>&emsp;&emsp;训练时，模型同时接收<strong>影像对 + 真值句子</strong>，目标是让模型学会“看图 → 写句子”</p>
+<p><strong>step 1. CNN特征提取</strong></p>
+<ol>
+<li>两幅影像 $I_{t0}$、$I_{t1}$ 分别通过<strong>权重共享的</strong>改进版 ResNet-101 backbone（conv5_x 及后续层替换为 1×1 卷积，通道 1024→512）</li>
+<li>输出两张特征图 $X_{t0}$、$X_{t1}$（空间尺寸 H×W，通道 d&#x3D;512）</li>
+</ol>
+<p><strong>step 2. 展平 + 位置编码</strong></p>
+<ol>
+<li>两张特征图分别展平为序列：$(H, W, d) → (H×W, d)$，每个像素位置成为序列中的一个 token</li>
+<li>加上<strong>可学习的 2-D 位置编码</strong>（实验证明只在此处加编码效果最佳）</li>
+<li>得到两条特征序列，送入双分支 Transformer 编码器（DTE）</li>
+</ol>
+<p><strong>Step 3. 双分支 Transformer 编码器（DTE，N&#x3D;3 个阶段循环执行）</strong></p>
+<ol>
+<li><p><strong>差分编码模块（DE）</strong>：两时相特征逐元素相减，$X_{dif|t0} &#x3D; X_{dif|t1} &#x3D; X_{t1} − X_{t0}$（采用 DE1 策略，保留时序信息），输出蕴含变化位置与幅度的“差异表示”</p>
+</li>
+<li><p><strong>孪生交叉编码模块（CE）</strong>：两个对称分支中，Q 来自该时刻图像特征 $X_i$，K 和 V 来自差异特征 $X_{dif|i}$；经 8 头交叉注意力 + Add&amp; Norm + 前馈网络 + Add&amp; Norm，输出聚焦于变化区域的增强特征 $X_{t0}$、$X_{t1}$</p>
+<blockquote>
+<ul>
+<li><strong>DE1</strong>：直接相减 $X_{dif} &#x3D; X_{t1} − X_{t0}$（保留符号，即“时序信息”）</li>
+<li><strong>DE2</strong>：取绝对值 $Abs(X_{t1} − X_{t0})$</li>
+<li><strong>DE3</strong>：$RELU( conv( [ X_{t1} − X_{t0}; X_i] ) )$，即把差值和当前时刻特征拼接后做卷积变换</li>
+</ul>
+</blockquote>
+</li>
+<li><p><strong>多阶段双时相融合模块（MBF）</strong>：将两分支特征在通道维拼接，加上上一阶段的累积融合特征，经 1×1→3×3→1×1 卷积残差单元融合后再层归一化。三个阶段分别关注不同变化（如阶段1道路、阶段2建筑、阶段3植被），最终融合为揭示多重变化、排除无关干扰的表示 $X_{fus}$</p>
+</li>
+</ol>
+<p><strong>Step 4. 解码器并行训练</strong></p>
+<ol>
+<li><strong>真值句子先做词嵌入</strong>（词嵌入维度 1024，从头训练），加上正弦&#x2F;余弦位置编码</li>
+<li>解码器每层：<strong>掩码自注意力</strong>（防止看到未来的词）→ <strong>编码器-解码器注意力</strong>（Q 来自句子嵌入，K&#x2F;V 来自 <strong>Step 3</strong> 的 $X_fus$）→ 前馈网络</li>
+<li>经线性层 + Softmax，输出每个位置的词概率向量 $p_t ∈ R^K$</li>
+</ol>
+<p><strong>Step 5. 计算损失、更新参数</strong></p>
+<ol>
+<li>采用 <strong>Teacher Forcing 教师强制</strong>：解码器每一步的输入是<strong>真值词</strong>，而非模型自己生成的词</li>
+<li>输出的词概率分布与真值句子计算<strong>交叉熵损失</strong></li>
+<li>反向传播更新整个网络参数</li>
+</ol>
+<h3 id="2-2-推理阶段"><a href="#2-2-推理阶段" class="headerlink" title="2.2 推理阶段"></a>2.2 推理阶段</h3><p>&emsp;&emsp;推理时，模型<strong>只接收影像对</strong>，没有任何真值句子，需要逐词生成答案。</p>
+<p><strong>Step 1–3. 视觉特征提取与编码（与训练完全相同）</strong></p>
+<ol>
+<li>影像对 → ResNet-101 → 展平 + 位置编码 → DTE 三个阶段（差分编码DE → 交叉编码CE → MBF 融合）；</li>
+<li>得到最终融合特征 $X_{fus}$</li>
+</ol>
+<p><strong>Step 4. 自回归逐词生成</strong></p>
+<ol>
+<li><strong>起始输入</strong>：特殊符号 <strong>“start”</strong> 的词嵌入</li>
+<li>第 1 次迭代：解码器根据 $[ start ]$ 与 $X_{fus}$，经掩码自注意力 + 交叉注意力（$K&#x2F;V &#x3D; X_{fus}$）+ Softmax 预测第 1 个词$w_1$</li>
+<li>第 2 次迭代：将 $w_1$ 拼入序列 $[ start ;  w_1 ] $，再次预测 $w_2$</li>
+<li>如此循环，每生成一个词就拼入序列再预测下一个</li>
+<li><strong>终止条件</strong>：当生成的词为 <strong>“end”</strong> 时停止</li>
+</ol>
+<p><strong>Step 5. Beam Search 束搜索优化</strong></p>
+<ol>
+<li><p>beam&#x3D;1 即贪心搜索；增大 beam 可同时保留多条候选句子路径（本文实验表明，当 beam&#x3D;3 时，评价指标区域平和）</p>
+<blockquote>
+<ol>
+<li><p><strong>贪心搜索（Greedy Search</strong>）→ 推理策略 → 生成句子的每一步，都只选当前概率最高的那一个词，选完就丢弃其他所有可能性，一条路走到黑</p>
+</li>
+<li><p><strong>束搜索（Beam Search）</strong>→ 推理策略 → 每一步同时保留概率最高的 K 条候选句子路径（K 就叫 beam size 束宽），让它们并行“生长”，最后从 K 条完整句子中挑出整体概率最高的一条</p>
+</li>
+</ol>
+<p>采用束搜索，这样即使某条开头看起来不咋样的路径后来变得更好，也不会被提前“误杀”</p>
+</blockquote>
+</li>
+</ol>
+<p><strong>Step 6. 输出最终句子</strong></p>
+<ol>
+<li>停止后输出完整的变化描述句子，如 <em>“A road appears in the desert”</em></li>
+</ol>
+<h2 id="3-整体流程是什么？各模块分别做什么？"><a href="#3-整体流程是什么？各模块分别做什么？" class="headerlink" title="3. 整体流程是什么？各模块分别做什么？"></a>3. 整体流程是什么？各模块分别做什么？</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs text">影像对 (I_t0, I_t1)<br>      ↓<br>① CNN 特征提取器（ResNet-101 backbone）<br>      ↓<br>② 双分支 Transformer 编码器（DTE）← 核心创新，含 3 个阶段<br>   每阶段循环：差分编码DE → 孪生交叉编码CE → 多阶段双时相融合MBF<br>      ↓<br>③ 描述解码器（Transformer Decoder）<br>      ↓<br>变化描述句子（Caption）<br></code></pre></td></tr></table></figure>
+
+<p>&emsp;<strong>① CNN特征提取器</strong> ：把原始像素转化为高层语义特征——即从“一堆彩色格子”变成“这里有建筑、这里有道路”的特征表示</p>
+<blockquote>
+<p>&emsp;&emsp;通过两幅影像分别通过<strong>权重共享的</strong>改进版 ResNet-101 实现。</p>
+<p><strong>输入输出</strong>：输入 256×256 影像 → 输出两张特征图 $X_{t0}$、$X_{t1}$</p>
+</blockquote>
+<p>&emsp;<strong>② 双分支 Transformer 编码器（DTE）</strong>( 核心创新 )</p>
+<blockquote>
+<p>分为三个模块：</p>
+<ol>
+<li><strong>差分编码模块</strong>：生成“差异表示”——直接告诉后续模块“两张图哪些位置的语义不一样、差多少”</li>
+<li><strong>孪生交叉编码模块</strong>：让每幅图的<strong>图像特征去“查询”差异信息</strong>，从而把变化区域“高亮”到特征上</li>
+<li><strong>多阶段双时相融合模块</strong>：融合当前阶段两分支的输出和之前所有阶段的累积结果，得到既包含多重感兴趣变化、又排除无关干扰的融合表示 $X_{fus}$</li>
+</ol>
+</blockquote>
+<p><strong>③ 描述解码器</strong>：把融合特征 $X_{fus}$ “翻译”成一句自然语言</p>
+<blockquote>
+<ul>
+<li>标准 Transformer 解码器，每层包含三部分: <ul>
+<li><strong>掩码自注意力</strong>：保证逐词预测只依赖已生成的词</li>
+<li><strong>编码器-解码器注意力</strong>：Q 来自句子嵌入，<strong>K&#x2F;V 来自 $X_{fus}$</strong>，即让句子去“查询”视觉变化信息</li>
+<li>前馈网络 + 残差 + 层归一化</li>
+</ul>
+</li>
+<li><strong>输出</strong>：线性层 + Softmax 得到词概率分布，逐词生成直到 “end”</li>
+</ul>
+</blockquote>
+<h2 id="4-实验细节"><a href="#4-实验细节" class="headerlink" title="4. 实验细节"></a>4. 实验细节</h2><p>&emsp;&emsp;训练阶段使用<code>Adma优化器</code> ，词嵌入的维度在<code>512维</code>，最大训练轮数<code>40</code>，初始学习率<code>0.0001</code>。当验证集上的 BLEU‐4 指标连续三个 轮数下降时,学习率将<code>衰减0.7倍</code>。</p>
+<hr>
+<p>&emsp;&emsp;评价指标：使用 <code>BLEU-N ( N=1,2,3,4) / ROUGE-L / METEOR / CIDEr-D </code> ，指标分数越高,生成句子与参考句子之间 的相似度就越高</p>
+<blockquote>
+<p>&emsp;&emsp;在论文之前，已经说明了本文使用的差异编码为 <code>DE1</code>,同时在实验方面，本文对上述评价指标做了实验分析，并于基线做了对比。</p>
+<p>&emsp;&emsp;<strong>基线采用没有差分编码模块的孪生Transformer编码器来分别处理双时态特征</strong></p>
+</blockquote>
+<hr>
+<p>&emsp;&emsp;消融实验：本文对 <code>CE</code>和<code>MBF</code> 进行消融实验，用来验证该模块的有效性。分别从三个方面评估性能指标：</p>
+<ol>
+<li>仅测试有变化的图像对</li>
+<li>仅测试没有变化的图像对</li>
+<li>在整个测试集上进行测试</li>
+</ol>
+<blockquote>
+<p>&emsp;&emsp;测试的数值，代表的是该模型生成对应图片的描述的准确率</p>
+</blockquote>
+<p>&emsp;&emsp;<strong>Q：</strong> 既然 DTE 是本文的核心创新模块，那么本文的<strong>消融实验为什么没有DE模块</strong>？</p>
+<p>&emsp;&emsp;<strong>A：</strong> 关于 DE 的消融实验，本文并没有将他写入该部分，因为 DE 模块含有三中不同的策略，为了对比不同策略的有效性，为此，在消融实验之前，已经根据 baseline 对这三种策略进行对比实验。</p>
+<p>&emsp;&emsp;注意：该对比实验的 baseline 采用的和后面的消融实验的 “在整个测试集上进行测试” 的 baseline 是一样的。对比之后，本文采用的是 DE1 的策略。</p>
+<br/>
+
+<p>&emsp;&emsp;本文还对比了当时最优的合成图像变化描述，包括 四种基于 LSTM （Capt-Rep-Diff , Capt-Att, Capt-Dual-Att , DUD）和两种基于 Transformer （MCCFormers-S，MCCFormers-D）的方法 。</p>
+<hr>
+<p>&emsp;&emsp;关于本文的骨干网络，本文对比了5中经典的之后采取了改进后的 ResNet‐101 。</p>
+<blockquote>
+<p>骨干网络就是在输入 DTE 之前的图像特征提取的阶段，将 ResNet‐101 的 <code>conv5_x</code> 及后续层替换为 <code>1*1</code>卷积，同时将特征通道从<code>1024</code>降到<code>512</code></p>
+</blockquote>
+<hr>
+<p>关于位置嵌入：</p>
+<ul>
+<li>在双时相特征序列输入双分支 Transformer编码器之前，使用可学习的 2‐D位置嵌入 ,将空间位置信息融入模型中</li>
+<li>在标题解码器中, 使用正弦和余弦函数对序列进行位置嵌入</li>
+</ul>
+<div class="note note-danger">
+            <p>&emsp;&emsp;论文在 <strong>IV. E</strong> 部分说词向量嵌入为 1024，但是又在实验部分 <strong>V. A</strong> 部分又说，词向量维度为 512 ？？？？？？</p><p>&emsp;&emsp;解码器的 K&#x2F;V 投影层输入维度跟着编码器输出走——只要模型用了 MBF 把两分支特征通道拼接（512+512），就填 1024。如果跑的是不拼接的变体（单路 512 维特征），就填 512。（代码中注释有：<code> args.feature_dim_de = 1024 # 当有concat是1024,否则为512</code>）</p>
+          </div>
+
+<hr>
+<h1 id="Semantic-CD"><a href="#Semantic-CD" class="headerlink" title="Semantic-CD"></a>Semantic-CD</h1><p>论文名称：Semantic-CD: Remote Sensing Image Semantic Change Detection towards Open-vocabulary Setting</p>
+<p>阅读日期：2026.11.1</p>
+<p>所属方向与编号：视觉语言驱动的变化检测-02</p>
+<div class="note note-success">
+            <p><strong>预知识：</strong></p><ol><li><strong>二值变化检测（BCD）</strong>，任务类型 ， 只回答“哪里变了”，输出一张黑白掩膜，变了的区域是白色，没变的是黑色，但不告诉你变成了什么。</li><li><strong>语义变化检测（SCD）</strong>，任务类型 ， 进一步回答“从什么变成了什么”，比如“绿地变成了建筑物”</li></ol>
+          </div>
+
+<h2 id="1-这篇论文要解决什么问题？-1"><a href="#1-这篇论文要解决什么问题？-1" class="headerlink" title="1. 这篇论文要解决什么问题？"></a>1. 这篇论文要解决什么问题？</h2><blockquote>
+<p><strong>背景</strong></p>
+<p>&emsp;&emsp;遥感影像的语义变化检测（SCD）不仅要找出“哪里变了”，还要识别“从什么变成了什么”，实用价值高于二值变化检测（BCD）。但现有SCD方法都在封闭类别集下工作，只能识别训练时见过的类别，无法泛化到新的地物类型。CLIP等视觉-语言基础模型虽具备开放词汇能力，却难以直接辨别双时相影像中的有效变化，且SCD领域也缺乏覆盖广泛类别的数据集。</p>
+</blockquote>
+<p>&emsp;&emsp;让变化检测模型从“只认识训练时见过的类别”变为“原则上能识别任意文字描述的类别”，即开放词汇能力，从而摆脱对固定类别集的依赖。</p>
+<h2 id="2-输入和输出流程分别是什么？"><a href="#2-输入和输出流程分别是什么？" class="headerlink" title="2. 输入和输出流程分别是什么？"></a>2. 输入和输出流程分别是什么？</h2><p><a href="/2026/10/22/%E7%A0%94%E7%A9%B6%E7%94%9F/%E8%AF%BB%E6%96%87%E7%8C%AE%E8%AE%B0%E5%BD%951/#clip">对应 CLIP 文章</a></p>
+<p><strong>输入：</strong></p>
+<ul>
+<li><strong>双时相遥感影像</strong>：变化前影像 $I_1 ∈ R^{H×W×3}$ 和变化后影像 $I_2 ∈ R^{H×W×3}$（$H×W$为图像尺寸，3为RGB通道）</li>
+<li><strong>类别集合 C</strong>：地物类别词的集合（如SECOND数据集的6类：非变化、低植被、非植被地表、树木、水体、建筑物、操场等），SCD分支需要用它来生成开放词汇提示</li>
+<li><strong>仅训练阶段需要</strong>：真值标签，包括二值变化检测掩膜 $y^{bcd}$ 和变化前&#x2F;后时相的语义变化检测掩膜 $y^{scd-1&#x2F;2}$</li>
+</ul>
+<p><strong>输出：</strong></p>
+<ul>
+<li>二值变化检测掩膜 $M_{BCD} ∈ R^{H×W}$：每个像素为“变化&#x2F;未变化”二值</li>
+<li>语义变化检测掩膜 $M^1_{SCD}、M^2_{SCD} ∈ R^{H×W×C}$：变化前后两个时相各自的逐像素类别概率图（C为类别数）</li>
+</ul>
+<p><img src="/../../img/%E7%A0%94%E7%A9%B6%E7%94%9F/semantic-CD/1.png" srcset="/img/loading.gif" lazyload alt="1"></p>
+<hr>
+<h3 id="2-1-训练阶段-1"><a href="#2-1-训练阶段-1" class="headerlink" title="2.1 训练阶段"></a>2.1 训练阶段</h3><p><strong>Step 1.（BCD分支训练）双时相图像进入适配后的CLIP视觉编码器</strong></p>
+<p>&emsp;&emsp;$I_1$、$I_2 $送入 Bi-temporal CLIP 视觉编码器 $Φ_{CLIP-enc}$（内部在四个全局注意力层嵌入了BCSF适配器），得到特征 $F_1$、$F_2 ∈ R^{N×C}$（ N 为 token 数，C 为通道数）。<strong>此阶段BCSF参数参与更新，CLIP其余骨干参数冻结。</strong></p>
+<p><strong>Step 2.（BCD分支训练）BCD解码器生成二值掩膜</strong></p>
+<p>&emsp;&emsp;$F_1$、$F_2$ 拼接后经 SimpleFPN 多尺度采样（$Φ_sampling$）得到 4 级多尺度特征 { $F’_i ∈ R^{H&#x2F;2^{i+1}×W&#x2F;2^{i+1}×512}, i∈{1,2,3,4}$ }，经卷积精化（$Φ_{conv}$）、双线性插值统一分辨率（$Φ_{resize}$）、拼接与1×1卷积投影（$Φ_{proj}$）后输出 $M_{BCD}$，与真值 $y^{bcd}$ 计算二元交叉熵损失 $L_{bcd}$反向传播。</p>
+<blockquote>
+<p><strong>注意</strong>：此阶段 prompter（提示学习器）和 SCD 解码器<strong>全部冻结固定</strong>，不参与梯度更新</p>
+</blockquote>
+<p><strong>Step 3.（SCD分支训练）提示学习器构建语义代价体</strong></p>
+<p>&emsp;&emsp;特征 $F_1$、$F_2$ 和类别集合 $C$ 进入提示学习器 $\Phi_{\text{prompt-learner}}$：元网络 $\Phi_{meta}$ 从 $F_i$ 提取实例级变化语义元标记 $p_i^m &#x3D; \Phi_{meta}(F_i)$；与任务可学习标记 $p^t$ 相加得上下文嵌入 $p_i^c &#x3D; p_i^m + p^t$；再与每个类别词嵌入 $p_j^{\text{text}}$ 拼接送入 CLIP 文本编码器得到 $t_{i,j}$；最后与视觉特征做余弦相似度（$\Phi_{sim}$），生成像素级代价体 $F_{cv}^1, F_{cv}^2 \in \mathbb{R}^{H’ \times W’ \times C}$（$H’ \times W’$ 为低分辨率特征图尺寸）。</p>
+<p><strong>Step 4.（SCD分支训练）SCD解码器融合并输出语义掩膜</strong></p>
+<p>&emsp;&emsp;视觉特征 ${F_i}$ 与代价体 ${F^{cv}_i}$ 各自经共享参数的 SimpleFPN 生成多尺度特征，逐级相加融合（$F’_i &#x3D; F^i_{cv} + F_i$），经卷积、插值统一尺度后由解码映射层输出 $M^1_{SCD}$、$M^2_{SCD}$，与真值 $y^{scd-1&#x2F;2}$ 计算交叉熵损失 $L_{scd}$反向传播。</p>
+<blockquote>
+<p><strong>注意</strong>：此阶段视觉编码器和 BCD 解码器<strong>全部冻结</strong></p>
+<font color="red"> 
+
+<p>关于${F^{cv}_i}$  和 ${F_{cv}^i}$  在本文中都是同一个意思，论文对于此处的公式有明显的笔误</p>
+</font></blockquote>
+<div class="note note-info">
+            <p>&emsp;&emsp; $\hat{y}_i$ 和 $y_i$ 指的是单个像素的预测值和真值。而 $M_{BCD}$、$M_{SCD}^1$、$M_{SCD}^2$ 是整幅掩膜（$H \times W$ 的图像）。它们的关系是：</p><p>$$<br>\hat{y}_i^{bcd} &#x3D; M_{BCD} \text{ 的第 } i \text{ 个像素的预测值}<br>$$</p><p>$$<br>\hat{y}_{i,c}^{scd-1&#x2F;2} &#x3D; M_{SCD}^{1&#x2F;2} \text{ 的第 } i \text{ 个像素在第 } c \text{ 类上的概率}<br>$$</p><p>所以完整写出来应该是：</p><p>$$<br>\mathcal{L}_{bcd} &#x3D; \text{BCE} \left( M_{BCD}, y^{bcd} \right) &#x3D; -\frac{1}{N} \sum_{i&#x3D;1}^{N} \left( y_i^{bcd} \log \hat{y}_i^{bcd} + (1 - y_i^{bcd}) \log(1 - \hat{y}_i^{bcd}) \right)\tag{1}<br>$$</p><p>$$<br>\mathcal{L}_{scd} &#x3D; \text{CE} \left( M_{SCD}^1, y^{scd-1} \right) + \text{CE} \left( M_{SCD}^2, y^{scd-2} \right) &#x3D; -\frac{1}{N} \sum_{i&#x3D;1}^{N} \sum_{c&#x3D;1}^{C-1} y_{i,c}^{scd-1&#x2F;2} \log \hat{y}_{i,c}^{scd-1&#x2F;2}\tag{2}<br>$$</p><p>&emsp;&emsp;上标“1&#x2F;2”隐含了对两幅掩膜 $M_{SCD}^1$ 和 $M_{SCD}^2$ 的求和。式(6)中只写了一个 $\mathcal{L}_{scd}$，但 SCD 分支实际输出变化前、变化后两幅语义掩膜。作者用上标“1&#x2F;2”（意为“时相1和时相2”）把两幅掩膜的损失合并成一个式子表达，即：</p><p>$$<br>\mathcal{L}_{scd} &#x3D; \mathcal{L}_{scd-1} + \mathcal{L}_{scd-2}<br>$$</p>
+          </div>
+
+<h3 id="2-2-推理阶段-1"><a href="#2-2-推理阶段-1" class="headerlink" title="2.2 推理阶段"></a>2.2 推理阶段</h3><p>&emsp;&emsp;推理时只需输入 $I_1$、$I_2$ 和类别词集合 C（<strong>无需任何真值标签</strong>），流程与训练前向传播完全一致，但所有参数固定</p>
+<p><strong>Step 1.</strong> 双时相图像 → 适配后的CLIP视觉编码器 → 提取特征 $F_1$、$F_2$；</p>
+<p><strong>Step 2.</strong> $F_1$、$F_2$ → BCD解码器 → 输出二值变化掩膜 $M_{BCD}$（哪里变了）；</p>
+<p><strong>Step 3.</strong> $F_1$、$F_2$ 与类别集合 $C$ → 提示学习器（元标记由当前图像内容动态生成，即“实例级语义引导”） → CLIP文本编码器 → 余弦相似度 → 代价体 $F_{cv}^1$、$F_{cv}^2$；</p>
+<p><strong>Step 4.</strong> 代价体与视觉特征经SCD解码器多尺度融合 → 输出前后时相语义掩膜 $M_{SCD}^1$、$M_{SCD}^2$（变成了什么）。</p>
+<hr>
+<p>双时相影像 → BCSF适配后的CLIP编码器提取共享特征 → 兵分两路</p>
+<ol>
+<li><p>一路拼接做多尺度二值分割（BCD，回答”哪里变了”）</p>
+</li>
+<li><p>一路驱动开放词汇提示器生成代价体再与视觉特征逐尺度融合（SCD，回答”变成了什么”）</p>
+</li>
+</ol>
+<p>三张输出图组合得到完整语义变化结果</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A0%94%E7%A9%B6%E7%94%9F/" class="category-chain-item">研究生</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%A0%94%E7%A9%B6%E7%94%9F/%E6%96%87%E7%8C%AE/" class="category-chain-item">文献</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%81%A5%E6%84%9F%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="print-no-link">#遥感大模型</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>读文献4-RSICCformer/Semantic-CD</div>
+      <div>http://one-and-one-fourth.github.io/2026/10/30/研究生/读文献记录3/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>一又四分之一</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2026年10月30日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2026年11月1日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-cc-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2026/10/26/%E7%A0%94%E7%A9%B6%E7%94%9F/%E8%AF%BB%E6%96%87%E7%8C%AE%E8%AE%B0%E5%BD%952/" title="读文献3-BLIP-2 / LLaVA">
+                        <span class="hidden-mobile">读文献3-BLIP-2 / LLaVA</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a _href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a _href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/5.0.0/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
