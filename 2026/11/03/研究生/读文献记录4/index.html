@@ -21,7 +21,7 @@
   
     <meta name="description" content="Change-Agent论文名称：Change-Agent: Towards Interactive Comprehensive Remote Sensing Change Interpretation and Analysis 阅读日期：2026.11.3 所属方向与编号：视觉语言驱动的变化检测-03              预知识多级变化解译（MCI），任务框架 ， 同时输出像素级变化掩膜和">
 <meta property="og:type" content="article">
-<meta property="og:title" content="读文献5-Change-Agent">
+<meta property="og:title" content="读文献5-Change-Agent&#x2F;ChangeChat">
 <meta property="og:url" content="http://one-and-one-fourth.github.io/2026/11/03/%E7%A0%94%E7%A9%B6%E7%94%9F/%E8%AF%BB%E6%96%87%E7%8C%AE%E8%AE%B0%E5%BD%954/index.html">
 <meta property="og:site_name" content="一又四分之一">
 <meta property="og:description" content="Change-Agent论文名称：Change-Agent: Towards Interactive Comprehensive Remote Sensing Change Interpretation and Analysis 阅读日期：2026.11.3 所属方向与编号：视觉语言驱动的变化检测-03              预知识多级变化解译（MCI），任务框架 ， 同时输出像素级变化掩膜和">
@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://one-and-one-fourth.github.io/img/%E7%A0%94%E7%A9%B6%E7%94%9F/%E8%AF%BB%E6%96%87%E7%8C%AE%E8%AE%B0%E5%BD%954/2.png">
 <meta property="og:image" content="http://one-and-one-fourth.github.io/img/%E7%A0%94%E7%A9%B6%E7%94%9F/%E8%AF%BB%E6%96%87%E7%8C%AE%E8%AE%B0%E5%BD%954/3.png">
 <meta property="article:published_time" content="2026-11-03T09:38:54.102Z">
-<meta property="article:modified_time" content="2026-11-03T14:02:20.646Z">
+<meta property="article:modified_time" content="2026-11-04T14:27:58.155Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="遥感大模型">
 <meta name="twitter:card" content="summary_large_image">
@@ -39,7 +39,7 @@
   
   
   
-  <title>读文献5-Change-Agent - 一又四分之一</title>
+  <title>读文献5-Change-Agent/ChangeChat - 一又四分之一</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -217,7 +217,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="读文献5-Change-Agent"></span>
+            <span id="subtitle" data-typed-text="读文献5-Change-Agent/ChangeChat"></span>
           
         </div>
 
@@ -245,7 +245,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.1k 字
+          7.3k 字
         
       </span>
     
@@ -256,7 +256,7 @@
         
         
         
-          35 分钟
+          61 分钟
         
       </span>
     
@@ -293,12 +293,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">读文献5-Change-Agent</h1>
+            <h1 id="seo-header">读文献5-Change-Agent/ChangeChat</h1>
             
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2026年11月3日 晚上
+                    本文最后更新于 2026年11月4日 晚上
                   
                 
               </p>
@@ -548,6 +548,88 @@
 <blockquote>
 <p>既然本文是实现的交互式的任务，为什么没有描述核心模型与LLM是如何交互的呢</p>
 </blockquote>
+<hr>
+<h1 id="ChangeChat"><a href="#ChangeChat" class="headerlink" title="ChangeChat"></a>ChangeChat</h1><p>论文名称：ChangeChat: An Interactive Model for Remote Sensing Change Analysis via Multimodal Instruction Tuning</p>
+<p>阅读日期：2026.11.4</p>
+<p>所属方向与编号：视觉语言驱动的变化检测-04</p>
+<div class="note note-success">
+            <p><strong>预知识</strong>：</p><hr><ol><li><strong>视觉语言模型（VLM，Vision-Language Model）</strong>， 模型类型 ， 同时“看”图像和“读”文字、并能用语言回答关于图像问题的 AI 模型。 可以理解为“能看图说话的 AI”</li><li><strong>LoRA（Low-Rank Adaptation）</strong>， 参数高效微调技术 ， 不动大模型本体、只训练两个小矩阵（A &#x2F; B）来教会它新任务的方法</li></ol>
+          </div>
+
+<h2 id="1-这篇论文要解决什么问题？-1"><a href="#1-这篇论文要解决什么问题？-1" class="headerlink" title="1. 这篇论文要解决什么问题？"></a>1. 这篇论文要解决什么问题？</h2><blockquote>
+<p>&emsp;&emsp;遥感变化分析经历了三个阶段，但每个阶段都有明显短板。传统变化检测只能识别像素级变化，无法说明“变了什么物体、数量多少、位置在哪”；后来出现的变化描述（如基于 LEVIR-CC 的模型）能把变化翻译成自然语言，但只能被动输出一段描述，用户无法追问，不支持交互式、用户特定的查询；而现有的交互式模型 ChangeAgent 依赖外部大语言模型、缺乏端到端框架，功能被限制在预定义流程内。<strong>同时，GPT-4、LLaVA 等通用视觉语言模型缺乏对遥感影像独特特性的理解</strong>，经常给出误导性解读。此外，领域内缺乏专门面向遥感变化分析的指令微调数据集。</p>
+</blockquote>
+<p>&emsp;&emsp;提出 ChangeChat——首个面向遥感变化分析的交互式双时相视觉语言模型，能回答变化描述、数量统计、位置定位等多种用户查询；并配套构建了 87k 条指令的 ChangeChat-87k 数据集，性能超越 SOTA 和 GPT-4。</p>
+<div class="note note-warning">
+            <p>&emsp;&emsp;注意：LLaVA是输入一个图，然后根据这个图进行问答，而本模型是直接输入两个，进行对比问答。上一篇的 <strong>Change-Agent</strong> 比这个好在对话、可以标注显示变化方面，但是他是作为一个工具让GPT调用，而不是独立的，本模型是独立的。</p>
+          </div>
+
+<hr>
+<h2 id="2-输入和输出、模型整体流程分别是什么？"><a href="#2-输入和输出、模型整体流程分别是什么？" class="headerlink" title="2. 输入和输出、模型整体流程分别是什么？"></a>2. 输入和输出、模型整体流程分别是什么？</h2><p><strong>输入</strong> ： 双时相影像对 $(I_{t1}, I_{t2})$ + 文字指令 Q</p>
+<p><strong>输出</strong>： 文字回复 C</p>
+<hr>
+<h3 id="2-1-训练阶段-1"><a href="#2-1-训练阶段-1" class="headerlink" title="2.1 训练阶段"></a>2.1 训练阶段</h3><p><strong>输入</strong>：来自 <strong>LEVIR-MCI 数据集</strong>的双时相影像对 + 每条样本对应的指令 + 标准答案（即”Human 提问 + Assistant 回答”的完整对话对）</p>
+<p><strong>step 1. 准备双时相图像输入</strong><br>&emsp;&emsp;每条训练样本包含同一地点不同时间的两张遥感影像 $I_{t1}$ 和 $I_{t2}$，每张为 $256 \times 256$ 分辨率</p>
+<p><strong>step 2. 视觉塔 (CLIP-ViT) 编码图像</strong><br>&emsp;&emsp;两张图分别送入冻结的 <strong>CLIP-ViT</strong>，各被切成 $14 \times 14 &#x3D; 196$ 个图块，每个图块被编码为 $1024$ 维 token。即每张图产生 $196$ 个 $1024$ 维视觉向量</p>
+<p><strong>step 3. MLP 适配器对齐模态</strong><br>&emsp;&emsp;两组 $1024$ 维视觉 token 分别经过冻结的单隐藏层 MLP，映射到 $4096$ 维，以匹配 <strong>Vicuna-v1.5 LLM</strong> 的输入嵌入维度。两个时相的视觉嵌入被一起送入 LLM（这是与 LLaVA 只送单图的关键区别）</p>
+<p><strong>step 4. 拼接构造完整对话序列</strong><br>&emsp;&emsp;按论文给出的格式，将视觉 token 与文字指令拼成对话模板。以变化描述为例：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text">Human: [$I_&#123;t1&#125;$视觉token] [$I_&#123;t2&#125;$视觉token] 请简要描述这两张图像中的变化。 &lt;STOP&gt;<br><br>Assistant: &lt;标准答案描述C&gt; &lt;STOP&gt;<br></code></pre></td></tr></table></figure>
+
+<p>不同任务对应不同的指令 $Q$ 和答案 $C$：</p>
+<ul>
+<li>二值分类 $\rightarrow$ $Q$：“两张图是否发生变化？请回答 yes 或 no”，$C$: yes&#x2F;no（真值来自 LEVIR-MCI 变化图）</li>
+<li>类别量化 $\rightarrow$ $Q$：“新增了几条路&#x2F;几栋楼？”，$C$: 数字（真值由 OpenCV 分析变化图得到）</li>
+<li>变化定位 $\rightarrow$ $C$: 多边形顶点坐标序列 $P &#x3D; [(x_1,y_1),(x_2,y_2),…,(x_n,y_n)]$ （归一化坐标）</li>
+<li>GPT 辅助指令 &#x2F; 多轮 CoT 对话 $\rightarrow$ 由 ChatGPT 生成的问答对 &#x2F; 递进式多轮对话</li>
+</ul>
+<p><strong>step 5. 计算 loss 并只更新 LoRA 参数</strong><br>&emsp;&emsp;完整序列送入 Vicuna-v1.5，对 Assistant 部分的 token 计算交叉熵损失（指令微调范式）。由于视觉塔和 MLP 被冻结，梯度只更新 LLM 中插入的 LoRA 低秩矩阵（$r&#x3D;64$, $\alpha&#x3D;128$）。</p>
+<p>&emsp;&emsp;混合精度训练 + 动态损失缩放，AdamW 优化器（$lr&#x3D;2 \times 10^{-4}$, warmup $3%$），在 ChangeChat-87k 共 87,195 条指令上训练 1 个 epoch。</p>
+<hr>
+<h3 id="2-2-推理阶段-1"><a href="#2-2-推理阶段-1" class="headerlink" title="2.2 推理阶段"></a>2.2 推理阶段</h3><p><strong>输入</strong>：用户上传的双时相影像对 $(I_{t1}, I_{t2})$ + 用户的自然语言问题（可以是任意形式的提问，不再局限于训练模板）</p>
+<p><strong>step 1. 用户输入双时相影像与问题</strong><br>&emsp;&emsp;用户上传两张同一地点不同时间的遥感影像，并用自然语言提出查询，例如“图中道路有什么变化？”“新增了几栋建筑？”“请画出变化建筑的位置”。</p>
+<p><strong>step 2. 视觉塔 + MLP 编码（与训练相同）</strong><br>&emsp;&emsp;两张影像分别经过冻结的 CLIP-ViT（各产生 $196 \times 1024$ 维 token），再经冻结的 MLP 升维到 $4096$ 维。</p>
+<p><strong>step 3. 拼接用户指令送入 LLM</strong><br>&emsp;&emsp;将两个时相的视觉嵌入与用户问题按 Human&#x2F;Assistant 模板拼接，输入到已加载 LoRA 权重的 Vicuna-v1.5 中。</p>
+<p><strong>step 4. LLM 自回归生成回答</strong><br>&emsp;&emsp;Vicuna 逐 token 自回归生成文字回复。根据用户问题类型，输出形式不同：</p>
+<ul>
+<li>变化描述 $\rightarrow$ 自然语言描述，如 “A house appears at the bottom of the scene”</li>
+<li>二值判断 $\rightarrow$ yes 或 no</li>
+<li>类别量化 $\rightarrow$ 具体数字（论文用预定义规则把数字词转成阿拉伯数字算 MAE）</li>
+<li>变化定位 $\rightarrow$ 坐标序列 $[(x_1,y_1), (x_2,y_2), \dots]$，可进一步可视化成多边形轮廓</li>
+<li>多轮 CoT 推理 $\rightarrow$ 模型先判断“是否变化”，再分述“道路&#x2F;建筑的具体变化”，最后汇总生成描述</li>
+</ul>
+<p><strong>step 5. 支持多轮追问</strong><br>&emsp;&emsp;由于按多轮对话格式训练过，用户可在同一对话中继续追问（如“新出现的建筑有几栋？”“它们在哪？”），模型将历史对话 + 当前问题 + 双时相视觉 token 一起送入 LLM，继续生成回答</p>
+<hr>
+<div class="note note-success">
+            <blockquote><p>&emsp;&emsp;也就是说，<strong>整个模型只有 LoRA  在更新参数</strong>，A、B 矩阵以并联旁路的形式，插在 Vicuna 每一层（共 32 层）的特定投影矩阵旁——最常见是注意力模块的 q_proj 和 v_proj；每个被选中的矩阵 $W_0$ 冻结不动，旁边挂一对 $A(4096 \times 64) \rightarrow B(64 \times 4096)$ 小矩阵，输出按 $W_0 \cdot x + 2 \cdot B(A \cdot x)$ 相加；$K$、$O$ 投影和整个前馈 MLP、词嵌入、输出头通常保持纯冻结。训练时全模型 67 亿参数里只有这几千万个旁路参数在更新。</p></blockquote><p>关于本文使用的 <strong>Vicuna-7B</strong> 的 LLM 是一个 <strong>32 层</strong> 堆叠的 Transformer decoder。每一层内包含两个子模块：</p><blockquote><p>Vicuna-7B: 2023 年 LMSYS（几所高校联合团队）发布的一款<strong>开源对话大模型</strong>，相当于“免费版 ChatGPT”</p></blockquote><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs text">Vicuna-v1.5 (7B)<br>│<br>├── 词嵌入层 Embedding (4096 维)          ← LoRA 不放这里<br>├── 32 个相同的 Transformer 层 (Layer 0 ~ 31)<br>│    │<br>│    ├── ① 注意力模块 (Attention)<br>│    │    ├── Q 投影 q_proj:  4096 → 4096<br>│    │    ├── K 投影 k_proj:  4096 → 4096   (实际 4096→4096, 内部含 GQA 分组)<br>│    │    ├── V 投影 v_proj:  4096 → 4096<br>│    │    ├── O 输出投影 o_proj: 4096 → 4096<br>│    │    └── (RoPE 旋转位置编码, 无参数)<br>│    │<br>│    ├── ② 前馈网络 MLP<br>│    │    ├── gate_proj:  4096 → 11008   (SwiGLU 门控)<br>│    │    ├── up_proj:    4096 → 11008<br>│    │    └── down_proj:  11008 → 4096<br>│    │<br>│    └── (层归一化 RMSNorm × 2, 无传统权重或极小, 通常不放 LoRA)<br>│<br>├── 最终 RMSNorm                              ← LoRA 不放这里<br>└── 输出头 lm_head: 4096 → 词表 32000        ← LoRA 不放这里<br><br></code></pre></td></tr></table></figure><p>&emsp;&emsp;LoRA 的做法是<strong>挑出上面这些投影矩阵中的若干个，在旁边并联 A→B 旁路</strong>。以 LLaVA&#x2F;ChangeChat 这类工作最常见的配置（q_proj 和 v_proj）为例，<strong>每一层都插，32 层共插 64 个位置</strong>：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs text">┌────────── Transformer Layer i (i = 0,1,2,...,31) ──────────┐<br>│                                                             │<br>│  ① 注意力模块                                               │<br>│                                                             │<br>│     x ──┬──[W_q: 4096×4096]──────┐                          │<br>│         │   (冻结 ❄️)             ├──(相加)──→ Q             │<br>│         └──[A_q: 4096×64]→[B_q: 64×4096]─┘                  │<br>│              🔥可训练                🔥可训练                 │<br>│                                                             │<br>│     x ──[W_k: 4096×4096]──→ K      (无 LoRA, 纯冻结 ❄️)     │<br>│                                                             │<br>│     x ──┬──[W_v: 4096×4096]──────┐                          │<br>│         │   (冻结 ❄️)             ├──(相加)──→ V             │<br>│         └──[A_v: 4096×64]→[B_v: 64×4096]─┘                  │<br>│              🔥可训练                🔥可训练                 │<br>│                                                             │<br>│     attention 输出 ──[W_o: 4096×4096]──→ O  (无 LoRA ❄️)    │<br>│                                                             │<br>│  ② 前馈网络 MLP                                             │<br>│     [gate_proj / up_proj / down_proj]   全部无 LoRA ❄️      │<br>└─────────────────────────────────────────────────────────────┘<br><br></code></pre></td></tr></table></figure><p>每一处旁路的计算都是：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">输出 = W·x  +  (α/r) · B(A·x)<br>       ❄️冻结      🔥可训练 (α/r = 128/64 = 2)<br></code></pre></td></tr></table></figure><hr><p><strong>关于超参数 $α$ 和 $r$</strong></p><p><font color="Orangered"><strong>1. 影响学习率</strong></font></p><p>&emsp;&emsp;$\alpha&#x2F;r$ 本身不含学习率，它不参与学习率的计算。它们的关系不是“计算关系”，而是“效果耦合关系”</p><p>&emsp;&emsp;$\alpha&#x2F;r$ 会偷偷改变“梯度实际起多大作用”，从而改变最优学习率的位置。</p><p><strong>一、参数的实际更新量 &#x3D; 学习率 $\times$ 梯度</strong></p><p>&emsp;&emsp;优化器更新参数的公式是：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">1  Δ参数 = 学习率 × 梯度<br></code></pre></td></tr></table></figure><p>&emsp;&emsp;注意：梯度本身的大小，会被 $\alpha&#x2F;r$ 缩放。这是整条因果链的起点。</p><p><strong>二、$\alpha&#x2F;r$ 如何“偷偷”改变梯度大小</strong></p><p>看向前向计算：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs text">1  h = W₀ · x + (α/r) · B(A · x)<br></code></pre></td></tr></table></figure><p>&emsp;&emsp;旁路的输出乘了系数 $s &#x3D; \alpha&#x2F;r$。根据链式法则，反向传播时，流回 $A$ 和 $B$ 的梯度也被乘了同一个 $s$：</p><ul><li><p>$$\partial L&#x2F;\partial A &#x3D; s \cdot (B 的梯度链)$$</p></li><li><p>$$\partial L&#x2F;\partial B &#x3D; s \cdot (A 的梯度链)$$</p></li></ul><p>于是每次参数更新：</p><p>$$实际更新量 &#x3D; 学习率 \times 梯度 &#x3D; 学习率 \times s \times (原始梯度)$$</p><p>&emsp;&emsp;也就是说，$s &#x3D; \alpha&#x2F;r$ 实际上起到了“隐形学习率”的作用：</p><table><thead><tr><th align="left">组合</th><th align="left">实际效果</th></tr></thead><tbody><tr><td align="left">学习率&#x3D;2e-4, $s&#x3D;1$</td><td align="left">有效步长 $\approx$ 2e-4</td></tr><tr><td align="left">学习率&#x3D;2e-4, $s&#x3D;2$ (本文)</td><td align="left">有效步长 $\approx$ 4e-4</td></tr><tr><td align="left">学习率&#x3D;2e-4, $s&#x3D;4$</td><td align="left">有效步长 $\approx$ 8e-4，可能发散</td></tr></tbody></table><hr><p><strong>三、如果想自己调，怎么判断方向</strong></p><p>看 $r$ 够不够（任务复杂度）：</p><ul><li>任务简单（如单标签分类） $\rightarrow$ $r&#x3D;8 \sim 16$ 够用</li><li>任务复杂（如多任务、需要学习输出坐标&#x2F;数字&#x2F;多轮推理，本文属于这种） $\rightarrow$ $r&#x3D;32 \sim 128$</li><li>$r$ 不够的症状：模型学不会某类任务（如本文的定位任务学不好），可以加大 $r$</li></ul><p>看 $\alpha$ 合不合适（学习强度）：</p><ul><li>训练损失下不去、学得慢 $\rightarrow$ 可适当增大 $\alpha$（如从 $r$ 提高到 (2r)）</li><li>训练损失剧烈震荡、模型输出质量变差 $\rightarrow$ $\alpha$ 过大，退回 $\alpha &#x3D; r$ 或减小</li></ul><p>&emsp;&emsp;最省事的办法：直接固定 $\alpha&#x2F;r &#x3D; 2$（即 $\alpha &#x3D; 2r$），只调 $r$——这也是 LLaVA 官方与多数复现工作的做法。学习率再配 $2 \times 10^{-4} \sim 1 \times 10^{-4}$（LoRA 场景的标配），基本就能稳定训练。</p>
+          </div>
+
+<hr>
+<h2 id="3-实验部分-1"><a href="#3-实验部分-1" class="headerlink" title="3. 实验部分"></a>3. 实验部分</h2><p><strong>评价指标</strong></p>
+<ul>
+<li>采用 BLEU-1，METEOR，ROUGE-L，CIDEr</li>
+<li>采用 MAE 进行类别特定量化</li>
+</ul>
+<p>&emsp;&emsp;与<strong>SOTA</strong>方法进行比较,包 括Capt‐Dual‐Att , DUDA , MCCFormer‐S , MCCFormer‐D , RSICCFormer , Prompt‐CC </p>
+<hr>
+<p><strong>数据集</strong></p>
+<ul>
+<li>LEVIR-CC 测试集的1929个样本，评估模型的性能</li>
+<li>ChangeChat‐87k 数据集</li>
+</ul>
+<hr>
+<p><strong>超参数设置</strong></p>
+<ul>
+<li>LoRA 使用 <code>r=64</code>和<code>α=128</code></li>
+<li>使用 AdamW 优化器和余弦学习率调度器在 <strong>ChangeChat‐87k数据集</strong>上对 CHANGECHAT 进行了<strong>一个</strong> epoch的训练</li>
+<li><code>lr=2e-4</code></li>
+<li>使用批大小为 <code>16</code> 在<code>6</code> 个步骤内<strong>累计梯度</strong>（达到全局批大小为 <code>96</code>）</li>
+</ul>
+<div class="note note-success">
+            <p>&emsp;&emsp;一次前向-反向传播，LoRA 更新一次 $A$、$B$。$87,195$ 条数据 $&#x3D; 87,195$ 次参数更新（batch size $32$ 时约合 $2,725$ 步）。这么多更新，足够让 $A$、$B$ 从全零&#x2F;小随机值学出“对比两图 $\rightarrow$ 分析 $\rightarrow$ 按格式回答”的完整映射。</p><p>&emsp;&emsp;对于低秩修正这个级别的学习任务，几千步已经绰绰有余。可以把它理解成：不是“看一遍书”，而是“做了一遍 $8.7$ 万题的题海”——每道题都推动一次参数更新。</p><p>&emsp;&emsp;$1$ epoch 的合理性 $&#x3D; 87,195$ 次梯度更新已经足够让 $0.5%$ 的可训练参数收敛。</p><table><thead><tr><th align="left">情况</th><th align="left">建议 epoch 数</th></tr></thead><tbody><tr><td align="left">标准 LoRA 微调（本文场景）</td><td align="left">$1$</td></tr><tr><td align="left">数据量小（$&lt;1$ 万条）</td><td align="left">$2 \sim 3$，配合早停</td></tr><tr><td align="left">领域差异极大（如从自然图像到医学影像）</td><td align="left">$2 \sim 3$ 个 epoch，并配数据增强</td></tr><tr><td align="left">从零预训练</td><td align="left">几百 $\sim$ 几千 epoch</td></tr></tbody></table>
+          </div>
+
+<h2 id="4-与前一篇相比，核心变化是什么？-1"><a href="#4-与前一篇相比，核心变化是什么？-1" class="headerlink" title="4. 与前一篇相比，核心变化是什么？"></a>4. 与前一篇相比，核心变化是什么？</h2><p>&emsp;&emsp;ChangeChat 与 Change-Agent 最本质的差别是范式转变：Change-Agent 走的是“感知模型当眼睛、通用 LLM 当大脑、通过生成代码调用工具”的 Agent 路线</p>
+<p>&emsp;&emsp;ChangeChat 则走 LLaVA 式的“把图像 token 直接喂给 LLM、用多模态指令数据微调”的端到端路线</p>
 
                 
               </div>
@@ -600,7 +682,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>读文献5-Change-Agent</div>
+      <div>读文献5-Change-Agent/ChangeChat</div>
       <div>http://one-and-one-fourth.github.io/2026/11/03/研究生/读文献记录4/</div>
     </div>
     <div class="license-meta">
@@ -619,7 +701,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年11月3日</div>
+          <div>2026年11月4日</div>
         </div>
       
       

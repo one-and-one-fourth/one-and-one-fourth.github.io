@@ -27,7 +27,7 @@
 <meta property="og:description" content="论文名称：BLIP-2: Bootstrapping Language-Image Pre-training with Frozen Image Encoders and Large Language Models阅读日期：2026.10.26 所属方向与编号：通用基础论文-05 预知识              微调 (Fine-tuning) :在预训练基础上，用小数据把模型”调教”到某个具体">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-10-26T08:36:04.788Z">
-<meta property="article:modified_time" content="2026-10-30T08:39:46.591Z">
+<meta property="article:modified_time" content="2026-11-04T14:23:07.827Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="遥感大模型">
 <meta name="twitter:card" content="summary_large_image">
@@ -293,7 +293,7 @@
               <p id="updated-time" class="note note-info" style="">
                 
                   
-                    本文最后更新于 2026年10月30日 下午
+                    本文最后更新于 2026年11月4日 晚上
                   
                 
               </p>
@@ -495,7 +495,7 @@
 <p>&emsp;&emsp;对于式$p(X_a|X_v, X_{instruct}) &#x3D; ∏ p_θ(x_i | X_v, X_{instruct},&lt;i, X_a,&lt;i)$ 中的条件，本文显式地添加了 $\mathbf{X}_{\text{v}}$，以强调图像对所有答案的接地（grounded）作用；同时为了更好的可读性，本文省略了 $\mathbf{X}_{\text{system-message}}$ 以及所有之前的 <code>&lt;STOP&gt;</code>。对于 LLaVA 模型的训练，本文采用了双阶段的指令微调流程。</p>
 <p>&emsp;&emsp;其中 $\boldsymbol{\theta}$ 是可训练的参数，$\mathbf{X}_{\text{instruct}, &lt;i}$ 和 $\mathbf{X}_{\text{a}, &lt;i}$ 分别是所有轮次中、当前预测 token $\boldsymbol{x}_i$ 之前的指令和答案 token。预测 token 的见 <strong>公式（1）</strong>。</p>
 <h2 id="4-与前一篇相比，核心变化是什么？-1"><a href="#4-与前一篇相比，核心变化是什么？-1" class="headerlink" title="4. 与前一篇相比，核心变化是什么？"></a>4. 与前一篇相比，核心变化是什么？</h2><p>&emsp;&emsp;前一篇的 BLIP-2 同样也是根据图片产生信息，不过 BLIP-2 更偏重于以很少的代价将图片送入 LLM ，他通过设计了一个 Q-Former 连接了 ViT 和 LLM，实现了以很少的代价实现了视觉-语言的对话。</p>
-<p>&emsp;&emsp;本文则重点教会了模型听懂人的指令。在训练阶段已经进入了微调的行为，前者则仍是偏重训练出对应的模型参数。并且本文已经支持了多轮对话，前者则只是一图一答的行为。并且本文也提出了视觉指令微调的概念，让模型像ChatGPT一样工作（另需注意，当时背景下，CPT并不支持图片的输入，仅仅是文本对话）。</p>
+<p>&emsp;&emsp;本文则重点教会了模型听懂人的指令。在训练阶段已经进入了微调的行为，前者则仍是偏重训练出对应的模型参数。并且本文已经支持了多轮对话，前者则只是一图一答的行为。并且本文也提出了视觉指令微调的概念，让模型像ChatGPT一样工作（另需注意，当时背景下，GPT并不支持图片的输入，仅仅是文本对话）。</p>
 
                 
               </div>
@@ -567,7 +567,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2026年10月30日</div>
+          <div>2026年11月4日</div>
         </div>
       
       
