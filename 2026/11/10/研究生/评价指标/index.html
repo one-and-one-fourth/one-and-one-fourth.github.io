@@ -27,7 +27,7 @@
 <meta property="og:description" content="评估指标总结导航 混淆矩阵 precision（精确率） recall（召回率） IoU（交并比） MIoU（平均交并比） FWIoU（频率加权交并比） pixel acc（PA，像素精度） MPA（平均像素精度） F1-score Kappa 系数 SeK（分离 Kappa 系数） Overall Acc（OA，总体精度） producer’s acc（生产者精度） user’s acc（UA，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-11-10T14:13:22.664Z">
-<meta property="article:modified_time" content="2026-11-10T14:45:29.243Z">
+<meta property="article:modified_time" content="2026-11-10T15:14:25.763Z">
 <meta property="article:author" content="一又四分之一">
 <meta property="article:tag" content="评价指标">
 <meta name="twitter:card" content="summary_large_image">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.2k 字
+          2.3k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          19 分钟
+          20 分钟
         
       </span>
     
@@ -366,8 +366,7 @@
 <ul>
 <li>类1：$43&#x2F;47&#x3D;0.9149$</li>
 <li>类2：$45&#x2F;51&#x3D;0.8824$</li>
-<li>类3：$49&#x2F;52&#x3D;0.9423$</li>
-<li>mean-precision &#x3D; $(0.9149+0.8824+0.9423)&#x2F;3 &#x3D; \textbf{0.9132}$</li>
+<li>类3：$49&#x2F;52&#x3D;0.9423$<br>$$<br>\begin{aligned}<br>  mean-precision<br>  &amp;&#x3D; (0.9149+0.8824+0.9423)&#x2F;3 \\<br>  &amp;&#x3D; \textbf{0.9132}<br>  \end{aligned}<br>$$</li>
 </ul>
 <blockquote>
 <p>也叫<strong>查准率</strong>。表示模型预测为某一类别的所有样本中，真正属于该类别的比例。衡量的是模型预测得“准不准”（不冤枉好人）。在变化检测中，意味着模型标出的变化区域里，有多少是真正发生变化的（避免误检）。</p>
@@ -386,73 +385,62 @@
 <hr>
 <p><a id="iou"></a><br><strong>IoU（交并比）：对角线 &#x2F;（对角线+列总和-对角线+行总和-对角线），即 $TP&#x2F;(TP+FP+FN)$</strong></p>
 <ul>
-<li>类1：$43&#x2F;(43+4+7)&#x3D;43&#x2F;54&#x3D;0.7963$ （$FP&#x3D;4+0&#x3D;4$，$FN&#x3D;5+2&#x3D;7$）</li>
-<li>类2：$45&#x2F;(45+5+6)&#x3D;45&#x2F;56&#x3D;0.8036$ （$FP&#x3D;5+1&#x3D;6$，$FN&#x3D;4+1&#x3D;5$）</li>
-<li>类3：$49&#x2F;(49+3+1)&#x3D;49&#x2F;53&#x3D;0.9245$ （$FP&#x3D;2+1&#x3D;3$，$FN&#x3D;0+1&#x3D;1$）</li>
+<li><p>类1：$43&#x2F;(43+4+7)&#x3D;43&#x2F;54&#x3D;0.7963$</p>
+<p> （$FP&#x3D;4+0&#x3D;4$，$FN&#x3D;5+2&#x3D;7$）</p>
+</li>
+<li><p>类2：$45&#x2F;(45+5+6)&#x3D;45&#x2F;56&#x3D;0.8036$ </p>
+<p>（$FP&#x3D;5+1&#x3D;6$，$FN&#x3D;4+1&#x3D;5$）</p>
+</li>
+<li><p>类3：$49&#x2F;(49+3+1)&#x3D;49&#x2F;53&#x3D;0.9245$ </p>
+<p>（$FP&#x3D;2+1&#x3D;3$，$FN&#x3D;0+1&#x3D;1$）</p>
+</li>
 </ul>
 <blockquote>
 <p>语义分割中最核心的指标。计算的是预测区域与真实区域的交集除以它们的并集。IoU 越高，说明预测的掩码与真实情况的吻合度越好。$1$ 代表完美重合，$0$ 代表毫无重合。它同时兼顾了误检和漏检的情况。</p>
 </blockquote>
 <hr>
 <p><a id="miou"></a><br><strong>MIoU（平均交并比）</strong></p>
-<ul>
-<li>MIoU &#x3D; $(iou类1+iou类2+iou类3)&#x2F;3 &#x3D; (0.7963+0.8036+0.9245)&#x2F;3 &#x3D; \textbf{0.8415}$</li>
-</ul>
+<p>$$<br>\begin{aligned}<br>MIoU &amp;&#x3D; (iou类1+iou类2+iou类3)&#x2F;3 \\<br>&amp;&#x3D; (0.7963+0.8036+0.9245)&#x2F;3 \\<br>&amp;&#x3D; \textbf{0.8415}<br>\end{aligned}<br>$$</p>
 <blockquote>
 <p>计算所有类别 IoU 的平均值。它是多类别分割任务中最常用的标准指标，能综合反映模型在各类别上的平均表现，避免了单一类别极端值对整体评估的影响。</p>
 </blockquote>
 <hr>
 <p><a id="fwiou"></a><br><strong>FWIoU（频率加权交并比）</strong></p>
 <p>权重为各类真实样本频率（行总和&#x2F;总数）：</p>
-<ul>
-<li>FWIoU &#x3D; $(50&#x2F;150)\times0.7963 + (50&#x2F;150)\times0.8036 + (50&#x2F;150)\times0.9245$</li>
-<li>$&#x3D; \textbf{0.8415}$ （本例各类频率相等，故与 MIoU 相同；只有类别不平衡时二者才不同）</li>
-</ul>
+<p>$$<br>\begin{aligned}<br>FWIoU &amp;&#x3D; (50&#x2F;150)\times0.7963 \\<br>&amp;+ (50&#x2F;150)\times0.8036 \\<br>&amp;+ (50&#x2F;150)\times0.9245\\\\<br>&amp;&#x3D;\textbf{0.8415}<br>\end{aligned}<br>$$</p>
+<p>（本例各类频率相等，故与 MIoU 相同；只有类别不平衡时二者才不同）</p>
 <blockquote>
 <p>根据每个类别的真实像素频率（占比）对 IoU 进行加权平均。类别像素越多，权重越大。它更符合“按面积算正确率”的直觉，在类别严重不平衡（如背景极大）的情况下，比 MIoU 更能反映整体像素级的准确度。</p>
 </blockquote>
 <hr>
 <p><a id="pa"></a><br><strong>pixel acc（PA，像素精度）</strong></p>
-<ul>
-<li>PA &#x3D; $(43+45+49)&#x2F;150 &#x3D; 137&#x2F;150 &#x3D; \textbf{0.9133}$</li>
-</ul>
+<p>$$<br>\begin{aligned}<br>PA &amp;&#x3D; (43+45+49)&#x2F;150<br>\\&amp;&#x3D; 137&#x2F;150<br>\\&amp;&#x3D; \textbf{0.9133}<br>\end{aligned}<br>$$</p>
 <blockquote>
 <p>最简单的指标，即预测正确的像素总数占总像素数的比例。但在类别极度不平衡时（比如 $95%$ 都是未变化背景），即使模型把所有像素都预测为背景，PA 也会很高，因此存在“虚高”问题。</p>
 </blockquote>
 <hr>
 <p><a id="mpa"></a><br><strong>MPA（平均像素精度，即各类召回率均值）</strong></p>
-<ul>
-<li>MPA &#x3D; $(43&#x2F;50+45&#x2F;50+49&#x2F;50)&#x2F;3 &#x3D; \textbf{0.9133}$</li>
-</ul>
+<p>$$<br>\begin{aligned}<br>MPA &amp;&#x3D; (43&#x2F;50+45&#x2F;50+49&#x2F;50)&#x2F;3 \\&amp;&#x3D; \textbf{0.9133}<br>\end{aligned}<br>$$</p>
 <blockquote>
 <p>各类别 Recall（召回率）的平均值。它平等对待每个类别，不管该类别的像素多还是少，能在一定程度上缓解类别不平衡带来的评估偏差。</p>
 </blockquote>
 <hr>
-<p><a id="f1"></a><br><strong>F1-score（用 mean-P 与 mean-R 计算）</strong></p>
-<ul>
-<li>F1 &#x3D; $2\times precision\times recall&#x2F;(precision+recall) &#x3D; 2\times0.9132\times0.9133&#x2F;(0.9132+0.9133) &#x3D; \textbf{0.9132}$</li>
-</ul>
+<p><a id="f1"></a><br><strong>F1-score（用 mean-P 与 mean-R 计算）</strong><br>$$<br>\begin{aligned}<br>F1 &amp;&#x3D; 2\times precision\times recall&#x2F;(precision+recall) \\<br>&amp;&#x3D; 2\times0.9132\times0.9133&#x2F;(0.9132+0.9133) \\<br>&amp;&#x3D; \textbf{0.9132}<br>\end{aligned}<br>$$</p>
 <blockquote>
 <p>Precision 和 Recall 的调和平均数。因为 Precision 和 Recall 经常是此消彼长的（提高查准率往往会降低查全率），F1-score 将两者综合起来，用以衡量模型的整体综合性能。F1 越高，说明模型的 P 和 R 达到了较好的平衡。</p>
 </blockquote>
 <hr>
 <p><a id="kappa"></a><br><strong>Kappa 系数</strong></p>
-<ul>
-<li>po &#x3D; PA &#x3D; $(43+45+49)&#x2F;150 &#x3D; 0.9133$</li>
-<li>pe &#x3D; $(47\times50+51\times50+52\times50)&#x2F;(150\times150) &#x3D; (2350+2550+2600)&#x2F;22500 &#x3D; \textbf{0.3333}$</li>
-<li>kappa &#x3D; $(po-pe)&#x2F;(1-pe) &#x3D; (0.9133-0.3333)&#x2F;(1-0.3333) &#x3D; 0.58&#x2F;0.6667 &#x3D; \textbf{0.8700}$</li>
-</ul>
+<p>po &#x3D; PA &#x3D; $(43+45+49)&#x2F;150 &#x3D; 0.9133$<br>$$<br>\begin{aligned}<br>pe &amp;&#x3D; (47\times50+51\times50+52\times50)&#x2F;(150\times150)\\<br>&amp;&#x3D; (2350+2550+2600)&#x2F;22500 \\<br>&amp;&#x3D; \textbf{0.3333}<br>\end{aligned}<br>$$</p>
+<p>$$<br>\begin{aligned}<br>kappa &amp;&#x3D; (po-pe)&#x2F;(1-pe) \\<br>&amp;&#x3D; (0.9133-0.3333)&#x2F;(1-0.3333) \\<br>&amp;&#x3D; 0.58&#x2F;0.6667 \\<br>&amp;&#x3D; \textbf{0.8700}<br>\end{aligned}<br>$$</p>
 <blockquote>
 <p>用于一致性检验。它不仅考虑了模型的预测准确率，还扣除了随机猜测带来的准确率（即“碰巧猜对”的概率）。Kappa 值在 $0 \sim 1$ 之间，通常 $&gt;0.8$ 认为一致性极好，能有效避免类别不平衡时的精度虚高。</p>
 </blockquote>
 <hr>
 <p><a id="sek"></a><br><strong>SeK（Separated Kappa coefficient，分离 Kappa 系数）</strong></p>
-<p>假设上表数据已剥离了“未变化”类（即纯变化区域的混淆矩阵）：</p>
-<ul>
-<li>po &#x3D; $(43+45+49)&#x2F;150 &#x3D; \textbf{0.9133}$</li>
-<li>pe &#x3D; $(47\times50+51\times50+52\times50)&#x2F;(150\times150) &#x3D; 7500&#x2F;22500 &#x3D; \textbf{0.3333}$</li>
-<li>SeK &#x3D; $(po-pe)&#x2F;(1-pe) &#x3D; (0.9133-0.3333)&#x2F;(1-0.3333) &#x3D; 0.58&#x2F;0.6667 &#x3D; \textbf{0.8700}$</li>
-</ul>
+<p>假设上表数据已剥离了“未变化”类（即纯变化区域的混淆矩阵）：<br>$$<br>po &#x3D; (43+45+49)&#x2F;150 &#x3D; \textbf{0.9133}<br>$$</p>
+<p>$$<br>\begin{aligned}<br>pe &amp;&#x3D; (47\times50+51\times50+52\times50)&#x2F;(150\times150) \\<br>&amp;&#x3D; 7500&#x2F;22500 \\<br>&amp;&#x3D; \textbf{0.3333}<br>\end{aligned}<br>$$</p>
+<p>$$<br>\begin{aligned}<br>SeK &amp;&#x3D; (po-pe)&#x2F;(1-pe) \\<br>&amp;&#x3D; (0.9133-0.3333)&#x2F;(1-0.3333) \\<br>&amp;&#x3D; 0.58&#x2F;0.6667 \\<br>&amp;&#x3D; \textbf{0.8700}<br>\end{aligned}<br>$$</p>
 <blockquote>
 <p>专门为语义变化检测（SCD）设计的改进型 Kappa 指标。在计算前，先将海量的“未变化（non-change）”像素从混淆矩阵中直接剥离（剔除），仅保留真正发生变化的像素来计算 Kappa。它解决了传统指标在 SCD 任务中因背景过大导致的“虚高”问题，专门衡量模型在变化区域内区分不同语义转换类别的能力。</p>
 </blockquote>
@@ -489,10 +477,7 @@
 <p>等同于 F1-score（调和平均数），用于综合评价某一类别的预测质量，平衡了生产者精度（查全）和用户精度（查准）。</p>
 </blockquote>
 <hr>
-<p><a id="sa"></a><br><strong>Short acc（SA）</strong></p>
-<ul>
-<li>SA &#x3D; $PA\times UA&#x2F;(PA+UA-PA\times UA) &#x3D; 0.9133\times0.9132&#x2F;(0.9133+0.9132-0.9133\times0.9132) &#x3D; 0.8341&#x2F;0.9925 \approx \textbf{0.8404}$</li>
-</ul>
+<p><a id="sa"></a><br><strong>Short acc（SA）</strong><br>$$<br>\begin{aligned}<br>SA &amp;&#x3D; PA\times UA&#x2F;(PA+UA-PA\times UA) \\<br>&amp;&#x3D; 0.9133\times0.9132&#x2F;(0.9133+0.9132-0.9133\times0.9132) \\<br>&amp;&#x3D; 0.8341&#x2F;0.9925 \\<br>&amp;\approx \textbf{0.8404}<br>\end{aligned}<br>$$</p>
 <blockquote>
 <p>结合了 PA（召回率）和 UA（精确率）的一个综合指标，用来平衡两种误差，常用于遥感图像分类评估，是对模型局部表现的一种稳健评估。</p>
 </blockquote>
@@ -502,7 +487,7 @@
 <li>漏分误差 $&#x3D; 1 - 生产者精度 &#x3D; 1 - 0.9133 &#x3D; \textbf{0.0867}$ （该类真实样本被漏掉分错的比例）</li>
 </ul>
 <blockquote>
-<p>表示真实存在的某类样本中，被模型遗漏（没有预测出来）的比例。代表**“漏检”**（本应该圈出来的，但没圈出来）。</p>
+<p>表示真实存在的某类样本中，被模型遗漏（没有预测出来）的比例。代表 <strong>“漏检”</strong>（本应该圈出来的，但没圈出来）。</p>
 </blockquote>
 <hr>
 <p><a id="commission"></a><br><strong>错分误差（commission error）</strong></p>
@@ -510,7 +495,7 @@
 <li>错分误差 $&#x3D; 1 - 用户精度 &#x3D; 1 - 0.9132 &#x3D; \textbf{0.0868}$ （被判为该类的样本中分错的比例）</li>
 </ul>
 <blockquote>
-<p>表示模型预测为某类的样本中，实际上是其他类别的比例。代表**“误检”**或“错报”（本来不是这个类，却被圈成了这个类）。</p>
+<p>表示模型预测为某类的样本中，实际上是其他类别的比例。代表 <strong>“误检”</strong> 或“错报”（本来不是这个类，却被圈成了这个类）。</p>
 </blockquote>
 
                 
